@@ -127,10 +127,22 @@ demais no planejamento estratégico do Jaime.
 
 ---
 
-## 5. Instituição de referência
+## 5. Case e credencial
 
-**Fase 2 — a decidir.** Hipótese forte: o case **não é fictício**. É a própria
-organização de Aureo, que viveu as três falhas. Ver `00-pre-producao/case-e-ancoras.md`.
+**O case não é fictício** — é a própria trajetória de Aureo. Fundador contando o
+próprio tombo tem autoridade que case ilustrativo não alcança, e não há tempo em
+85 min para sustentar uma organização fictícia **e** entregar quatro colunas.
+Personagens seguem por função: "o contador", "a coordenadora".
+
+**Credencial (2 frases, depois da promessa):** da Pastoral Social de uma paróquia
+em Itajaí a fundador de uma plataforma que administra bilhões em investimento
+social — e, entre uma coisa e outra, quebrou a cara com a gestão da própria
+organização.
+
+**Contraponto positivo (volta 4):** assessoria semanal ao Instituto Rogério Rosa
+há 5 anos, 1h por semana. Sem ele, a aula vira inventário de fracassos.
+
+Detalhamento em `00-pre-producao/case-e-ancoras.md`.
 
 ---
 
@@ -174,8 +186,8 @@ organização de Aureo, que viveu as três falhas. Ver `00-pre-producao/case-e-a
 |------|--------|
 | Fase 0 · Briefing | ✅ fechada |
 | Fase 1 · Ideia-instrumento | ✅ proposta, reenquadrada como guardião — aguarda corte de Aureo |
-| Fase 2 · Case e paredes | — |
-| Fase 3 · Âncoras | — |
+| Fase 2 · Case e credencial | ✅ proposta |
+| Fase 3 · Âncoras | ✅ proposta |
 | Fase 4 · Estrutura | rascunhada na seção 6 |
 | Fase 5 · Roteiro | — |
 | Fase 6 · Slides | — |
