@@ -1,8 +1,8 @@
 # Briefing — Gestão eficiente
 
-> Aula dentro da Formação de Líderes do Programa Impulso.
-> Status: **em preenchimento** — faltam as duas listas (seção 2) e o perfil da
-> plateia (seção 4). As duas dependem da grade do programa.
+> 5ª aula da Formação de Líderes no 3º Setor — Programa Impulso / Instituto GRPCOM.
+> **Fase 0 fechada.** Aberto apenas: nº de inscritos e se as aulas anteriores
+> deixaram material produzido (seção 4) — útil, não bloqueante.
 
 ## 1. A frase de saída
 
