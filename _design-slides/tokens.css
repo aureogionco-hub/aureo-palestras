@@ -1,0 +1,111 @@
+/* ============================================================
+   TOKENS — Sistema visual Aureo Gionco aplicado a palestras
+   Fonte: _identidade/skills/skill-identidade-visual/paleta-cores.json (v1.0)
+   Não invente cor aqui. Se a identidade mudar, atualize o submodule
+   _identidade e reflita a mudança neste arquivo, em um lugar só.
+   ============================================================ */
+
+:root {
+  /* ---- Núcleo da marca ---- */
+  --azul-profundo:      #132B70;
+  --azul-assinatura:    #174C97;
+  --azul-aberto:        #2C83B7;
+  --turquesa:           #2FAEB8;
+  --verde-petroleo:     #0E625B;
+  --verde-vivo:         #14856C;
+  --verde-alegre:       #41A95B;
+
+  /* ---- Acentos e apoio (calor, nunca base) ---- */
+  --vermelho-profundo:  #B21F35;
+  --vermelho-assinatura:#D83C4C;
+  --coral:              #E86655;
+  --acafrao:            #D9A437;
+  --areia:              #CBAF8A;
+  --rosa:               #D98191;
+  --violeta:            #6658B7;
+
+  /* ---- Neutros quentes (o "fundo neutro quente" da identidade) ---- */
+  --papel:        #FAF7F2;  /* fundo do slide */
+  --papel-fundo:  #F2ECE3;  /* caixas, blocos, áreas de descanso */
+  --papel-borda:  #E3D9CB;
+  --tinta:        #14213D;  /* texto corrido escuro, derivado do azul profundo */
+  --tinta-suave:  #55637E;  /* texto secundário, legendas */
+
+  /* ---- Palco (a moldura escura em volta do slide, no modo formador) ---- */
+  --palco:        #0B1430;
+  --palco-alto:   #131F42;
+  --palco-linha:  rgba(255, 255, 255, 0.08);
+  --palco-texto:  rgba(255, 255, 255, 0.86);
+  --palco-fraco:  rgba(255, 255, 255, 0.34);
+
+  /* ---- Papéis semânticos ----
+     Use SEMPRE estes, nunca a cor crua, para que um ajuste de marca
+     não exija caçar hex espalhado pelos slides. */
+  --cor-titulo:    var(--azul-profundo);
+  --cor-realce:    var(--vermelho-profundo);  /* o <em> dentro de um título */
+  --cor-positivo:  var(--verde-petroleo);
+  --cor-negativo:  var(--vermelho-profundo);
+  --cor-apoio:     var(--turquesa);
+
+  /* ---- Tipografia ----
+     Sesimbra é a fonte oficial de títulos. Ela não é uma webfont pública:
+     se o arquivo estiver em _design-slides/fontes/, o @font-face abaixo a carrega;
+     se não estiver, cai em Sora, o fallback digital previsto pela identidade. */
+  --fonte-titulo: 'Sesimbra', 'Sora', system-ui, sans-serif;
+  --fonte-texto:  'Carlito', 'Calibri', system-ui, -apple-system, sans-serif;
+
+  /* ---- Escala tipográfica (relativa ao palco, não em px fixo) ----
+     Tudo é em em/cqw dentro do slide, para o mesmo HTML servir
+     a uma tela de 13" e a um telão de evento sem reescrever nada. */
+  --t-display:  5.2cqw;
+  --t-titulo:   3.4cqw;
+  --t-corpo:    2.0cqw;
+  --t-apoio:    1.55cqw;
+  --t-etiqueta: 1.15cqw;
+
+  /* ---- Ritmo ---- */
+  --gap-1: 0.8cqw;
+  --gap-2: 1.6cqw;
+  --gap-3: 2.6cqw;
+  --gap-4: 4.0cqw;
+  --raio:  1.1cqw;
+  --raio-g: 1.8cqw;
+
+  /* ---- Sombra: discreta, editorial, nunca "corporativa" ---- */
+  --sombra: 0 0.4cqw 2.4cqw rgba(19, 43, 112, 0.10);
+}
+
+/* Sesimbra, se o arquivo existir. Coloque .woff2 em _design-slides/fontes/.
+   Sem o arquivo, o navegador simplesmente ignora e usa Sora. */
+@font-face {
+  font-family: 'Sesimbra';
+  src: url('fontes/Sesimbra.woff2') format('woff2');
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+/* ============================================================
+   CONTRASTE — a parte que não é gosto, é regra
+   A identidade exige WCAG AA (4.5:1). Medido sobre --papel (#FAF7F2):
+
+     TEXTO EM QUALQUER TAMANHO (passa AA)
+       azul-profundo      15.3:1   ✓
+       azul-assinatura     9.5:1   ✓
+       verde-petroleo      6.7:1   ✓
+       vermelho-profundo   6.3:1   ✓
+       tinta              13.9:1   ✓
+
+     SÓ TEXTO GRANDE, acima de ~28px (passa AA Large, 3:1)
+       azul-aberto         3.9:1   ⚠
+       vermelho-assinatura 4.2:1   ⚠
+       coral               3.0:1   ⚠
+
+     NUNCA COMO TEXTO — só preenchimento, forma, ícone, barra
+       turquesa            2.5:1   ✗
+       verde-alegre        2.8:1   ✗
+       verde-vivo          4.3:1   ✗ (fica abaixo de AA por pouco)
+       acafrao, areia, rosa        ✗
+
+   Por isso --cor-realce é o vermelho-profundo e não o assinatura:
+   o realce aparece dentro de título E dentro de texto corrido.
+   ============================================================ */

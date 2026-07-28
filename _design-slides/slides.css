@@ -1,0 +1,371 @@
+/* ============================================================
+   SLIDES — sistema de layout de palestras de Aureo Gionco
+   Um arquivo HTML, duas saídas:
+     data-modo="formador"  → slide + painel de notas ao lado
+     data-modo="limpo"     → só o slide, tela cheia, 16:9
+   Você escreve uma vez. As duas versões nunca desencontram.
+   ============================================================ */
+
+@import url('tokens.css');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--fonte-texto);
+  background: var(--palco);
+  color: var(--palco-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh 2vw;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* ---------- barra superior ---------- */
+.barra {
+  width: 100%; max-width: 1500px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.2vh; padding: 0 4px;
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--palco-fraco); font-weight: 600;
+}
+.barra a { color: var(--palco-fraco); text-decoration: none; margin-right: 14px; }
+.barra a:hover { color: #fff; }
+.barra .modo-toggle {
+  font: inherit; text-transform: uppercase; letter-spacing: 0.08em;
+  background: rgba(255,255,255,0.07); border: 1px solid var(--palco-linha);
+  color: var(--palco-fraco); padding: 5px 12px; border-radius: 6px; cursor: pointer;
+}
+.barra .modo-toggle:hover { color: #fff; background: rgba(255,255,255,0.14); }
+
+/* ---------- palco: slide + notas ---------- */
+.apresentacao {
+  width: 100%; max-width: 1500px;
+  display: flex; border-radius: var(--raio-g); overflow: hidden;
+  box-shadow: 0 14px 70px rgba(0,0,0,0.55);
+}
+
+.slide { display: none; width: 100%; }
+.slide.ativo { display: flex; }
+
+/* A TELA — tudo dentro dela dimensiona em cqw, então o mesmo slide
+   serve a um notebook e a um telão sem uma linha reescrita. */
+.tela {
+  flex: 0 0 66%;
+  container-type: inline-size;
+  aspect-ratio: 16 / 9;
+  background: var(--papel);
+  position: relative;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 5.2cqw 6cqw;
+  overflow: hidden;
+}
+
+.tela .assinatura {
+  position: absolute; top: 2.6cqw; left: 3.2cqw;
+  font-size: var(--t-etiqueta); font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--azul-profundo); opacity: 0.30;
+}
+.tela .paginacao {
+  position: absolute; bottom: 2.6cqw; right: 3.2cqw;
+  font-size: var(--t-etiqueta); color: var(--azul-profundo); opacity: 0.30; font-weight: 600;
+}
+
+/* ---------- painel de notas (só no modo formador) ---------- */
+.notas {
+  flex: 0 0 34%;
+  background: var(--palco-alto);
+  display: flex; flex-direction: column;
+  padding: 30px 28px; overflow-y: auto;
+}
+.notas-topo {
+  display: flex; align-items: center; gap: 9px;
+  margin-bottom: 20px; padding-bottom: 15px;
+  border-bottom: 1px solid var(--palco-linha);
+}
+.notas-topo::before {
+  content: ''; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--vermelho-assinatura); flex-shrink: 0;
+}
+.notas-topo span {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--palco-fraco);
+}
+.notas-corpo { font-size: 16px; line-height: 1.85; color: var(--palco-texto); flex: 1; }
+.notas-corpo strong { color: var(--acafrao); font-weight: 600; }
+.notas-corpo p + p { margin-top: 1em; }
+
+.notas-tempo {
+  align-self: flex-start; margin-bottom: 16px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--turquesa); background: rgba(47,174,184,0.12);
+  border: 1px solid rgba(47,174,184,0.35); border-radius: 20px; padding: 4px 12px;
+}
+.notas-aviso {
+  margin-top: 20px; background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--vermelho-assinatura); border-radius: 0 8px 8px 0;
+  padding: 15px 17px; font-size: 15px; line-height: 1.75;
+}
+.notas-aviso strong { color: var(--acafrao); }
+.notas-ref { margin-top: 20px; font-size: 10px; color: rgba(255,255,255,0.16); text-align: right; }
+
+/* ---------- navegação ---------- */
+.navegacao {
+  width: 100%; max-width: 1500px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1.4vh; padding: 0 4px;
+}
+.nav-btn {
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  background: rgba(255,255,255,0.08); border: none; color: var(--palco-fraco);
+  padding: 10px 24px; border-radius: 8px; cursor: pointer; transition: background .2s, color .2s;
+}
+.nav-btn:hover:not(:disabled) { background: rgba(255,255,255,0.16); color: #fff; }
+.nav-btn:disabled { opacity: 0.22; cursor: not-allowed; }
+.nav-pontos { display: flex; gap: 6px; align-items: center; }
+.nav-ponto {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.20); cursor: pointer; transition: all .2s;
+}
+.nav-ponto.ativo { background: var(--vermelho-assinatura); width: 26px; border-radius: 4px; }
+.dica-teclado {
+  font-size: 10px; color: rgba(255,255,255,0.18);
+  text-align: center; margin-top: 10px; letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   MODO LIMPO — a apresentação final, sem a visão do palestrante
+   ============================================================ */
+body[data-modo="limpo"] { padding: 0; background: #000; }
+body[data-modo="limpo"] .barra,
+body[data-modo="limpo"] .navegacao,
+body[data-modo="limpo"] .dica-teclado,
+body[data-modo="limpo"] .notas { display: none; }
+body[data-modo="limpo"] .apresentacao {
+  max-width: none; width: 100vw; height: 100vh;
+  border-radius: 0; box-shadow: none;
+  align-items: center; justify-content: center;
+}
+body[data-modo="limpo"] .tela {
+  flex: none;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+}
+/* Na apresentação final a paginação some — ninguém precisa ver "4/18". */
+body[data-modo="limpo"] .paginacao { display: none; }
+
+/* ============================================================
+   BLOCOS DE SLIDE
+   Cada bloco é uma forma de ancorar uma ideia. Não são "estilos":
+   escolher o bloco é escolher COMO a plateia vai lembrar daquilo.
+   Catálogo visual em biblioteca-de-blocos.html
+   ============================================================ */
+
+/* -- cabeçalho de slide -- */
+.cabecalho {
+  padding-bottom: 1.6cqw; margin-bottom: 2.8cqw;
+  border-bottom: 0.18cqw solid var(--papel-borda); flex-shrink: 0;
+}
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-titulo); font-weight: 800;
+  color: var(--cor-titulo); line-height: 1.18; letter-spacing: -0.01em;
+}
+.titulo em { color: var(--cor-realce); font-style: normal; }
+
+/* -- selo: marca a que parte do arco este slide pertence -- */
+.selo {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 0.8cqw;
+  background: var(--papel-fundo); border: 0.15cqw solid var(--areia);
+  border-radius: 5cqw; padding: 0.8cqw 2cqw;
+  font-size: var(--t-etiqueta); font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--verde-petroleo); margin-bottom: 2.4cqw;
+}
+
+/* -- 1. FRASE DE IMPACTO — âncora mínima. A frase é o slide. -- */
+.frase-impacto {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-display); font-weight: 800;
+  color: var(--cor-titulo); line-height: 1.16; letter-spacing: -0.02em;
+  text-align: center; margin: auto 0;
+}
+.frase-impacto em { color: var(--cor-realce); font-style: normal; }
+.frase-apoio {
+  font-size: var(--t-corpo); color: var(--tinta-suave); font-weight: 500;
+  text-align: center; line-height: 1.5; margin-top: 2cqw;
+}
+
+/* -- 2. CONTRASTE — âncora estrutural. Os dois lados têm peso igual. -- */
+.contraste { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
+.contraste > div {
+  border-radius: var(--raio); padding: 3cqw 3.4cqw;
+  display: flex; align-items: center; gap: 2.2cqw;
+}
+.contraste .nao { background: #FBEDEE; border: 0.18cqw solid var(--vermelho-profundo); }
+.contraste .sim { background: #E9F3EF; border: 0.18cqw solid var(--verde-petroleo); }
+.contraste .marca { font-size: 3cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
+.contraste .nao .marca { color: var(--vermelho-profundo); }
+.contraste .sim .marca { color: var(--verde-petroleo); }
+.contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.35; }
+
+/* -- 3. DECLARAÇÃO — âncora literal. O dado precisa ser lido como está. -- */
+.declaracao {
+  background: var(--papel-fundo); border: 0.18cqw solid var(--areia);
+  border-radius: var(--raio-g); padding: 3.4cqw 3.6cqw; margin: auto 0;
+}
+.declaracao .rotulo {
+  font-size: var(--t-etiqueta); font-weight: 700; letter-spacing: 0.11em;
+  text-transform: uppercase; color: var(--tinta-suave); margin-bottom: 1.8cqw;
+}
+.declaracao .corpo {
+  font-size: 2.3cqw; font-weight: 700; color: var(--azul-profundo); line-height: 1.5;
+}
+
+/* -- 4. PASSOS — âncora literal numerada. Um método que a plateia copia. -- */
+.passos { display: flex; flex-direction: column; gap: var(--gap-1); margin: auto 0; }
+.passos > div {
+  display: flex; align-items: center; gap: 1.8cqw;
+  background: var(--papel-fundo); border-radius: var(--raio); padding: 1.8cqw 2.2cqw;
+}
+.passos .n {
+  width: 3.4cqw; height: 3.4cqw; border-radius: var(--raio);
+  color: #fff; font-size: 1.8cqw; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.passos > div:nth-child(1) .n { background: var(--azul-assinatura); }
+.passos > div:nth-child(2) .n { background: var(--verde-petroleo); }
+.passos > div:nth-child(3) .n { background: var(--vermelho-profundo); }
+.passos > div:nth-child(4) .n { background: var(--violeta); }
+/* rótulo curto (2-3 palavras) e sempre em uma linha; min-width alinha as colunas */
+.passos .rotulo {
+  font-size: var(--t-corpo); font-weight: 700; color: var(--azul-profundo);
+  flex-shrink: 0; min-width: 17cqw; white-space: nowrap;
+}
+.passos .valor { font-size: var(--t-apoio); font-weight: 500; color: var(--tinta-suave); line-height: 1.4; }
+
+/* -- 5. TESTE — o checklist que a plateia aplica sozinha depois. -- */
+.teste { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
+.teste > div {
+  display: flex; align-items: center; gap: 2.2cqw;
+  background: var(--papel-fundo); border-radius: var(--raio); padding: 2.6cqw 2.8cqw;
+}
+.teste .icone { font-size: 2.6cqw; flex-shrink: 0; line-height: 1; }
+.teste .texto { font-size: var(--t-corpo); font-weight: 600; color: var(--tinta); line-height: 1.4; }
+.teste .texto strong { color: var(--azul-profundo); font-weight: 800; }
+
+/* -- 6. FLUXO — âncora estrutural: de onde para onde. -- */
+.fluxo { margin: auto 0; }
+.fluxo .caixa { border-radius: var(--raio); padding: 2.4cqw 2.8cqw; }
+.fluxo .antes { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
+.fluxo .depois { background: #E9F3EF; border: 0.18cqw solid var(--verde-petroleo); }
+.fluxo .rotulo {
+  font-size: var(--t-etiqueta); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.09em; margin-bottom: 1.2cqw;
+}
+.fluxo .antes .rotulo { color: var(--tinta-suave); }
+.fluxo .depois .rotulo { color: var(--verde-petroleo); }
+.fluxo .valor { font-size: var(--t-corpo); font-weight: 600; color: var(--tinta); line-height: 1.4; }
+.fluxo .seta { text-align: center; padding: 1.4cqw 0; font-size: 2.8cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1; }
+
+/* -- 7. LISTA — itens curtos, mesmo peso, sem virar bullet corporativo. -- */
+.lista { display: flex; flex-direction: column; gap: 0.7cqw; margin: auto 0; }
+.lista > div {
+  display: flex; align-items: center; gap: 1.4cqw;
+  padding: 1.3cqw 2cqw; border-radius: 0.8cqw; background: var(--papel-fundo);
+}
+.lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 1.5cqw; flex-shrink: 0; }
+.lista .texto { font-size: var(--t-apoio); font-weight: 600; color: var(--tinta); line-height: 1.3; }
+
+/* -- 8. NÚMEROS — indicadores tratados com peso, não como enfeite. -- */
+.numeros { display: flex; gap: var(--gap-3); justify-content: center; margin: auto 0; flex-wrap: wrap; }
+.numeros > div { text-align: center; min-width: 16cqw; }
+.numeros .n {
+  font-family: var(--fonte-titulo);
+  font-size: 6cqw; font-weight: 800; line-height: 1; color: var(--azul-profundo);
+}
+.numeros > div:nth-child(2) .n { color: var(--verde-petroleo); }
+.numeros > div:nth-child(3) .n { color: var(--vermelho-profundo); }
+.numeros .d {
+  font-size: var(--t-apoio); font-weight: 600; color: var(--tinta-suave);
+  margin-top: 1cqw; line-height: 1.35;
+}
+
+/* -- 9. CITAÇÃO — a fala de alguém, com a autoria por cargo. -- */
+.citacao { margin: auto 0; padding-left: 3cqw; border-left: 0.4cqw solid var(--turquesa); }
+.citacao .fala {
+  font-family: var(--fonte-titulo);
+  font-size: 3cqw; font-weight: 600; color: var(--azul-profundo);
+  line-height: 1.35; font-style: italic;
+}
+.citacao .autoria {
+  font-size: var(--t-apoio); font-weight: 600; color: var(--tinta-suave); margin-top: 1.8cqw;
+}
+
+/* -- 10. CHAMADA — o momento em que a plateia faz alguma coisa. -- */
+.chamada { display: flex; flex-direction: column; align-items: center; gap: var(--gap-3); margin: auto 0; }
+.chamada .etiquetas { display: flex; gap: 1.4cqw; flex-wrap: wrap; justify-content: center; }
+.chamada .etiqueta {
+  background: var(--papel-fundo); border: 0.18cqw solid var(--azul-profundo);
+  color: var(--azul-profundo); font-size: var(--t-apoio); font-weight: 700;
+  padding: 1.3cqw 2.6cqw; border-radius: 4cqw;
+}
+
+/* -- 11. FECHO — o remate. Discreto de propósito: não compete com o slide. -- */
+.fecho {
+  margin-top: 2.4cqw; background: var(--papel-fundo);
+  border-left: 0.25cqw solid var(--areia); border-radius: 0 0.7cqw 0.7cqw 0;
+  padding: 1.3cqw 2cqw; text-align: left; flex-shrink: 0;
+}
+.fecho span { display: block; font-size: var(--t-apoio); color: var(--tinta-suave); line-height: 1.4; }
+.fecho span + span { font-weight: 700; margin-top: 0.3cqw; }
+.fecho b { color: var(--cor-realce); font-weight: 800; }
+
+/* -- 12. CAPA — abertura da palestra -- */
+.tela.capa { background: var(--azul-profundo); justify-content: flex-end; padding: 7cqw; }
+.tela.capa .assinatura, .tela.capa .paginacao { color: #fff; opacity: 0.5; }
+.capa .sobretitulo {
+  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--turquesa); margin-bottom: 2cqw;
+}
+.capa h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 6.4cqw; font-weight: 800; color: #fff;
+  line-height: 1.08; letter-spacing: -0.02em;
+}
+.capa h1 em { color: var(--acafrao); font-style: normal; }
+.capa .autoria {
+  margin-top: 3.4cqw; padding-top: 2.4cqw;
+  border-top: 0.15cqw solid rgba(255,255,255,0.22);
+  font-size: var(--t-corpo); color: rgba(255,255,255,0.80); font-weight: 500;
+}
+.capa .autoria b { color: #fff; font-weight: 700; }
+
+/* -- 13. SECÇÃO — vira a página do arco. Respiro entre blocos. -- */
+.tela.seccao { background: var(--verde-petroleo); align-items: center; justify-content: center; }
+.tela.seccao .assinatura, .tela.seccao .paginacao { color: #fff; opacity: 0.45; }
+.seccao .numero-parte {
+  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.20em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  text-align: center; margin-bottom: 1.8cqw;
+}
+.seccao h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 5cqw; font-weight: 800; color: #fff;
+  text-align: center; line-height: 1.14;
+}
+
+/* ---------- impressão / captura para o .pptx ---------- */
+@media print {
+  body { background: #fff; padding: 0; }
+  .barra, .navegacao, .dica-teclado, .notas { display: none !important; }
+  .slide { display: flex !important; page-break-after: always; }
+  .apresentacao { box-shadow: none; border-radius: 0; max-width: none; }
+  .tela { flex: 1 1 100%; }
+}
