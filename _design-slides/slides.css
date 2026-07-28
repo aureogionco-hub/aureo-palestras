@@ -361,6 +361,90 @@ body[data-modo="limpo"] .paginacao { display: none; }
   text-align: center; line-height: 1.14;
 }
 
+/* -- 14. GANCHO — o primeiro slide depois da capa. A tensão.
+      Diferente do frase-impacto: mais respiro, sem cabeçalho, sem fecho.
+      O slide existe para segurar silêncio. -- */
+.tela.gancho { justify-content: center; padding: 9cqw 10cqw; }
+.gancho-frase {
+  font-family: var(--fonte-titulo);
+  font-size: 6.2cqw; font-weight: 800;
+  color: var(--cor-titulo); line-height: 1.12; letter-spacing: -0.025em;
+  text-align: center;
+}
+.gancho-frase em { color: var(--cor-realce); font-style: normal; }
+
+/* -- 15. PROMESSA — o que a plateia ganha. Peso de capa, cor própria:
+      azul-assinatura, para não se confundir com a capa (azul-profundo)
+      nem com a secção (verde-petróleo). -- */
+.tela.promessa { background: var(--azul-assinatura); justify-content: center; padding: 7cqw; }
+.tela.promessa .assinatura, .tela.promessa .paginacao { color: #fff; opacity: 0.45; }
+.promessa-rotulo {
+  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--turquesa); margin-bottom: 2.4cqw;
+}
+.promessa-frase {
+  font-family: var(--fonte-titulo);
+  font-size: 4.4cqw; font-weight: 700; color: #fff;
+  line-height: 1.22; letter-spacing: -0.015em;
+}
+/* o instrumento prometido — é o que esta metodologia tem e as outras não */
+.promessa-frase b { color: var(--acafrao); font-weight: 800; }
+.promessa-apoio {
+  margin-top: 3cqw; padding-top: 2.2cqw;
+  border-top: 0.15cqw solid rgba(255,255,255,0.22);
+  font-size: var(--t-apoio); color: rgba(255,255,255,0.78); font-weight: 500; line-height: 1.5;
+}
+
+/* -- 16. INSTRUMENTO — a assinatura desta metodologia.
+      Reaparece ao fim de cada volta da trança, com mais uma parte preenchida.
+      A plateia vê o objeto sendo construído. É a série progressiva do curso
+      da Pratika, virada dispositivo de palco.
+
+      Estados por parte:  .vazia  →  .ativa (nasce agora)  →  .preenchida
+      Ordem no HTML = ordem no instrumento. Nunca mais de 4 partes. -- */
+.instrumento { display: flex; gap: 1.3cqw; align-items: stretch; margin: auto 0; }
+.instrumento .parte {
+  flex: 1; border-radius: var(--raio); padding: 2.2cqw 2cqw;
+  display: flex; flex-direction: column; gap: 1.2cqw; min-height: 21cqw;
+  position: relative;
+}
+.instrumento .n {
+  width: 2.6cqw; height: 2.6cqw; border-radius: 50%;
+  font-size: 1.3cqw; font-weight: 800; color: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.instrumento .rotulo {
+  font-size: var(--t-etiqueta); font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase; line-height: 1.3;
+}
+.instrumento .conteudo { font-size: var(--t-apoio); font-weight: 600; line-height: 1.35; }
+
+.instrumento .vazia { background: transparent; border: 0.2cqw dashed var(--papel-borda); }
+.instrumento .vazia .n { background: var(--papel-borda); }
+.instrumento .vazia .rotulo { color: var(--tinta-suave); opacity: 0.55; }
+
+.instrumento .preenchida { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
+.instrumento .preenchida .n { background: var(--azul-assinatura); }
+.instrumento .preenchida .rotulo { color: var(--tinta-suave); }
+.instrumento .preenchida .conteudo { color: var(--tinta); }
+
+.instrumento .ativa { background: #E9F3EF; border: 0.26cqw solid var(--verde-petroleo); }
+.instrumento .ativa .n { background: var(--verde-petroleo); }
+.instrumento .ativa .rotulo { color: var(--verde-petroleo); }
+.instrumento .ativa .conteudo { color: var(--tinta); }
+.instrumento .ativa .agora {
+  position: absolute; top: -1.5cqw; left: 2cqw;
+  background: var(--verde-petroleo); color: #fff;
+  font-size: 1.05cqw; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.5cqw 1.2cqw; border-radius: 3cqw;
+}
+
+.instrumento-legenda {
+  margin-top: 2cqw; text-align: center;
+  font-size: var(--t-etiqueta); font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-suave);
+}
+
 /* ---------- impressão / captura para o .pptx ---------- */
 @media print {
   body { background: #fff; padding: 0; }

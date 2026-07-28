@@ -41,13 +41,19 @@
 
 O que a plateia leva na mão. Cabe em um slide. Aplica-se na segunda-feira.
 
+> **Regra de tamanho:** o tempo de palco define quantas partes o instrumento
+> pode ter, porque cada parte precisa de uma volta inteira da trança.
+> Até 20 min = 2 partes · 30 a 50 min = 3 · 60 a 90 min = 4, no máximo.
+
 ### [Nome da ideia-instrumento]
 
-| Parte | O que é | Onde é ensinada |
-|-------|---------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
+| Parte | O que é | A parede que ela derruba | Volta |
+|-------|---------|--------------------------|-------|
+| 1 | | | 1 |
+| 2 | | | 2 |
+| 3 | | | 3 |
+
+> Se alguma parede ficar em branco, ou a parte sobra, ou o case está errado.
 
 ---
 
@@ -79,15 +85,21 @@ O que a plateia leva na mão. Cabe em um slide. Aplica-se na segunda-feira.
 
 ---
 
-## 6. O arco
+## 6. A estrutura
 
-| Parte | Tempo | Tema | Âncora | Bloco de slide |
-|-------|-------|------|--------|----------------|
-| Abertura | | | | |
-| Desenvolvimento 1 | | | | |
-| Desenvolvimento 2 | | | | |
-| Prática | | | | |
-| Encerramento | | | | |
+| Movimento | Tempo | Conteúdo | Âncora | Blocos de slide |
+|-----------|-------|----------|--------|-----------------|
+| 1 · Abertura impactante | ~90s | gancho → problema → espelho → ponte | | `capa` `gancho` |
+| 2 · Grande promessa | ~45s | promessa + quem fala (2 frases) | — | `promessa` |
+| 3 · Trança — volta 1 | | parede → parte 1 → alívio | | |
+| 3 · Trança — volta 2 | | parede → parte 2 → alívio | | |
+| 3 · Trança — volta 3 | | parede → parte 3 → alívio | | |
+| 4 · Prática | | a plateia usa o instrumento | — | `chamada` |
+| 5 · Grande finale | 2-3 min | volta ao gancho → princípio → passo | | `instrumento` `frase-impacto` |
+| **Folga** | **5-10%** | | | |
+
+> O núcleo fixo (abertura + promessa + finale) é de ~4 min em qualquer palestra.
+> Só a trança e a prática escalam, e escalam por volta inteira.
 
 ---
 
@@ -108,8 +120,8 @@ O que a plateia leva na mão. Cabe em um slide. Aplica-se na segunda-feira.
 |------|--------|
 | Briefing | |
 | Ideia-instrumento | |
-| Case e âncoras | |
-| Arco | |
+| Case, paredes e âncoras | |
+| Estrutura (5 movimentos) | |
 | Roteiro | |
 | Slides | |
 | Ensaio cronometrado | |

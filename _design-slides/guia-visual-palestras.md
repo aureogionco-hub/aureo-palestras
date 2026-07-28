@@ -97,13 +97,13 @@ Estilos que costumam servir a palestra:
 |---|---|
 | A1 Abstrato orgânico | Capas, aberturas, transições entre partes |
 | A5 Ilustração linear | Formação, workshop, conteúdo sobre relações |
-| A9 Mapas e percursos | Metodologia, etapas, jornada |
+| A9 Mapas e percursos | Metodologia, jornada, o instrumento crescendo volta a volta |
 | A10 Gráficos ilustrados | Indicadores, pesquisa, resultado |
 | A11 Esboços conceituais | Facilitação, pensamento em construção |
 
 ## 7. Checagem antes de subir ao palco
 
-- [ ] Todo slide cabe em um dos 13 blocos
+- [ ] Todo slide cabe em um dos 16 blocos
 - [ ] Nenhum slide tem dois blocos de conteúdo
 - [ ] Nenhum hex escrito à mão; só variáveis
 - [ ] Nenhum `px` dentro da `.tela`

@@ -39,11 +39,17 @@ Um arquivo por palestra: `palestras/<nome>/slides.html`. Um slide é:
 Nunca escreva número de slide à mão. `slides.js` numera a paginação e a
 referência das notas — inserir um slide no meio não obriga a renumerar nada.
 
-## Os 13 blocos
+## Os 16 blocos
+
+Os três primeiros são os movimentos da metodologia — abertura, promessa e o
+instrumento que atravessa a palestra. Os outros treze são blocos de conteúdo.
 
 | # | Bloco | Âncora | Use quando |
 |---|---|---|---|
-| 1 | `frase-impacto` | mínima | A frase é a ideia. Abertura, virada, encerramento |
+| 14 | `gancho` | mínima | **A tensão.** Primeiro slide depois da capa. Sem cabeçalho, sem fecho |
+| 15 | `promessa` | — | **O que a plateia ganha**, com o instrumento nomeado. Logo após o gancho |
+| 16 | `instrumento` | literal | **A assinatura da metodologia.** Reaparece ao fim de cada volta da trança |
+| 1 | `frase-impacto` | mínima | A frase é a ideia. Virada, encerramento |
 | 2 | `contraste` | estrutural | A plateia confunde duas coisas que precisam ser separadas |
 | 3 | `declaracao` | literal | O texto vale pela redação exata; a plateia vai querer copiar |
 | 4 | `passos` | literal | O método reutilizável — o coração da ideia-instrumento |
@@ -70,6 +76,37 @@ lembrar daquilo.** Se um slide não cabe em nenhum bloco, o problema quase nunca
 - `citacao`: 1 por palestra, 2 no limite.
 - `seccao`: 3 por palestra. Mais que isso vira sumário, e sumário mata ritmo.
 - `frase-impacto`: sem parágrafo embaixo. Se precisa explicar, não é este bloco.
+- `gancho`: **1 por palestra.** Se aparece um segundo, ele não era o gancho.
+- `promessa`: **1 por palestra**, sempre logo depois do gancho.
+- `instrumento`: **no máximo 4 partes**, e o número vem do tempo de palco, não do
+  gosto — 20 min = 2 · 45 min = 3 · 90 min = 4.
+
+## O bloco `instrumento`
+
+É o que separa esta metodologia de qualquer outra palestra: a plateia não ouve
+falar de um instrumento, ela **vê o objeto sendo construído**.
+
+Três estados por parte:
+
+```html
+<div class="instrumento">
+  <div class="parte preenchida"><span class="n">1</span>
+    <div class="rotulo">A mudança</div><div class="conteudo">…</div></div>
+  <div class="parte ativa"><span class="agora">agora</span><span class="n">2</span>
+    <div class="rotulo">O indicador</div><div class="conteudo">…</div></div>
+  <div class="parte vazia"><span class="n">3</span>
+    <div class="rotulo">A meta</div></div>
+</div>
+<div class="instrumento-legenda">Nome do instrumento · 2 de 3</div>
+```
+
+- `vazia` — tracejada, sem conteúdo. Ainda não foi conquistada.
+- `ativa` — verde, com o selo "agora". **Uma por slide**, nunca duas.
+- `preenchida` — já conquistada em uma volta anterior.
+
+Repita este slide ao fim de cada volta da trança, avançando um estado. No
+finale, todas preenchidas. É a série progressiva do curso da Pratika virada
+dispositivo de palco.
 
 ## Cor — a parte que não é gosto
 

@@ -21,6 +21,55 @@ Um arquivo, duas visões. Não existe "segundo arquivo sem notas" para manter em
 sincronia — duas fontes sempre desencontram na correção de última hora, que é
 justamente a mais importante.
 
+## O método
+
+Criado por Aureo Gionco, fundindo duas linhagens: o rigor de desenho pedagógico
+dos cursos da Pratika Social (Fases 0 a 3 — briefing, instrumento, case, âncoras)
+e a metodologia de palestras memoráveis do próprio Aureo (Fase 4 em diante).
+
+Cinco movimentos:
+
+| | Movimento | |
+|---|---|---|
+| 1 | **Abertura impactante** | a tensão. O case entra aqui, sem conclusão |
+| 2 | **Grande promessa** | e ela nomeia o instrumento. Só depois vem quem fala |
+| 3 | **A trança** | storytelling e método entrelaçados |
+| 4 | **Prática** | a plateia usa o instrumento na cadeira |
+| 5 | **Grande finale** | volta ao gancho → princípio → primeiro passo |
+
+**O que separa esta metodologia:** toda palestra memorável entrega
+conhecimento; esta entrega conhecimento **e um objeto**. Por isso a promessa
+pode ser concreta, e por isso o finale aterrissa em algo que a pessoa está
+segurando.
+
+**A trança** é o movimento central. O erro que quase toda palestra comete é
+contar a história, emocionar, e então dizer "agora vou te ensinar três passos" —
+e a energia escorre pelo ralo da explicação. Aqui o instrumento **não é explicado
+depois da história: ele é descoberto dentro dela.** A organização protagonista
+precisa dele e o inventa por necessidade, na frente da plateia.
+
+Uma volta da trança por parte do instrumento:
+
+```
+a história avança → bate na parede → a parte do instrumento
+                                     derruba a parede → alívio
+```
+
+E ao fim de cada volta o slide do instrumento reaparece com mais uma parte
+preenchida — a plateia **vê o objeto sendo construído**.
+
+### Quase nada escala com o tempo
+
+O núcleo fixo — abertura, promessa, finale — é de ~4 minutos em qualquer
+palestra. Ganhar atenção leva o mesmo tempo num talk de 18 e numa formação de 90.
+Só a trança e a prática escalam, e por volta inteira.
+
+Consequência prática: **o tempo de palco define o tamanho do instrumento.**
+Até 20 min = 2 partes · 30 a 50 min = 3 · 60 a 90 min = 4, no máximo.
+
+> O método ainda não tem nome definitivo — isso fica para depois dos primeiros
+> testes em palco. "Trança" é descrição do que o movimento faz, não marca.
+
 ## Como começar uma palestra
 
 ```bash

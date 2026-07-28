@@ -11,6 +11,18 @@ Repositório de palestras e formações de **Aureo Gionco** (sem acento no nome 
 3. A fonte de verdade de cada palestra é o `PALESTRA-base.md` dela, **não o
    histórico de conversa**. Leia antes, atualize depois de cada decisão aprovada.
 
+## A estrutura, em uma tela
+
+Cinco movimentos: **abertura impactante** (a tensão; o case entra aqui sem
+conclusão) → **grande promessa** (nomeia o instrumento; só depois vem quem fala,
+em 2 frases) → **a trança** (uma volta por parte do instrumento: história →
+parede → a parte nasce → alívio) → **prática** (a plateia usa) → **grande
+finale** (volta ao gancho → princípio central → primeiro passo de segunda-feira).
+
+O núcleo fixo (abertura + promessa + finale) é ~4 min em qualquer palestra. Só a
+trança e a prática escalam, por volta inteira. **O tempo de palco define quantas
+partes o instrumento pode ter:** até 20 min = 2 · 30-50 min = 3 · 60-90 min = 4.
+
 ## As regras que valem em tudo
 
 - **Uma fase por vez.** Proponha, não decida. Não avance sem aprovação explícita.
