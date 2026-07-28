@@ -1,6 +1,6 @@
 ---
 name: slides-aureo
-description: Como montar slides no sistema visual próprio de Aureo Gionco — os 13 blocos, quando usar cada um, as regras de cor e contraste, e a estrutura do arquivo slides.html com modo formador e modo limpo. Use ao criar ou revisar qualquer slide deste repositório.
+description: Como montar slides no sistema visual próprio de Aureo Gionco — os 17 blocos, quando usar cada um, as regras de cor e contraste, e a estrutura do arquivo slides.html com modo formador e modo limpo. Use ao criar ou revisar qualquer slide deste repositório.
 ---
 
 # Slides Aureo — como montar
@@ -39,16 +39,18 @@ Um arquivo por palestra: `palestras/<nome>/slides.html`. Um slide é:
 Nunca escreva número de slide à mão. `slides.js` numera a paginação e a
 referência das notas — inserir um slide no meio não obriga a renumerar nada.
 
-## Os 16 blocos
+## Os 17 blocos
 
-Os três primeiros são os movimentos da metodologia — abertura, promessa e o
-instrumento que atravessa a palestra. Os outros treze são blocos de conteúdo.
+Os quatro primeiros são os movimentos da metodologia — abertura, promessa, o
+instrumento que atravessa a palestra e a pausa de trabalho. Os outros treze são
+blocos de conteúdo.
 
 | # | Bloco | Âncora | Use quando |
 |---|---|---|---|
 | 14 | `gancho` | mínima | **A tensão.** Primeiro slide depois da capa. Sem cabeçalho, sem fecho |
 | 15 | `promessa` | — | **O que a plateia ganha**, com o instrumento nomeado. Logo após o gancho |
 | 16 | `instrumento` | literal | **A assinatura da metodologia.** Reaparece ao fim de cada volta da trança |
+| 17 | `pausa` (`.tela.trabalho`) | — | **Aula online.** Fica sozinho na tela enquanto a plateia preenche |
 | 1 | `frase-impacto` | mínima | A frase é a ideia. Virada, encerramento |
 | 2 | `contraste` | estrutural | A plateia confunde duas coisas que precisam ser separadas |
 | 3 | `declaracao` | literal | O texto vale pela redação exata; a plateia vai querer copiar |
@@ -80,6 +82,32 @@ lembrar daquilo.** Se um slide não cabe em nenhum bloco, o problema quase nunca
 - `promessa`: **1 por palestra**, sempre logo depois do gancho.
 - `instrumento`: **no máximo 4 partes**, e o número vem do tempo de palco, não do
   gosto — 20 min = 2 · 45 min = 3 · 90 min = 4.
+- `pausa`: só em formato ao vivo com tempo de trabalho. Um por volta da trança.
+
+## O bloco `pausa` — o único que fica sozinho na tela
+
+Para aula online ao vivo, onde a plateia **preenche o instrumento junto com
+você**. Este slide fica na tela 5 minutos, sem ninguém falando — então ele
+carrega tudo: consigna, restrição, tempo e o instrumento com a parte ativa.
+
+**O teste:** se alguém chegar atrasado no meio da pausa, este slide sozinho tem
+que bastar. Se não bastar, falta informação nele.
+
+```html
+<div class="tela trabalho">
+  <div class="pausa-topo">
+    <span class="pausa-selo">● Pausa de trabalho</span>
+    <span class="pausa-tempo">5 min</span>
+  </div>
+  <div class="pausa-consigna">A consigna, com <em>realce</em> no verbo.</div>
+  <div class="pausa-restricoes"><span>3 a 6 itens</span><span>um por linha</span></div>
+  <div class="instrumento compacto">…</div>
+</div>
+```
+
+O relógio é grande de propósito: é a informação mais consultada durante a pausa.
+E a orientação de fala mais importante deste bloco é **ficar quieto** — a vontade
+de preencher o silêncio explicando de novo rouba o tempo de quem está escrevendo.
 
 ## O bloco `instrumento`
 

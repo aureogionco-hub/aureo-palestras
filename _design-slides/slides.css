@@ -445,6 +445,51 @@ body[data-modo="limpo"] .paginacao { display: none; }
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-suave);
 }
 
+/* -- 17. PAUSA DE TRABALHO — o único bloco que precisa sobreviver sozinho.
+      Fica na tela 5 minutos enquanto a plateia preenche o instrumento, sem
+      ninguém falando. Por isso ele carrega tudo: a consigna, a restrição, o
+      tempo e o instrumento com a parte ativa. Se alguém chegar atrasado no meio
+      da pausa, este slide sozinho tem que bastar. -- */
+.tela.trabalho {
+  background: #EEF5F1;
+  border-top: 0.6cqw solid var(--verde-petroleo);
+  justify-content: center; padding: 4.5cqw 6cqw;
+}
+.pausa-topo {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 2.6cqw; flex-shrink: 0;
+}
+.pausa-selo {
+  display: inline-flex; align-items: center; gap: 0.8cqw;
+  background: var(--verde-petroleo); color: #fff;
+  font-size: var(--t-etiqueta); font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 0.9cqw 2cqw; border-radius: 4cqw;
+}
+/* o relógio: grande de propósito — é a informação mais consultada da pausa */
+.pausa-tempo {
+  font-family: var(--fonte-titulo);
+  font-size: 4.4cqw; font-weight: 800; color: var(--verde-petroleo); line-height: 1;
+}
+.pausa-consigna {
+  font-family: var(--fonte-titulo);
+  font-size: 3.4cqw; font-weight: 800; color: var(--azul-profundo);
+  line-height: 1.22; margin-bottom: 2cqw; flex-shrink: 0;
+}
+.pausa-consigna em { color: var(--cor-realce); font-style: normal; }
+.pausa-restricoes { display: flex; gap: 1.2cqw; flex-wrap: wrap; margin-bottom: 3cqw; flex-shrink: 0; }
+.pausa-restricoes span {
+  background: #fff; border: 0.15cqw solid var(--verde-petroleo);
+  color: var(--verde-petroleo); font-size: var(--t-apoio); font-weight: 700;
+  padding: 0.9cqw 2cqw; border-radius: 4cqw;
+}
+/* o instrumento entra reduzido: aqui ele é referência, não protagonista */
+.instrumento.compacto { margin: 0; }
+.instrumento.compacto .parte { min-height: 11cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; }
+.instrumento.compacto .conteudo { font-size: 1.35cqw; }
+.tela.trabalho .instrumento .preenchida { background: #fff; }
+.tela.trabalho .instrumento .vazia { border-color: #C8D6CE; }
+
 /* ---------- impressão / captura para o .pptx ---------- */
 @media print {
   body { background: #fff; padding: 0; }

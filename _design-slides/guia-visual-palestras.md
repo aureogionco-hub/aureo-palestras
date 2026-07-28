@@ -103,7 +103,7 @@ Estilos que costumam servir a palestra:
 
 ## 7. Checagem antes de subir ao palco
 
-- [ ] Todo slide cabe em um dos 16 blocos
+- [ ] Todo slide cabe em um dos 17 blocos
 - [ ] Nenhum slide tem dois blocos de conteúdo
 - [ ] Nenhum hex escrito à mão; só variáveis
 - [ ] Nenhum `px` dentro da `.tela`

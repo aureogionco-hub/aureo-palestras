@@ -32,13 +32,44 @@ próximas semanas** — o que hoje ela não consegue.
 | Formato | **Online, ao vivo** |
 | Tempo | **90 minutos** |
 | Interação | Chat aberto — a plateia escreve durante |
-| Q&A | dentro dos 90 min — definir se ao final ou distribuído |
+| Q&A | provavelmente ao final |
+| **Pausas de trabalho** | **~5 min cada, distribuídas — a plateia preenche o instrumento junto com Aureo** |
 | Posição na grade | [pendente] |
 
 > **90 min online ao vivo não é palestra — é aula.** A atenção online decai muito
-> mais rápido que na sala. Isso muda o peso da prática: em vez de um bloco único
-> no fim, ela se distribui em micro-práticas no chat ao fim de cada volta da
-> trança.
+> mais rápido que na sala.
+
+**As pausas resolvem isso, e são o achado do formato.** A plateia não assiste 90
+minutos e pratica no fim: ela **preenche o instrumento junto com Aureo**, em
+pausas de ~5 min, uma a cada volta da trança.
+
+Consequência: a prática não é o movimento 4 — ela está **dentro** de cada volta.
+A volta passa a ser:
+
+```
+história → parede → a parte nasce → PAUSA: a plateia preenche a parte dela → alívio
+```
+
+Isso é a série progressiva do curso da Pratika acontecendo **ao vivo**: cada
+pessoa sai com o próprio instrumento preenchido, construído junto, não com um
+modelo em branco para preencher depois. É a diferença entre sair com o objeto e
+sair com a intenção de fazer o objeto.
+
+### Orçamento de tempo — 90 min
+
+| | |
+|---|---|
+| Abertura + promessa | 5 min |
+| **N voltas** (conteúdo + pausa de 5) | **65 min** |
+| Grande finale | 5 min |
+| Q&A | 10 min |
+| Folga | 5 min |
+
+- **3 voltas** → ~16 min de exposição corrida antes de cada pausa
+- **4 voltas** → ~11 min de exposição antes de cada pausa ✅
+
+**4 voltas encaixa melhor.** Online, 16 minutos de exposição sem interação é
+tempo demais — a aba do lado ganha. 11 minutos e uma pausa é ritmo sustentável.
 
 ## 4. A plateia
 
