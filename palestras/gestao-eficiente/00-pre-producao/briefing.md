@@ -16,25 +16,58 @@ próximas semanas** — o que hoje ela não consegue.
 
 ## 2. As duas listas
 
-**O que esta aula VAI ensinar**
-- [pendente — depende da grade]
+### O que esta aula VAI ensinar
 
-**O corte deliberado — o que NÃO vai entrar**
-- [pendente — depende da grade: o que já foi dado antes e o que vem depois]
+O território, na formulação da própria organizadora:
 
-> ⚠️ Decisão mais importante da Fase 0 e a única bloqueante.
+> **prioridade → plano → responsável → prazo → recurso → acompanhamento → resultado**
+
+E na página do programa: *"organizar cronogramas e recursos para gerir a
+organização com mais precisão"*.
+
+### O corte deliberado — o que NÃO entra
+
+Esta aula é a **5ª de 6**. Quase todo tema adjacente já foi dado ou vem depois:
+
+| Não entra | Porque é de |
+|---|---|
+| Missão, prioridades institucionais, governança, papéis da diretoria | Aula 1 · Jaime Tezza |
+| Delegação, sucessão, cultura, retenção, voluntariado | Aula 2 · Ana Gabriela Borges |
+| Sobrecarga, esgotamento, clima, riscos psicossociais, NR-1 | Aula 3 · Sandra Pierozan |
+| Parcerias, redes, imprensa, pitch, comunicação da causa | Aula 4 · Giovanna Fiori |
+| Fontes de recurso, editais, doadores, funil, metas financeiras | Aula 6 · Thiago Massagardi |
+
+**A aula começa onde o Jaime parou e para antes do Thiago começar:**
+
+> "Você já sabe para onde a organização quer ir. Como isso vira trabalho
+> organizado, com dono e com data?"
+
+### O conflito que isso cria — e a solução
+
+Duas das três histórias de Aureo (seção 6) encostam em território alheio: a
+certidão negativa e os editais são **captação**, que é a aula do Thiago.
+
+**Solução:** usá-las como **consequência**, nunca como tema. Aureo não ensina a
+captar — ele mostra que a captação **morre antes de começar** quando a gestão não
+está em dia. Dito explicitamente no palco, isso vira ponte para a aula seguinte
+em vez de invasão:
+
+> "Captação é tema da próxima semana, com o Thiago. O que eu quero mostrar hoje é
+> que ela nem chega lá se a certidão estiver vencida."
 
 ## 3. O convite
 
 | Campo | Valor |
 |---|---|
-| Programa | Programa Impulso — Formação de Líderes |
+| Programa | Formação de Líderes no 3º Setor — Programa Impulso / Instituto GRPCOM |
+| **Data** | **30/07/2026, 9h às 11h** |
+| Posição na grade | **5ª de 6** — depois de Conexões Estratégicas, antes de Captação de Recursos |
 | Formato | **Online, ao vivo** |
-| Tempo | **90 minutos** |
+| Tempo | **90 min de palco** (o encontro é de 2h — confirmar o que é abertura/Q&A da organização) |
 | Interação | Chat aberto — a plateia escreve durante |
 | Q&A | provavelmente ao final |
 | **Pausas de trabalho** | **~5 min cada, distribuídas — a plateia preenche o instrumento junto com Aureo** |
-| Posição na grade | [pendente] |
+| Trilha | Direção → Pessoas → Ambiente saudável → Relações → **Execução (esta)** → Recursos |
 
 > **90 min online ao vivo não é palestra — é aula.** A atenção online decai muito
 > mais rápido que na sala.
@@ -73,7 +106,34 @@ tempo demais — a aba do lado ganha. 11 minutos e uma pausa é ritmo sustentáv
 
 ## 4. A plateia
 
-- [pendente — perfil dos participantes vem com o briefing do programa]
+Quatro perfis declarados pelo programa:
+
+- gestores de ONGs **iniciantes ou intermediárias**
+- coordenadores de projetos
+- **fundadores e lideranças sobrecarregadas pela centralização**
+- líderes que querem ampliar escala e impacto
+
+Turma heterogênea, majoritariamente **organizações pequenas e médias**: equipe
+reduzida, presença forte de voluntários, maturidade em gestão muito desigual.
+Formação on-line e gratuita, alcance nacional.
+
+**O que isso implica para a aula:**
+
+- Nada pode pressupor equipe, sistema ou orçamento. O instrumento tem que
+  funcionar para quem é sozinho na organização.
+- "Sobrecarregado pela centralização" é o perfil dominante — a pessoa que faz
+  tudo. Ela não tem tempo para gestão, e é exatamente esse o argumento da virada.
+- Maturidade desigual: quem já organiza precisa levar algo, e quem nunca
+  organizou não pode se perder. O instrumento resolve isso porque cada um
+  preenche no próprio nível.
+
+### Não sabemos ainda
+
+Número de inscritos, nomes e portes das organizações, e — o mais útil — **se as
+quatro aulas anteriores deixaram algum material produzido** (diagnóstico,
+planejamento, exercício). Se deixaram, a aula pode abrir recuperando o que eles
+já fizeram, em vez de criar mais um conteúdo solto. **Vale perguntar à
+organização antes do dia 30.**
 
 ## 5. A parede
 
@@ -131,7 +191,8 @@ porque é vivido, é numérico e é indefensável.
 
 - Online: a plateia não tem mesa nem material impresso. O instrumento precisa
   funcionar em tela, em papel improvisado ou no próprio chat.
-- Vão querer o arquivo depois: [confirmar]
+- Vão querer o arquivo depois: provável — formação gratuita costuma distribuir material
+- Na página o nome está grafado "Áureo Gionco". **Pedir correção para "Aureo Gionco".**
 
 ---
 
