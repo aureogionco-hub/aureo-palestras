@@ -12,7 +12,7 @@
 | **Título** | Gestão Eficiente |
 | **Evento** | Formação de Líderes no 3º Setor — Programa Impulso / Instituto GRPCOM |
 | **Data** | **30/07/2026, 9h às 11h** |
-| **Tempo de palco** | **90 min** (o encontro é de 2h; abertura, encerramento, conversas e Q&A estão **fora** dos 90) |
+| **Tempo de palco** | **~85 min** — o encontro inteiro é de **1h30**, com abertura rápida da organizadora, que já passa a tela. ⚠️ **Confirmar se o Q&A está dentro desses 85.** |
 | **Formato** | Aula online, ao vivo, com pausas de trabalho de ~5 min |
 | **Posição** | 5ª de 6 · depois de Conexões Estratégicas, antes de Captação de Recursos |
 | **Status** | Fases 0 e 1 fechadas |
@@ -47,7 +47,7 @@ plateia preenche a dela na pausa seguinte.
 |---|--------|------------------------------|
 | 1 | **O que não pode cair** | O que, se parar, custa dinheiro ou credibilidade à organização? |
 | 2 | **Como está hoje** | Em dia · Atrasado · **Não sei** |
-| 3 | **Quem cuida** | Uma pessoa com nome. Não "a equipe", não "a gente" |
+| 3 | **Quem é o guardião** | Uma pessoa com nome. Não "a equipe", não "a gente" |
 | 4 | **Quando eu olho** | Toda semana · Todo mês · Uma vez por ano · **Quando dá problema** |
 
 Exemplo de linha preenchida:
@@ -55,6 +55,11 @@ Exemplo de linha preenchida:
 | O que não pode cair | Como está hoje | Quem cuida | Quando eu olho |
 |---|---|---|---|
 | Certidões negativas | Não sei | eu (mas nunca olho) | quando dá problema |
+
+> **"Guardião" é palavra da organizadora**, e é a chave da adaptação para público
+> de líderes: o líder não é quem faz — é quem **garante que existe, que está em
+> dia, que tem dono e que alguém olha**. As quatro colunas são exatamente as
+> quatro garantias de um guardião.
 
 ### As quatro paredes
 
@@ -64,7 +69,7 @@ Cada coluna nasce de uma parede real — e duas delas são histórias de Aureo:
 |---|---|---|
 | 1 | "Eu nem sei listar o que não pode cair" | 1 · O que não pode cair |
 | 2 | "Eu acho que está tudo em dia" — a ilusão | 2 · Como está hoje |
-| 3 | "Está tudo comigo" — a centralização | 3 · Quem cuida |
+| 3 | "Está tudo comigo" — a centralização | 3 · Quem é o guardião |
 | 4 | "Eu só descubro quando já é tarde" | 4 · Quando eu olho |
 
 ### Por que este instrumento e não outro
@@ -85,6 +90,20 @@ Cada coluna nasce de uma parede real — e duas delas são histórias de Aureo:
 - **Prova a virada.** A coluna 4 é o mecanismo literal de "gestão devolve tempo
   para a ação": 20 minutos de rotina por semana no lugar de semanas apagando
   incêndio.
+
+### O pedido da organizadora, e onde cada parte entra
+
+| Pedido | Onde entra |
+|---|---|
+| Linguagem de **líder**, não de operador | Enquadramento geral: o líder garante, não executa. Tom do roteiro inteiro |
+| Como o líder direciona para ser **"guardião dos dados"** | Vira o nome da coluna 3 e o conceito que costura as quatro |
+| **Importância dos dados organizados** | Já é a espinha: o INSS de R$ 300 mil aconteceu por documentação desorganizada |
+| **Como avaliar quando investir num programa de gestão** | Slide próprio dentro da volta 4, como consequência da rotina |
+
+**O critério do software** (volta 4): investe-se em sistema quando a **rotina
+manual já existe e está quebrando por volume**. Comprar sistema antes de ter
+rotina só digitaliza o caos — e é o erro mais caro que uma organização pequena
+comete. Isso responde à pergunta dela sem virar aula de ferramenta.
 
 ### Descartado
 
@@ -119,16 +138,22 @@ organização de Aureo, que viveu as três falhas. Ver `00-pre-producao/case-e-a
 
 **90 min de palco.** Q&A fica fora, com a organização.
 
+**~85 min de palco**, dentro de um encontro de 1h30.
+
 | Movimento | Tempo | Conteúdo | Blocos |
 |-----------|-------|----------|--------|
 | 1 · Abertura impactante | 4 min | gancho (INSS) → problema → espelho → ponte | `capa` `gancho` |
 | 2 · Grande promessa | 2 min | a promessa + quem fala, 2 frases | `promessa` |
-| 3 · Volta 1 | 17 min | 12 de conteúdo + **pausa 5** | `contraste` `passos` `pausa` `instrumento` |
-| 3 · Volta 2 | 17 min | 12 + **pausa 5** | idem |
-| 3 · Volta 3 | 17 min | 12 + **pausa 5** | idem |
-| 3 · Volta 4 | 17 min | 12 + **pausa 5** | idem |
+| 3 · Volta 1 | 15 min | 11 de conteúdo + **pausa 4** | `contraste` `passos` `pausa` `instrumento` |
+| 3 · Volta 2 | 15 min | 11 + **pausa 4** | idem |
+| 3 · Volta 3 | 15 min | 11 + **pausa 4** | idem |
+| 3 · Volta 4 | 15 min | 11 + **pausa 4** · inclui o critério do software | idem |
 | 5 · Grande finale | 6 min | volta ao gancho → princípio → segunda-feira | `instrumento` `frase-impacto` |
-| **Folga** | **10 min** | online ao vivo sempre escorrega | |
+| **Folga** | **13 min** | online ao vivo sempre escorrega, e o Q&A pode cair aqui dentro | |
+
+> Pausa caiu de 5 para **4 min**: o encontro encolheu de 2h para 1h30 e a folga
+> precisa absorver um eventual Q&A dentro do tempo. Se confirmar que o Q&A é
+> fora, a pausa volta para 5.
 
 > Não há movimento 4 separado: **a prática está dentro de cada volta**, nas
 > pausas em que a plateia preenche a coluna junto com Aureo.
@@ -150,7 +175,7 @@ organização de Aureo, que viveu as três falhas. Ver `00-pre-producao/case-e-a
 | Item | Status |
 |------|--------|
 | Fase 0 · Briefing | ✅ fechada |
-| Fase 1 · Ideia-instrumento | ✅ proposta — aguarda corte de Aureo |
+| Fase 1 · Ideia-instrumento | ✅ proposta, reenquadrada como guardião — aguarda corte de Aureo |
 | Fase 2 · Case e paredes | — |
 | Fase 3 · Âncoras | — |
 | Fase 4 · Estrutura | rascunhada na seção 6 |
