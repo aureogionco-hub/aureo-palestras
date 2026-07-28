@@ -13,7 +13,7 @@
 | **Evento** | Formação de Líderes no 3º Setor — Programa Impulso / Instituto GRPCOM |
 | **Data** | **30/07/2026, 9h às 11h** |
 | **Tempo de palco** | **~85 min** — o encontro inteiro é de **1h30**, com abertura rápida da organizadora, que já passa a tela. ⚠️ **Confirmar se o Q&A está dentro desses 85.** |
-| **Formato** | Aula online, ao vivo, com pausas de trabalho de ~5 min |
+| **Formato** | Aula online, ao vivo, com pausas de trabalho de ~4 min |
 | **Posição** | 5ª de 6 · depois de Conexões Estratégicas, antes de Captação de Recursos |
 | **Status** | Fases 0 e 1 fechadas |
 
@@ -52,7 +52,7 @@ plateia preenche a dela na pausa seguinte.
 
 Exemplo de linha preenchida:
 
-| O que não pode cair | Como está hoje | Quem cuida | Quando eu olho |
+| O que não pode cair | Como está hoje | Quem é o guardião | Quando eu olho |
 |---|---|---|---|
 | Certidões negativas | Não sei | eu (mas nunca olho) | quando dá problema |
 
@@ -135,8 +135,6 @@ organização de Aureo, que viveu as três falhas. Ver `00-pre-producao/case-e-a
 ---
 
 ## 6. A estrutura
-
-**90 min de palco.** Q&A fica fora, com a organização.
 
 **~85 min de palco**, dentro de um encontro de 1h30.
 
