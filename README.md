@@ -155,7 +155,13 @@ pip install playwright python-pptx pillow && playwright install chromium   # uma
 python3 ferramentas/gerar-pdf.py  palestras/<nome>/slides.html              # PDF limpo
 python3 ferramentas/gerar-pdf.py  palestras/<nome>/slides.html --formador   # PDF com notas
 python3 ferramentas/gerar-pptx.py palestras/<nome>/slides.html              # PowerPoint
+python3 ferramentas/gerar-standalone.py palestras/<nome>/slides.html        # HTML de arquivo único
 ```
+
+O **standalone** existe porque o `slides.html` aponta para `../../_design-slides/`
+— ótimo para trabalhar, péssimo para mandar por e-mail: sozinho ele abre sem
+estilo. O `-completo.html` embute CSS e JS e funciona em qualquer computador,
+sem internet e sem pasta ao lado. **É o arquivo que se manda para revisar.**
 
 O `.pptx` sai 16:9 com as notas do formador no campo de anotações — para o
 evento que só aceita pendrive.
