@@ -3,494 +3,296 @@
 > Como se fala, não como se escreve. Não é para ler no palco — é para ensaiar e
 > depois soltar. O que está em **negrito** é o que não pode ser esquecido se você
 > travar.
+>
+> **Os 20 casos não estão aqui.** Eles vivem nas notas do `slides.html`, um por
+> slide, porque é lá que você vai lê-los. Este arquivo tem o que precisa estar
+> na sua cabeça: o **núcleo fixo** (abertura, promessa, fechamento), as
+> **transições**, o **Q&A** e os **cortes de emergência**.
 
-**30/07/2026 · online ao vivo · 85 min de palco · folga de 9 min**
+**30/07/2026 · online ao vivo · ~85 min de palco · 49 slides · folga de ~11 min**
 
-| | Bloco | Acumulado |
+| | Bloco | Acum. |
 |---|---|---|
-| 4 min | Abertura | 00:00 |
-| 2 min | A promessa | 04:00 |
-| 5 min | A ferramenta | 06:00 |
-| 7 min | O instrumento | 11:00 |
-| 8 min | Pilar 1 · Estratégia | 18:00 |
-| 10 min | Pilar 2 · Operação | 26:00 |
-| 10 min | Pilar 3 · Finanças | 36:00 |
-| 10 min | Pilar 4 · Monitoramento | 46:00 |
-| 12 min | Pilar 5 · Governança | 56:00 |
-| 8 min | Finale | 68:00 |
-| | **Fim** | **76:00** |
+| 7 min | Abertura — o problema do setor | 00:00 |
+| 3 min | A promessa + quem fala | 07:00 |
+| 3 min | A ferramenta (pausa) | 10:00 |
+| 4 min | Como preencher + o exemplo | 13:00 |
+| 12 min | Dimensão 1 · Estratégia | 17:00 |
+| 12 min | Dimensão 2 · Operação | 29:00 |
+| 12 min | Dimensão 3 · Finanças | 41:00 |
+| 12 min | Dimensão 4 · Monitoramento e Avaliação | 53:00 |
+| 8 min | Fechamento + oferta | 65:00 |
+| | **Fim** | **73:30** |
 
 ---
 
-## ABERTURA · 00:00 → 04:00
+## ABERTURA · 00:00 → 07:00
 
-> Sem "bom dia a todos". Sem currículo. Sem agenda. Câmera ligada e a primeira
-> frase já é a história.
+> Câmera ligada e a primeira frase já é o problema. Sem "bom dia a todos", sem
+> currículo, sem agenda.
 
-**O gancho — o tombo, sem a conclusão**
+**A frase de entrada**
 
-"Eu já respondi a um processo de trezentos mil reais por causa de uma pasta de
-documentos.
+"Toda organização social cuida muito bem de quem ela atende. E quase nenhuma
+cuida de si mesma.
 
-Trezentos mil. Numa organização social. Que não tinha trezentos mil.
+E não é distração. É **hierarquia**: o atendimento é a missão, a gestão é o que
+sobra. É o que a gente faz na sexta à tarde, quando dá."
 
-E o mais duro não foi o valor. Foi descobrir que aquilo vinha se acumulando havia
-anos, em silêncio, enquanto eu estava fazendo o que eu achava que era o mais
-importante: cuidar do atendimento, cuidar das pessoas, cuidar da causa.
+> Pausa. Não emende.
 
-**Eu não fui negligente. Eu estava ocupado com a missão.**"
+**O que fica de fora**
 
-> Pausa aqui. Deixa o silêncio. Não emenda.
+"E aí a organização esquece a equipe, esquece as metas, esquece o registro do que
+faz, esquece o financeiro. E esquece a coisa mais grave: **por que ela faz o que
+faz.**
 
-**O problema**
+Não por desprezo. Por falta de tempo para olhar.
 
-"Eu vou voltar nessa história no final da aula. Antes disso, eu preciso te contar
-por que ela não é só minha.
+E quando isso acontece, a conta não chega em forma de bronca. Chega em forma de
+recurso devolvido, de projeto perdido, de equipe exausta."
 
-Toda organização social que eu conheço divide o tempo entre duas coisas: a ação e
-a gestão. E existe uma hierarquia silenciosa entre elas. A ação é a missão. A
-gestão é o que sobra. É o que a gente faz na sexta à tarde, quando dá.
+**O cenário**
 
-Só que a conta chega. E ela não chega em forma de bronca — chega em forma de
-projeto perdido, de recurso devolvido, de processo."
-
-**O espelho — o cenário**
-
-"E chega num momento particularmente ruim para o setor.
-
-Nunca se exigiu tanta transparência. Nunca se exigiu tanta comprovação de
-resultado. O financiador que antes pedia um relatório agora pede evidência.
-O recurso está mais escasso e mais disputado. E a régua da profissionalização
-subiu para todo mundo, inclusive para quem tem três pessoas na equipe.
+"E chega num momento particularmente ruim. Nunca se exigiu tanta transparência.
+O financiador que antes pedia um relatório hoje pede evidência. E a régua da
+profissionalização subiu para todo mundo — inclusive para quem tem três pessoas
+na equipe.
 
 **Hoje não basta fazer o bem. É preciso demonstrar que ele está sendo feito da
 melhor maneira possível.**"
 
-**A ponte**
+**A crença, e a virada**
 
-"E aqui está a coisa que eu vim dizer, e que eu levei quinze anos e um processo
-de trezentos mil reais para entender:
+"Só que existe uma crença no caminho, e ela é o contrário da verdade: a de que
+cuidar da gestão é tirar energia da missão.
 
-**Gestão não rouba tempo da ação. Gestão devolve tempo para a ação.**
+**Gestão não rouba tempo da ação. Gestão devolve tempo para a ação.** Toda hora
+que você gasta apagando incêndio é hora que você não passou com quem você
+atende.
 
-Toda hora que você gasta apagando incêndio é hora que você não passou com quem
-você atende. Toda captação que morreu por uma certidão vencida é projeto que não
-aconteceu.
+E eu quero ser muito claro sobre o tamanho da coisa que eu estou pedindo:
+**não é volume de gestão. É estrutura mínima e recorrente.** Eu assessoro um
+instituto há cinco anos. Uma hora por semana. Não é muito — é uma hora. Mas é
+toda semana."
 
-A pergunta desta aula não é se você é organizado. É outra: **você sabe onde a sua
-gestão está frágil?**"
-
-> `capa` → `gancho`
-> **Transição:** "E é isso que a gente vai descobrir hoje, junto."
+> **Transição:** "E é isso que a gente vai fazer hoje, junto."
 
 ---
 
-## A PROMESSA · 04:00 → 06:00
+## A PROMESSA · 07:00 → 10:00
 
-"Nos próximos oitenta minutos você não vai assistir a uma palestra sobre gestão.
+"Nos próximos setenta minutos você não vai assistir a uma palestra sobre gestão.
 
-**Você vai sair daqui com o Mapa da sua organização preenchido.** Não um modelo
-em branco para preencher depois — preenchido, hoje, por você, comigo do lado.
+**Você vai sair daqui com o Mapa do Que Não Pode Cair preenchido** — com a
+realidade da sua organização, não com a minha. Vinte critérios, quatro dimensões.
+E em cada linha quatro perguntas: como está hoje, quem é o guardião, quando é
+acompanhado, e onde está registrado.
 
-Um mapa de quatro colunas que mostra o que na sua organização não pode cair, como
-cada coisa está hoje, quem cuida de cada uma e com que frequência alguém olha.
+E eu já quero dizer uma coisa antes de começar, porque ela importa: **são vinte
+critérios, alguns inspirados no prêmio Melhores ONGs. Eles não são a verdade nem
+o total.** Existem outros eixos de gestão, e no fim eu vou te pedir para
+acrescentar os seus."
 
-Quando a gente terminar, você vai olhar para essa tela e vai ver, num quadro só,
-onde está a fragilidade da sua gestão. E vai saber por onde começar na terça-feira.
+> ⚠️ **Não pule esse enquadramento.** Sem ele, quem marcar quinze "não existe"
+> sai achando que foi reprovado numa prova — e a prova nem é completa.
 
-**E quem chegar até o fim tem uma coisa esperando.** Eu conto no final."
+**Quem fala — três frases**
 
-> Não detalhe o prêmio aqui. Só planta.
+"Rapidamente, para você saber com quem está falando. Eu comecei organizando ação
+comunitária na Pastoral Social de uma paróquia em Itajaí. Hoje sou fundador de
+uma plataforma que administra o investimento social de empresas como Petrobras,
+Itaipu e Caixa.
 
-**Quem fala — duas frases, agora**
+**E, no meio disso, passei vinte anos construindo os sistemas onde a gestão de
+organizações como a sua é analisada do outro lado da mesa.** É de lá que vêm os
+vinte critérios. Não saíram de um livro."
 
-"Rapidamente, para você saber com quem está falando.
-
-Eu comecei na Pastoral Social de uma paróquia em Itajaí, organizando ação
-comunitária. Hoje eu sou fundador de uma plataforma que administra o investimento
-social de empresas como Petrobras, Itaipu e Caixa.
-
-**E, entre uma coisa e outra, eu quebrei a cara com a gestão da minha própria
-organização.** É disso que eu vim falar."
-
-> `promessa`
 > **Transição:** "Para a gente fazer isso junto, eu preciso que você abra uma coisa."
 
 ---
 
-## A FERRAMENTA · 06:00 → 11:00
+## A FERRAMENTA · 10:00 → 13:00
 
-> ⚠️ A logística vem **aqui**, não no minuto zero. Agora eles já querem entrar.
+> A logística vem **aqui**, não no minuto zero. Agora eles já querem entrar.
 
-"Eu vou mandar um link no chat agora, e ele também está no QR code da tela.
+"Eu vou mandar um link no chat, e ele também está no QR da tela.
 
-Esse link abre a plataforma da Pratika. Lá dentro está o Mapa que a gente vai
-preencher — e ele fica seu. Não é PDF, não é uma imagem que você vai perder na
-pasta de downloads. **É uma ferramenta que continua funcionando depois que essa
-chamada acabar.**
+São sete páginas. A primeira explica as colunas, a segunda é um exemplo
+preenchido, e as quatro do meio são as dimensões que a gente vai preencher hoje.
+**Se você conseguir imprimir, melhor: é para marcar caixinha, não para digitar.**
 
-Você entra, cria seu acesso e abre o Mapa. Leva dois minutos.
+Três minutos. Quem abriu, escreve 'abri' no chat."
 
-Vou te dar cinco. Quem já entrou, escreve **'entrei'** no chat que eu acompanho."
+> Fique quieto. Responda no chat, não em voz alta. Ao voltar, **não recomece do
+> zero** para quem não abriu — o slide resolve.
 
-> `pausa` — slide fica parado 5 min: QR + link escrito + os 3 passos.
-> Fique quieto. Responda no chat, não em voz alta. Ao voltar, não recomece do
-> zero para quem não entrou — siga; eles se resolvem com o slide.
-
-**Retomada**
-
-"Quem não conseguiu entrar, sem problema: pega papel e caneta e faz do mesmo
-jeito. O mapa funciona nos dois. E o link fica no chat a aula inteira."
+**Retomada:** "Quem não conseguiu, pega papel e caneta e vai do mesmo jeito. O
+link fica no chat a aula inteira."
 
 ---
 
-## O INSTRUMENTO · 11:00 → 18:00
+## COMO PREENCHER · 13:00 → 17:00
 
-> Aqui você ensina as **quatro colunas de uma vez**, com uma linha preenchida na
-> frente deles. Se pular isso, a primeira pausa quebra.
+"Quatro colunas. Vou dizer duas coisas sobre elas e depois mostrar um exemplo.
 
-"Olha o mapa. Quatro colunas. Vou preencher uma linha com você, usando a minha
-história.
+Na primeira, **'não sei' é resposta válida** — e é a mais honesta. 'Não sei' é o
+único lugar onde o problema pode estar crescendo sem você ver.
 
-**Coluna 1 — o que não pode cair.** Não é uma lista de tarefas. É a pergunta: o
-que, se parar, custa dinheiro ou credibilidade para a sua organização? No meu
-caso: *certidões negativas*.
+E na última tem uma opção escrita lá que é a mais importante de todas: **'na
+minha cabeça'.** Não é vergonha. É a resposta mais comum de quem fundou a
+organização."
 
-**Coluna 2 — como está hoje.** Três respostas possíveis: em dia, atrasado, ou não
-sei. E **'não sei' é resposta válida** — mais que isso, é a mais honesta e a mais
-comum. No meu caso, naquela época, era 'não sei'. Eu teria jurado que era 'em
-dia'.
+**O exemplo — e é o slide que ensina a ler**
 
-**Coluna 3 — quem é o guardião.** Uma pessoa. Com nome. 'A equipe' não é resposta.
-'A gente' não é resposta. E aqui está a parte que interessa para quem lidera:
-**o líder não é quem faz. O líder é quem garante que alguém faz.** No meu caso, a
-resposta era: ninguém.
+"Esta é a dimensão de Operação de uma organização que atende sessenta jovens. Ela
+trabalha bem. As pessoas são boas. **E olha o resultado.**
 
-**Coluna 4 — quando eu olho.** Toda semana, todo mês, uma vez por ano — ou a
-resposta que quase todo mundo dá, que é 'quando dá problema'. E 'quando dá
-problema' não é uma frequência. **É a ausência de uma.**
+Repara na segunda linha: tem dono, tem frequência — **e ainda é frágil**, porque
+o lugar é o caderno de uma pessoa. Se ela sair, a informação sai com ela. O
+próximo passo aqui não é cobrar mais dela. É mudar o 'onde'.
 
-Essa linha aqui, com 'não sei' e 'ninguém' e 'quando dá problema', é a linha que
-me custou trezentos mil reais.
+E é por isso que a regra é essa: **uma linha só está saudável quando as quatro
+colunas estão respondidas.** Estruturado, com dono, com frequência e com lugar.
+Faltando qualquer uma, ela é frágil.
 
-**Uma linha. Quatro colunas. É isso que a gente vai repetir cinco vezes.**"
+Nessa dimensão, essa organização tem **zero** linhas saudáveis. E ninguém ali é
+desleixado. **O problema não é falta de esforço — é falta de estrutura.**"
 
-> `instrumento` — linha demonstrativa preenchida ao vivo.
-> **Transição:** "E a gente vai varrer cinco territórios, porque quase todo mundo
-> só lembra do lugar onde já se queimou."
+> ⚠️ **Este bloco tira a culpa da sala antes das pausas.** Se a plateia se sentir
+> julgada, ela preenche bonito e o diagnóstico não serve para nada.
+>
+> **Transição:** "Agora a sua vez. Vamos começar pela estratégia."
 
 ---
 
-## PILAR 1 · ESTRATÉGIA · 18:00 → 26:00
-*(4 min de fala + 4 de preenchimento)*
+## AS QUATRO DIMENSÕES · 17:00 → 65:00
 
-**A ponte com o Jaime**
+> Cada uma tem o mesmo desenho, e **a repetição é o que faz a aula funcionar**:
+> abre a dimensão → cinco casos, um por slide → pausa de 5 min.
+>
+> Os casos estão nas notas de cada slide. Aqui ficam só as pontes e as pausas.
 
-"O primeiro território é a estratégia. E aqui eu vou ser rápido de propósito,
-porque **estratégia quem deu foi o Jaime, na primeira aula desta formação.** Eu
-não vou repetir o que ele fez.
+### Dimensão 1 · Estratégia — 17:00
 
-Eu só quero fazer uma pergunta sobre aquilo: **do que ele te ajudou a construir,
-o que não pode cair?**
+**A ponte com o Jaime, dita em voz alta:** "estratégia quem deu foi o Jaime, na
+aula 1 desta formação. Eu não vou repetir. Eu só quero fazer uma pergunta sobre
+aquilo: **do que ele te ajudou a construir, o que não pode cair?**"
 
-Porque plano estratégico tem uma característica cruel: ele é feito com muita
-energia, num dia bonito, e depois **ninguém nunca mais abre o arquivo.** O plano
-não morre de erro. Morre de abandono.
+"Porque plano estratégico não morre de erro. **Morre de abandono** — ninguém
+nunca mais abre o arquivo."
 
-E quando ele morre, a organização não percebe. Ela continua trabalhando. Só que
-cada pessoa começa a decidir sozinha o que é prioridade — e aí você tem cinco
-pessoas remando com força para cinco lados."
+> **Para a pausa:** "Cinco minutos. Marque rápido, e se travar numa linha deixe
+> em branco e siga."
 
-**As perguntas-chave**
+### Dimensão 2 · Operação — 29:00
 
-"Três perguntas para a coluna 1 deste pilar:
+**Comece pela retomada:** comente uma ou duas coisas que apareceram no chat.
+Isso prova que você está lendo e sobe a participação nas três pausas seguintes.
 
-- **A mudança que a sua organização busca está escrita em algum lugar** que não
-  seja a sua cabeça?
-- **As metas deste ano existem** num documento que a equipe consegue abrir?
-- Se alguém perguntar hoje 'qual é a prioridade da organização', **existe uma
-  resposta única**, ou depende de quem responde?"
+**A ponte com a Ana Gabriela:** "ela já falou de equipe, de delegação, de
+voluntariado nesta formação, e eu não vou repetir. **Eu estou falando de uma
+coisa mais chata e mais concreta: o registro do que vocês fazem.**"
 
-> `passos`
+"O impacto acontece na rotina. E a rotina, se não for registrada, some."
 
-**A pausa** · 4 min
+> **Para a pausa:** "Cinco minutos. E na coluna do guardião, se você escrever 'a
+> equipe', apaga e escreve um nome."
 
-"Preenche a linha de estratégia. Uma ou duas linhas, não mais. E lembra: as
-quatro colunas. O que é, como está, quem cuida, quando você olha."
+### Dimensão 3 · Finanças — 41:00
 
-> `pausa` — restrições: *1 a 2 linhas · as 4 colunas · 4 minutos*
-> **Transição:** "Estratégia é o caminho. Agora, quem anda nele."
+**A ponte com o Thiago:** "captação é a aula da semana que vem, com o Thiago, e é
+dele. O que eu quero mostrar aqui é outra coisa: **a captação morre antes de
+começar quando a gestão não está em dia.**"
 
----
+"E é a dimensão em que eu tenho mais quilometragem do lado de quem analisa. Eu
+passei vinte anos construindo o sistema onde a prestação de contas de
+organizações como a sua é conferida. **É onde eu vi mais projeto bom morrer por
+motivo bobo.**"
 
-## PILAR 2 · OPERAÇÃO · 26:00 → 36:00
-*(5 min de fala + 5 de preenchimento)*
+> **Para a pausa:** "Cinco minutos. E se você não souber responder alguma,
+> escreve 'não sei' — é a resposta mais útil desta dimensão inteira."
 
-**A âncora — os editais perdidos**
+### Dimensão 4 · Monitoramento e Avaliação — 53:00
 
-"Eu já perdi recurso de edital por falta de qualificação da minha equipe.
+"São duas coisas, e por isso o nome é duplo. **Monitorar é acompanhar o que está
+acontecendo. Avaliar é julgar o que aquilo significa** — e decidir diferente por
+causa disso.
 
-Não foi porque o projeto era ruim. O projeto era bom. **Foi porque a gente não
-conseguiu montar o que o edital pedia, no formato que ele pedia, no prazo que ele
-pedia.** A informação existia — espalhada, na cabeça de três pessoas, em quatro
-cadernos diferentes.
+Essa é a dimensão em que eu passei os últimos quinze anos. E a pergunta que
+atravessa tudo o que eu construí é uma só: **o que mudou por causa desse
+projeto?**
 
-E eu quero ser específico sobre uma coisa, porque a Ana Gabriela já falou de
-gestão de pessoas nesta formação e eu não vou repetir: **eu não estou falando de
-delegação, nem de clima, nem de desenvolvimento de equipe.** Estou falando de uma
-coisa mais chata e mais concreta: **o registro do que vocês fazem.**
+Porque a organização que não mede não fica só sem relatório. **Ela fica sem
+aprender.** Repete o que não funciona por mais três anos, porque ninguém tem como
+saber que não funcionou."
 
-Porque é o seguinte. Você atendeu sessenta jovens este ano. Ótimo. **Consegue
-provar?**
-
-Se um financiador te pedir amanhã a lista dos atendidos, com frequência, você
-demora quanto? Uma hora? Uma semana? Ou você não consegue?
-
-**O impacto acontece na rotina.** E a rotina, se não for registrada, some."
-
-**As perguntas-chave**
-
-"Para a sua linha de operação:
-
-- **Quem foi atendido este mês, e onde isso está anotado?**
-- As listas de presença existem — e **alguém recolhe**, ou elas ficam com quem
-  aplicou a oficina?
-- **Se a pessoa que toca a atividade sair amanhã, o que se perde junto com ela?**
-
-Essa última é a pergunta que dói. Guarda ela."
-
-> `contraste` → `passos`
-
-**A pausa** · 5 min
-
-"Duas linhas de operação. E na coluna 3, se a resposta for 'a equipe', apaga e
-escreve um nome."
-
-> `pausa`
-> **Transição:** "Registro é o que prova o que você fez. Agora, o que sustenta."
+> ⚠️ **Seu território mais forte — segure a mão.** Seis minutos, não vire aula de
+> indicadores. A plateia tem menos repertório aqui que em qualquer outra dimensão.
+>
+> **Para a pausa:** "Última. Cinco minutos — e quando terminar, olhe o Mapa
+> inteiro, as quatro páginas juntas."
 
 ---
 
-## PILAR 3 · FINANÇAS · 36:00 → 46:00
-*(5 min de fala + 5 de preenchimento)*
+## FECHAMENTO · 65:00 → 73:30
 
-**A âncora — a certidão que matou a captação**
+**A promessa, entregue**
 
-"Eu já perdi uma captação inteira por causa de uma certidão.
+"Setenta minutos atrás eu prometi que você sairia daqui com isso preenchido.
+**Está preenchido. E não fui eu que preenchi.**"
 
-Não por falta de projeto. Não por falta de mérito. **Por atraso de imposto.** O
-atraso travou a emissão da certidão negativa, e sem a certidão negativa a
-organização não podia receber o recurso. Simples assim.
+**A contagem — dê vinte segundos de silêncio**
 
-E olha o tamanho da desproporção: o valor do imposto atrasado era pequeno. O
-recurso que se perdeu era grande.
+"Agora conta, nos vinte critérios. Quantos estão em 'não existe'. Quantos têm **o
+seu nome** no guardião. Quantos estão em 'só quando dá problema' ou 'nunca'.
 
-**Captação é tema da próxima semana, com o Thiago, e é dele.** O que eu quero
-mostrar hoje é outra coisa: **a captação morre antes de começar quando a gestão
-não está em dia.** Você pode escrever o melhor projeto do mundo — se a certidão
-estiver vencida no dia do envio, acabou.
+Se o seu nome aparece em quinze dos vinte, **você não tem uma organização. Você
+tem uma dependência.**"
 
-E tem uma frase que eu queria que vocês levassem daqui:
+> Diga sem julgamento. É o perfil da maioria da sala.
 
-**Organizações não encerram suas atividades porque possuem boas causas. Encerram
-porque deixam de sustentar sua operação.**"
+**O princípio**
 
-**As perguntas-chave**
+"E aqui está a frase que eu queria que você levasse: **se a maioria das suas
+linhas está sem dono e sem lugar, o problema não é falta de esforço. É falta de
+estrutura.** E nenhuma organização resolve falta de estrutura trabalhando mais.
 
-"Para a linha de finanças:
+Esforço vocês já têm de sobra. Se esforço resolvesse, estava resolvido."
 
-- **Você sabe quanto tem em caixa agora**, sem abrir o aplicativo do banco?
-- **A prestação de contas do projeto está em dia** — ou está esperando o
-  financiador cobrar?
-- **Suas obrigações fiscais estão em dia hoje?** Não 'estavam'. Hoje."
+**O primeiro passo**
 
-> `passos`
+"O que fazer esta semana? **Um critério. Um só.** Escolhe um — de preferência o
+que te deixou mais desconfortável durante a aula, não o mais fácil. Dá um nome no
+guardião e uma frequência no acompanhamento.
 
-**A pausa** · 5 min
+Um por semana. Em cinco semanas, uma dimensão inteira mudou de cara."
 
-"Duas linhas de finanças. E se você não souber responder alguma, **escreve 'não
-sei'.** É a resposta mais útil desta aula inteira — porque 'não sei' é o único
-lugar onde o problema pode estar crescendo sem você ver."
+**A humildade, pela segunda vez**
 
-> `pausa`
-> **Transição:** "As finanças sustentam. Agora, como você sabe se está dando certo."
+"E o Mapa não termina aqui. Esses vinte critérios são **um corte**, não a gestão
+inteira. Existem outros eixos — governança, pessoas, comunicação,
+sustentabilidade — e alguns deles são justamente as outras aulas desta formação.
+**Então acrescente as suas linhas.** O Mapa é seu."
 
----
+**A oferta — um parágrafo, não mais**
 
-## PILAR 4 · MONITORAMENTO · 46:00 → 56:00
-*(6 min de fala + 4 de preenchimento)*
+"E se você quiser companhia nesse caminho: a Bússola Social tem ferramenta de
+gestão de projetos e financeira estruturada. A Pratika Social tem formação
+prática, curta, com instrumento no fim. **E eu tenho um curso para liberar de
+graça para quem me procurar** — é sério, e é para quem pedir.
 
-> Seu território mais forte. É aqui que você tem mais autoridade que qualquer
-> outro palestrante desta formação. Mas segure a mão: não vire aula de indicadores.
+Não tem como fugir disso: estrutura precisa de ferramenta e de método. Eu tenho
+os dois para oferecer, e você não é obrigado a nada."
 
-**A abertura do pilar**
+> Deixe o contato **escrito no chat** e fixado.
 
-"Esse é o pilar em que eu passei os últimos quinze anos da minha vida.
+**O fecho**
 
-Quando eu comecei, lá na Pastoral e depois no Conselho da criança e do
-adolescente, eu vi uma coisa que nunca mais me largou: **existia muita ação
-importante acontecendo, muita gente séria trabalhando — e quase nenhuma
-capacidade de demonstrar o que estava mudando.**
-
-E o que eu aprendi depois disso é que a organização que não mede não fica só sem
-relatório. **Ela fica sem aprender.** Ela repete o que não funciona por mais três
-anos, porque ninguém tem como saber que não funcionou.
-
-**Quem mede aprende. Quem aprende evolui.**"
-
-**A distinção que importa**
-
-"E aqui tem uma armadilha. Monitoramento não é contar atividade.
-
-'Fizemos 96 oficinas' não é monitoramento. Isso é registro de operação — é o
-pilar anterior. **Monitoramento é responder o que mudou na vida de quem você
-atende.**
-
-São coisas diferentes, e quase toda organização entrega a primeira achando que
-está entregando a segunda."
-
-**As perguntas-chave**
-
-"Para a linha de monitoramento:
-
-- **O que mudou na vida de quem você atende este ano?** Diz em uma frase.
-- **Que número você usaria para provar isso?**
-- **Alguém coleta esse número hoje** — ou ele só aparece quando o relatório está
-  vencendo?"
-
-> `contraste` → `passos`
-
-**A pausa** · 4 min
-
-"Uma ou duas linhas. E se a coluna 4 for 'nunca', escreve 'nunca'. É uma resposta."
-
-> `pausa`
-> **Transição:** "E chegamos no último. O que segura tudo o que a gente fez até aqui."
-
----
-
-## PILAR 5 · GOVERNANÇA · 56:00 → 68:00
-*(8 min de fala + 4 de preenchimento)*
-
-> Aqui a história da abertura ganha a conclusão que ficou pendurada 56 minutos.
-> É o ponto alto da aula. Não corra.
-
-**A conclusão do gancho**
-
-"Lembra dos trezentos mil reais que eu contei lá no começo?
-
-Agora eu vou contar inteiro.
-
-Era dívida de INSS. Foi se acumulando ao longo de anos, na relação entre a
-organização e a contabilidade. Não houve má-fé de ninguém. Houve **uma
-documentação que ninguém organizava, uma prestação de contas que ninguém
-conferia, e um processo entre a organização e o contador que ninguém era dono.**
-
-Eu confiava. Ele mandava o que precisava. Eu assinava. E ninguém, nunca, sentou
-para conferir se o que entrava batia com o que saía.
-
-Quando o processo chegou, eu descobri três coisas ao mesmo tempo: que existia,
-que era grande, e que vinha de longe.
-
-**E olha a linha do mapa: 'obrigações trabalhistas'. Como está hoje: não sei.
-Quem é o guardião: ninguém. Quando eu olho: quando dá problema.**
-
-Eu já tinha o problema há anos. Eu só não tinha a linha."
-
-> Deixe o silêncio. É o momento da aula inteira.
-
-**O pilar**
-
-"Governança não é conselho, não é estatuto, não é burocracia de organização
-grande. **Governança é a garantia de que as coisas continuam funcionando quando
-alguém falta.**
-
-E ela é o pilar mais invisível dos cinco, porque é o único em que **nada
-acontecer é o resultado esperado.** Ninguém te elogia por ter a certidão em dia.
-Só te cobra quando não tem."
-
-**As perguntas-chave — e a última é a que pega todo mundo**
-
-"Para a sua linha de governança:
-
-- **As suas certidões estão válidas hoje?** Não 'estavam'. Hoje.
-- **A última ata está registrada?**
-- E a pergunta que eu quero que você responda mesmo que não escreva:
-  **quem tem as senhas?** Do banco, do gov.br, do e-CAC, do e-mail institucional.
-
-Se a resposta for 'só eu', você não tem uma organização. **Você tem uma
-dependência.**"
-
-> `declaracao` → `teste`
-
-**A pausa** · 4 min
-
-"Duas linhas de governança. E quando terminar, **olha o mapa inteiro.** Ele está
-completo."
-
-> `pausa` → `instrumento` (completo)
-
----
-
-## FINALE · 68:00 → 76:00
-
-**Batida 1 — o retrato**
-
-"Olha o seu mapa agora.
-
-Conta quantas linhas estão em 'não sei'. Conta quantas estão sem dono. Conta
-quantas dizem 'quando dá problema'.
-
-**Isso não é uma nota. É um retrato.** Não é sobre você ser um bom ou mau gestor
-— é sobre o nível de maturidade em que a sua gestão está hoje. E maturidade é uma
-coisa que sobe.
-
-E eu quero que você repare num padrão, porque ele vale mais que qualquer coisa
-que eu falei nesta aula: **as linhas que estão em dia são quase sempre as mesmas
-que têm um guardião com nome e uma frequência marcada.** E as linhas em 'não sei'
-são quase sempre as que não têm nenhum dos dois.
-
-Não é sorte. **É a coluna 3 e a coluna 4 fazendo o trabalho.**"
-
-**Batida 2 — o princípio**
-
-"Toda organização social nasce de um propósito. Mas propósito, sozinho, não
-transforma a realidade.
-
-**A transformação acontece quando boas intenções encontram uma gestão madura.**
-
-E maturidade em gestão não é um fim em si mesma. Ela é o caminho para você
-ampliar seu impacto, usar melhor seus recursos e garantir que a sua missão
-continue existindo daqui a dez anos.
-
-Voltando ao começo: eu não perdi trezentos mil reais por ser desorganizado. **Eu
-perdi por estar ocupado com a coisa certa e desatento à coisa chata.** E a coisa
-chata cobrou o preço da coisa certa."
-
-**Batida 3 — a terça-feira e o prêmio**
-
-"O que fazer na terça?
-
-**Uma linha.** Escolhe uma linha vermelha do seu mapa — só uma. Dá um nome a ela
-na coluna 3 e uma frequência na coluna 4. Só isso. Uma linha por semana e em dois
-meses o seu mapa mudou de cor.
-
-E agora a coisa que eu prometi lá no começo.
-
-**Quem terminar de preencher o mapa e enviar para a gente até [terça-feira, dia
-X] ganha, de graça, o curso de Teoria da Mudança da Pratika Social.**
-
-E não é um brinde aleatório. Repara no ciclo que a gente rodou hoje: começamos na
-estratégia, passamos pela operação, pelas finanças, pelo monitoramento e pela
-governança. **E o ciclo recomeça na estratégia — só que agora com o mapa na mão.**
-
-O curso de Teoria da Mudança é exatamente esse recomeço, um nível acima.
+"**Sair da intenção e chegar à prática.** É o que eu faço há vinte anos. E é o que
+você começou a fazer nos últimos setenta minutos.
 
 Obrigado, gente. Foi um prazer."
-
-> `instrumento` (completo) → `frase-impacto`
-> **Deixe o slide com o prazo e o link do envio parado na tela** enquanto responde
-> o chat.
 
 ---
 
@@ -498,21 +300,33 @@ Obrigado, gente. Foi um prazer."
 
 | Pergunta | Resposta curta |
 |---|---|
-| "Qual sistema você recomenda?" | Nenhum ainda. Sistema se compra quando a **rotina manual já existe e está quebrando por volume**. Comprar antes só digitaliza o caos. E eu vendo software de gestão — estou falando contra o meu bolso. |
-| "Sou sozinho, como defino um guardião?" | Você é o guardião de tudo. Aí a coluna 4 é a que salva: **a frequência é o que substitui a equipe.** |
-| "Não tenho equipe nem dinheiro para contador" | O mapa não pressupõe nenhum dos dois. Ele pressupõe **20 minutos por semana**. |
-| "Quantas linhas o mapa deve ter?" | Comece com 8 a 10. Se passar de 20, você está listando tarefa, não o que não pode cair. |
-| "E se está tudo vermelho?" | Ótimo — é o retrato mais útil que existe. **Uma linha por semana.** |
+| "Qual sistema você recomenda?" | Nenhum ainda. Olhe a coluna **"onde está registrado"**: se as respostas são oito lugares diferentes, o problema é rotina, não software. Sistema se compra quando a rotina manual já existe e está quebrando por volume. E eu vendo software de gestão — **estou falando contra o meu bolso**. |
+| "Sou sozinho, como defino um guardião?" | Você é o guardião de tudo. Aí a coluna da frequência é a que salva: **a rotina é o que substitui a equipe.** |
+| "Marquei 'não existe' em quase tudo." | É o retrato mais útil que existe, e é o mais comum. **Um critério por semana.** Em vinte semanas o Mapa é outro. |
+| "Não tenho equipe nem dinheiro para contador." | O Mapa não pressupõe nenhum dos dois. Pressupõe **uma hora por semana**. |
+| "Isso vale para organização pequena?" | Os vinte critérios foram escolhidos para funcionar com três pessoas e sem orçamento. **Nenhum deles exige sistema, equipe ou dinheiro** — exigem dono e rotina. |
+| "Como faço a teoria de mudança?" (critério 1 de Estratégia) | É o critério que mais gente marca "não existe", e é assunto de um curso inteiro, não de uma resposta. **É exatamente o curso que eu ofereci no fim.** |
+| "E governança, conselho, estatuto?" | É a aula 1, do Jaime. Deixei fora de propósito para não repetir o que ele já deu. |
+
+---
 
 ## Cortes de emergência
 
-> Se o tempo apertar, nesta ordem. **Corte pilar inteiro, nunca metade de vários**
-> — meia rodada deixa a plateia com o mapa pela metade e sem saber por quê.
+> Se o tempo apertar, nesta ordem. **Corte dentro da dimensão, nunca a dimensão
+> inteira** — perder uma dimensão deixa a plateia com o Mapa pela metade e sem
+> saber por quê.
 
-1. **Pilar 4 · Monitoramento** — é o mais fácil de resumir em 2 min ("o que mudou,
-   que número prova, quem coleta") sem perder o mapa.
-2. **Pilar 1 · Estratégia** — já é o mais curto e já está coberto pelo Jaime.
-3. Encurtar a pausa de Operação e Finanças de 5 para 3 min.
+1. **Os casos 4 e 5 de Estratégia** (planos de ação e decisões registradas) —
+   diga os dois em uma frase cada e mande para a pausa. Ganha 2 min.
+2. **O caso 4 de Operação** (termos e autorizações) — o slide sozinho se explica,
+   e a pausa cobre. Ganha 1 min.
+3. **Reduzir as pausas 3 e 4 de 5 para 4 min.** Ganha 2 min. Avise: "hoje quatro
+   minutos, e o que faltar você termina depois — o arquivo é seu."
+4. **O slide do ciclo/outros eixos no fechamento** — dizer em voz alta sem
+   projetar. Ganha 1 min.
 
-**Nunca corte:** a Governança (é a conclusão do gancho) nem o bloco do
-instrumento (sem ele nada funciona).
+**Nunca corte:** o exemplo preenchido (é o slide que ensina a ler o Mapa), a
+contagem do fechamento (sem ela o fim é discurso), e a frase do princípio.
+
+**Se sobrar tempo:** volte ao chat nas pausas e leia respostas em voz alta na
+retomada. É o que mais aumenta a sensação de aula coletiva.

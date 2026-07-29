@@ -15,7 +15,7 @@
 | **Tempo de palco** | **~85 min** — o encontro inteiro é de **1h30**, com abertura rápida da organizadora, que já passa a tela. ⚠️ **Confirmar se o Q&A está dentro desses 85.** |
 | **Formato** | Aula online, ao vivo, com pausas de trabalho de ~5 min |
 | **Posição** | 5ª de 6 · depois de Conexões Estratégicas, antes de Captação de Recursos |
-| **Status** | Reconstrução em curso — Fase 1 fechada, Fase 4 em proposta |
+| **Status** | Fases 0 a 6 fechadas — falta o ensaio cronometrado |
 
 ---
 
@@ -254,7 +254,61 @@ conflito de interesses e lista de presença na mesma pausa.
 
 ## 6. A estrutura
 
-Em proposta — ver `00-pre-producao/arco.md`.
+**Formato: aula de diagnóstico guiado.** Não tem trança, não tem case
+protagonista, não tem volta ao gancho — o instrumento é entregue pronto no começo
+e a plateia preenche uma dimensão por vez. Detalhe em `00-pre-producao/arco.md`,
+os 20 casos em `00-pre-producao/casos.md`.
+
+| Movimento | Tempo | Acum. |
+|---|---|---|
+| Abertura — o problema do setor | 7 | 00:00 |
+| A promessa + quem fala | 3 | 07:00 |
+| A ferramenta (pausa) | 3 | 10:00 |
+| Como preencher + o exemplo analisado | 4 | 13:00 |
+| Dimensão 1 · Estratégia | 12 | 17:00 |
+| Dimensão 2 · Operação | 12 | 29:00 |
+| Dimensão 3 · Finanças | 12 | 41:00 |
+| Dimensão 4 · Monitoramento e Avaliação | 12 | 53:00 |
+| Fechamento + oferta | 8 | 65:00 |
+| **Fim** | | **73:30** |
+| **Folga** | **~11** | |
+
+Cada dimensão: abre (1,5 min) → cinco slides de critério, um caso cada (6 min) →
+pausa de 5 min. **Nunca mais de 8 min de exposição sem interação.**
+
+### Decisões de desenho registradas
+
+- **Não usei o bloco `seccao`.** A regra é no máximo 3 por palestra e há 4
+  dimensões. Cada uma abre com `declaracao`, e o `instrumento compacto` das pausas
+  faz o papel de virar a página.
+- **`frase-impacto` com `frase-apoio` em 5 slides.** A skill pede frase sem
+  parágrafo embaixo; aqui o apoio **completa** a frase em vez de explicá-la (a
+  segunda metade da sentença, a prova, a enumeração). Desvio consciente.
+- **`declaracao` é o bloco dominante (16 usos).** Vinte casos narrados curtos são
+  naturalmente texto que vale pela redação exata. A variação vem de `contraste`
+  (4), `fluxo` (2) e `numeros` (4) onde o caso tem outra forma.
+- **Todo slide de critério tem o mesmo esqueleto:** `selo` com dimensão e
+  contagem → o critério como título → o caso → o remate no `fecho`. A repetição é
+  o que faz a plateia saber onde está.
+
+## 6b. Arquivos de produção
+
+| Arquivo | O que é |
+|---|---|
+| `slides.html` | **49 slides**, fonte única. Notas do formador dentro. `P` alterna modo |
+| `slides-completo.html` | Standalone com CSS e JS embutidos — para mandar por e-mail |
+| `gestao-eficiente.pdf` | 49 páginas, modo limpo |
+| `gestao-eficiente-formador.pdf` | 49 páginas, com as notas |
+| `mapa.pdf` | 7 páginas A4 paisagem — **o material do participante** |
+| `roteiro.md` | Núcleo fixo falado, transições, Q&A e cortes de emergência |
+
+Regenerar tudo depois de mexer no `slides.html`:
+
+```bash
+python3 ferramentas/gerar-pdf.py palestras/gestao-eficiente/slides.html
+python3 ferramentas/gerar-pdf.py palestras/gestao-eficiente/slides.html --formador
+python3 ferramentas/gerar-standalone.py palestras/gestao-eficiente/slides.html
+```
 
 **~85 min de palco. Quatro voltas, uma por pilar.** A prática não é um movimento
 separado: está dentro de cada volta, na pausa em que a plateia preenche as cinco
@@ -280,12 +334,26 @@ linhas daquele pilar.
 | Fase 1 · Ideia-instrumento | ✅ **fechada — definida por Aureo** |
 | Fase 2 · Case e credencial | 🔄 reaberta — trajetória do histórico, sem as falhas |
 | Fase 3 · Âncoras | 🔄 reaberta — uma por volta, todas do histórico |
-| Fase 4 · Estrutura | 🔄 em proposta |
-| Fase 5 · Roteiro | ⛔ a refazer |
-| Fase 6 · Slides | ⛔ a refazer — os 50 slides atuais servem ao instrumento antigo |
-| Fase 7 · Ensaio e export | ⛔ |
+| Fase 4 · Estrutura | ✅ fechada |
+| Fase 5 · Roteiro | ✅ escrito |
+| Fase 6 · Slides | ✅ **49 slides, sem estouro de `.tela`, exportados** |
+| Fase 7 · Ensaio e export | 🔄 falta Aureo rodar cronometrando |
 
-> **Material da versão anterior que continua no repositório:** `slides.html`,
-> `slides-completo.html`, `mapa.html`, `roteiro.md` e os dois PDFs. Todos servem
-> ao instrumento de cinco pilares e quatro colunas, com as falhas pessoais como
-> âncoras. **Não reaproveitar conteúdo — só o sistema visual.**
+**Material da versão anterior: removido.** Os 50 slides do instrumento de cinco
+pilares, o roteiro antigo e os PDFs correspondentes saíram do repositório — só o
+sistema visual de `_design-slides` foi reaproveitado.
+
+### O que ainda depende de Aureo
+
+| Item | Onde |
+|---|---|
+| **QR e link do Mapa** | slide 10 (`pausa` da ferramenta). Dois placeholders `[ ]` |
+| **PDF ou sistema?** | se for sistema, mudar a consigna do slide 10 e subir a pausa para 5 min |
+| Contato para o curso gratuito | slide 48, dito e escrito no chat |
+| Rodar inteira cronometrando | Fase 7, passo 1 |
+| Confirmar se o Q&A está dentro dos 85 min | pendência aberta desde a Fase 0 |
+
+**O exemplo preenchido** (slide 12 e página 2 do `mapa.pdf`) usa uma organização
+de 60 jovens com três contratadas e oito voluntários. É invenção, coerente com os
+20 casos. Se o porte dominante da turma for menor, vale trocar — quanto mais
+parecido com quem está na sala, mais forte o reconhecimento.
