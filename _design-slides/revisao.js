@@ -19,9 +19,29 @@
   var slides = [].slice.call(document.querySelectorAll(".slide"));
   if (!slides.length) return;
 
-  var NOME = location.pathname.split("/").slice(-2).join("/");
+  /* A chave nao pode depender do nome do arquivo: slides.html e
+     slides-completo.html sao a MESMA palestra, e trocar de um para o outro nao
+     pode fazer a revisao sumir. Usa a pasta + o titulo. */
+  var partes = location.pathname.split("/");
+  var NOME = (partes[partes.length - 2] || "palestra") + "::" + (document.title || "").trim();
   var K_COM = "aureo-revisao-com::" + NOME;
   var K_OK  = "aureo-revisao-ok::" + NOME;
+
+  /* migra revisoes gravadas pelo esquema antigo (chave por caminho de arquivo) */
+  (function migrar() {
+    var pasta = partes[partes.length - 2] || "";
+    ["com", "ok"].forEach(function (tipo) {
+      var destino = tipo === "com" ? K_COM : K_OK;
+      if (localStorage.getItem(destino)) return;
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (!k || k.indexOf("aureo-revisao-" + tipo + "::") !== 0 || k === destino) continue;
+        if (pasta && k.indexOf(pasta) === -1) continue;
+        localStorage.setItem(destino, localStorage.getItem(k));
+        break;
+      }
+    });
+  })();
 
   function ler(k) { try { return JSON.parse(localStorage.getItem(k) || "{}"); } catch (e) { return {}; } }
   function gravar(k, d) { try { localStorage.setItem(k, JSON.stringify(d)); } catch (e) {} }
@@ -58,8 +78,16 @@
     ".slide.rv-aprovado .tela{box-shadow:inset 0 0 0 4px #0E625B}",
     ".slide.rv-comentado .tela{box-shadow:inset 0 0 0 4px #B21F35}",
 
-    ".rv-faixa{width:100%;max-width:1500px;margin:14px auto 0;background:#FAF7F2;border-radius:14px;",
-    "padding:15px 18px;box-shadow:0 10px 34px rgba(0,0,0,.35);font-family:'Carlito',Calibri,system-ui,sans-serif}",
+    /* fixa no rodape: com 49 slides a faixa ficava fora da tela e o body tem
+       overflow hidden, entao nao havia como rolar ate os botoes de exportar */
+    ".rv-faixa{position:fixed;left:0;right:0;bottom:0;z-index:120;background:#FAF7F2;",
+    "border-radius:16px 16px 0 0;padding:12px 22px 14px;box-shadow:0 -8px 34px rgba(0,0,0,.45);",
+    "max-height:44vh;overflow-y:auto;font-family:'Carlito',Calibri,system-ui,sans-serif}",
+    /* o deck encolhe o suficiente para nunca ficar atras da faixa */
+    "body.rv-on{justify-content:flex-start;padding-top:1.4vh}",
+    "body.rv-on .apresentacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
+    "body.rv-on .barra,body.rv-on .navegacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
+    "body.rv-on .dica-teclado{display:none}",
     ".rv-cab{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",
     ".rv-qual{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#55637E}",
     ".rv-perg{flex:1;min-width:180px;font-size:17px;font-weight:800;color:#132B70}",
@@ -68,20 +96,22 @@
     "cursor:pointer;border:2px solid transparent;transition:.14s;white-space:nowrap}",
     ".rv-b.ok{background:#0E625B;color:#fff}.rv-b.ok:hover{background:#14856C}",
     ".rv-b.ok.on{background:#fff;color:#0E625B;border-color:#0E625B}",
+    ".rv-b.exp{background:#fff;color:#132B70;border-color:#E3D9CB;font-size:13px;padding:11px 16px}",
+    ".rv-b.exp:hover{background:#F2ECE3}",
 
-    ".rv-box{margin-top:13px;border-top:1px solid #E3D9CB;padding-top:13px}",
+    ".rv-box{margin-top:10px;border-top:1px solid #E3D9CB;padding-top:10px}",
     ".rv-box h4{margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#B21F35;",
     "display:flex;align-items:baseline;gap:10px}",
     ".rv-salvo{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:none;color:#0E625B;opacity:0;transition:opacity .2s}",
     ".rv-salvo.on{opacity:1}",
-    ".rv-box textarea{width:100%;min-height:94px;resize:vertical;font-family:inherit;font-size:15px;",
+    ".rv-box textarea{width:100%;min-height:64px;resize:vertical;font-family:inherit;font-size:15px;",
     "line-height:1.55;color:#14213D;background:#F2ECE3;border:1px solid #E3D9CB;border-radius:9px;padding:11px 13px;outline:none}",
     ".rv-box textarea:focus{border-color:#B21F35}",
     ".rv-row{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}",
     ".rv-x{font-family:inherit;font-size:13px;font-weight:700;border-radius:11px;padding:10px 16px;cursor:pointer;border:1px solid #E3D9CB;background:#fff;color:#55637E}",
 
 
-    ".rv-rod{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;border-top:1px solid #E3D9CB;padding-top:11px}",
+    ".rv-rod{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px}",
     ".rv-cnt{font-size:13px;font-weight:700;color:#55637E}",
     ".rv-sp{flex:1}",
     ".rv-rod button{font-family:inherit;font-size:13px;font-weight:800;border-radius:11px;padding:9px 15px;",
@@ -89,7 +119,12 @@
     ".rv-rod button:hover{background:#F2ECE3}",
     ".rv-dica{font-size:12px;color:#55637E;opacity:.8;width:100%;line-height:1.45}",
 
+    /* o modo limpo tem de voltar a ocupar a tela inteira: as regras de rv-on
+       tem a mesma especificidade e sao injetadas depois, entao venceriam */
     "body[data-modo='limpo'] .rv-faixa,body[data-modo='limpo'] .rv-selo{display:none!important}",
+    "body[data-modo='limpo'].rv-on{justify-content:center;padding:0}",
+    "body[data-modo='limpo'].rv-on .apresentacao,body[data-modo='limpo'].rv-on .barra,",
+    "body[data-modo='limpo'].rv-on .navegacao{max-width:none}",
     "body[data-modo='limpo'] .slide .tela{box-shadow:none!important}",
     "@media print{.rv-faixa,.rv-selo{display:none!important}.slide .tela{box-shadow:none!important}}"
   ].join("");
@@ -114,14 +149,14 @@
       '<span class="rv-perg">Este slide está bom?</span>' +
       '<span class="rv-bts">' +
         '<button class="rv-b ok" type="button" data-ac="ok">✓ Aprovar este slide</button>' +
+        '<button class="rv-b exp" type="button" data-ac="copiar">⧉ Copiar revisão</button>' +
+        '<button class="rv-b exp" type="button" data-ac="baixar">⬇ Baixar</button>' +
       '</span>' +
     '</div>' +
     '<div class="rv-box"><h4><span class="rv-tit"></span><span class="rv-salvo">✓ salvo</span></h4>' +
       '<textarea placeholder="O que mudar neste slide? Pode ser o texto, o bloco, a ordem, o tempo... — vai salvando sozinho"></textarea>' +
       '<div class="rv-row"><button class="rv-x" type="button" data-ac="apagar">Apagar este comentário</button></div></div>' +
     '<div class="rv-rod"><span class="rv-cnt"></span><span class="rv-sp"></span>' +
-      '<button type="button" data-ac="copiar">⧉ Copiar revisão</button>' +
-      '<button type="button" data-ac="baixar">⬇ Baixar arquivo</button>' +
       '<span class="rv-dica">Navegue com ← → ou pelos botões acima. Em cada slide, aprove ou comente aqui. Fica salvo neste navegador — no fim, copie ou baixe e mande de volta.</span>' +
     '</div>';
 
@@ -227,7 +262,7 @@
     return linhas.join("\n");
   }
 
-  faixa.querySelector(".rv-rod").addEventListener("click", function (e) {
+  faixa.addEventListener("click", function (e) {
     var ac = e.target.getAttribute && e.target.getAttribute("data-ac");
     if (!ac) return;
     var btn = e.target, rotulo = btn.textContent;
@@ -245,5 +280,6 @@
     }
   });
 
+  document.body.classList.add("rv-on");
   pintar();
 })();

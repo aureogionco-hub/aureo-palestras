@@ -61,15 +61,28 @@ body {
   position: relative;
   display: flex; flex-direction: column;
   justify-content: center;
-  padding: 5.2cqw 6cqw;
+  padding: 4cqw 5.5cqw;
   overflow: hidden;
 }
 
+/* rodapé, não topo: no topo ela colidia com o título dos slides longos */
 .tela .assinatura {
-  position: absolute; top: 2.6cqw; left: 3.2cqw;
-  font-size: var(--t-etiqueta); font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--azul-profundo); opacity: 0.30;
+  position: absolute; bottom: 2.2cqw; left: 3.2cqw;
+  width: 8cqw; height: 2.6cqw; overflow: hidden; text-indent: -999em;
+  background: var(--marca-reduzida) left center / contain no-repeat;
+  opacity: 0.34;
+}
+/* na capa a assinatura completa já está no corpo — a reduzida sairia repetida */
+.tela.capa .assinatura { display: none; }
+/* em fundo escuro a assinatura precisa virar branca */
+.tela.seccao .assinatura, .tela.promessa .assinatura {
+  filter: brightness(0) invert(1); opacity: 0.45;
+}
+/* na capa entra a assinatura completa, grande, no lugar do texto de autoria */
+.capa .marca-completa {
+  width: 30cqw; height: 13cqw; margin-bottom: 2cqw;
+  background: var(--marca-completa) left center / contain no-repeat;
+  filter: brightness(0) invert(1);
 }
 .tela .paginacao {
   position: absolute; bottom: 2.6cqw; right: 3.2cqw;
@@ -168,7 +181,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 
 /* -- cabeçalho de slide -- */
 .cabecalho {
-  padding-bottom: 1.6cqw; margin-bottom: 2.8cqw;
+  padding-bottom: 1.4cqw; margin-bottom: 2.2cqw;
   border-bottom: 0.18cqw solid var(--papel-borda); flex-shrink: 0;
 }
 .titulo {
@@ -203,17 +216,21 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 
 /* -- 2. CONTRASTE — âncora estrutural. Os dois lados têm peso igual. -- */
-.contraste { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
+.contraste { display: flex; gap: var(--gap-2); margin: auto 0; align-items: stretch; }
 .contraste > div {
-  border-radius: var(--raio); padding: 3cqw 3.4cqw;
-  display: flex; align-items: center; gap: 2.2cqw;
+  flex: 1; border-radius: var(--raio-g); padding: 3.4cqw 3cqw;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2cqw; text-align: center;
 }
-.contraste .nao { background: #FBEDEE; border: 0.18cqw solid var(--vermelho-profundo); }
-.contraste .sim { background: #E9F3EF; border: 0.18cqw solid var(--verde-petroleo); }
-.contraste .marca { font-size: 3cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
+/* variante empilhada, para quando um lado VIRA o outro e a ordem importa */
+.contraste.empilhado { flex-direction: column; }
+.contraste.empilhado > div { flex-direction: row; text-align: left; padding: 2.6cqw 3cqw; }
+.contraste .nao { background: var(--fundo-vermelho); border: 0.18cqw solid var(--vermelho-profundo); }
+.contraste .sim { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
+.contraste .marca { font-size: 5cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
 .contraste .nao .marca { color: var(--vermelho-profundo); }
 .contraste .sim .marca { color: var(--verde-petroleo); }
-.contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.35; }
+.contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.3; }
 
 /* -- 3. DECLARAÇÃO — âncora literal. O dado precisa ser lido como está. -- */
 .declaracao {
@@ -264,7 +281,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo { margin: auto 0; }
 .fluxo .caixa { border-radius: var(--raio); padding: 2.4cqw 2.8cqw; }
 .fluxo .antes { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
-.fluxo .depois { background: #E9F3EF; border: 0.18cqw solid var(--verde-petroleo); }
+.fluxo .depois { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
 .fluxo .rotulo {
   font-size: var(--t-etiqueta); font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.09em; margin-bottom: 1.2cqw;
@@ -275,12 +292,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo .seta { text-align: center; padding: 1.4cqw 0; font-size: 2.8cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1; }
 
 /* -- 7. LISTA — itens curtos, mesmo peso, sem virar bullet corporativo. -- */
-.lista { display: flex; flex-direction: column; gap: 0.7cqw; margin: auto 0; }
+.lista { display: flex; flex-direction: column; gap: 1cqw; margin: auto 0; }
 .lista > div {
-  display: flex; align-items: center; gap: 1.4cqw;
-  padding: 1.3cqw 2cqw; border-radius: 0.8cqw; background: var(--papel-fundo);
+  display: flex; align-items: center; gap: 1.8cqw;
+  padding: 1.9cqw 2.4cqw; border-radius: var(--raio); background: var(--papel-fundo);
+  border-left: 0.4cqw solid var(--areia);
 }
-.lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 1.5cqw; flex-shrink: 0; }
+.lista > div:last-child { border-left-color: var(--verde-petroleo); background: var(--fundo-verde); }
+.lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 2cqw; flex-shrink: 0; }
 .lista .texto { font-size: var(--t-apoio); font-weight: 600; color: var(--tinta); line-height: 1.3; }
 
 /* -- 8. NÚMEROS — indicadores tratados com peso, não como enfeite. -- */
@@ -405,7 +424,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento { display: flex; gap: 1.3cqw; align-items: stretch; margin: auto 0; }
 .instrumento .parte {
   flex: 1; border-radius: var(--raio); padding: 2.2cqw 2cqw;
-  display: flex; flex-direction: column; gap: 1.2cqw; min-height: 21cqw;
+  display: flex; flex-direction: column; gap: 1.2cqw; min-height: 17cqw;
   position: relative;
 }
 .instrumento .n {
@@ -428,11 +447,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento .preenchida .rotulo { color: var(--tinta-suave); }
 .instrumento .preenchida .conteudo { color: var(--tinta); }
 
-.instrumento .ativa { background: #E9F3EF; border: 0.26cqw solid var(--verde-petroleo); }
+.instrumento .ativa { background: var(--fundo-verde); border: 0.26cqw solid var(--verde-petroleo); }
 .instrumento .ativa .n { background: var(--verde-petroleo); }
 .instrumento .ativa .rotulo { color: var(--verde-petroleo); }
 .instrumento .ativa .conteudo { color: var(--tinta); }
-.instrumento .alerta { background: #FBEDEE; border: 0.26cqw solid var(--vermelho-profundo); }
+.instrumento .alerta { background: var(--fundo-vermelho); border: 0.26cqw solid var(--vermelho-profundo); }
 .instrumento .alerta .n { background: var(--vermelho-profundo); }
 .instrumento .alerta .rotulo { color: var(--vermelho-profundo); }
 .instrumento .alerta .conteudo { color: var(--tinta); }
@@ -450,16 +469,46 @@ body[data-modo="limpo"] .paginacao { display: none; }
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-suave);
 }
 
+/* -- 18. MAPA — o instrumento inteiro, em tabela. Serve para mostrar o objeto
+      completo ANTES de destrinchar coluna por coluna, e para o retrato final. -- */
+.mapa { width: 100%; margin: auto 0; border-collapse: separate; border-spacing: 0 0.7cqw; }
+.mapa th {
+  font-size: var(--t-etiqueta); font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--tinta-suave); text-align: left;
+  padding: 0 1.6cqw 0.8cqw; white-space: nowrap;
+}
+.mapa td {
+  background: var(--papel-fundo); padding: 1.5cqw 1.6cqw;
+  font-size: var(--t-apoio); color: var(--tinta); line-height: 1.3;
+}
+.mapa td:first-child { border-radius: var(--raio) 0 0 var(--raio); font-weight: 700; color: var(--azul-profundo); }
+.mapa td:last-child { border-radius: 0 var(--raio) var(--raio) 0; }
+.mapa .marca-ok, .mapa .marca-nao, .mapa .marca-meio {
+  display: inline-block; font-size: var(--t-apoio); font-weight: 800;
+  padding: 0.4cqw 1.4cqw; border-radius: 4cqw; white-space: nowrap;
+}
+.mapa .marca-ok  { background: var(--fundo-verde); color: var(--verde-petroleo); border: 0.15cqw solid var(--verde-petroleo); }
+.mapa .marca-nao { background: var(--fundo-vermelho); color: var(--vermelho-profundo); border: 0.15cqw solid var(--vermelho-profundo); }
+.mapa .marca-meio{ background: #FBF4E4; color: #8A6413; border: 0.15cqw solid var(--acafrao); }
+.mapa .vazio { color: var(--tinta-suave); opacity: .5; font-style: italic; }
+
 /* -- 17. PAUSA DE TRABALHO — o único bloco que precisa sobreviver sozinho.
       Fica na tela 5 minutos enquanto a plateia preenche o instrumento, sem
       ninguém falando. Por isso ele carrega tudo: a consigna, a restrição, o
       tempo e o instrumento com a parte ativa. Se alguém chegar atrasado no meio
       da pausa, este slide sozinho tem que bastar. -- */
 .tela.trabalho {
-  background: #EEF5F1;
+  background: var(--fundo-verde);
   border-top: 0.6cqw solid var(--verde-petroleo);
-  justify-content: center; padding: 4.5cqw 6cqw;
+  justify-content: center; gap: 2.2cqw; padding: 4cqw 5.5cqw;
 }
+/* o cabeçalho da pausa fica ancorado no topo; o resto centraliza junto,
+   senão sobra um vazio grande no meio da tela */
+.tela.trabalho > .pausa-topo {
+  position: absolute; top: 4cqw; left: 5.5cqw; right: 5.5cqw; margin: 0;
+}
+.tela.trabalho > .pausa-consigna,
+.tela.trabalho > .pausa-restricoes { margin: 0; }
 .pausa-topo {
   display: flex; align-items: baseline; justify-content: space-between;
   margin-bottom: 2.6cqw; flex-shrink: 0;
@@ -478,11 +527,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 .pausa-consigna {
   font-family: var(--fonte-titulo);
-  font-size: 3.4cqw; font-weight: 800; color: var(--azul-profundo);
+  font-size: 4cqw; font-weight: 800; color: var(--azul-profundo);
   line-height: 1.22; margin-bottom: 2cqw; flex-shrink: 0;
 }
 .pausa-consigna em { color: var(--cor-realce); font-style: normal; }
-.pausa-restricoes { display: flex; gap: 1.2cqw; flex-wrap: wrap; margin-bottom: 3cqw; flex-shrink: 0; }
+.pausa-restricoes { display: flex; gap: 1.2cqw; flex-wrap: wrap; margin-bottom: 2.4cqw; flex-shrink: 0; }
 .pausa-restricoes span {
   background: #fff; border: 0.15cqw solid var(--verde-petroleo);
   color: var(--verde-petroleo); font-size: var(--t-apoio); font-weight: 700;
@@ -490,10 +539,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 /* o instrumento entra reduzido: aqui ele é referência, não protagonista */
 .instrumento.compacto { margin: 0; }
-.instrumento.compacto .parte { min-height: 11cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; }
+.instrumento.compacto .parte { min-height: 8cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; justify-content: center; }
 .instrumento.compacto .conteudo { font-size: 1.35cqw; }
 .tela.trabalho .instrumento .preenchida { background: #fff; }
-.tela.trabalho .instrumento .vazia { border-color: #C8D6CE; }
+.tela.trabalho .instrumento .vazia { border-color: var(--papel-borda); }
 
 /* ---------- impressão / captura para o .pptx ---------- */
 @media print {

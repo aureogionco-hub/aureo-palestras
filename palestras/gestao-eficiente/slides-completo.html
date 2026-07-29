@@ -39,12 +39,18 @@
   --rosa:               #D98191;
   --violeta:            #6658B7;
 
-  /* ---- Neutros quentes (o "fundo neutro quente" da identidade) ---- */
-  --papel:        #FAF7F2;  /* fundo do slide */
-  --papel-fundo:  #F2ECE3;  /* caixas, blocos, áreas de descanso */
-  --papel-borda:  #E3D9CB;
-  --tinta:        #14213D;  /* texto corrido escuro, derivado do azul profundo */
-  --tinta-suave:  #55637E;  /* texto secundário, legendas */
+  /* ---- Neutros — valores oficiais do design system v19 ---- */
+  --papel:        #F8F5EF;  /* = --canvas       · fundo do slide */
+  --branco:       #FFFFFF;  /* = --surface */
+  --papel-fundo:  #F1E9DF;  /* = --surface-warm · caixas e áreas de descanso */
+  --papel-borda:  #DCD8D1;  /* = --line */
+  --tinta:        #18242C;  /* = --ink          · texto corrido */
+  --tinta-suave:  #58666F;  /* = --ink-soft     · secundário e legendas */
+
+  /* superfícies coloridas, também do sistema */
+  --fundo-azul:   #E7F1F5;  /* = --surface-blue */
+  --fundo-verde:  #E6F2EC;  /* = --surface-green */
+  --fundo-vermelho:#F8E7E5; /* = --surface-red */
 
   /* ---- Palco (a moldura escura em volta do slide, no modo formador) ---- */
   --palco:        #0B1430;
@@ -72,11 +78,11 @@
   /* ---- Escala tipográfica (relativa ao palco, não em px fixo) ----
      Tudo é em em/cqw dentro do slide, para o mesmo HTML servir
      a uma tela de 13" e a um telão de evento sem reescrever nada. */
-  --t-display:  5.2cqw;
-  --t-titulo:   3.4cqw;
-  --t-corpo:    2.0cqw;
-  --t-apoio:    1.55cqw;
-  --t-etiqueta: 1.15cqw;
+  --t-display:  6.6cqw;
+  --t-titulo:   4.3cqw;
+  --t-corpo:    2.5cqw;
+  --t-apoio:    1.95cqw;
+  --t-etiqueta: 1.35cqw;
 
   /* ---- Ritmo ---- */
   --gap-1: 0.8cqw;
@@ -92,6 +98,19 @@
 
 /* Sesimbra, se o arquivo existir. Coloque .woff2 em _design-slides/fontes/.
    Sem o arquivo, o navegador simplesmente ignora e usa Sora. */
+/* ============================================================
+   ASSINATURA DA MARCA
+   Embutida em base64 de propósito: o slides-completo.html precisa
+   funcionar sozinho, sem pasta ao lado.
+   Regra do manual: "assinatura discreta, autoria clara e espaço
+   para a ideia principal" — por isso ela é pequena e translúcida
+   no canto, e só aparece inteira na capa.
+   ============================================================ */
+:root {
+  --marca-completa: url('data:image/png;base64,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');
+  --marca-reduzida: url('data:image/png;base64,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');
+}
+
 @font-face {
   font-family: 'Sesimbra';
   src: url('fontes/Sesimbra.woff2') format('woff2');
@@ -101,7 +120,7 @@
 
 /* ============================================================
    CONTRASTE — a parte que não é gosto, é regra
-   A identidade exige WCAG AA (4.5:1). Medido sobre --papel (#FAF7F2):
+   A identidade exige WCAG AA (4.5:1). Medido sobre --papel (#F8F5EF):
 
      TEXTO EM QUALQUER TAMANHO (passa AA)
        azul-profundo      15.3:1   ✓
@@ -179,15 +198,28 @@ body {
   position: relative;
   display: flex; flex-direction: column;
   justify-content: center;
-  padding: 5.2cqw 6cqw;
+  padding: 4cqw 5.5cqw;
   overflow: hidden;
 }
 
+/* rodapé, não topo: no topo ela colidia com o título dos slides longos */
 .tela .assinatura {
-  position: absolute; top: 2.6cqw; left: 3.2cqw;
-  font-size: var(--t-etiqueta); font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--azul-profundo); opacity: 0.30;
+  position: absolute; bottom: 2.2cqw; left: 3.2cqw;
+  width: 8cqw; height: 2.6cqw; overflow: hidden; text-indent: -999em;
+  background: var(--marca-reduzida) left center / contain no-repeat;
+  opacity: 0.34;
+}
+/* na capa a assinatura completa já está no corpo — a reduzida sairia repetida */
+.tela.capa .assinatura { display: none; }
+/* em fundo escuro a assinatura precisa virar branca */
+.tela.seccao .assinatura, .tela.promessa .assinatura {
+  filter: brightness(0) invert(1); opacity: 0.45;
+}
+/* na capa entra a assinatura completa, grande, no lugar do texto de autoria */
+.capa .marca-completa {
+  width: 30cqw; height: 13cqw; margin-bottom: 2cqw;
+  background: var(--marca-completa) left center / contain no-repeat;
+  filter: brightness(0) invert(1);
 }
 .tela .paginacao {
   position: absolute; bottom: 2.6cqw; right: 3.2cqw;
@@ -286,7 +318,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 
 /* -- cabeçalho de slide -- */
 .cabecalho {
-  padding-bottom: 1.6cqw; margin-bottom: 2.8cqw;
+  padding-bottom: 1.4cqw; margin-bottom: 2.2cqw;
   border-bottom: 0.18cqw solid var(--papel-borda); flex-shrink: 0;
 }
 .titulo {
@@ -321,17 +353,21 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 
 /* -- 2. CONTRASTE — âncora estrutural. Os dois lados têm peso igual. -- */
-.contraste { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
+.contraste { display: flex; gap: var(--gap-2); margin: auto 0; align-items: stretch; }
 .contraste > div {
-  border-radius: var(--raio); padding: 3cqw 3.4cqw;
-  display: flex; align-items: center; gap: 2.2cqw;
+  flex: 1; border-radius: var(--raio-g); padding: 3.4cqw 3cqw;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2cqw; text-align: center;
 }
-.contraste .nao { background: #FBEDEE; border: 0.18cqw solid var(--vermelho-profundo); }
-.contraste .sim { background: #E9F3EF; border: 0.18cqw solid var(--verde-petroleo); }
-.contraste .marca { font-size: 3cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
+/* variante empilhada, para quando um lado VIRA o outro e a ordem importa */
+.contraste.empilhado { flex-direction: column; }
+.contraste.empilhado > div { flex-direction: row; text-align: left; padding: 2.6cqw 3cqw; }
+.contraste .nao { background: var(--fundo-vermelho); border: 0.18cqw solid var(--vermelho-profundo); }
+.contraste .sim { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
+.contraste .marca { font-size: 5cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
 .contraste .nao .marca { color: var(--vermelho-profundo); }
 .contraste .sim .marca { color: var(--verde-petroleo); }
-.contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.35; }
+.contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.3; }
 
 /* -- 3. DECLARAÇÃO — âncora literal. O dado precisa ser lido como está. -- */
 .declaracao {
@@ -382,7 +418,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo { margin: auto 0; }
 .fluxo .caixa { border-radius: var(--raio); padding: 2.4cqw 2.8cqw; }
 .fluxo .antes { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
-.fluxo .depois { background: #E9F3EF; border: 0.18cqw solid var(--verde-petroleo); }
+.fluxo .depois { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
 .fluxo .rotulo {
   font-size: var(--t-etiqueta); font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.09em; margin-bottom: 1.2cqw;
@@ -393,12 +429,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo .seta { text-align: center; padding: 1.4cqw 0; font-size: 2.8cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1; }
 
 /* -- 7. LISTA — itens curtos, mesmo peso, sem virar bullet corporativo. -- */
-.lista { display: flex; flex-direction: column; gap: 0.7cqw; margin: auto 0; }
+.lista { display: flex; flex-direction: column; gap: 1cqw; margin: auto 0; }
 .lista > div {
-  display: flex; align-items: center; gap: 1.4cqw;
-  padding: 1.3cqw 2cqw; border-radius: 0.8cqw; background: var(--papel-fundo);
+  display: flex; align-items: center; gap: 1.8cqw;
+  padding: 1.9cqw 2.4cqw; border-radius: var(--raio); background: var(--papel-fundo);
+  border-left: 0.4cqw solid var(--areia);
 }
-.lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 1.5cqw; flex-shrink: 0; }
+.lista > div:last-child { border-left-color: var(--verde-petroleo); background: var(--fundo-verde); }
+.lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 2cqw; flex-shrink: 0; }
 .lista .texto { font-size: var(--t-apoio); font-weight: 600; color: var(--tinta); line-height: 1.3; }
 
 /* -- 8. NÚMEROS — indicadores tratados com peso, não como enfeite. -- */
@@ -523,7 +561,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento { display: flex; gap: 1.3cqw; align-items: stretch; margin: auto 0; }
 .instrumento .parte {
   flex: 1; border-radius: var(--raio); padding: 2.2cqw 2cqw;
-  display: flex; flex-direction: column; gap: 1.2cqw; min-height: 21cqw;
+  display: flex; flex-direction: column; gap: 1.2cqw; min-height: 17cqw;
   position: relative;
 }
 .instrumento .n {
@@ -546,11 +584,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento .preenchida .rotulo { color: var(--tinta-suave); }
 .instrumento .preenchida .conteudo { color: var(--tinta); }
 
-.instrumento .ativa { background: #E9F3EF; border: 0.26cqw solid var(--verde-petroleo); }
+.instrumento .ativa { background: var(--fundo-verde); border: 0.26cqw solid var(--verde-petroleo); }
 .instrumento .ativa .n { background: var(--verde-petroleo); }
 .instrumento .ativa .rotulo { color: var(--verde-petroleo); }
 .instrumento .ativa .conteudo { color: var(--tinta); }
-.instrumento .alerta { background: #FBEDEE; border: 0.26cqw solid var(--vermelho-profundo); }
+.instrumento .alerta { background: var(--fundo-vermelho); border: 0.26cqw solid var(--vermelho-profundo); }
 .instrumento .alerta .n { background: var(--vermelho-profundo); }
 .instrumento .alerta .rotulo { color: var(--vermelho-profundo); }
 .instrumento .alerta .conteudo { color: var(--tinta); }
@@ -568,16 +606,46 @@ body[data-modo="limpo"] .paginacao { display: none; }
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-suave);
 }
 
+/* -- 18. MAPA — o instrumento inteiro, em tabela. Serve para mostrar o objeto
+      completo ANTES de destrinchar coluna por coluna, e para o retrato final. -- */
+.mapa { width: 100%; margin: auto 0; border-collapse: separate; border-spacing: 0 0.7cqw; }
+.mapa th {
+  font-size: var(--t-etiqueta); font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--tinta-suave); text-align: left;
+  padding: 0 1.6cqw 0.8cqw; white-space: nowrap;
+}
+.mapa td {
+  background: var(--papel-fundo); padding: 1.5cqw 1.6cqw;
+  font-size: var(--t-apoio); color: var(--tinta); line-height: 1.3;
+}
+.mapa td:first-child { border-radius: var(--raio) 0 0 var(--raio); font-weight: 700; color: var(--azul-profundo); }
+.mapa td:last-child { border-radius: 0 var(--raio) var(--raio) 0; }
+.mapa .marca-ok, .mapa .marca-nao, .mapa .marca-meio {
+  display: inline-block; font-size: var(--t-apoio); font-weight: 800;
+  padding: 0.4cqw 1.4cqw; border-radius: 4cqw; white-space: nowrap;
+}
+.mapa .marca-ok  { background: var(--fundo-verde); color: var(--verde-petroleo); border: 0.15cqw solid var(--verde-petroleo); }
+.mapa .marca-nao { background: var(--fundo-vermelho); color: var(--vermelho-profundo); border: 0.15cqw solid var(--vermelho-profundo); }
+.mapa .marca-meio{ background: #FBF4E4; color: #8A6413; border: 0.15cqw solid var(--acafrao); }
+.mapa .vazio { color: var(--tinta-suave); opacity: .5; font-style: italic; }
+
 /* -- 17. PAUSA DE TRABALHO — o único bloco que precisa sobreviver sozinho.
       Fica na tela 5 minutos enquanto a plateia preenche o instrumento, sem
       ninguém falando. Por isso ele carrega tudo: a consigna, a restrição, o
       tempo e o instrumento com a parte ativa. Se alguém chegar atrasado no meio
       da pausa, este slide sozinho tem que bastar. -- */
 .tela.trabalho {
-  background: #EEF5F1;
+  background: var(--fundo-verde);
   border-top: 0.6cqw solid var(--verde-petroleo);
-  justify-content: center; padding: 4.5cqw 6cqw;
+  justify-content: center; gap: 2.2cqw; padding: 4cqw 5.5cqw;
 }
+/* o cabeçalho da pausa fica ancorado no topo; o resto centraliza junto,
+   senão sobra um vazio grande no meio da tela */
+.tela.trabalho > .pausa-topo {
+  position: absolute; top: 4cqw; left: 5.5cqw; right: 5.5cqw; margin: 0;
+}
+.tela.trabalho > .pausa-consigna,
+.tela.trabalho > .pausa-restricoes { margin: 0; }
 .pausa-topo {
   display: flex; align-items: baseline; justify-content: space-between;
   margin-bottom: 2.6cqw; flex-shrink: 0;
@@ -596,11 +664,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 .pausa-consigna {
   font-family: var(--fonte-titulo);
-  font-size: 3.4cqw; font-weight: 800; color: var(--azul-profundo);
+  font-size: 4cqw; font-weight: 800; color: var(--azul-profundo);
   line-height: 1.22; margin-bottom: 2cqw; flex-shrink: 0;
 }
 .pausa-consigna em { color: var(--cor-realce); font-style: normal; }
-.pausa-restricoes { display: flex; gap: 1.2cqw; flex-wrap: wrap; margin-bottom: 3cqw; flex-shrink: 0; }
+.pausa-restricoes { display: flex; gap: 1.2cqw; flex-wrap: wrap; margin-bottom: 2.4cqw; flex-shrink: 0; }
 .pausa-restricoes span {
   background: #fff; border: 0.15cqw solid var(--verde-petroleo);
   color: var(--verde-petroleo); font-size: var(--t-apoio); font-weight: 700;
@@ -608,10 +676,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 /* o instrumento entra reduzido: aqui ele é referência, não protagonista */
 .instrumento.compacto { margin: 0; }
-.instrumento.compacto .parte { min-height: 11cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; }
+.instrumento.compacto .parte { min-height: 8cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; justify-content: center; }
 .instrumento.compacto .conteudo { font-size: 1.35cqw; }
 .tela.trabalho .instrumento .preenchida { background: #fff; }
-.tela.trabalho .instrumento .vazia { border-color: #C8D6CE; }
+.tela.trabalho .instrumento .vazia { border-color: var(--papel-borda); }
 
 /* ---------- impressão / captura para o .pptx ---------- */
 @media print {
@@ -643,7 +711,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="sobretitulo">Formação de Líderes no 3º Setor · 30 de julho</div>
     <h1>Gestão<br><em>Eficiente</em></h1>
-    <div class="autoria"><b>Aureo Gionco</b> · a maturidade da gestão como caminho para ampliar o impacto</div>
+    <div class="marca-completa"></div>
+    <div class="autoria">A maturidade da gestão como caminho para ampliar o impacto</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O que falar</span></div><span class="notas-tempo">00:00</span>
@@ -655,7 +724,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <section class="slide">
   <div class="tela gancho">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
-    <div class="gancho-frase">Eu já respondi a um processo de <em>trezentos mil reais</em><br>por causa de uma pasta de documentos.</div>
+    <div class="gancho-frase">Eu já respondi a um processo de<br><em>R$ 300.000</em><br>por causa de uma pasta de documentos.</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O gancho</span></div><span class="notas-tempo">00:10</span>
@@ -672,10 +741,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <div class="tela">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="frase-impacto">Eu não fui negligente.<br>Eu estava <em>ocupado com a missão</em>.</div>
-    <div class="fecho">
-      <span>Essa é a parte que ninguém conta.</span>
-      <span>O tombo quase nunca vem de <b>descuido</b>.</span>
-    </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O que falar</span></div><span class="notas-tempo">01:00</span>
@@ -690,19 +755,18 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <section class="slide">
   <div class="tela">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
-    <div class="cabecalho"><div class="titulo">E a conta chega num<br><em>momento difícil</em> para o setor</div></div>
+    <div class="cabecalho"><div class="titulo">E não é só comigo.<br>Mudou <em>a régua</em> para todo mundo</div></div>
     <div class="lista">
-      <div><span class="seta">→</span><span class="texto">Nunca se exigiu tanta transparência e prestação de contas</span></div>
+      <div><span class="seta">→</span><span class="texto">O que passava despercebido há dez anos, hoje trava recurso</span></div>
       <div><span class="seta">→</span><span class="texto">O financiador que pedia relatório agora pede evidência</span></div>
       <div><span class="seta">→</span><span class="texto">Recurso mais escasso e mais disputado</span></div>
       <div><span class="seta">→</span><span class="texto">A régua da profissionalização subiu para todo mundo</span></div>
-      <div><span class="seta">→</span><span class="texto">Inclusive para quem tem três pessoas na equipe</span></div>
+      <div><span class="seta">→</span><span class="texto"><strong>E vale igual para quem tem três pessoas na equipe</strong></span></div>
     </div>
-    <div class="fecho"><span>A exigência subiu para todos.</span><span>O <b>tamanho da equipe</b> não subiu junto.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O cenário</span></div><span class="notas-tempo">01:40</span>
-    <div class="notas-corpo"><p>Rápido — <strong>não leia a lista.</strong> Diga três dos cinco e siga. A plateia lê sozinha.</p></div>
+    <div class="notas-corpo"><p>Emende direto da sua história: <strong>"e o pior é que eu não fui o único, nem fui azarado — mudou a régua."</strong></p><p>Rápido — <strong>não leia a lista.</strong> Diga três dos cinco e siga.</p></div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -728,10 +792,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="nao"><span class="marca">✕</span><span class="texto">Gestão rouba tempo da ação</span></div>
       <div class="sim"><span class="marca">✓</span><span class="texto">Gestão devolve tempo para a ação</span></div>
     </div>
-    <div class="fecho">
-      <span>Toda hora apagando incêndio é hora que você não passou com quem atende.</span>
-      <span>Toda captação morta por certidão vencida é <b>projeto que não aconteceu</b>.</span>
-    </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A tese</span></div><span class="notas-tempo">02:50</span>
@@ -743,11 +803,37 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <section class="slide">
   <div class="tela gancho">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
-    <div class="gancho-frase">A pergunta de hoje não é<br>se você é organizado.<br><br>É: <em>você sabe onde a sua gestão está frágil?</em></div>
+    <div class="gancho-frase">A pergunta não é<br>se você é organizado.<br><br>É <em>quanto tempo você perde</em><br>por não ser.</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A ponte</span></div><span class="notas-tempo">03:30</span>
     <div class="notas-corpo"><p>"E é isso que a gente vai descobrir hoje, junto."</p></div>
+    <div class="notas-ref"></div>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="tela">
+    <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+    <div class="cabecalho"><div class="titulo">A conta que <em>ninguém faz</em></div></div>
+    <div class="passos">
+      <div><span class="n">1</span><span class="rotulo">Procurar papel</span><span class="valor">que não está onde deveria — 20 min por semana</span></div>
+      <div><span class="n">2</span><span class="rotulo">Refazer conta</span><span class="valor">prestação atrasada, recibo perdido — 3h por mês</span></div>
+      <div><span class="n">3</span><span class="rotulo">Correr atrás</span><span class="valor">de certidão vencida na véspera — 4h por trimestre</span></div>
+    </div>
+    <div class="numeros" style="margin-top:3cqw">
+      <div><div class="n">69h</div><div class="d">por ano</div></div>
+      <div><div class="n">9</div><div class="d">dias de trabalho</div></div>
+      <div><div class="n">0</div><div class="d">atendimento a mais</div></div>
+    </div>
+  </div>
+  <aside class="notas">
+    <div class="notas-topo"><span>A virada, em número</span></div><span class="notas-tempo">03:50</span>
+    <div class="notas-corpo">
+      <p><strong>Ao contrário do que todo mundo pensa</strong>, gestão não custa tempo — a falta dela custa. Nove dias por ano apagando incêndio, e nenhum atendimento a mais por causa disso.</p>
+      <p>"É por isso que eu digo: <strong>gestão devolve tempo para a ação.</strong>"</p>
+    </div>
+    <div class="notas-aviso"><strong>São estimativas ilustrativas</strong>, não pesquisa — diga isso ("é uma conta de padeiro"). Se você tiver os números reais da sua organização, troque: fica mais forte.</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -757,14 +843,19 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <section class="slide">
   <div class="tela promessa">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
-    <div class="promessa-rotulo">Nos próximos 80 minutos</div>
-    <div class="promessa-frase">Você não vai assistir a uma palestra sobre gestão. <b>Você vai sair daqui com o Mapa da sua organização preenchido.</b></div>
-    <div class="promessa-apoio">Não um modelo em branco para preencher depois. Preenchido — hoje, por você, comigo do lado.</div>
+    <div class="promessa-rotulo">A promessa</div>
+    <div class="promessa-frase">Você sai daqui com <b>isto preenchido</b>.</div>
+    <table class="mapa" style="margin-top:2.6cqw">
+      <tr><th>O que não pode cair</th><th>Como está</th><th>Quem é o guardião</th><th>Quando eu olho</th></tr>
+      <tr><td>Certidões negativas</td><td><span class="marca-nao">Não sei</span></td><td class="vazio">ninguém</td><td>quando dá problema</td></tr>
+      <tr><td>Prestação de contas</td><td><span class="marca-meio">Atrasado</span></td><td>a coordenadora</td><td>quando cobram</td></tr>
+      <tr><td>Listas de presença</td><td><span class="marca-ok">Em dia</span></td><td>a educadora</td><td>todo mês</td></tr>
+    </table>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A promessa</span></div><span class="notas-tempo">04:00</span>
     <div class="notas-corpo">
-      <p>"Um mapa de quatro colunas: o que na sua organização não pode cair, como cada coisa está hoje, quem cuida e com que frequência alguém olha."</p>
+      <p><strong>Mostre o objeto, não fale dele.</strong> "É isso aqui. Quatro colunas. No fim da aula esse quadro está preenchido com a realidade da SUA organização — não com a minha."</p>
       <p>"Quando a gente terminar, você vai ver num quadro só onde está a fragilidade da sua gestão. E vai saber por onde começar na terça."</p>
       <p><strong>"E quem chegar até o fim tem uma coisa esperando. Eu conto no final."</strong></p>
     </div>
@@ -782,7 +873,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="seta">↓</div>
       <div class="caixa depois"><div class="rotulo">Onde eu estou</div><div class="valor">Fundador de uma plataforma que administra o investimento social de empresas como Petrobras, Itaipu e Caixa</div></div>
     </div>
-    <div class="fecho"><span>E, entre uma coisa e outra,</span><span>eu <b>quebrei a cara</b> com a gestão da minha própria organização.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Quem fala</span></div><span class="notas-tempo">05:10</span>
@@ -826,17 +916,17 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <div class="tela">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="cabecalho"><div class="titulo">O Mapa do Que <em>Não Pode Cair</em></div></div>
-    <div class="instrumento">
-      <div class="parte vazia"><span class="n">1</span><div class="rotulo">O que não pode cair</div></div>
-      <div class="parte vazia"><span class="n">2</span><div class="rotulo">Como está hoje</div></div>
-      <div class="parte vazia"><span class="n">3</span><div class="rotulo">Quem é o guardião</div></div>
-      <div class="parte vazia"><span class="n">4</span><div class="rotulo">Quando eu olho</div></div>
-    </div>
-    <div class="instrumento-legenda">Quatro colunas · uma linha por item</div>
+    <table class="mapa">
+      <tr><th>O que não pode cair</th><th>Como está hoje</th><th>Quem é o guardião</th><th>Quando eu olho</th></tr>
+      <tr><td>Certidões negativas</td><td><span class="marca-nao">Não sei</span></td><td class="vazio">ninguém definido</td><td>quando dá problema</td></tr>
+      <tr><td>Prestação de contas do projeto</td><td><span class="marca-meio">Atrasado</span></td><td>a coordenadora</td><td>quando o financiador cobra</td></tr>
+      <tr><td>Listas de presença das oficinas</td><td><span class="marca-ok">Em dia</span></td><td>a educadora</td><td>todo mês</td></tr>
+      <tr><td>Indicadores dos atendidos</td><td><span class="marca-nao">Não sei</span></td><td class="vazio">ninguém definido</td><td class="vazio">nunca</td></tr>
+    </table>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O instrumento</span></div><span class="notas-tempo">11:00</span>
-    <div class="notas-corpo"><p>"Olha o mapa. Quatro colunas. <strong>Vou preencher uma linha com você, usando a minha história.</strong>"</p></div>
+    <div class="notas-corpo"><p>"Esse é o mapa inteiro. <strong>Olha o quadro todo primeiro</strong> — depois a gente vai coluna por coluna."</p><p>Já dá para ver o padrão: <strong>a única linha em dia é a única que tem dono e frequência.</strong> Não comente ainda — plante.</p></div>
     <div class="notas-aviso">Se você pular este bloco, <strong>a primeira pausa quebra</strong> — eles não vão saber o que é guardião nem o que é frequência.</div>
     <div class="notas-ref"></div>
   </aside>
@@ -852,7 +942,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div><span class="n">3</span><span class="rotulo">Quem cuida?</span><span class="valor">uma pessoa, com nome</span></div>
       <div><span class="n">4</span><span class="rotulo">Quando olho?</span><span class="valor">semana · mês · ano · quando dá problema</span></div>
     </div>
-    <div class="fecho"><span>Não é uma lista de tarefas.</span><span>É o mapa do que <b>não pode parar</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O que falar</span></div><span class="notas-tempo">11:40</span>
@@ -867,7 +956,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <div class="tela">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="frase-impacto">O líder não é<br>quem faz.<br><br>É quem <em>garante que alguém faz</em>.</div>
-    <div class="fecho"><span>"A equipe" não é resposta.</span><span>"A gente" <b>também não</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Coluna 3 — o guardião</span></div><span class="notas-tempo">13:30</span>
@@ -887,7 +975,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="nao"><span class="marca">✕</span><span class="texto">Quando dá problema · quando o financiador cobra · quando falta dinheiro</span></div>
       <div class="sim"><span class="marca">✓</span><span class="texto">Toda semana · todo mês · todo trimestre</span></div>
     </div>
-    <div class="fecho"><span>Uma é uma frequência.</span><span>A outra é a <b>ausência</b> de uma.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Coluna 4 — a rotina</span></div><span class="notas-tempo">14:40</span>
@@ -942,7 +1029,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="rotulo">Eu não vou repetir. Só quero fazer uma pergunta sobre aquilo</div>
       <div class="corpo">Do que ele te ajudou a construir — <strong>o que não pode cair?</strong></div>
     </div>
-    <div class="fecho"><span>Plano estratégico não morre de erro.</span><span>Morre de <b>abandono</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A ponte com o Jaime</span></div><span class="notas-tempo">18:30</span>
@@ -1034,7 +1120,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="nao"><span class="marca">✕</span><span class="texto">"A gente atende cerca de sessenta jovens"</span></div>
       <div class="sim"><span class="marca">✓</span><span class="texto">A lista, com nome e frequência, em dez minutos</span></div>
     </div>
-    <div class="fecho"><span>O impacto acontece na rotina.</span><span>E a rotina, se não for registrada, <b>some</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O que falar</span></div><span class="notas-tempo">28:30</span>
@@ -1052,7 +1137,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div><span class="n">2</span><span class="rotulo">A coleta</span><span class="valor">alguém recolhe as listas, ou elas ficam com quem aplicou?</span></div>
       <div><span class="n">3</span><span class="rotulo">A saída</span><span class="valor">se quem toca a atividade sair amanhã, o que se perde junto?</span></div>
     </div>
-    <div class="fecho"><span>A terceira é a que dói.</span><span><b>Guarda ela.</b></span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>As perguntas-chave</span></div><span class="notas-tempo">30:00</span>
@@ -1107,7 +1191,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="seta">↓</div>
       <div class="caixa depois"><div class="rotulo">O que se perdeu</div><div class="valor">A certidão negativa — e, sem ela, o recurso inteiro</div></div>
     </div>
-    <div class="fecho"><span>Não faltou projeto. Não faltou mérito.</span><span>Faltou <b>uma certidão válida no dia do envio</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A âncora</span></div><span class="notas-tempo">36:20</span>
@@ -1192,7 +1275,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="rotulo">O que eu vi quando comecei, lá na Pastoral</div>
       <div class="corpo">Muita ação importante acontecendo, muita gente séria trabalhando — e <strong>quase nenhuma capacidade de demonstrar o que estava mudando.</strong></div>
     </div>
-    <div class="fecho"><span>A organização que não mede não fica só sem relatório.</span><span>Ela fica <b>sem aprender</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O que falar</span></div><span class="notas-tempo">46:20</span>
@@ -1212,7 +1294,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="nao"><span class="marca">✕</span><span class="texto">"Fizemos 96 oficinas este ano" — isso é registro de operação</span></div>
       <div class="sim"><span class="marca">✓</span><span class="texto">"41% dos jovens saíram empregados" — isso é o que mudou</span></div>
     </div>
-    <div class="fecho"><span>Quem mede aprende.</span><span>Quem aprende <b>evolui</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A distinção</span></div><span class="notas-tempo">48:30</span>
@@ -1294,7 +1375,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="rotulo">Dívida de INSS acumulada ao longo de anos</div>
       <div class="corpo">Não houve má-fé de ninguém. Houve <strong>uma documentação que ninguém organizava, uma prestação de contas que ninguém conferia, e um processo entre a organização e o contador que ninguém era dono.</strong></div>
     </div>
-    <div class="fecho"><span>Eu confiava. Ele mandava. Eu assinava.</span><span>E ninguém nunca sentou para <b>conferir</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A história inteira</span></div><span class="notas-tempo">57:00</span>
@@ -1328,10 +1408,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <div class="tela">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="frase-impacto">Governança é a garantia<br>de que as coisas continuam<br>quando <em>alguém falta</em>.</div>
-    <div class="fecho">
-      <span>É o pilar mais invisível dos cinco —</span>
-      <span>o único em que <b>nada acontecer é o resultado esperado</b>.</span>
-    </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O pilar</span></div><span class="notas-tempo">60:00</span>
@@ -1400,7 +1476,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="nao"><span class="marca">✕</span><span class="texto">Antes de existir rotina — só digitaliza o caos</span></div>
       <div class="sim"><span class="marca">✓</span><span class="texto">Quando a rotina manual já existe e está quebrando por volume</span></div>
     </div>
-    <div class="fecho"><span>Eu vendo software de gestão.</span><span>E estou te dizendo para <b>não comprar ainda</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O que a organizadora pediu</span></div><span class="notas-tempo">68:00</span>
@@ -1423,7 +1498,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div><div class="n">?</div><div class="d">linhas sem dono</div></div>
       <div><div class="n">?</div><div class="d">linhas em "quando dá problema"</div></div>
     </div>
-    <div class="fecho"><span>Não é sobre você ser bom ou mau gestor.</span><span>É o nível em que a sua gestão está <b>hoje</b>. E nível <b>sobe</b>.</span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Batida 1 — o retrato</span></div><span class="notas-tempo">70:00</span>
@@ -1506,7 +1580,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div><span class="seta">→</span><span class="texto">A governança garante consistência</span></div>
       <div><span class="seta">→</span><span class="texto"><strong>E volta para a estratégia — agora com o mapa na mão</strong></span></div>
     </div>
-    <div class="fecho"><span>O curso de Teoria da Mudança é esse recomeço.</span><span><b>Um nível acima.</b></span></div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O fecho do ciclo</span></div><span class="notas-tempo">75:30</span>
@@ -1660,9 +1733,29 @@ body[data-modo="limpo"] .paginacao { display: none; }
   var slides = [].slice.call(document.querySelectorAll(".slide"));
   if (!slides.length) return;
 
-  var NOME = location.pathname.split("/").slice(-2).join("/");
+  /* A chave nao pode depender do nome do arquivo: slides.html e
+     slides-completo.html sao a MESMA palestra, e trocar de um para o outro nao
+     pode fazer a revisao sumir. Usa a pasta + o titulo. */
+  var partes = location.pathname.split("/");
+  var NOME = (partes[partes.length - 2] || "palestra") + "::" + (document.title || "").trim();
   var K_COM = "aureo-revisao-com::" + NOME;
   var K_OK  = "aureo-revisao-ok::" + NOME;
+
+  /* migra revisoes gravadas pelo esquema antigo (chave por caminho de arquivo) */
+  (function migrar() {
+    var pasta = partes[partes.length - 2] || "";
+    ["com", "ok"].forEach(function (tipo) {
+      var destino = tipo === "com" ? K_COM : K_OK;
+      if (localStorage.getItem(destino)) return;
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (!k || k.indexOf("aureo-revisao-" + tipo + "::") !== 0 || k === destino) continue;
+        if (pasta && k.indexOf(pasta) === -1) continue;
+        localStorage.setItem(destino, localStorage.getItem(k));
+        break;
+      }
+    });
+  })();
 
   function ler(k) { try { return JSON.parse(localStorage.getItem(k) || "{}"); } catch (e) { return {}; } }
   function gravar(k, d) { try { localStorage.setItem(k, JSON.stringify(d)); } catch (e) {} }
@@ -1699,8 +1792,16 @@ body[data-modo="limpo"] .paginacao { display: none; }
     ".slide.rv-aprovado .tela{box-shadow:inset 0 0 0 4px #0E625B}",
     ".slide.rv-comentado .tela{box-shadow:inset 0 0 0 4px #B21F35}",
 
-    ".rv-faixa{width:100%;max-width:1500px;margin:14px auto 0;background:#FAF7F2;border-radius:14px;",
-    "padding:15px 18px;box-shadow:0 10px 34px rgba(0,0,0,.35);font-family:'Carlito',Calibri,system-ui,sans-serif}",
+    /* fixa no rodape: com 49 slides a faixa ficava fora da tela e o body tem
+       overflow hidden, entao nao havia como rolar ate os botoes de exportar */
+    ".rv-faixa{position:fixed;left:0;right:0;bottom:0;z-index:120;background:#FAF7F2;",
+    "border-radius:16px 16px 0 0;padding:12px 22px 14px;box-shadow:0 -8px 34px rgba(0,0,0,.45);",
+    "max-height:44vh;overflow-y:auto;font-family:'Carlito',Calibri,system-ui,sans-serif}",
+    /* o deck encolhe o suficiente para nunca ficar atras da faixa */
+    "body.rv-on{justify-content:flex-start;padding-top:1.4vh}",
+    "body.rv-on .apresentacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
+    "body.rv-on .barra,body.rv-on .navegacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
+    "body.rv-on .dica-teclado{display:none}",
     ".rv-cab{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",
     ".rv-qual{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#55637E}",
     ".rv-perg{flex:1;min-width:180px;font-size:17px;font-weight:800;color:#132B70}",
@@ -1709,20 +1810,22 @@ body[data-modo="limpo"] .paginacao { display: none; }
     "cursor:pointer;border:2px solid transparent;transition:.14s;white-space:nowrap}",
     ".rv-b.ok{background:#0E625B;color:#fff}.rv-b.ok:hover{background:#14856C}",
     ".rv-b.ok.on{background:#fff;color:#0E625B;border-color:#0E625B}",
+    ".rv-b.exp{background:#fff;color:#132B70;border-color:#E3D9CB;font-size:13px;padding:11px 16px}",
+    ".rv-b.exp:hover{background:#F2ECE3}",
 
-    ".rv-box{margin-top:13px;border-top:1px solid #E3D9CB;padding-top:13px}",
+    ".rv-box{margin-top:10px;border-top:1px solid #E3D9CB;padding-top:10px}",
     ".rv-box h4{margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#B21F35;",
     "display:flex;align-items:baseline;gap:10px}",
     ".rv-salvo{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:none;color:#0E625B;opacity:0;transition:opacity .2s}",
     ".rv-salvo.on{opacity:1}",
-    ".rv-box textarea{width:100%;min-height:94px;resize:vertical;font-family:inherit;font-size:15px;",
+    ".rv-box textarea{width:100%;min-height:64px;resize:vertical;font-family:inherit;font-size:15px;",
     "line-height:1.55;color:#14213D;background:#F2ECE3;border:1px solid #E3D9CB;border-radius:9px;padding:11px 13px;outline:none}",
     ".rv-box textarea:focus{border-color:#B21F35}",
     ".rv-row{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}",
     ".rv-x{font-family:inherit;font-size:13px;font-weight:700;border-radius:11px;padding:10px 16px;cursor:pointer;border:1px solid #E3D9CB;background:#fff;color:#55637E}",
 
 
-    ".rv-rod{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;border-top:1px solid #E3D9CB;padding-top:11px}",
+    ".rv-rod{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px}",
     ".rv-cnt{font-size:13px;font-weight:700;color:#55637E}",
     ".rv-sp{flex:1}",
     ".rv-rod button{font-family:inherit;font-size:13px;font-weight:800;border-radius:11px;padding:9px 15px;",
@@ -1730,7 +1833,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
     ".rv-rod button:hover{background:#F2ECE3}",
     ".rv-dica{font-size:12px;color:#55637E;opacity:.8;width:100%;line-height:1.45}",
 
+    /* o modo limpo tem de voltar a ocupar a tela inteira: as regras de rv-on
+       tem a mesma especificidade e sao injetadas depois, entao venceriam */
     "body[data-modo='limpo'] .rv-faixa,body[data-modo='limpo'] .rv-selo{display:none!important}",
+    "body[data-modo='limpo'].rv-on{justify-content:center;padding:0}",
+    "body[data-modo='limpo'].rv-on .apresentacao,body[data-modo='limpo'].rv-on .barra,",
+    "body[data-modo='limpo'].rv-on .navegacao{max-width:none}",
     "body[data-modo='limpo'] .slide .tela{box-shadow:none!important}",
     "@media print{.rv-faixa,.rv-selo{display:none!important}.slide .tela{box-shadow:none!important}}"
   ].join("");
@@ -1755,14 +1863,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
       '<span class="rv-perg">Este slide está bom?</span>' +
       '<span class="rv-bts">' +
         '<button class="rv-b ok" type="button" data-ac="ok">✓ Aprovar este slide</button>' +
+        '<button class="rv-b exp" type="button" data-ac="copiar">⧉ Copiar revisão</button>' +
+        '<button class="rv-b exp" type="button" data-ac="baixar">⬇ Baixar</button>' +
       '</span>' +
     '</div>' +
     '<div class="rv-box"><h4><span class="rv-tit"></span><span class="rv-salvo">✓ salvo</span></h4>' +
       '<textarea placeholder="O que mudar neste slide? Pode ser o texto, o bloco, a ordem, o tempo... — vai salvando sozinho"></textarea>' +
       '<div class="rv-row"><button class="rv-x" type="button" data-ac="apagar">Apagar este comentário</button></div></div>' +
     '<div class="rv-rod"><span class="rv-cnt"></span><span class="rv-sp"></span>' +
-      '<button type="button" data-ac="copiar">⧉ Copiar revisão</button>' +
-      '<button type="button" data-ac="baixar">⬇ Baixar arquivo</button>' +
       '<span class="rv-dica">Navegue com ← → ou pelos botões acima. Em cada slide, aprove ou comente aqui. Fica salvo neste navegador — no fim, copie ou baixe e mande de volta.</span>' +
     '</div>';
 
@@ -1868,7 +1976,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     return linhas.join("\n");
   }
 
-  faixa.querySelector(".rv-rod").addEventListener("click", function (e) {
+  faixa.addEventListener("click", function (e) {
     var ac = e.target.getAttribute && e.target.getAttribute("data-ac");
     if (!ac) return;
     var btn = e.target, rotulo = btn.textContent;
@@ -1886,6 +1994,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     }
   });
 
+  document.body.classList.add("rv-on");
   pintar();
 })();
 
