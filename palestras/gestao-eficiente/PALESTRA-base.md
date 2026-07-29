@@ -148,27 +148,40 @@ Detalhamento em `00-pre-producao/case-e-ancoras.md`.
 
 ## 6. A estrutura
 
-**~85 min de palco**, dentro de um encontro de 1h30.
+**~85 min de palco**, dentro de um encontro de 1h30. Ordem dos pilares = a do
+próprio documento de Aureo: estratégia define o caminho, a operação executa, as
+finanças sustentam, o monitoramento mede, a governança garante consistência.
 
-| Movimento | Tempo | Conteúdo | Blocos |
-|-----------|-------|----------|--------|
-| 1 · Abertura impactante | 4 min | gancho (INSS) → problema → espelho → ponte | `capa` `gancho` |
-| 2 · Grande promessa | 2 min | a promessa + quem fala, 2 frases | `promessa` |
-| 3 · Volta 1 | 15 min | 11 de conteúdo + **pausa 4** | `contraste` `passos` `pausa` `instrumento` |
-| 3 · Volta 2 | 15 min | 11 + **pausa 4** | idem |
-| 3 · Volta 3 | 15 min | 11 + **pausa 4** | idem |
-| 3 · Volta 4 | 15 min | 11 + **pausa 4** · inclui o critério do software | idem |
-| 5 · Grande finale | 6 min | volta ao gancho → princípio → segunda-feira | `instrumento` `frase-impacto` |
-| **Folga** | **13 min** | online ao vivo sempre escorrega, e o Q&A pode cair aqui dentro | |
+| Movimento | Tempo | Acum. | Blocos |
+|---|---|---|---|
+| Abertura — o gancho do INSS, sem conclusão | 4 | 00:00 | `capa` `gancho` |
+| A promessa + teaser do prêmio + quem fala | 2 | 04:00 | `promessa` |
+| A ferramenta — link + QR, plataforma Pratika | 5 | 06:00 | `pausa` |
+| O instrumento — as 4 colunas, uma linha ao vivo | 7 | 11:00 | `instrumento` |
+| Pilar 1 · **Estratégia** — ponte com o Jaime | 8 | 18:00 | `passos` `pausa` |
+| Pilar 2 · **Operação** — os editais perdidos | 10 | 26:00 | `contraste` `passos` `pausa` |
+| Pilar 3 · **Finanças** — a certidão que matou a captação | 10 | 36:00 | `passos` `pausa` |
+| Pilar 4 · **Monitoramento** — território mais forte | 10 | 46:00 | `contraste` `passos` `pausa` |
+| Pilar 5 · **Governança** — o INSS contado inteiro | 12 | 56:00 | `declaracao` `teste` `pausa` `instrumento` |
+| Finale — retrato, princípio, terça-feira e prêmio | 8 | 68:00 | `instrumento` `frase-impacto` |
+| **Folga** | **9** | | |
 
-> Pausa caiu de 5 para **4 min**: o encontro encolheu de 2h para 1h30 e a folga
-> precisa absorver um eventual Q&A dentro do tempo. Se confirmar que o Q&A é
-> fora, a pausa volta para 5.
+### Decisões do formato
 
-> Não há movimento 4 separado: **a prática está dentro de cada volta**, nas
-> pausas em que a plateia preenche a coluna junto com Aureo.
-
----
+- **A prática não é um bloco:** está dentro de cada pilar, nas pausas em que a
+  plateia preenche o Mapa na plataforma da Pratika, junto com Aureo.
+- **O instrumento é ensinado uma vez**, antes do primeiro pilar. Sem isso a
+  primeira pausa quebra — eles não sabem o que é guardião nem o que é frequência.
+- **A logística vem no minuto 6**, nunca no zero. Abrir com link gasta o momento
+  de maior atenção da aula explicando ferramenta.
+- **Governança por último** fecha o gancho da abertura: a história do INSS fica
+  pendurada 56 minutos e ganha a conclusão ali.
+- **O prêmio** (curso de Teoria da Mudança da Pratika) é anunciado sem detalhe na
+  promessa e detalhado no finale. Ele não é brinde: é o recomeço do ciclo dos
+  cinco pilares, um nível acima — a estratégia revisitada com o Mapa na mão.
+- **São 5 partes, não 4.** A regra de "máximo 4" vale quando cada parte traz
+  conceito novo; aqui o conceito é ensinado uma vez e os cinco pilares são cinco
+  aplicações da mesma mecânica.
 
 ## 7. Identidade visual
 
@@ -188,7 +201,7 @@ Detalhamento em `00-pre-producao/case-e-ancoras.md`.
 | Fase 1 · Ideia-instrumento | ✅ proposta, reenquadrada como guardião — aguarda corte de Aureo |
 | Fase 2 · Case e credencial | ✅ proposta |
 | Fase 3 · Âncoras | ✅ proposta |
-| Fase 4 · Estrutura | rascunhada na seção 6 |
-| Fase 5 · Roteiro | — |
+| Fase 4 · Estrutura | ✅ fechada |
+| Fase 5 · Roteiro | ✅ escrito — aguarda leitura de Aureo |
 | Fase 6 · Slides | — |
 | Fase 7 · Ensaio e export | — |
