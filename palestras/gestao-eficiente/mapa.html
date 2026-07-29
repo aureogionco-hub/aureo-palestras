@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Mapa do Que Não Pode Cair — material do participante</title>
+<link rel="stylesheet" href="../../_design-slides/tokens.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--fonte-texto); background: #E8E3DA; color: var(--tinta);
+    padding: 40px 20px 80px; display: flex; flex-direction: column; align-items: center; gap: 34px;
+  }
+  .folha {
+    width: 100%; max-width: 1180px; background: var(--papel);
+    border-radius: 14px; padding: 44px 48px 40px;
+    box-shadow: 0 10px 40px rgba(19,43,112,.10);
+  }
+  .marca { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--azul-profundo); opacity: .45; }
+  h1 { font-family: var(--fonte-titulo); font-size: 38px; font-weight: 800; color: var(--azul-profundo); line-height: 1.1; margin: 10px 0 6px; letter-spacing: -.02em; }
+  h1 em { color: var(--vermelho-profundo); font-style: normal; }
+  .sub { font-size: 16px; color: var(--tinta-suave); font-weight: 500; margin-bottom: 26px; }
+  h2 { font-family: var(--fonte-titulo); font-size: 22px; font-weight: 800; color: var(--azul-profundo); margin-bottom: 6px; }
+  .nota { font-size: 14.5px; color: var(--tinta-suave); line-height: 1.6; margin-bottom: 20px; max-width: 850px; }
+  .nota b { color: var(--azul-assinatura); }
+
+  /* ---- grade dos 5 pilares ---- */
+  .pilares { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 8px; }
+  .pilar { background: var(--papel-fundo); border: 1.5px solid var(--areia); border-radius: 10px; padding: 14px 14px 16px; }
+  .pilar .n { width: 24px; height: 24px; border-radius: 50%; background: var(--azul-assinatura); color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 9px; }
+  .pilar h3 { font-size: 14.5px; font-weight: 800; color: var(--azul-profundo); margin-bottom: 6px; }
+  .pilar p { font-size: 12.5px; color: var(--tinta-suave); line-height: 1.45; }
+
+  /* ---- tabela do mapa ---- */
+  table { width: 100%; border-collapse: separate; border-spacing: 0 6px; }
+  thead th {
+    font-size: 11.5px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--tinta-suave); text-align: left; padding: 0 14px 8px;
+  }
+  thead th span { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--tinta-suave); opacity: .8; margin-top: 3px; }
+  tbody td { background: var(--papel-fundo); padding: 13px 14px; font-size: 14.5px; vertical-align: middle; }
+  tbody td:first-child { border-radius: 9px 0 0 9px; font-weight: 700; color: var(--azul-profundo); }
+  tbody td:last-child { border-radius: 0 9px 9px 0; }
+  tbody tr.grupo td { background: transparent; padding: 12px 14px 2px; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--verde-petroleo); }
+
+  .tag { display: inline-block; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+  .ok    { background: #E4F0EA; color: var(--verde-petroleo); border: 1.3px solid var(--verde-petroleo); }
+  .atras { background: #FBF1DF; color: #8A6413; border: 1.3px solid var(--acafrao); }
+  .nsei  { background: #FBEDEE; color: var(--vermelho-profundo); border: 1.3px solid var(--vermelho-profundo); }
+  .vazio { color: var(--tinta-suave); opacity: .55; font-style: italic; }
+  td.dono, td.olho { color: var(--tinta); font-weight: 600; }
+
+  /* ---- retrato ---- */
+  .retrato { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+  .r { flex: 1; min-width: 180px; border-radius: 10px; padding: 16px 18px; }
+  .r .big { font-family: var(--fonte-titulo); font-size: 34px; font-weight: 800; line-height: 1; }
+  .r .lb { font-size: 13px; font-weight: 600; margin-top: 6px; line-height: 1.4; }
+  .r.a { background: #FBEDEE; } .r.a .big, .r.a .lb { color: var(--vermelho-profundo); }
+  .r.b { background: #FBF1DF; } .r.b .big, .r.b .lb { color: #8A6413; }
+  .r.c { background: #E4F0EA; } .r.c .big, .r.c .lb { color: var(--verde-petroleo); }
+
+  .destaque { margin-top: 22px; background: var(--papel-fundo); border-left: 4px solid var(--vermelho-profundo); border-radius: 0 9px 9px 0; padding: 16px 20px; font-size: 15.5px; line-height: 1.6; color: var(--tinta); }
+  .destaque b { color: var(--vermelho-profundo); }
+
+  /* ---- versão em branco ---- */
+  .branco tbody td { background: transparent; border-bottom: 1.5px dashed var(--papel-borda); border-radius: 0; height: 46px; }
+  .branco tbody td:first-child { border-radius: 0; }
+  .rodape { font-size: 12px; color: var(--tinta-suave); opacity: .8; margin-top: 22px; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · A GRADE DE VARREDURA ============ -->
+<div class="folha">
+  <div class="marca">Gestão Eficiente · Aureo Gionco</div>
+  <h1>O Mapa do Que <em>Não Pode Cair</em></h1>
+  <div class="sub">O retrato da maturidade da gestão da sua organização — feito por você, em quatro passos.</div>
+
+  <h2>Passo 1 · Onde procurar</h2>
+  <p class="nota">Antes de listar, varra os <b>cinco pilares</b>. Quase todo mundo só lembra do pilar em que já se queimou — a grade existe para você enxergar os outros quatro.</p>
+  <div class="pilares">
+    <div class="pilar"><div class="n">1</div><h3>Estratégia</h3><p>O plano, as metas, a transformação que a organização busca</p></div>
+    <div class="pilar"><div class="n">2</div><h3>Operação</h3><p>Atendimentos, oficinas, listas de presença, registro das ações</p></div>
+    <div class="pilar"><div class="n">3</div><h3>Finanças</h3><p>Caixa, orçamento, execução financeira, prestação de contas</p></div>
+    <div class="pilar"><div class="n">4</div><h3>Monitoramento</h3><p>Indicadores, metas, evidências do que mudou</p></div>
+    <div class="pilar"><div class="n">5</div><h3>Governança</h3><p>Atas, contratos, certidões, obrigações legais e trabalhistas</p></div>
+  </div>
+</div>
+
+<!-- ============ 2 · EXEMPLO PREENCHIDO ============ -->
+<div class="folha">
+  <div class="marca">Exemplo preenchido</div>
+  <h1>Como o Mapa fica <em>quando é honesto</em></h1>
+  <div class="sub">Uma organização real que atende 60 jovens, com três pessoas contratadas e oito voluntários.</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:31%">1 · O que não pode cair<span>o que, se parar, custa dinheiro ou credibilidade</span></th>
+        <th style="width:16%">2 · Como está hoje<span>a resposta honesta</span></th>
+        <th style="width:26%">3 · Quem é o guardião<span>uma pessoa, não "a equipe"</span></th>
+        <th style="width:27%">4 · Quando eu olho<span>com que frequência, de verdade</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="grupo"><td colspan="4">Governança</td></tr>
+      <tr>
+        <td>Certidões negativas (INSS, FGTS, Federal)</td>
+        <td><span class="tag nsei">Não sei</span></td>
+        <td class="dono vazio">ninguém definido</td>
+        <td class="olho">quando dá problema</td>
+      </tr>
+      <tr>
+        <td>Atas de assembleia e diretoria</td>
+        <td><span class="tag atras">Atrasado</span></td>
+        <td class="dono">eu</td>
+        <td class="olho">uma vez por ano</td>
+      </tr>
+
+      <tr class="grupo"><td colspan="4">Finanças</td></tr>
+      <tr>
+        <td>Prestação de contas do projeto financiado</td>
+        <td><span class="tag atras">Atrasado</span></td>
+        <td class="dono">a coordenadora</td>
+        <td class="olho">quando o financiador cobra</td>
+      </tr>
+      <tr>
+        <td>Fluxo de caixa do mês</td>
+        <td><span class="tag nsei">Não sei</span></td>
+        <td class="dono">eu</td>
+        <td class="olho">quando falta dinheiro</td>
+      </tr>
+
+      <tr class="grupo"><td colspan="4">Operação</td></tr>
+      <tr>
+        <td>Listas de presença das oficinas</td>
+        <td><span class="tag ok">Em dia</span></td>
+        <td class="dono">a educadora</td>
+        <td class="olho">todo mês</td>
+      </tr>
+      <tr>
+        <td>Folha e eSocial dos contratados</td>
+        <td><span class="tag ok">Em dia</span></td>
+        <td class="dono">o contador</td>
+        <td class="olho">todo mês</td>
+      </tr>
+
+      <tr class="grupo"><td colspan="4">Monitoramento</td></tr>
+      <tr>
+        <td>Indicadores dos jovens atendidos</td>
+        <td><span class="tag nsei">Não sei</span></td>
+        <td class="dono vazio">ninguém definido</td>
+        <td class="olho vazio">nunca</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="retrato">
+    <div class="r a"><div class="big">3</div><div class="lb">linhas em "não sei"<br>— o que mais custa caro</div></div>
+    <div class="r b"><div class="big">2</div><div class="lb">linhas atrasadas<br>com dono, mas sem rotina</div></div>
+    <div class="r c"><div class="big">2</div><div class="lb">linhas em dia<br>— e as duas têm dono e frequência</div></div>
+  </div>
+
+  <div class="destaque">
+    Repare no padrão: <b>as duas linhas em dia são exatamente as duas que têm um guardião com nome e uma frequência marcada.</b> Não é coincidência — é a coluna 3 e a coluna 4 fazendo o trabalho. E as três linhas em "não sei" são as três sem dono definido.
+  </div>
+
+  <div class="rodape"><span>Formação de Líderes no 3º Setor · Gestão Eficiente</span><span>Aureo Gionco</span></div>
+</div>
+
+<!-- ============ 3 · EM BRANCO ============ -->
+<div class="folha">
+  <div class="marca">Para preencher</div>
+  <h1>O seu Mapa</h1>
+  <div class="sub">Uma linha por item. Comece com 3 a 6 — dá para crescer depois.</div>
+
+  <table class="branco">
+    <thead>
+      <tr>
+        <th style="width:31%">1 · O que não pode cair</th>
+        <th style="width:16%">2 · Como está hoje<span>em dia · atrasado · não sei</span></th>
+        <th style="width:26%">3 · Quem é o guardião</th>
+        <th style="width:27%">4 · Quando eu olho</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="destaque" style="border-left-color: var(--verde-petroleo);">
+    <b>Segunda-feira:</b> escolha <b>uma</b> linha vermelha. Só uma. Dê um nome a ela na coluna 3 e uma frequência na coluna 4. É por aí que a maturidade sobe.
+  </div>
+
+  <div class="rodape"><span>Formação de Líderes no 3º Setor · Gestão Eficiente</span><span>Aureo Gionco</span></div>
+</div>
+
+</body>
+</html>
