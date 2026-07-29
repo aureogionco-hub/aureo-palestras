@@ -73,7 +73,8 @@ body {
    à direita ela assina, que é a função dela. */
 .tela .assinatura {
   position: absolute; bottom: 2.4cqw; right: 3.2cqw;
-  width: 8cqw; height: 2.6cqw; overflow: hidden; text-indent: -999em;
+  /* 30% maior que o original: a 15 metros a assinatura anterior desaparecia */
+  width: 10.4cqw; height: 3.4cqw; overflow: hidden; text-indent: -999em;
   background: var(--marca-reduzida) right center / contain no-repeat;
   opacity: 0.34;
 }

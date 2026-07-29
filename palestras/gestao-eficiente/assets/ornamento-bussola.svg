@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Ornamento de bússola do Programa Impulso, redesenhado em vetor para
+       escalar no telão sem serrar. Traço único, sem preenchimento: ele é
+       moldura, não ilustração — não pode competir com o conteúdo. -->
+  <g stroke="#F2D06B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- anel -->
+    <circle cx="100" cy="100" r="62"/>
+    <!-- estrela de oito pontas -->
+    <path d="M100 26 L112 76 L152 48 L124 88 L174 100 L124 112 L152 152 L112 124 L100 174 L88 124 L48 152 L76 112 L26 100 L76 88 L48 48 L88 76 Z"/>
+    <!-- miolo -->
+    <circle cx="100" cy="100" r="9"/>
+    <!-- esferas sobre o anel, nas diagonais -->
+    <circle cx="144" cy="56" r="11" fill="#FFFFFF"/>
+    <circle cx="56" cy="144" r="11" fill="#FFFFFF"/>
+    <!-- marcas de cardinal, fora do anel -->
+    <path d="M100 4 V16"/>
+    <path d="M100 184 V196"/>
+    <path d="M4 100 H16"/>
+    <path d="M184 100 H196"/>
+  </g>
+</svg>

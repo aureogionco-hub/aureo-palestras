@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestão Eficiente · exemplo de moldura</title>
+<link rel="stylesheet" href="../../_design-slides/slides.css">
+<style>
+/* ============================================================
+   MOLDURA DO EVENTO — proposta, ainda não está no sistema.
+   Só entra no _design-slides depois que Aureo aprovar.
+
+   Regra que governa tudo aqui: a moldura é MOBÍLIA, não conteúdo.
+   Ela identifica o evento e desaparece na leitura. No momento em que
+   alguém repara nela antes de ler o título, ela está errada.
+   ============================================================ */
+
+/* A tela com moldura recua em cima e embaixo para o conteúdo não colidir com
+   os logos. Esse recuo TEM UM CUSTO: sobra menos altura para o conteúdo, e o
+   ritmo interno precisa apertar um pouco para compensar. */
+.tela.com-moldura { padding: 5.4cqw 5.5cqw 4.8cqw; }
+.tela.com-moldura .cabecalho { margin-bottom: 2.3cqw; }
+.tela.com-moldura .fecho { margin-top: 2cqw; }
+
+/* overflow:hidden aqui é o que permite os ornamentos SANGRAREM para fora da
+   borda sem inflar a altura da .tela — sem isso a checagem de estouro acusa
+   transbordo que é, na verdade, o efeito desejado. */
+.moldura { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+
+/* --- logos do evento, canto superior esquerdo --- */
+.moldura-topo {
+  position: absolute; top: 2.5cqw; left: 3.4cqw;
+  display: flex; align-items: center; gap: 2cqw;
+}
+
+/* --- logos dos parceiros, no pé, centralizados --- */
+.moldura-pe {
+  position: absolute; bottom: 1.9cqw; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 2.6cqw;
+}
+
+/* slot de logo: some quando o PNG real entrar no lugar */
+.slot {
+  border: 0.14cqw dashed var(--areia); border-radius: 0.5cqw;
+  padding: 0.5cqw 1.1cqw; font-size: 1.05cqw; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--tinta-suave); opacity: 0.6; white-space: nowrap;
+}
+
+/* --- ornamentos de bússola: os dois cantos livres --- */
+.ornamento { position: absolute; opacity: 0.5; }
+.ornamento svg { width: 100%; height: 100%; display: block; }
+/* alto à direita, cortado pela borda — é assim no template do evento */
+.ornamento-td { top: -4cqw; right: -4cqw; width: 17cqw; height: 17cqw; }
+/* baixo à esquerda, também sangrando */
+.ornamento-be { bottom: -5cqw; left: -5cqw; width: 16cqw; height: 16cqw; }
+
+/* a assinatura sobe um pouco para não encostar na fileira de logos do pé */
+.tela.com-moldura .assinatura { bottom: 1.5cqw; }
+.tela.com-moldura .paginacao  { bottom: 2cqw; }
+</style>
+</head>
+<body data-modo="formador">
+
+<div class="barra">
+  <span><a href="../../README.md">← Repositório</a><span>Exemplo de moldura · 1 slide para aprovar</span></span>
+  <span>
+    <button class="modo-toggle" data-modo-toggle>P · alternar modo</button>
+    <span data-contador style="margin-left:14px"></span>
+  </span>
+</div>
+
+<div class="apresentacao">
+
+<section class="slide ativo">
+  <div class="tela com-moldura">
+    <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+
+    <div class="moldura">
+      <div class="moldura-topo">
+        <span class="slot">logo · programa impulso</span>
+        <span class="slot">logo · instituto grpcom</span>
+      </div>
+
+      <div class="ornamento ornamento-td">
+        <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <g stroke="var(--acafrao)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="100" cy="100" r="62"/>
+            <path d="M100 26 L112 76 L152 48 L124 88 L174 100 L124 112 L152 152 L112 124 L100 174 L88 124 L48 152 L76 112 L26 100 L76 88 L48 48 L88 76 Z"/>
+            <circle cx="100" cy="100" r="9"/>
+            <circle cx="144" cy="56" r="11" fill="var(--canvas-slide)"/>
+            <circle cx="56" cy="144" r="11" fill="var(--canvas-slide)"/>
+            <path d="M100 4 V16"/><path d="M100 184 V196"/>
+            <path d="M4 100 H16"/><path d="M184 100 H196"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="ornamento ornamento-be">
+        <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <g stroke="var(--acafrao)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="100" cy="100" r="62"/>
+            <path d="M100 26 L112 76 L152 48 L124 88 L174 100 L124 112 L152 152 L112 124 L100 174 L88 124 L48 152 L76 112 L26 100 L76 88 L48 48 L88 76 Z"/>
+            <circle cx="100" cy="100" r="9"/>
+            <circle cx="144" cy="56" r="11" fill="var(--canvas-slide)"/>
+            <circle cx="56" cy="144" r="11" fill="var(--canvas-slide)"/>
+            <path d="M100 4 V16"/><path d="M100 184 V196"/>
+            <path d="M4 100 H16"/><path d="M184 100 H196"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="moldura-pe">
+        <span class="slot">logo · bússola social</span>
+        <span class="slot">logo · pratika</span>
+      </div>
+    </div>
+
+    <span class="selo">Operação · critério 2 de 5</span>
+    <div class="cabecalho"><div class="titulo">As presenças e oficinas são<br>registradas <em>de forma integrada</em></div></div>
+    <div class="contraste">
+      <div class="nao"><span class="rotulo">Como costuma ser</span><span class="texto">Cada uma anota no seu caderno, e alguém passa a tarde somando papel</span></div>
+      <div class="sim"><span class="rotulo">Como precisa ser</span><span class="texto">Quem participou, quem faltou e o conteúdo — em um lugar, em minutos</span></div>
+    </div>
+    <div class="fecho">
+      <span>Ninguém deixou de anotar.</span>
+      <span>A informação existia — <b>só não estava junta</b>.</span>
+    </div>
+  </div>
+
+  <aside class="notas">
+    <div class="notas-topo"><span>Para você aprovar ou cortar</span></div><span class="notas-tempo">exemplo</span>
+    <div class="notas-corpo">
+      <p>Escolhi um <strong>slide de critério</strong> de propósito: são 20 dos 49, então é o formato que mais aparece. Se a moldura funciona aqui, funciona em quase tudo.</p>
+      <p><strong>Os quatro retângulos tracejados são slots.</strong> Me manda o PNG dos logos (ou a imagem inteira do template) e eles saem — a moldura já está posicionada.</p>
+      <p>Os ornamentos de bússola estão <strong>desenhados em vetor</strong>, não recortados da imagem: assim escalam no telão sem serrar e a cor vem do token, não de um pixel.</p>
+      <p>A assinatura está <strong>30% maior</strong> e subiu um pouco para não encostar na fileira de logos do pé.</p>
+    </div>
+    <div class="notas-aviso"><strong>A ilustração do barco não entra aqui.</strong> No template ela fica no canto inferior direito, que é justamente o lugar da sua assinatura. Proponho ela só na capa e no slide de encerramento, onde não há assinatura competindo.</div>
+    <div class="notas-ref"></div>
+  </aside>
+</section>
+
+</div>
+
+<div class="navegacao">
+  <button class="nav-btn" data-nav="anterior">← Anterior</button>
+  <div class="nav-pontos"></div>
+  <button class="nav-btn" data-nav="proximo">Próximo →</button>
+</div>
+<div class="dica-teclado">← → navegar · P alterna formador/limpo · F tela cheia</div>
+
+<script src="../../_design-slides/slides.js"></script>
+<script src="../../_design-slides/revisao.js"></script>
+</body>
+</html>
