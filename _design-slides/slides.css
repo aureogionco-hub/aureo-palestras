@@ -432,6 +432,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento .ativa .n { background: var(--verde-petroleo); }
 .instrumento .ativa .rotulo { color: var(--verde-petroleo); }
 .instrumento .ativa .conteudo { color: var(--tinta); }
+.instrumento .alerta { background: #FBEDEE; border: 0.26cqw solid var(--vermelho-profundo); }
+.instrumento .alerta .n { background: var(--vermelho-profundo); }
+.instrumento .alerta .rotulo { color: var(--vermelho-profundo); }
+.instrumento .alerta .conteudo { color: var(--tinta); }
+
 .instrumento .ativa .agora {
   position: absolute; top: -1.5cqw; left: 2cqw;
   background: var(--verde-petroleo); color: #fff;

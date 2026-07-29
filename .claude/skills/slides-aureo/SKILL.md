@@ -131,6 +131,9 @@ Três estados por parte:
 - `vazia` — tracejada, sem conteúdo. Ainda não foi conquistada.
 - `ativa` — verde, com o selo "agora". **Uma por slide**, nunca duas.
 - `preenchida` — já conquistada em uma volta anterior.
+- `alerta` — vermelho. A resposta que **é o problema** ("não sei", "ninguém",
+  "quando dá problema"). Não use `ativa` para marcar falha: verde diz "ok" e
+  briga com o que o texto está dizendo.
 
 Repita este slide ao fim de cada volta da trança, avançando um estado. No
 finale, todas preenchidas. É a série progressiva do curso da Pratika virada

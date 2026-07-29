@@ -139,15 +139,26 @@ git add _identidade && git commit -m "identidade: atualiza para <versão>"
 
 Faça isso **entre palestras**, nunca no meio da produção de uma.
 
-## Exportar o .pptx
+## Revisar
+
+Todo `slides.html` carrega `revisao.js`: uma faixa abaixo do deck com **aprovar**
+e **comentar**, slide a slide. Selo no canto e moldura colorida mostram em que pé
+cada um está. Tudo fica no navegador; no fim, "copiar revisão" ou "baixar
+arquivo" gera o texto para mandar de volta. Não aparece no modo limpo nem nas
+exportações.
+
+## Exportar
 
 ```bash
-pip install playwright python-pptx && playwright install chromium   # uma vez
-python3 ferramentas/gerar-pptx.py palestras/<nome>/slides.html
+pip install playwright python-pptx pillow && playwright install chromium   # uma vez
+
+python3 ferramentas/gerar-pdf.py  palestras/<nome>/slides.html              # PDF limpo
+python3 ferramentas/gerar-pdf.py  palestras/<nome>/slides.html --formador   # PDF com notas
+python3 ferramentas/gerar-pptx.py palestras/<nome>/slides.html              # PowerPoint
 ```
 
-Gera um PowerPoint 16:9 com cada slide renderizado em alta resolução e as notas
-do formador no campo de anotações — para o evento que só aceita pendrive.
+O `.pptx` sai 16:9 com as notas do formador no campo de anotações — para o
+evento que só aceita pendrive.
 
 ## Antes de subir ao palco
 

@@ -4,4 +4,5 @@ Thumbs.db
 *.log
 *.mp4
 .render/
+.render-formador/
 __pycache__/
