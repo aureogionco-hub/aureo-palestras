@@ -142,7 +142,8 @@ Faça isso **entre palestras**, nunca no meio da produção de uma.
 ## Revisar
 
 Todo `slides.html` carrega `revisao.js`: uma faixa abaixo do deck com **aprovar**
-e **comentar**, slide a slide. Selo no canto e moldura colorida mostram em que pé
+e uma caixa de comentário **sempre aberta**, que salva sozinha enquanto se digita
+— num deck de cinquenta slides, clicar "comentar" a cada um é atrito puro. Selo no canto e moldura colorida mostram em que pé
 cada um está. Tudo fica no navegador; no fim, "copiar revisão" ou "baixar
 arquivo" gera o texto para mandar de volta. Não aparece no modo limpo nem nas
 exportações.
