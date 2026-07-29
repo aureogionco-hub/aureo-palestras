@@ -40,10 +40,13 @@
   --violeta:            #6658B7;
 
   /* ---- Neutros — valores oficiais do design system v19 ---- */
-  --papel:        #F8F5EF;  /* = --canvas       · fundo do slide */
+  /* O fundo do slide é AZUL CLARINHO, não bege — bege em telão lê como
+     papel velho. O bege do sistema (surface-warm) fica só para acento. */
+  --papel:        #EDF3F8;  /* fundo do slide · azul clarinho */
   --branco:       #FFFFFF;  /* = --surface */
-  --papel-fundo:  #F1E9DF;  /* = --surface-warm · caixas e áreas de descanso */
-  --papel-borda:  #DCD8D1;  /* = --line */
+  --papel-fundo:  #FFFFFF;  /* caixas: branco sobre o azul, não bege sobre bege */
+  --papel-borda:  #D3E0EA;  /* linha, na família do azul */
+  --areia-fundo:  #F1E9DF;  /* = --surface-warm · só como acento quente */
   --tinta:        #18242C;  /* = --ink          · texto corrido */
   --tinta-suave:  #58666F;  /* = --ink-soft     · secundário e legendas */
 
@@ -198,13 +201,14 @@ body {
   position: relative;
   display: flex; flex-direction: column;
   justify-content: center;
-  padding: 4cqw 5.5cqw;
+  gap: 2.6cqw;              /* respiro ENTRE os elementos, não só nas bordas */
+  padding: 4.5cqw 5.5cqw 5.5cqw;
   overflow: hidden;
 }
 
-/* rodapé, não topo: no topo ela colidia com o título dos slides longos */
+/* canto inferior DIREITO, sempre. A paginação cede o lugar e vai para a esquerda. */
 .tela .assinatura {
-  position: absolute; bottom: 2.2cqw; left: 3.2cqw;
+  position: absolute; bottom: 2.2cqw; right: 3.2cqw;
   width: 8cqw; height: 2.6cqw; overflow: hidden; text-indent: -999em;
   background: var(--marca-reduzida) left center / contain no-repeat;
   opacity: 0.34;
@@ -216,13 +220,9 @@ body {
   filter: brightness(0) invert(1); opacity: 0.45;
 }
 /* na capa entra a assinatura completa, grande, no lugar do texto de autoria */
-.capa .marca-completa {
-  width: 30cqw; height: 13cqw; margin-bottom: 2cqw;
-  background: var(--marca-completa) left center / contain no-repeat;
-  filter: brightness(0) invert(1);
-}
+
 .tela .paginacao {
-  position: absolute; bottom: 2.6cqw; right: 3.2cqw;
+  position: absolute; bottom: 2.8cqw; left: 3.2cqw;
   font-size: var(--t-etiqueta); color: var(--azul-profundo); opacity: 0.30; font-weight: 600;
 }
 
@@ -318,7 +318,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 
 /* -- cabeçalho de slide -- */
 .cabecalho {
-  padding-bottom: 1.4cqw; margin-bottom: 2.2cqw;
+  padding-bottom: 1.8cqw; margin-bottom: 0;
   border-bottom: 0.18cqw solid var(--papel-borda); flex-shrink: 0;
 }
 .titulo {
@@ -340,11 +340,13 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 
 /* -- 1. FRASE DE IMPACTO — âncora mínima. A frase é o slide. -- */
+/* REGRA: frase única funciona centralizada — nos dois eixos, com respiro real */
 .frase-impacto {
   font-family: var(--fonte-titulo);
   font-size: var(--t-display); font-weight: 800;
-  color: var(--cor-titulo); line-height: 1.16; letter-spacing: -0.02em;
-  text-align: center; margin: auto 0;
+  color: var(--cor-titulo); line-height: 1.14; letter-spacing: -0.025em;
+  text-align: center; margin: auto; max-width: 82cqw;
+  align-self: center; text-wrap: balance;
 }
 .frase-impacto em { color: var(--cor-realce); font-style: normal; }
 .frase-apoio {
@@ -355,16 +357,25 @@ body[data-modo="limpo"] .paginacao { display: none; }
 /* -- 2. CONTRASTE — âncora estrutural. Os dois lados têm peso igual. -- */
 .contraste { display: flex; gap: var(--gap-2); margin: auto 0; align-items: stretch; }
 .contraste > div {
-  flex: 1; border-radius: var(--raio-g); padding: 3.4cqw 3cqw;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 2cqw; text-align: center;
+  flex: 1; border-radius: var(--raio-g); padding: 3.4cqw 3.2cqw;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;
+  gap: 1.6cqw; text-align: left;
 }
 /* variante empilhada, para quando um lado VIRA o outro e a ordem importa */
 .contraste.empilhado { flex-direction: column; }
 .contraste.empilhado > div { flex-direction: row; text-align: left; padding: 2.6cqw 3cqw; }
-.contraste .nao { background: var(--fundo-vermelho); border: 0.18cqw solid var(--vermelho-profundo); }
-.contraste .sim { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
-.contraste .marca { font-size: 5cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
+.contraste .nao { background: var(--fundo-vermelho); border: none; box-shadow: var(--sombra); }
+.contraste .sim { background: var(--fundo-verde); border: none; box-shadow: var(--sombra); }
+/* REGRA: ✕ e ✓ são pobres. O sinal vira rótulo tipográfico com barra de cor —
+   composição gráfica, não ícone de lista. */
+.contraste .marca {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-etiqueta); font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding-bottom: 1.2cqw; margin-bottom: 0.6cqw;
+  border-bottom: 0.5cqw solid currentColor; align-self: stretch;
+  text-align: left; line-height: 1;
+}
 .contraste .nao .marca { color: var(--vermelho-profundo); }
 .contraste .sim .marca { color: var(--verde-petroleo); }
 .contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.3; }
@@ -383,7 +394,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 
 /* -- 4. PASSOS — âncora literal numerada. Um método que a plateia copia. -- */
-.passos { display: flex; flex-direction: column; gap: var(--gap-1); margin: auto 0; }
+.passos { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
 .passos > div {
   display: flex; align-items: center; gap: 1.8cqw;
   background: var(--papel-fundo); border-radius: var(--raio); padding: 1.8cqw 2.2cqw;
@@ -405,7 +416,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .passos .valor { font-size: var(--t-apoio); font-weight: 500; color: var(--tinta-suave); line-height: 1.4; }
 
 /* -- 5. TESTE — o checklist que a plateia aplica sozinha depois. -- */
-.teste { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
+.teste { display: flex; flex-direction: column; gap: var(--gap-3); margin: auto 0; }
 .teste > div {
   display: flex; align-items: center; gap: 2.2cqw;
   background: var(--papel-fundo); border-radius: var(--raio); padding: 2.6cqw 2.8cqw;
@@ -454,7 +465,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 
 /* -- 9. CITAÇÃO — a fala de alguém, com a autoria por cargo. -- */
-.citacao { margin: auto 0; padding-left: 3cqw; border-left: 0.4cqw solid var(--turquesa); }
+.citacao { margin: auto; max-width: 84cqw; padding-left: 3.4cqw; border-left: 0.6cqw solid var(--turquesa); }
 .citacao .fala {
   font-family: var(--fonte-titulo);
   font-size: 3cqw; font-weight: 600; color: var(--azul-profundo);
@@ -484,7 +495,24 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fecho b { color: var(--cor-realce); font-weight: 800; }
 
 /* -- 12. CAPA — abertura da palestra -- */
-.tela.capa { background: var(--azul-profundo); justify-content: flex-end; padding: 7cqw; }
+.tela.capa {
+  background: var(--azul-profundo); justify-content: flex-end;
+  padding: 7cqw; gap: 0; overflow: hidden;
+}
+/* forma orgânica de fundo — composição, e evita a capa virar caixa de texto */
+.tela.capa::before {
+  content: ''; position: absolute; right: -14cqw; top: -22cqw;
+  width: 62cqw; height: 62cqw; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(47,174,184,.30), rgba(47,174,184,0) 70%);
+  pointer-events: none;
+}
+/* REGRA: na capa a assinatura vai PEQUENA no alto, nunca no centro */
+.capa .marca-topo {
+  position: absolute; top: 5cqw; left: 7cqw;
+  width: 15cqw; height: 5.4cqw;
+  background: var(--marca-completa) left center / contain no-repeat;
+  filter: brightness(0) invert(1); opacity: 0.9;
+}
 .tela.capa .assinatura, .tela.capa .paginacao { color: #fff; opacity: 0.5; }
 .capa .sobretitulo {
   font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.16em;
@@ -492,7 +520,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 .capa h1 {
   font-family: var(--fonte-titulo);
-  font-size: 6.4cqw; font-weight: 800; color: #fff;
+  font-size: 9.5cqw; max-width: 70cqw; font-weight: 800; color: #fff;
   line-height: 1.08; letter-spacing: -0.02em;
 }
 .capa h1 em { color: var(--acafrao); font-style: normal; }
@@ -503,18 +531,42 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 .capa .autoria b { color: #fff; font-weight: 700; }
 
-/* -- 13. SECÇÃO — vira a página do arco. Respiro entre blocos. -- */
-.tela.seccao { background: var(--verde-petroleo); align-items: center; justify-content: center; }
+/* -- 13. SECÇÃO / PILAR — o nome é enorme e a composição é assimétrica:
+      número gigante em marca-d'água atrás, nome alinhado à esquerda,
+      barra de cor. Nome de pilar centralizado e pequeno era o problema. -- */
+.tela.seccao {
+  background: var(--verde-petroleo);
+  align-items: flex-start; justify-content: center;
+  padding: 6cqw 7cqw; overflow: hidden;
+}
+/* o número do pilar, gigante, sangrando na borda — composição, não decoração */
+.tela.seccao::after {
+  content: attr(data-n);
+  position: absolute; right: -2cqw; bottom: -8cqw;
+  font-family: var(--fonte-titulo); font-size: 42cqw; font-weight: 800;
+  line-height: 0.8; color: #fff; opacity: 0.09; pointer-events: none;
+}
+.seccao .barra-cor {
+  width: 14cqw; height: 0.9cqw; background: var(--acafrao);
+  border-radius: 1cqw; margin-bottom: 3cqw;
+}
 .tela.seccao .assinatura, .tela.seccao .paginacao { color: #fff; opacity: 0.45; }
 .seccao .numero-parte {
-  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.20em;
-  text-transform: uppercase; color: rgba(255,255,255,0.55);
-  text-align: center; margin-bottom: 1.8cqw;
+  font-size: var(--t-apoio); font-weight: 800; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--acafrao);
+  text-align: left; margin-bottom: 1.6cqw;
 }
+/* REGRA: nome de pilar é o maior tipo da apresentação inteira */
 .seccao h2 {
   font-family: var(--fonte-titulo);
-  font-size: 5cqw; font-weight: 800; color: #fff;
-  text-align: center; line-height: 1.14;
+  font-size: 11cqw; font-weight: 800; color: #fff;
+  text-align: left; line-height: 0.95; letter-spacing: -0.03em;
+  position: relative; z-index: 1;
+}
+.seccao .legenda {
+  font-size: var(--t-corpo); color: rgba(255,255,255,0.72);
+  margin-top: 2.4cqw; max-width: 55cqw; line-height: 1.4;
+  position: relative; z-index: 1;
 }
 
 /* -- 14. GANCHO — o primeiro slide depois da capa. A tensão.
@@ -523,7 +575,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .tela.gancho { justify-content: center; padding: 9cqw 10cqw; }
 .gancho-frase {
   font-family: var(--fonte-titulo);
-  font-size: 6.2cqw; font-weight: 800;
+  max-width: 84cqw; margin: auto; text-wrap: balance;
+  font-size: 7.2cqw; font-weight: 800;
   color: var(--cor-titulo); line-height: 1.12; letter-spacing: -0.025em;
   text-align: center;
 }
@@ -711,7 +764,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="sobretitulo">Formação de Líderes no 3º Setor · 30 de julho</div>
     <h1>Gestão<br><em>Eficiente</em></h1>
-    <div class="marca-completa"></div>
+    <div class="marca-topo"></div>
     <div class="autoria">A maturidade da gestão como caminho para ampliar o impacto</div>
   </div>
   <aside class="notas">
@@ -789,8 +842,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="cabecalho"><div class="titulo">A coisa que eu levei quinze anos<br>e <em>trezentos mil reais</em> para entender</div></div>
     <div class="contraste">
-      <div class="nao"><span class="marca">✕</span><span class="texto">Gestão rouba tempo da ação</span></div>
-      <div class="sim"><span class="marca">✓</span><span class="texto">Gestão devolve tempo para a ação</span></div>
+      <div class="nao"><span class="marca">Não</span><span class="texto">Gestão rouba tempo da ação</span></div>
+      <div class="sim"><span class="marca">Sim</span><span class="texto">Gestão devolve tempo para a ação</span></div>
     </div>
   </div>
   <aside class="notas">
@@ -972,8 +1025,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="cabecalho"><div class="titulo">"Quando dá problema"<br><em>não é uma frequência</em></div></div>
     <div class="contraste">
-      <div class="nao"><span class="marca">✕</span><span class="texto">Quando dá problema · quando o financiador cobra · quando falta dinheiro</span></div>
-      <div class="sim"><span class="marca">✓</span><span class="texto">Toda semana · todo mês · todo trimestre</span></div>
+      <div class="nao"><span class="marca">Não</span><span class="texto">Quando dá problema · quando o financiador cobra · quando falta dinheiro</span></div>
+      <div class="sim"><span class="marca">Sim</span><span class="texto">Toda semana · todo mês · todo trimestre</span></div>
     </div>
   </div>
   <aside class="notas">
@@ -1009,10 +1062,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <!-- ════════════ PILAR 1 · ESTRATÉGIA · 18:00 → 26:00 ════════════ -->
 
 <section class="slide">
-  <div class="tela seccao">
+  <div class="tela seccao" data-n="1">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+    <div class="barra-cor"></div>
     <div class="numero-parte">Pilar 1 de 5</div>
     <h2>Estratégia</h2>
+    <div class="legenda">define o caminho — o que a organização quer que aconteça</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Transição</span></div><span class="notas-tempo">18:00</span>
@@ -1082,10 +1137,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <!-- ════════════ PILAR 2 · OPERAÇÃO · 26:00 → 36:00 ════════════ -->
 
 <section class="slide">
-  <div class="tela seccao">
+  <div class="tela seccao" data-n="2">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+    <div class="barra-cor"></div>
     <div class="numero-parte">Pilar 2 de 5</div>
     <h2>Operação</h2>
+    <div class="legenda">executa — transforma plano em rotina registrada</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Transição</span></div><span class="notas-tempo">26:00</span>
@@ -1117,8 +1174,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="cabecalho"><div class="titulo">Você atendeu sessenta jovens este ano.<br><em>Consegue provar?</em></div></div>
     <div class="contraste">
-      <div class="nao"><span class="marca">✕</span><span class="texto">"A gente atende cerca de sessenta jovens"</span></div>
-      <div class="sim"><span class="marca">✓</span><span class="texto">A lista, com nome e frequência, em dez minutos</span></div>
+      <div class="nao"><span class="marca">Não</span><span class="texto">"A gente atende cerca de sessenta jovens"</span></div>
+      <div class="sim"><span class="marca">Sim</span><span class="texto">A lista, com nome e frequência, em dez minutos</span></div>
     </div>
   </div>
   <aside class="notas">
@@ -1170,10 +1227,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <!-- ════════════ PILAR 3 · FINANÇAS · 36:00 → 46:00 ════════════ -->
 
 <section class="slide">
-  <div class="tela seccao">
+  <div class="tela seccao" data-n="3">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+    <div class="barra-cor"></div>
     <div class="numero-parte">Pilar 3 de 5</div>
     <h2>Finanças</h2>
+    <div class="legenda">sustenta — sem caixa em dia, nada dos outros pilares importa</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Transição</span></div><span class="notas-tempo">36:00</span>
@@ -1256,10 +1315,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <!-- ════════════ PILAR 4 · MONITORAMENTO · 46:00 → 56:00 ════════════ -->
 
 <section class="slide">
-  <div class="tela seccao">
+  <div class="tela seccao" data-n="4">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+    <div class="barra-cor"></div>
     <div class="numero-parte">Pilar 4 de 5</div>
     <h2>Monitoramento</h2>
+    <div class="legenda">mede — sem isso, ninguém aprende com o que fez</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Transição</span></div><span class="notas-tempo">46:00</span>
@@ -1291,8 +1352,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="cabecalho"><div class="titulo">A armadilha:<br>atividade <em>não é</em> mudança</div></div>
     <div class="contraste">
-      <div class="nao"><span class="marca">✕</span><span class="texto">"Fizemos 96 oficinas este ano" — isso é registro de operação</span></div>
-      <div class="sim"><span class="marca">✓</span><span class="texto">"41% dos jovens saíram empregados" — isso é o que mudou</span></div>
+      <div class="nao"><span class="marca">Não</span><span class="texto">"Fizemos 96 oficinas este ano" — isso é registro de operação</span></div>
+      <div class="sim"><span class="marca">Sim</span><span class="texto">"41% dos jovens saíram empregados" — isso é o que mudou</span></div>
     </div>
   </div>
   <aside class="notas">
@@ -1344,10 +1405,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <!-- ════════════ PILAR 5 · GOVERNANÇA · 56:00 → 68:00 ════════════ -->
 
 <section class="slide">
-  <div class="tela seccao">
+  <div class="tela seccao" data-n="5">
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
+    <div class="barra-cor"></div>
     <div class="numero-parte">Pilar 5 de 5</div>
     <h2>Governança</h2>
+    <div class="legenda">garante consistência — o que segura tudo quando alguém falta</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Transição</span></div><span class="notas-tempo">56:00</span>
@@ -1473,8 +1536,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="cabecalho"><div class="titulo">"E quando eu compro<br><em>um sistema de gestão?</em>"</div></div>
     <div class="contraste">
-      <div class="nao"><span class="marca">✕</span><span class="texto">Antes de existir rotina — só digitaliza o caos</span></div>
-      <div class="sim"><span class="marca">✓</span><span class="texto">Quando a rotina manual já existe e está quebrando por volume</span></div>
+      <div class="nao"><span class="marca">Não</span><span class="texto">Antes de existir rotina — só digitaliza o caos</span></div>
+      <div class="sim"><span class="marca">Sim</span><span class="texto">Quando a rotina manual já existe e está quebrando por volume</span></div>
     </div>
   </div>
   <aside class="notas">

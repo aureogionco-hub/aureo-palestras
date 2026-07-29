@@ -25,10 +25,13 @@
   --violeta:            #6658B7;
 
   /* ---- Neutros — valores oficiais do design system v19 ---- */
-  --papel:        #F8F5EF;  /* = --canvas       · fundo do slide */
+  /* O fundo do slide é AZUL CLARINHO, não bege — bege em telão lê como
+     papel velho. O bege do sistema (surface-warm) fica só para acento. */
+  --papel:        #EDF3F8;  /* fundo do slide · azul clarinho */
   --branco:       #FFFFFF;  /* = --surface */
-  --papel-fundo:  #F1E9DF;  /* = --surface-warm · caixas e áreas de descanso */
-  --papel-borda:  #DCD8D1;  /* = --line */
+  --papel-fundo:  #FFFFFF;  /* caixas: branco sobre o azul, não bege sobre bege */
+  --papel-borda:  #D3E0EA;  /* linha, na família do azul */
+  --areia-fundo:  #F1E9DF;  /* = --surface-warm · só como acento quente */
   --tinta:        #18242C;  /* = --ink          · texto corrido */
   --tinta-suave:  #58666F;  /* = --ink-soft     · secundário e legendas */
 
