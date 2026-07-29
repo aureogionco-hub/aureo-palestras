@@ -76,7 +76,10 @@ lembrar daquilo.** Se um slide não cabe em nenhum bloco, o problema quase nunca
   reter cada item, vire `passos` e corte para três.
 - `numeros`: **3.** O quarto número apaga os três primeiros.
 - `citacao`: 1 por palestra, 2 no limite.
-- `seccao`: 3 por palestra. Mais que isso vira sumário, e sumário mata ritmo.
+- `seccao`: **uma por parte do arco** — uma por volta da trança, ou uma por
+  dimensão em aula de diagnóstico. O que a regra proíbe é `seccao` usada como
+  sumário ou como respiro decorativo; usada para virar a página do arco, quatro
+  são legítimas em palestra de quatro partes.
 - `frase-impacto`: sem parágrafo embaixo. Se precisa explicar, não é este bloco.
 - `gancho`: **1 por palestra.** Se aparece um segundo, ele não era o gancho.
 - `promessa`: **1 por palestra**, sempre logo depois do gancho.
@@ -139,12 +142,60 @@ Repita este slide ao fim de cada volta da trança, avançando um estado. No
 finale, todas preenchidas. É a série progressiva do curso da Pratika virada
 dispositivo de palco.
 
+## As oito regras de composição
+
+Estão implementadas no `slides.css` — usando os blocos, vêm de graça. Mas você
+precisa saber que existem, porque três delas dependem do que você escreve.
+
+| # | Regra | Depende de você? |
+|---|---|---|
+| 1 | **Assinatura sempre no canto inferior direito**, nunca à esquerda. Paginação no canto oposto | não |
+| 2 | **Na capa a assinatura é pequena e de canto** (alto à direita). Nunca grande no centro — não use `.marca-completa` | **sim** |
+| 3 | **Nunca uma palavra sozinha na linha.** `text-wrap: balance` cuida do fluxo automático — **mas não do seu `<br>`** | **sim** |
+| 4 | **Tela de pilar: o nome é o slide** (7,8cqw). Use `seccao` com `h2` + `.numero-parte` + `.seccao-apoio` | **sim** |
+| 5 | **Respiro de fora para dentro:** borda enxuta, ar no miolo entre cabeçalho, bloco e fecho | não |
+| 6 | **✕ e ✓ não são elemento gráfico** — leem como correção de prova. No `contraste`, use `.rotulo` em caixa alta; a barra de cor no topo faz o trabalho | **sim** |
+| 7 | **Frase única e citação centralizadas**, com medida curta | não |
+| 8 | **Fundo azul claríssimo, nunca bege** (`--canvas-slide`) | não |
+
+O bloco `contraste` agora é assim — **sem glifo**:
+
+```html
+<div class="contraste">
+  <div class="nao"><span class="rotulo">Meta de atividade</span>
+    <span class="texto">"Atender 120 jovens este ano"</span></div>
+  <div class="sim"><span class="rotulo">Meta de resultado</span>
+    <span class="texto">"80 dos 120 concluindo até dezembro"</span></div>
+</div>
+```
+
+O rótulo **nomeia a categoria**, não julga. E se ele repetir o que o texto já diz,
+corte um dos dois.
+
+## Estouro da `.tela` — meça, não confie no olho
+
+Slide mais alto que a `.tela` fica **cortado no telão e você não vê no navegador**,
+porque o overflow é escondido. `cabecalho` + bloco + `fecho` empilhados é a
+combinação que estoura com mais frequência.
+
+```js
+const t = document.querySelector('.slide.ativo .tela');
+t.scrollHeight > t.clientHeight   // true = cortado
+```
+
+Quando estourar, **corte texto.** Não reduza corpo de fonte: a escala foi medida
+para leitura a 15 metros.
+
 ## Cor — a parte que não é gosto
 
 A paleta vem de `_identidade` e está traduzida em `_design-slides/tokens.css`.
 **Nunca escreva hex dentro de um slide.** Use as variáveis.
 
-O contraste sobre o fundo `--papel` foi medido (a tabela completa está no fim do
+O fundo do slide é `--canvas-slide` — azul quase branco. **`--papel` (bege) é o
+papel impresso**, do material do participante, não o fundo do slide: no projetor a
+granulação que dá calor no impresso desaparece e sobra o amarelado.
+
+O contraste sobre o fundo do slide foi medido (a tabela completa está no fim do
 `tokens.css`). O resumo operacional:
 
 - **Texto em qualquer tamanho:** azul-profundo, azul-assinatura, verde-petroleo,

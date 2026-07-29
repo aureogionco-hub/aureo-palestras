@@ -23,13 +23,66 @@ A regra de aprovação da marca ("mesma materialidade, intenção e acabamento")
 continua valendo para **capas, aberturas e peças de divulgação**. Dentro do
 slide de conteúdo, legibilidade ganha de acabamento — sempre.
 
-## 2. Cor
+## 2. As oito regras de composição
 
-Núcleo azul/verde/vermelho, terracota e bege só para descanso. Um slide que
-virou bege com um detalhe azul **inverteu o sistema**.
+Estas oito não são preferência: são o que separa um slide montado de um slide
+desenhado. Todas estão implementadas no `slides.css` — se você usar os blocos,
+já vêm de graça.
 
-O contraste sobre `--papel` (#FAF7F2) foi medido. A tabela completa está no fim
-do `tokens.css`; o resumo operacional:
+**1 · A assinatura fica sempre no canto inferior direito.** Nunca à esquerda: à
+esquerda ela cai no começo da linha de leitura e briga com o texto. À direita ela
+assina, que é a função dela. A paginação vai para o canto oposto.
+
+**2 · Na capa a assinatura também é pequena e de canto** — no alto à direita.
+Assinatura grande e centralizada no meio da capa não é composição, é logo de
+abertura de vídeo.
+
+**3 · Nunca uma palavra sozinha na linha.** Título, frase de impacto, gancho,
+promessa e nome de pilar usam `text-wrap: balance`, que reparte as linhas em vez
+de deixar a última órfã. **Isso não cobre `<br>` escrito à mão** — se você quebrar
+manualmente, confira se não sobrou uma palavra sozinha embaixo.
+
+**4 · Tela de pilar: o nome é o slide.** Sem conteúdo competindo, o nome da parte
+ocupa tamanho de display (7,8cqw), não de título. Um pilar com nome pequeno
+desperdiça o único slide que existe só para virar a página.
+
+**5 · O respiro vem de fora para dentro.** O erro comum é sobrar moldura em cima
+e embaixo e faltar ar entre cabeçalho, bloco e fecho. A `.tela` tem borda enxuta
+de propósito (3,2cqw) para que o espaço fique **no miolo**, onde a leitura
+acontece.
+
+**6 · ✕ e ✓ não são elemento gráfico.** No telão eles leem como correção de prova
+de escola e roubam a atenção do texto. No bloco `contraste`, quem diz de que lado
+está a linha é **a barra de cor no topo mais um rótulo em caixa alta** — e o
+rótulo nomeia a categoria em vez de julgar. Se o rótulo repetir o que o texto já
+diz, corte um dos dois.
+
+**7 · Frase única e citação ficam centralizadas.** Fala solta encostada na margem
+esquerda parece parágrafo cortado. No eixo do slide, com medida curta, ela
+respira. O bloco `citacao` já é centrado, com um traço curto acima em vez de barra
+lateral — barra lateral desloca o texto do centro.
+
+**8 · Fundo de slide é azul claríssimo, nunca bege.** Ver a seção seguinte.
+
+## 3. Cor
+
+O fundo da `.tela` é `--canvas-slide` (#F0F6FA), um azul quase branco. **O bege
+saiu:** a granulação que dá calor no impresso desaparece no projetor e sobra o
+amarelado, que lê como papel envelhecido. As caixas usam `--superficie` e as
+bordas `--superficie-linha`, da mesma família.
+
+`--papel` e `--papel-fundo` continuam existindo — são o **papel impresso**, do
+material do participante, onde o bege funciona. Slide e impresso podem divergir
+nisso, e devem.
+
+Os três tons novos foram escolhidos com luminância equivalente à do bege que
+substituíram, então **a tabela de contraste no fim do `tokens.css` continua
+valendo integralmente.**
+
+Núcleo azul/verde/vermelho, terracota só para acento. Um slide que virou bege com
+um detalhe azul **inverteu o sistema**.
+
+O resumo operacional de contraste:
 
 - **Texto em qualquer tamanho** — azul-profundo, azul-assinatura, verde-petroleo, vermelho-profundo, tinta
 - **Só texto grande (28px+)** — azul-aberto, vermelho-assinatura, coral
@@ -41,7 +94,7 @@ funcionar no título grande *e* dentro de uma linha de texto pequena.
 **Nunca escreva hex dentro de um slide.** Só as variáveis do `tokens.css`. Uma
 mudança de marca precisa acontecer em um arquivo, não em quarenta.
 
-## 3. Tipografia
+## 4. Tipografia
 
 - **Títulos:** Sesimbra. Não é webfont pública — coloque o `.woff2` em
   `_design-slides/fontes/Sesimbra.woff2` e o `@font-face` carrega. Sem o
@@ -52,12 +105,10 @@ Tudo dimensiona em `cqw` — percentual da largura do slide. O mesmo HTML serve 
 um notebook e a um telão. **Não use `px` dentro da `.tela`**: quebra exatamente
 no telão, que é onde não dá para consertar.
 
-## 4. Anatomia do slide
+## 5. Anatomia do slide
 
 ```
 ┌─────────────────────────────────────────────┐
-│ assinatura                                  │   ← "Aureo Gionco", 30% opacidade
-│                                             │
 │ Título com realce                           │   ← .cabecalho > .titulo
 │ ───────────────────────────                 │
 │                                             │
@@ -66,14 +117,14 @@ no telão, que é onde não dá para consertar.
 │ ┌─────────────────────────────────────┐     │
 │ │ o fecho, duas linhas                │     │   ← .fecho, discreto de propósito
 │ └─────────────────────────────────────┘     │
-│                                  paginação  │
+│ paginação                      assinatura   │   ← assinatura SEMPRE à direita
 └─────────────────────────────────────────────┘
 ```
 
 **Um bloco de conteúdo por slide.** Empilhar dois blocos é o sintoma de um slide
 tentando dizer duas coisas.
 
-## 5. O fecho
+## 6. O fecho
 
 Duas linhas, a segunda mais curta, com uma palavra em `<b>`. Deliberadamente
 pequeno e sem cor forte: ele não pode competir com o conteúdo.
@@ -81,7 +132,7 @@ pequeno e sem cor forte: ele não pode competir com o conteúdo.
 **O erro mortal é usar o fecho para repetir o que você acabou de falar.** Ele
 carrega o que a plateia leva embora — não o resumo do slide.
 
-## 6. Ilustração gerada por IA
+## 7. Ilustração gerada por IA
 
 Quando um slide pedir imagem, use os estilos A1-A12 do guia da marca. Regras:
 
@@ -101,7 +152,7 @@ Estilos que costumam servir a palestra:
 | A10 Gráficos ilustrados | Indicadores, pesquisa, resultado |
 | A11 Esboços conceituais | Facilitação, pensamento em construção |
 
-## 7. Checagem antes de subir ao palco
+## 8. Checagem antes de subir ao palco
 
 - [ ] Todo slide cabe em um dos 17 blocos
 - [ ] Nenhum slide tem dois blocos de conteúdo
@@ -110,4 +161,22 @@ Estilos que costumam servir a palestra:
 - [ ] Nenhum número de slide escrito à mão (o JS numera)
 - [ ] Passou no modo limpo: nenhum slide depende de ler a coluna de notas
 - [ ] Testado na proporção da sala (16:9 quase sempre; confirme no briefing)
-- [ ] `--papel` domina os slides de conteúdo; azul/verde cheios só em capa e secção
+- [ ] `--canvas-slide` domina os slides de conteúdo; azul/verde cheios só em capa,
+      promessa e telas de pilar
+- [ ] **Nenhum slide estoura a `.tela`** — rode a checagem automática abaixo
+- [ ] Assinatura à direita em todos; nenhuma palavra sozinha em fim de linha
+- [ ] Nenhum ✕ ou ✓ como elemento gráfico
+
+### A checagem de estouro
+
+Slide que passa da altura da `.tela` fica cortado no telão e **você não vê isso no
+navegador**, porque o overflow é escondido. Meça antes:
+
+```js
+// no console, com o slide ativo
+const t = document.querySelector('.slide.ativo .tela');
+t.scrollHeight > t.clientHeight   // true = está cortado
+```
+
+Empilhar `cabecalho` + bloco + `fecho` é o que estoura com mais frequência. Quando
+estourar, **corte texto** — não reduza corpo de fonte.

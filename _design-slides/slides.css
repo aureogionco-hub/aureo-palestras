@@ -57,23 +57,34 @@ body {
   flex: 0 0 66%;
   container-type: inline-size;
   aspect-ratio: 16 / 9;
-  background: var(--papel);
+  background: var(--canvas-slide);
   position: relative;
   display: flex; flex-direction: column;
   justify-content: center;
-  padding: 4cqw 5.5cqw;
+  /* borda enxuta de proposito: o respiro que importa e o de DENTRO,
+     entre cabecalho, bloco e fecho — nao a moldura em volta de tudo */
+  padding: 3.2cqw 5.5cqw;
+  gap: 0;
   overflow: hidden;
 }
 
-/* rodapé, não topo: no topo ela colidia com o título dos slides longos */
+/* A assinatura fica SEMPRE no canto inferior direito. Nunca à esquerda:
+   à esquerda ela cai no início da linha de leitura e briga com o texto;
+   à direita ela assina, que é a função dela. */
 .tela .assinatura {
-  position: absolute; bottom: 2.2cqw; left: 3.2cqw;
+  position: absolute; bottom: 2.4cqw; right: 3.2cqw;
   width: 8cqw; height: 2.6cqw; overflow: hidden; text-indent: -999em;
-  background: var(--marca-reduzida) left center / contain no-repeat;
+  background: var(--marca-reduzida) right center / contain no-repeat;
   opacity: 0.34;
 }
-/* na capa a assinatura completa já está no corpo — a reduzida sairia repetida */
-.tela.capa .assinatura { display: none; }
+/* Na capa ela também é pequena e de canto — nunca grande e no centro.
+   Vai no alto à direita para não competir com o título. */
+.tela.capa .assinatura {
+  display: block; top: 4cqw; bottom: auto; right: 4cqw;
+  filter: brightness(0) invert(1); opacity: 0.55;
+}
+/* a marca grande no corpo da capa saiu: era a assinatura no centro */
+.capa .marca-completa { display: none; }
 /* em fundo escuro a assinatura precisa virar branca */
 .tela.seccao .assinatura, .tela.promessa .assinatura {
   filter: brightness(0) invert(1); opacity: 0.45;
@@ -85,7 +96,7 @@ body {
   filter: brightness(0) invert(1);
 }
 .tela .paginacao {
-  position: absolute; bottom: 2.6cqw; right: 3.2cqw;
+  position: absolute; bottom: 2.8cqw; left: 3.2cqw;
   font-size: var(--t-etiqueta); color: var(--azul-profundo); opacity: 0.30; font-weight: 600;
 }
 
@@ -181,13 +192,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 
 /* -- cabeçalho de slide -- */
 .cabecalho {
-  padding-bottom: 1.4cqw; margin-bottom: 2.2cqw;
-  border-bottom: 0.18cqw solid var(--papel-borda); flex-shrink: 0;
+  padding-bottom: 1.7cqw; margin-bottom: 3.1cqw;
+  border-bottom: 0.18cqw solid var(--superficie-linha); flex-shrink: 0;
 }
 .titulo {
   font-family: var(--fonte-titulo);
   font-size: var(--t-titulo); font-weight: 800;
   color: var(--cor-titulo); line-height: 1.18; letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 .titulo em { color: var(--cor-realce); font-style: normal; }
 
@@ -195,8 +207,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .selo {
   align-self: flex-start;
   display: inline-flex; align-items: center; gap: 0.8cqw;
-  background: var(--papel-fundo); border: 0.15cqw solid var(--areia);
-  border-radius: 5cqw; padding: 0.8cqw 2cqw;
+  background: var(--superficie); border: 0.15cqw solid var(--superficie-linha);
+  border-radius: 5cqw; padding: 0.9cqw 2.2cqw;
   font-size: var(--t-etiqueta); font-weight: 700;
   letter-spacing: 0.10em; text-transform: uppercase;
   color: var(--verde-petroleo); margin-bottom: 2.4cqw;
@@ -207,35 +219,54 @@ body[data-modo="limpo"] .paginacao { display: none; }
   font-family: var(--fonte-titulo);
   font-size: var(--t-display); font-weight: 800;
   color: var(--cor-titulo); line-height: 1.16; letter-spacing: -0.02em;
-  text-align: center; margin: auto 0;
+  text-align: center; margin: auto 0; text-wrap: balance;
 }
 .frase-impacto em { color: var(--cor-realce); font-style: normal; }
 .frase-apoio {
   font-size: var(--t-corpo); color: var(--tinta-suave); font-weight: 500;
-  text-align: center; line-height: 1.5; margin-top: 2cqw;
+  text-align: center; line-height: 1.5; margin-top: 2.6cqw;
+  max-width: 62cqw; margin-left: auto; margin-right: auto; text-wrap: balance;
 }
 
 /* -- 2. CONTRASTE — âncora estrutural. Os dois lados têm peso igual. -- */
 .contraste { display: flex; gap: var(--gap-2); margin: auto 0; align-items: stretch; }
 .contraste > div {
-  flex: 1; border-radius: var(--raio-g); padding: 3.4cqw 3cqw;
+  flex: 1; border-radius: var(--raio-g); padding: 3.6cqw 3.2cqw 3.2cqw;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 2cqw; text-align: center;
+  gap: 2cqw; text-align: center; position: relative; overflow: hidden;
 }
+/* A BARRA DE COR NO TOPO é o elemento gráfico deste bloco.
+   O ✕ e o ✓ saíram: no telão eles leem como correção de prova de escola,
+   não como composição — e roubam a atenção do texto, que é o conteúdo.
+   Quem diz de que lado está a linha é a cor e o rótulo. */
+.contraste > div::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 0.8cqw;
+}
+.contraste .nao::before { background: var(--vermelho-profundo); }
+.contraste .sim::before { background: var(--verde-petroleo); }
+.contraste .rotulo {
+  font-size: var(--t-etiqueta); font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase; line-height: 1;
+}
+.contraste .nao .rotulo { color: var(--vermelho-profundo); }
+.contraste .sim .rotulo { color: var(--verde-petroleo); }
+/* legado: se algum slide antigo ainda trouxer o glifo, ele não aparece */
+.contraste .marca { display: none; }
 /* variante empilhada, para quando um lado VIRA o outro e a ordem importa */
 .contraste.empilhado { flex-direction: column; }
-.contraste.empilhado > div { flex-direction: row; text-align: left; padding: 2.6cqw 3cqw; }
-.contraste .nao { background: var(--fundo-vermelho); border: 0.18cqw solid var(--vermelho-profundo); }
-.contraste .sim { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
-.contraste .marca { font-size: 5cqw; font-weight: 800; flex-shrink: 0; line-height: 1; }
-.contraste .nao .marca { color: var(--vermelho-profundo); }
-.contraste .sim .marca { color: var(--verde-petroleo); }
-.contraste .texto { font-size: var(--t-corpo); font-weight: 700; color: var(--tinta); line-height: 1.3; }
+.contraste.empilhado > div { flex-direction: row; text-align: left; padding: 3cqw 3.4cqw; gap: 2.6cqw; }
+.contraste.empilhado > div::before { right: auto; bottom: 0; width: 0.8cqw; height: auto; }
+.contraste .nao { background: var(--fundo-vermelho); }
+.contraste .sim { background: var(--fundo-verde); }
+.contraste .texto {
+  font-size: var(--t-corpo); font-weight: 700; color: var(--tinta);
+  line-height: 1.32; text-wrap: balance;
+}
 
 /* -- 3. DECLARAÇÃO — âncora literal. O dado precisa ser lido como está. -- */
 .declaracao {
-  background: var(--papel-fundo); border: 0.18cqw solid var(--areia);
-  border-radius: var(--raio-g); padding: 3.4cqw 3.6cqw; margin: auto 0;
+  background: var(--superficie); border: 0.18cqw solid var(--superficie-linha);
+  border-radius: var(--raio-g); padding: 3.4cqw 3.8cqw; margin: auto 0;
 }
 .declaracao .rotulo {
   font-size: var(--t-etiqueta); font-weight: 700; letter-spacing: 0.11em;
@@ -249,7 +280,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .passos { display: flex; flex-direction: column; gap: var(--gap-1); margin: auto 0; }
 .passos > div {
   display: flex; align-items: center; gap: 1.8cqw;
-  background: var(--papel-fundo); border-radius: var(--raio); padding: 1.8cqw 2.2cqw;
+  background: var(--superficie); border-radius: var(--raio); padding: 1.9cqw 2.3cqw;
 }
 .passos .n {
   width: 3.4cqw; height: 3.4cqw; border-radius: var(--raio);
@@ -271,7 +302,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .teste { display: flex; flex-direction: column; gap: var(--gap-2); margin: auto 0; }
 .teste > div {
   display: flex; align-items: center; gap: 2.2cqw;
-  background: var(--papel-fundo); border-radius: var(--raio); padding: 2.6cqw 2.8cqw;
+  background: var(--superficie); border-radius: var(--raio); padding: 2.6cqw 2.9cqw;
 }
 .teste .icone { font-size: 2.6cqw; flex-shrink: 0; line-height: 1; }
 .teste .texto { font-size: var(--t-corpo); font-weight: 600; color: var(--tinta); line-height: 1.4; }
@@ -280,7 +311,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 /* -- 6. FLUXO — âncora estrutural: de onde para onde. -- */
 .fluxo { margin: auto 0; }
 .fluxo .caixa { border-radius: var(--raio); padding: 2.4cqw 2.8cqw; }
-.fluxo .antes { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
+.fluxo .antes { background: var(--superficie); border: 0.18cqw solid var(--superficie-linha); }
 .fluxo .depois { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
 .fluxo .rotulo {
   font-size: var(--t-etiqueta); font-weight: 700; text-transform: uppercase;
@@ -292,11 +323,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo .seta { text-align: center; padding: 1.4cqw 0; font-size: 2.8cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1; }
 
 /* -- 7. LISTA — itens curtos, mesmo peso, sem virar bullet corporativo. -- */
-.lista { display: flex; flex-direction: column; gap: 1cqw; margin: auto 0; }
+.lista { display: flex; flex-direction: column; gap: 0.9cqw; margin: auto 0; }
 .lista > div {
   display: flex; align-items: center; gap: 1.8cqw;
-  padding: 1.9cqw 2.4cqw; border-radius: var(--raio); background: var(--papel-fundo);
-  border-left: 0.4cqw solid var(--areia);
+  padding: 1.9cqw 2.5cqw; border-radius: var(--raio); background: var(--superficie);
+  border-left: 0.45cqw solid var(--azul-aberto);
 }
 .lista > div:last-child { border-left-color: var(--verde-petroleo); background: var(--fundo-verde); }
 .lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 2cqw; flex-shrink: 0; }
@@ -316,31 +347,39 @@ body[data-modo="limpo"] .paginacao { display: none; }
   margin-top: 1cqw; line-height: 1.35;
 }
 
-/* -- 9. CITAÇÃO — a fala de alguém, com a autoria por cargo. -- */
-.citacao { margin: auto 0; padding-left: 3cqw; border-left: 0.4cqw solid var(--turquesa); }
+/* -- 9. CITAÇÃO — a fala de alguém, com a autoria por cargo.
+      Centralizada: fala única e frase única respiram melhor no eixo do
+      slide que encostadas na margem esquerda. A barra vertical virou um
+      traço curto acima, que não desloca o texto do centro. -- */
+.citacao { margin: auto auto; max-width: 74cqw; text-align: center; }
+.citacao::before {
+  content: ''; display: block; width: 7cqw; height: 0.4cqw;
+  background: var(--turquesa); border-radius: 0.4cqw; margin: 0 auto 2.8cqw;
+}
 .citacao .fala {
   font-family: var(--fonte-titulo);
-  font-size: 3cqw; font-weight: 600; color: var(--azul-profundo);
-  line-height: 1.35; font-style: italic;
+  font-size: 3.2cqw; font-weight: 600; color: var(--azul-profundo);
+  line-height: 1.38; font-style: italic; text-wrap: balance;
 }
 .citacao .autoria {
-  font-size: var(--t-apoio); font-weight: 600; color: var(--tinta-suave); margin-top: 1.8cqw;
+  font-size: var(--t-apoio); font-weight: 700; color: var(--tinta-suave);
+  margin-top: 2.4cqw; letter-spacing: 0.08em; text-transform: uppercase;
 }
 
 /* -- 10. CHAMADA — o momento em que a plateia faz alguma coisa. -- */
 .chamada { display: flex; flex-direction: column; align-items: center; gap: var(--gap-3); margin: auto 0; }
 .chamada .etiquetas { display: flex; gap: 1.4cqw; flex-wrap: wrap; justify-content: center; }
 .chamada .etiqueta {
-  background: var(--papel-fundo); border: 0.18cqw solid var(--azul-profundo);
+  background: var(--superficie); border: 0.18cqw solid var(--azul-profundo);
   color: var(--azul-profundo); font-size: var(--t-apoio); font-weight: 700;
   padding: 1.3cqw 2.6cqw; border-radius: 4cqw;
 }
 
 /* -- 11. FECHO — o remate. Discreto de propósito: não compete com o slide. -- */
 .fecho {
-  margin-top: 2.4cqw; background: var(--papel-fundo);
-  border-left: 0.25cqw solid var(--areia); border-radius: 0 0.7cqw 0.7cqw 0;
-  padding: 1.3cqw 2cqw; text-align: left; flex-shrink: 0;
+  margin-top: 2.9cqw; background: var(--superficie);
+  border-left: 0.3cqw solid var(--verde-petroleo); border-radius: 0 0.7cqw 0.7cqw 0;
+  padding: 1.7cqw 2.4cqw; text-align: left; flex-shrink: 0;
 }
 .fecho span { display: block; font-size: var(--t-apoio); color: var(--tinta-suave); line-height: 1.4; }
 .fecho span + span { font-weight: 700; margin-top: 0.3cqw; }
@@ -356,7 +395,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .capa h1 {
   font-family: var(--fonte-titulo);
   font-size: 6.4cqw; font-weight: 800; color: #fff;
-  line-height: 1.08; letter-spacing: -0.02em;
+  line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance;
 }
 .capa h1 em { color: var(--acafrao); font-style: normal; }
 .capa .autoria {
@@ -370,25 +409,43 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .tela.seccao { background: var(--verde-petroleo); align-items: center; justify-content: center; }
 .tela.seccao .assinatura, .tela.seccao .paginacao { color: #fff; opacity: 0.45; }
 .seccao .numero-parte {
-  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.20em;
-  text-transform: uppercase; color: rgba(255,255,255,0.55);
-  text-align: center; margin-bottom: 1.8cqw;
+  font-size: var(--t-corpo); font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(255,255,255,0.62);
+  text-align: center; margin-bottom: 2.6cqw;
 }
+/* O NOME É O SLIDE. Em tela de pilar não existe conteúdo competindo com
+   ele, então ele ocupa o tamanho de display — não o de título. */
 .seccao h2 {
   font-family: var(--fonte-titulo);
-  font-size: 5cqw; font-weight: 800; color: #fff;
-  text-align: center; line-height: 1.14;
+  font-size: 7.8cqw; font-weight: 800; color: #fff;
+  text-align: center; line-height: 1.06; letter-spacing: -0.025em;
+  text-wrap: balance; max-width: 84cqw;
 }
+/* a definição da dimensão, embaixo do nome — centralizada e com medida curta */
+.seccao-apoio {
+  max-width: 64cqw; margin: 3.2cqw auto 0; text-align: center;
+  font-size: var(--t-corpo); color: rgba(255,255,255,0.84);
+  font-weight: 500; line-height: 1.45; text-wrap: balance;
+}
+.seccao-apoio strong { color: #fff; font-weight: 700; }
+/* o fecho existe em fundo escuro também — vira faixa translúcida centrada */
+.tela.seccao .fecho {
+  background: rgba(255,255,255,0.10); border-left: none;
+  border-top: 0.2cqw solid rgba(255,255,255,0.30); border-radius: var(--raio);
+  margin: 3.4cqw auto 0; max-width: 66cqw; text-align: center; padding: 1.8cqw 2.6cqw;
+}
+.tela.seccao .fecho span { color: rgba(255,255,255,0.74); }
+.tela.seccao .fecho b { color: var(--acafrao); }
 
 /* -- 14. GANCHO — o primeiro slide depois da capa. A tensão.
       Diferente do frase-impacto: mais respiro, sem cabeçalho, sem fecho.
       O slide existe para segurar silêncio. -- */
-.tela.gancho { justify-content: center; padding: 9cqw 10cqw; }
+.tela.gancho { justify-content: center; padding: 5cqw 9cqw; }
 .gancho-frase {
   font-family: var(--fonte-titulo);
   font-size: 6.2cqw; font-weight: 800;
   color: var(--cor-titulo); line-height: 1.12; letter-spacing: -0.025em;
-  text-align: center;
+  text-align: center; text-wrap: balance; max-width: 72cqw; margin: 0 auto;
 }
 .gancho-frase em { color: var(--cor-realce); font-style: normal; }
 
@@ -404,7 +461,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .promessa-frase {
   font-family: var(--fonte-titulo);
   font-size: 4.4cqw; font-weight: 700; color: #fff;
-  line-height: 1.22; letter-spacing: -0.015em;
+  line-height: 1.22; letter-spacing: -0.015em; text-wrap: balance;
 }
 /* o instrumento prometido — é o que esta metodologia tem e as outras não */
 .promessa-frase b { color: var(--acafrao); font-weight: 800; }

@@ -25,7 +25,17 @@
   --violeta:            #6658B7;
 
   /* ---- Neutros — valores oficiais do design system v19 ---- */
-  --papel:        #F8F5EF;  /* = --canvas       · fundo do slide */
+  --papel:        #F8F5EF;  /* = --canvas       · papel impresso, material do participante */
+
+  /* ---- Canvas do slide — azul claríssimo, NÃO bege.
+     O bege lê como papel envelhecido no projetor: a granulação que dá
+     calor no impresso desaparece e sobra o amarelado. Estes três têm
+     luminância equivalente à do bege que substituíram, então a tabela de
+     contraste no fim deste arquivo continua valendo integralmente. ---- */
+  --canvas-slide:     #F0F6FA;  /* fundo da .tela */
+  --superficie:       #E3EDF4;  /* caixas, blocos, áreas de descanso */
+  --superficie-linha: #CBDCE7;  /* bordas e divisores sobre o canvas */
+
   --branco:       #FFFFFF;  /* = --surface */
   --papel-fundo:  #F1E9DF;  /* = --surface-warm · caixas e áreas de descanso */
   --papel-borda:  #DCD8D1;  /* = --line */
@@ -70,10 +80,10 @@
   --t-etiqueta: 1.35cqw;
 
   /* ---- Ritmo ---- */
-  --gap-1: 0.8cqw;
-  --gap-2: 1.6cqw;
-  --gap-3: 2.6cqw;
-  --gap-4: 4.0cqw;
+  --gap-1: 1.1cqw;
+  --gap-2: 2.0cqw;
+  --gap-3: 3.0cqw;
+  --gap-4: 4.4cqw;
   --raio:  1.1cqw;
   --raio-g: 1.8cqw;
 
