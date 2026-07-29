@@ -57,12 +57,43 @@ define o instrumento:
 
 ### As quatro colunas que a plateia preenche
 
-| Coluna | Natureza |
+| Coluna | Opções |
 |---|---|
-| **Como está hoje?** | opção fechada |
-| **Guardião** | nome próprio, texto livre |
-| **Quando é acompanhado?** | opção fechada |
-| **Onde está registrado?** | texto curto, com opções sugeridas |
+| **Como está hoje?** | Estruturado · Existe, mas frágil · Não existe · Não sei |
+| **Guardião** | nome próprio, campo aberto |
+| **Quando é acompanhado?** | Toda semana · Todo mês · A cada trimestre · Só quando dá problema · Nunca |
+| **Onde está registrado?** | Sistema · Planilha · Pasta física · E-mail ou WhatsApp · **Na minha cabeça** |
+
+**"Na minha cabeça" é opção formal, escrita.** É a resposta mais afiada do
+instrumento — faz o diagnóstico de centralização que a linha das senhas fazia na
+versão anterior, sem falar de senha e sem acusar ninguém.
+
+**As opções são caixas de marcar, não células vazias.** Marcar é muito mais rápido
+que escrever, e é isso que decide se as vinte linhas cabem nas quatro pausas de
+cinco minutos. Só o Guardião é campo aberto — escrever um nome é o exercício.
+
+### A regra de leitura
+
+> Uma linha só está **saudável** quando as quatro colunas estão respondidas:
+> estruturado, com dono, com frequência e com lugar. **Faltando qualquer uma das
+> quatro, ela é frágil.**
+
+### O material do participante
+
+`mapa.html` → `mapa.pdf`, **7 páginas A4 paisagem**:
+
+| Página | Conteúdo |
+|---|---|
+| 1 | O que é o instrumento + as quatro colunas explicadas + a regra de leitura |
+| 2 | **Exemplo preenchido** — a dimensão de Operação, com o retrato e três leituras |
+| 3 a 6 | As quatro dimensões **em branco**, uma por página, com as caixas de marcar |
+| 7 | A leitura do próprio Mapa — as quatro contagens e o primeiro passo |
+
+Gerar com:
+`python3 ferramentas/gerar-pdf-pagina.py palestras/gestao-eficiente/mapa.html`
+
+**A página 2 é reaproveitada nos slides** — é o exemplo analisado que abre a aula,
+antes da primeira dimensão.
 
 **Por que a lista vem preenchida.** "O que não pode cair" é pergunta generativa —
 exige abstrair do caos do dia a dia para uma categoria. Ao vivo, online, em cinco
