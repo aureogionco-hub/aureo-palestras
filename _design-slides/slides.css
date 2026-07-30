@@ -610,3 +610,88 @@ body[data-modo="limpo"] .paginacao { display: none; }
   .apresentacao { box-shadow: none; border-radius: 0; max-width: none; }
   .tela { flex: 1 1 100%; }
 }
+
+/* ============================================================
+   MOLDURA DO EVENTO — a mobília institucional do slide.
+   Logos de quem promove, ornamentos da identidade do evento.
+
+   Regra que governa tudo aqui: a moldura é MOBÍLIA, não conteúdo.
+   Ela identifica o evento e desaparece na leitura. No momento em que
+   alguém repara nela antes de ler o título, ela está errada.
+
+   Ela CUSTA ALTURA: os logos ocupam topo e pé, então o conteúdo perde
+   espaço. A compensação não é apertar o respiro — é reduzir a escala
+   tipográfica em 10% dentro da moldura, o que se faz redefinindo os
+   tokens --t-* localmente. Assim o ar entre os elementos continua, e o
+   que encolhe é o texto.
+   ============================================================ */
+.tela.com-moldura {
+  --t-display:  5.95cqw;
+  --t-titulo:   3.87cqw;
+  --t-corpo:    2.25cqw;
+  --t-apoio:    1.76cqw;
+  --t-etiqueta: 1.22cqw;
+  /* topo: logos terminam em 5,8cqw (2,6 + 3,2). Pé: em 4,4cqw (2 + 2,4).
+     O recuo abaixo dá a folga mínima sem roubar altura do conteúdo. */
+  padding: 6.1cqw 5.5cqw 5cqw;
+}
+/* os tamanhos que não vêm de token também cedem os 10% */
+.tela.com-moldura .gancho-frase   { font-size: 5.6cqw; }
+.tela.com-moldura.capa h1         { font-size: 5.75cqw; }
+.tela.com-moldura .seccao h2,
+.tela.com-moldura h2              { font-size: 7cqw; }
+.tela.com-moldura .promessa-frase { font-size: 3.95cqw; }
+.tela.com-moldura .numeros .n     { font-size: 5.4cqw; }
+.tela.com-moldura .citacao .fala  { font-size: 2.9cqw; }
+.tela.com-moldura .declaracao .corpo { font-size: 2.07cqw; }
+.tela.com-moldura .instrumento .parte { min-height: 15cqw; }
+/* o fecho cede um pouco de forro interno — é o bloco mais discreto do slide */
+.tela.com-moldura .fecho { padding: 1.4cqw 2.4cqw; }
+/* seis linhas de tabela somam muito espaçamento; dentro da moldura ele aperta */
+.tela.com-moldura .mapa { border-spacing: 0 0.5cqw; }
+
+.moldura { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+
+/* logos de quem promove: canto superior esquerdo, na ordem do template */
+.moldura-topo {
+  position: absolute; top: 2.6cqw; left: 3.4cqw;
+  display: flex; align-items: center; gap: 2.4cqw;
+}
+/* logos dos parceiros: no pé, centralizados */
+.moldura-pe {
+  position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 3.4cqw;
+}
+/* cada logo entra como <img> com altura fixa e largura livre — a proporção
+   é a do arquivo, e a altura é o que alinha a fileira */
+.moldura-topo img { height: 3.2cqw; width: auto; display: block; }
+.moldura-pe img   { height: 2.4cqw; width: auto; display: block; }
+
+/* SLOT — o lugar reservado enquanto o arquivo do logo não existe.
+   Tem a proporção do logo real, então trocar por <img> não desloca nada. */
+.slot {
+  border: 0.14cqw dashed var(--areia); border-radius: 0.5cqw;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95cqw; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--tinta-suave); opacity: 0.55;
+  white-space: nowrap; padding: 0 0.8cqw;
+}
+.moldura-topo .slot { height: 3.2cqw; }
+.moldura-pe   .slot { height: 2.4cqw; }
+
+/* ORNAMENTO de bússola: vetor, não recorte. Escala no telão sem serrar e a
+   cor vem do token. Sangra pelos cantos, como no template do evento. */
+.ornamento { position: absolute; opacity: 0.45; }
+.ornamento svg { width: 100%; height: 100%; display: block; }
+.ornamento-td { top: -4cqw; right: -4cqw; width: 17cqw; height: 17cqw; }
+.ornamento-be { bottom: -5cqw; left: -5cqw; width: 16cqw; height: 16cqw; }
+
+/* em fundo escuro (capa, promessa, tela de pilar) o ornamento clareia */
+.tela.seccao .ornamento, .tela.promessa .ornamento, .tela.capa .ornamento { opacity: 0.30; }
+.tela.seccao .slot, .tela.promessa .slot, .tela.capa .slot {
+  border-color: rgba(255,255,255,0.45); color: rgba(255,255,255,0.75); opacity: 0.9;
+}
+
+/* a assinatura e a paginação descem para a faixa livre, abaixo do conteúdo */
+.tela.com-moldura .assinatura { bottom: 1.6cqw; }
+.tela.com-moldura .paginacao  { bottom: 2.1cqw; }
