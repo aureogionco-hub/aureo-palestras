@@ -1,7 +1,7 @@
-# Gestão Eficiente — Base de Referência
+# Gestão Eficiente · Base de Referência
 
 > Fonte de verdade desta aula. Leia antes de qualquer trabalho aqui.
-> Não dependa do histórico de conversa — atualize a cada decisão aprovada.
+> Não dependa do histórico de conversa, atualize a cada decisão aprovada.
 
 ---
 
@@ -10,19 +10,19 @@
 | Campo | Valor |
 |-------|-------|
 | **Título** | Gestão Eficiente |
-| **Evento** | Formação de Líderes no 3º Setor — Programa Impulso / Instituto GRPCOM |
+| **Evento** | Formação de Líderes no 3º Setor, Programa Impulso / Instituto GRPCOM |
 | **Data** | **30/07/2026, 9h às 11h** |
-| **Tempo de palco** | **~85 min** — o encontro inteiro é de **1h30**, com abertura rápida da organizadora, que já passa a tela. ⚠️ **Confirmar se o Q&A está dentro desses 85.** |
+| **Tempo de palco** | **~85 min**, o encontro inteiro é de **1h30**, com abertura rápida da organizadora, que já passa a tela. ⚠️ **Confirmar se o Q&A está dentro desses 85.** |
 | **Formato** | Aula online, ao vivo, com pausas de trabalho de ~5 min |
 | **Posição** | 5ª de 6 · depois de Conexões Estratégicas, antes de Captação de Recursos |
-| **Status** | Fases 0 a 6 fechadas — falta o ensaio cronometrado |
+| **Status** | Fases 0 a 6 fechadas, falta o ensaio cronometrado |
 
 ---
 
 ## 2. A frase de saída
 
 > Ao final desta aula, a pessoa **entende onde estão os gargalos de gestão da
-> organização dela e sai com um plano para as próximas semanas** — o que hoje
+> organização dela e sai com um plano para as próximas semanas**, o que hoje
 > ela não consegue.
 
 **O território:** prioridade → plano → responsável → prazo → recurso →
@@ -47,7 +47,7 @@ quando necessário.**
 
 **Quatro pilares · cinco critérios cada · vinte critérios no total.**
 
-Cada critério vem **já escrito** em duas partes — e essa é a decisão de forma que
+Cada critério vem **já escrito** em duas partes, e essa é a decisão de forma que
 define o instrumento:
 
 | Coluna | Função |
@@ -65,12 +65,12 @@ define o instrumento:
 | **Onde está registrado?** | Sistema · Planilha · Pasta física · E-mail ou WhatsApp · **Na minha cabeça** |
 
 **"Na minha cabeça" é opção formal, escrita.** É a resposta mais afiada do
-instrumento — faz o diagnóstico de centralização que a linha das senhas fazia na
+instrumento, faz o diagnóstico de centralização que a linha das senhas fazia na
 versão anterior, sem falar de senha e sem acusar ninguém.
 
 **As opções são caixas de marcar, não células vazias.** Marcar é muito mais rápido
 que escrever, e é isso que decide se as vinte linhas cabem nas quatro pausas de
-cinco minutos. Só o Guardião é campo aberto — escrever um nome é o exercício.
+cinco minutos. Só o Guardião é campo aberto, escrever um nome é o exercício.
 
 ### A regra de leitura
 
@@ -85,17 +85,17 @@ cinco minutos. Só o Guardião é campo aberto — escrever um nome é o exercí
 | Página | Conteúdo |
 |---|---|
 | 1 | O que é o instrumento + as quatro colunas explicadas + a regra de leitura |
-| 2 | **Exemplo preenchido** — a dimensão de Operação, com o retrato e três leituras |
+| 2 | **Exemplo preenchido**, a dimensão de Operação, com o retrato e três leituras |
 | 3 a 6 | As quatro dimensões **em branco**, uma por página, com as caixas de marcar |
-| 7 | A leitura do próprio Mapa — as quatro contagens e o primeiro passo |
+| 7 | A leitura do próprio Mapa, as quatro contagens e o primeiro passo |
 
 Gerar com:
 `python3 ferramentas/gerar-pdf-pagina.py palestras/gestao-eficiente/mapa.html`
 
-**A página 2 é reaproveitada nos slides** — é o exemplo analisado que abre a aula,
+**A página 2 é reaproveitada nos slides**, é o exemplo analisado que abre a aula,
 antes da primeira dimensão.
 
-**Por que a lista vem preenchida.** "O que não pode cair" é pergunta generativa —
+**Por que a lista vem preenchida.** "O que não pode cair" é pergunta generativa,
 exige abstrair do caos do dia a dia para uma categoria. Ao vivo, online, em cinco
 minutos, com a maturidade desigual da turma, é onde a pausa quebrava. Vindo
 pronta, a lista deixa de ser formulário e passa a ser conteúdo: mesmo quem
@@ -104,7 +104,7 @@ passa a ser medido contra um padrão, não contra uma lista que a própria pesso
 inventou.
 
 **Por que "Onde está registrado?" é a coluna mais importante.** Ela transforma o
-diagnóstico de *estado* em diagnóstico de *lugar* — e é aí que está a doença real
+diagnóstico de *estado* em diagnóstico de *lugar*, e é aí que está a doença real
 da organização pequena: a informação existe, só está espalhada. É também a coluna
 que sustenta o critério do sistema: quando a resposta são oito lugares
 diferentes, é aí que plataforma passa a fazer sentido.
@@ -151,14 +151,14 @@ diferentes, é aí que plataforma passa a fazer sentido.
 
 > **O nome do pilar 4 é "Monitoramento e Avaliação", não "Monitoramento".** Com
 > o nome curto, avaliar os resultados e usar o aprendizado ficavam fora de lugar
-> — acompanhar não é julgar. Com o nome completo, o pilar é gestão de impacto e
+>, acompanhar não é julgar. Com o nome completo, o pilar é gestão de impacto e
 > as cinco linhas fecham.
 
-### Governança ficou fora — decisão
+### Governança ficou fora, decisão
 
 **São quatro pilares, não cinco.** Governança volta integralmente para o
 território do Jaime (aula 1), o que elimina qualquer sobreposição na grade. E
-quatro voltas é exatamente o máximo que o método admite para 60-90 min, além de
+quatro voltas é exatamente o máximo que o método admite para 60 a 90 min, além de
 ser a conclusão que o briefing já tinha: 4 voltas dão ~11 min de exposição antes
 de cada pausa, contra ~16 min com 3. No online, 16 min sem interação é a aba do
 lado ganhando.
@@ -166,7 +166,7 @@ lado ganhando.
 ### Descartado no caminho
 
 - **O desenho de coluna aberta** (a plateia inventando as linhas de "o que não
-  pode cair") — inviável na pausa e produzia retrato relativo.
+  pode cair"), inviável na pausa e produzia retrato relativo.
 - **A escada de quatro degraus** (organizar → acompanhar → avaliar → demonstrar),
   proposta a partir de §1 e §8 do histórico. Perdeu para o Mapa por ser diagnóstico
   de nível, não de prática.
@@ -182,7 +182,7 @@ lado ganhando.
 
 | Campo | Valor |
 |-------|-------|
-| **Quem está na sala** | Gestores de ONGs iniciantes/intermediárias, coordenadores de projeto e — perfil dominante — **fundadores sobrecarregados pela centralização** |
+| **Quem está na sala** | Gestores de ONGs iniciantes/intermediárias, coordenadores de projeto e, perfil dominante, **fundadores sobrecarregados pela centralização** |
 | **Porte** | Organizações pequenas e médias, equipe reduzida, muitos voluntários |
 | **Por que vieram** | Inscrição própria, formação gratuita, alcance nacional |
 | **Maturidade** | Muito desigual |
@@ -193,18 +193,18 @@ lado ganhando.
 **A parede, e ela é uma crença, não um problema de organização:** uma ONG foca na
 ação, não na gestão. A pessoa dá o que tem de melhor para a causa e trata a
 gestão como o que sobra. Enquanto essa crença estiver de pé, nenhuma ferramenta
-pega — a pessoa aprende e não usa, porque usar parece trair a causa.
+pega, a pessoa aprende e não usa, porque usar parece trair a causa.
 
 **A virada, na formulação nova:** não é volume de gestão, é **estrutura mínima e
 recorrente.** Uma hora por semana (§15 do histórico) sustenta uma instituição há
-cinco anos. Isso baixa o preço em vez de levantar o susto — e é o argumento que
+cinco anos. Isso baixa o preço em vez de levantar o susto, e é o argumento que
 uma plateia exausta consegue aceitar às nove da manhã.
 
 ---
 
 ## 5. Case e credencial
 
-**As três falhas pessoais saíram** — o processo de INSS, a captação perdida por
+**As três falhas pessoais saíram**, o processo de INSS, a captação perdida por
 certidão e os editais perdidos. Decisão de Aureo. A matéria-prima passa a ser
 exclusivamente o **histórico profissional e empresarial**, e o case é a própria
 trajetória, contada em ordem cronológica.
@@ -212,7 +212,7 @@ trajetória, contada em ordem cronológica.
 Personagens por função: "a coordenadora do instituto", "o contador", "as
 cooperativas". Nunca nome próprio.
 
-**Credencial — três frases, depois da promessa:**
+**Credencial, três frases, depois da promessa:**
 
 > Comecei na Pastoral Social de uma paróquia em Itajaí, organizando ação
 > comunitária. Hoje sou fundador de uma plataforma que administra o investimento
@@ -226,22 +226,22 @@ autoridade deixa de vir do tombo e passa a vir do ponto de observação.
 **O que NÃO entra:** percentuais societários, valores de investimento, nomes de
 sócios, Rede Salesiana, separação, cidadania italiana, lista de empresas do grupo.
 
-**Os R$ 300 mil não entram de forma alguma** — nem o processo de INSS, nem o
+**Os R$ 300 mil não entram de forma alguma**, nem o processo de INSS, nem o
 aporte de 2017. São fatos sem relação entre si, e aproximá-los sugere um
 parentesco que não existe.
 
-### O prêmio Melhores ONGs — referência externa
+### O prêmio Melhores ONGs, referência externa
 
 Cinco eixos que funcionam como modelo de maturidade institucional: Gestão e
 Planejamento · Representação e Responsabilidade · Estratégia de Financiamento ·
 Comunicação e Prestação de Contas · Causa e Estratégia de Atuação.
 
 Cruzado critério por critério contra os vinte do Mapa: **a cobertura é completa,
-exceto exatamente onde a aula cortou de propósito** — missão e conselho (Jaime),
+exceto exatamente onde a aula cortou de propósito**, missão e conselho (Jaime),
 site e comunicação institucional (Giovanna), diversificação de receita e reserva
 (Thiago).
 
-**Uso:** uma menção, no finale, como horizonte. E com uma condição — entra como
+**Uso:** uma menção, no finale, como horizonte. E com uma condição, entra como
 **escada, nunca como portão.** A turma é de organização pequena e iniciante;
 prêmio famoso pode soar como o mundo dos outros. A régua é a mesma para todos e
 ninguém começa em cima.
@@ -255,13 +255,13 @@ conflito de interesses e lista de presença na mesma pausa.
 ## 6. A estrutura
 
 **Formato: aula de diagnóstico guiado.** Não tem trança, não tem case
-protagonista, não tem volta ao gancho — o instrumento é entregue pronto no começo
+protagonista, não tem volta ao gancho, o instrumento é entregue pronto no começo
 e a plateia preenche uma dimensão por vez. Detalhe em `00-pre-producao/arco.md`,
 os 20 casos em `00-pre-producao/casos.md`.
 
 | Movimento | Tempo | Acum. |
 |---|---|---|
-| Abertura — o problema do setor | 7 | 00:00 |
+| Abertura, o problema do setor | 7 | 00:00 |
 | A promessa + quem fala | 3 | 07:00 |
 | A ferramenta (pausa) | 3 | 10:00 |
 | Como preencher + o exemplo analisado | 4 | 13:00 |
@@ -296,10 +296,10 @@ pausa de 5 min. **Nunca mais de 8 min de exposição sem interação.**
 | Arquivo | O que é |
 |---|---|
 | `slides.html` | **49 slides**, fonte única. Notas do formador dentro. `P` alterna modo |
-| `slides-completo.html` | Standalone com CSS e JS embutidos — para mandar por e-mail |
+| `slides-completo.html` | Standalone com CSS e JS embutidos, para mandar por e-mail |
 | `gestao-eficiente.pdf` | 49 páginas, modo limpo |
 | `gestao-eficiente-formador.pdf` | 49 páginas, com as notas |
-| `mapa.pdf` | 7 páginas A4 paisagem — **o material do participante** |
+| `mapa.pdf` | 7 páginas A4 paisagem, **o material do participante** |
 | `roteiro.md` | Núcleo fixo falado, transições, Q&A e cortes de emergência |
 
 Regenerar tudo depois de mexer no `slides.html`:
@@ -330,17 +330,17 @@ linhas daquele pilar.
 
 | Item | Status |
 |------|--------|
-| Fase 0 · Briefing | ✅ fechada — evento, plateia, corte e parede seguem válidos |
-| Fase 1 · Ideia-instrumento | ✅ **fechada — definida por Aureo** |
-| Fase 2 · Case e credencial | 🔄 reaberta — trajetória do histórico, sem as falhas |
-| Fase 3 · Âncoras | 🔄 reaberta — uma por volta, todas do histórico |
+| Fase 0 · Briefing | ✅ fechada, evento, plateia, corte e parede seguem válidos |
+| Fase 1 · Ideia-instrumento | ✅ **fechada, definida por Aureo** |
+| Fase 2 · Case e credencial | 🔄 reaberta, trajetória do histórico, sem as falhas |
+| Fase 3 · Âncoras | 🔄 reaberta, uma por volta, todas do histórico |
 | Fase 4 · Estrutura | ✅ fechada |
 | Fase 5 · Roteiro | ✅ escrito |
 | Fase 6 · Slides | ✅ **49 slides, sem estouro de `.tela`, exportados** |
 | Fase 7 · Ensaio e export | 🔄 falta Aureo rodar cronometrando |
 
 **Material da versão anterior: removido.** Os 50 slides do instrumento de cinco
-pilares, o roteiro antigo e os PDFs correspondentes saíram do repositório — só o
+pilares, o roteiro antigo e os PDFs correspondentes saíram do repositório, só o
 sistema visual de `_design-slides` foi reaproveitado.
 
 ### O que ainda depende de Aureo
@@ -355,5 +355,5 @@ sistema visual de `_design-slides` foi reaproveitado.
 
 **O exemplo preenchido** (slide 12 e página 2 do `mapa.pdf`) usa uma organização
 de 60 jovens com três contratadas e oito voluntários. É invenção, coerente com os
-20 casos. Se o porte dominante da turma for menor, vale trocar — quanto mais
+20 casos. Se o porte dominante da turma for menor, vale trocar, quanto mais
 parecido com quem está na sala, mais forte o reconhecimento.

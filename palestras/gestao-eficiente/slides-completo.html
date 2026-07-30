@@ -774,7 +774,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
    ============================================================ */
 .tela.com-moldura {
   --t-display:  5.95cqw;
-  --t-titulo:   3.87cqw;
+  --t-titulo:   4.05cqw;
   --t-corpo:    2.25cqw;
   --t-apoio:    1.76cqw;
   --t-etiqueta: 1.22cqw;
@@ -814,14 +814,15 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .moldura-topo img { height: 3.2cqw; width: auto; display: block; }
 .moldura-pe img   { height: 2.4cqw; width: auto; display: block; }
 
-/* SLOT — o lugar reservado enquanto o arquivo do logo não existe.
-   Tem a proporção do logo real, então trocar por <img> não desloca nada. */
+/* SLOT: o lugar reservado enquanto o arquivo do logo não existe.
+   Tem a proporção do logo real, então trocar por <img> não desloca nada.
+   SEM contorno: moldura tracejada faz o slide parecer wireframe, e a
+   plateia vê o rascunho antes do conteúdo. */
 .slot {
-  border: 0.14cqw dashed var(--areia); border-radius: 0.5cqw;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.95cqw; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--tinta-suave); opacity: 0.55;
-  white-space: nowrap; padding: 0 0.8cqw;
+  text-transform: uppercase; color: var(--tinta-suave); opacity: 0.30;
+  white-space: nowrap;
 }
 .moldura-topo .slot { height: 3.2cqw; }
 .moldura-pe   .slot { height: 2.4cqw; }
@@ -836,7 +837,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 /* em fundo escuro (capa, promessa, tela de pilar) o ornamento clareia */
 .tela.seccao .ornamento, .tela.promessa .ornamento, .tela.capa .ornamento { opacity: 0.30; }
 .tela.seccao .slot, .tela.promessa .slot, .tela.capa .slot {
-  border-color: rgba(255,255,255,0.45); color: rgba(255,255,255,0.75); opacity: 0.9;
+  color: rgba(255,255,255,0.55); opacity: 0.55;
 }
 
 /* a assinatura e a paginação descem para a faixa livre, abaixo do conteúdo */
@@ -946,7 +947,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>A abertura</span></div><span class="notas-tempo">00:20</span>
     <div class="notas-corpo">
       <p>"E não é distração. É <strong>hierarquia</strong>: o atendimento é a missão, a gestão é o que sobra. É o que a gente faz na sexta à tarde, quando dá."</p>
-      <p>"A gente é obcecado por quem a gente atende — e é por isso que a organização existe. O problema é o que essa obsessão deixa de fora."</p>
+      <p>"A gente é obcecado por quem a gente atende, e é por isso que a organização existe. O problema é o que essa obsessão deixa de fora."</p>
     </div>
     <div class="notas-aviso"><strong>Sem "bom dia a todos", sem currículo, sem agenda.</strong> Deixe um silêncio depois da frase.</div>
     <div class="notas-ref"></div>
@@ -988,19 +989,19 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">O que a obsessão pelo<br>atendimento <em>deixa de fora</em></div></div>
+    <div class="cabecalho"><div class="titulo">O que a obsessão pelo atendimento <em>deixa de fora</em></div></div>
     <div class="lista">
-      <div><span class="seta">→</span><span class="texto">A equipe — quem faz, e com que preparo</span></div>
-      <div><span class="seta">→</span><span class="texto">As metas — o que a gente quer alcançar este ano</span></div>
-      <div><span class="seta">→</span><span class="texto">A operação — o registro do que a gente faz</span></div>
-      <div><span class="seta">→</span><span class="texto">O financeiro — quanto entra, quanto sai, quanto falta</span></div>
+      <div><span class="seta">→</span><span class="texto">A equipe: quem faz, e com que preparo</span></div>
+      <div><span class="seta">→</span><span class="texto">As metas: o que a gente quer alcançar este ano</span></div>
+      <div><span class="seta">→</span><span class="texto">A operação: o registro do que a gente faz</span></div>
+      <div><span class="seta">→</span><span class="texto">O financeiro: quanto entra, quanto sai, quanto falta</span></div>
       <div><span class="seta">→</span><span class="texto"><strong>E o mais grave: por que a gente faz o que faz</strong></span></div>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O problema, aberto</span></div><span class="notas-tempo">01:20</span>
     <div class="notas-corpo">
-      <p><strong>Não leia a lista.</strong> Diga três e pare na última, que é a que dói: a organização esquece a própria razão de existir — não por desprezo, por falta de tempo para olhar.</p>
+      <p><strong>Não leia a lista.</strong> Diga três e pare na última, que é a que dói: a organização esquece a própria razão de existir. Não por desprezo, por falta de tempo para olhar.</p>
       <p>"E quando isso acontece, a conta não chega em forma de bronca. Chega em forma de recurso devolvido, projeto perdido, equipe exausta."</p>
     </div>
     <div class="notas-ref"></div>
@@ -1048,7 +1049,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>O cenário</span></div><span class="notas-tempo">02:40</span>
     <div class="notas-corpo">
-      <p>"Nunca se exigiu tanta transparência. O financiador que pedia relatório hoje pede evidência. E a régua subiu para todo mundo — inclusive para quem tem três pessoas na equipe."</p>
+      <p>"Nunca se exigiu tanta transparência. O financiador que pedia relatório hoje pede evidência. E a régua subiu para todo mundo, inclusive para quem tem três pessoas na equipe."</p>
       <p>Diga devagar. <strong>É a frase que autoriza os próximos setenta minutos.</strong></p>
     </div>
     <div class="notas-ref"></div>
@@ -1090,16 +1091,16 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">A crença que trava tudo —<br>e ela é <em>o contrário</em> da verdade</div></div>
+    <div class="cabecalho"><div class="titulo">A crença que trava tudo, e ela é <em>o contrário</em> da verdade</div></div>
     <div class="contraste">
       <div class="nao"><span class="rotulo">A crença que trava</span><span class="texto">Cuidar da gestão é tirar energia da missão</span></div>
-      <div class="sim"><span class="rotulo">O que acontece de verdade</span><span class="texto">Gestão devolve tempo para a ação — toda hora apagando incêndio é hora que não foi para quem você atende</span></div>
+      <div class="sim"><span class="rotulo">O que acontece de verdade</span><span class="texto">Gestão devolve tempo para a ação, toda hora apagando incêndio é hora que não foi para quem você atende</span></div>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A virada</span></div><span class="notas-tempo">03:40</span>
     <div class="notas-corpo">
-      <p><strong>Enquanto essa crença estiver de pé, nenhuma ferramenta pega</strong> — a pessoa aprende e não usa, porque usar parece trair a causa. É por isso que este slide vem antes de qualquer conteúdo.</p>
+      <p><strong>Enquanto essa crença estiver de pé, nenhuma ferramenta pega</strong>, a pessoa aprende e não usa, porque usar parece trair a causa. É por isso que este slide vem antes de qualquer conteúdo.</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -1146,7 +1147,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>O preço, baixado</span></div><span class="notas-tempo">05:30</span>
     <div class="notas-corpo">
-      <p>"Eu assessoro um instituto há cinco anos. <strong>Uma hora por semana.</strong> Não é muito — é uma hora. Mas é toda semana."</p>
+      <p>"Eu assessoro um instituto há cinco anos. <strong>Uma hora por semana.</strong> Não é muito. É uma hora. Mas é toda semana."</p>
       <p>Esta é a frase que a plateia exausta consegue aceitar às nove da manhã. <strong>Ninguém aqui vai virar gestor. Todo mundo consegue uma hora.</strong></p>
     </div>
     <div class="notas-ref"></div>
@@ -1198,7 +1199,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>A promessa</span></div><span class="notas-tempo">07:00</span>
     <div class="notas-corpo">
       <p>"Não é uma palestra sobre gestão. Você vai preencher <strong>enquanto</strong> a gente conversa, e no fim tem o retrato da sua gestão na mão."</p>
-      <p><strong>Diga a humildade agora, não no fim:</strong> "são vinte critérios, alguns inspirados no prêmio Melhores ONGs. Não são a verdade nem o total — existem outros eixos, e no fim eu quero que você acrescente os seus."</p>
+      <p><strong>Diga a humildade agora, não no fim:</strong> "são vinte critérios, alguns inspirados no prêmio Melhores ONGs. Não são a verdade nem o total. Existem outros eixos, e no fim eu quero que você acrescente os seus."</p>
     </div>
     <div class="notas-aviso">Sem esse enquadramento, quem marcar quinze "não existe" se sente julgado por uma lista que nem é completa.</div>
     <div class="notas-ref"></div>
@@ -1253,7 +1254,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>Quem fala</span></div><span class="notas-tempo">08:00</span>
     <div class="notas-corpo">
-      <p><strong>Três frases, não vire currículo.</strong> A terceira é a que sustenta a aula: você não vem dizer como se gere uma ONG — vem dizer o que se vê de quem avalia.</p>
+      <p><strong>Três frases, não vire currículo.</strong> A terceira é a que sustenta a aula: você não vem dizer como se gere uma ONG. Vem dizer o que se vê de quem avalia.</p>
       <p>"É de lá que vêm os vinte critérios. Não saíram de um livro."</p>
     </div>
     <div class="notas-ref"></div>
@@ -1295,7 +1296,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">Quatro dimensões,<br><em>cinco critérios</em> em cada</div></div>
+    <div class="cabecalho"><div class="titulo">Quatro dimensões, <em>cinco critérios</em> em cada</div></div>
     <div class="instrumento">
       <div class="parte vazia"><span class="n">1</span><div class="rotulo">Estratégia</div><div class="conteudo">Onde a organização quer chegar</div></div>
       <div class="parte vazia"><span class="n">2</span><div class="rotulo">Operação</div><div class="conteudo">O rastro do que ela faz</div></div>
@@ -1308,7 +1309,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>O caminho da aula</span></div><span class="notas-tempo">09:00</span>
     <div class="notas-corpo">
       <p>"A gente vai fazer quatro vezes a mesma coisa: eu explico a dimensão, dou cinco exemplos de rotina, e você preenche a sua parte em cinco minutos."</p>
-      <p><strong>Este quadro vai reaparecer quatro vezes</strong>, com uma dimensão acesa por vez. É o mapa da aula — aponte para ele quando alguém se perder.</p>
+      <p><strong>Este quadro vai reaparecer quatro vezes</strong>, com uma dimensão acesa por vez. É o mapa da aula. Aponte para ele quando alguém se perder.</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -1363,12 +1364,12 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
   </div>
   <aside class="notas">
-    <div class="notas-topo"><span>Logística — e só agora</span></div><span class="notas-tempo">10:00</span>
+    <div class="notas-topo"><span>Logística, e só agora</span></div><span class="notas-tempo">10:00</span>
     <div class="notas-corpo">
       <p>"São sete páginas. A primeira explica as colunas, a segunda é um exemplo preenchido, e as quatro do meio são as dimensões que a gente vai preencher hoje."</p>
       <p>"Se você imprimir, melhor: é para marcar caixinha, não para digitar."</p>
     </div>
-    <div class="notas-aviso"><strong>⚠️ Trocar antes da aula:</strong> o QR e o link. <strong>Se for sistema em vez de PDF</strong>, mude a consigna para "crie seu acesso e abra o Mapa" e suba a pausa para 5 min — sai da folga.</div>
+    <div class="notas-aviso"><strong>⚠️ Trocar antes da aula:</strong> o QR e o link. <strong>Se for sistema em vez de PDF</strong>, mude a consigna para "crie seu acesso e abra o Mapa" e suba a pausa para 5 min. Sai da folga.</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -1410,7 +1411,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">As quatro colunas<br>que <em>você</em> responde</div></div>
+    <div class="cabecalho"><div class="titulo">As quatro colunas que <em>você</em> responde</div></div>
     <div class="passos">
       <div><span class="n">1</span><span class="rotulo">Como está hoje?</span><span class="valor">estruturado · existe mas frágil · não existe · <strong>não sei</strong></span></div>
       <div><span class="n">2</span><span class="rotulo">Guardião</span><span class="valor">uma pessoa, com nome. "A equipe" não é resposta</span></div>
@@ -1421,10 +1422,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>A mecânica</span></div><span class="notas-tempo">13:00</span>
     <div class="notas-corpo">
-      <p>Na 1: <strong>"não sei" é resposta válida</strong> — e é a mais honesta. "Não sei" é o único lugar onde o problema pode estar crescendo sem você ver.</p>
-      <p>Na 4: <strong>"na minha cabeça" está escrito lá, de propósito.</strong> Não é vergonha — é a resposta mais comum de quem fundou a organização.</p>
+      <p>Na 1: <strong>"não sei" é resposta válida</strong>, e é a mais honesta. "Não sei" é o único lugar onde o problema pode estar crescendo sem você ver.</p>
+      <p>Na 4: <strong>"na minha cabeça" está escrito lá, de propósito.</strong> Não é vergonha. É a resposta mais comum de quem fundou a organização.</p>
     </div>
-    <div class="notas-aviso">Não explique demais. Eles vão entender preenchendo — a mecânica se aprende no exemplo do próximo slide.</div>
+    <div class="notas-aviso">Não explique demais. Eles vão entender preenchendo, a mecânica se aprende no exemplo do próximo slide.</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -1469,16 +1470,16 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <tr><th>Critério</th><th>Como está</th><th>Guardião</th><th>Quando</th><th>Onde está</th></tr>
       <tr><td>Cadastro dos atendidos</td><td><span class="marca-meio">Frágil</span></td><td>a coordenadora</td><td>todo mês</td><td>planilha na sala</td></tr>
       <tr><td>Presenças e oficinas</td><td><span class="marca-meio">Frágil</span></td><td>a educadora</td><td>todo mês</td><td>o caderno dela</td></tr>
-      <tr><td>Atividades documentadas</td><td><span class="marca-nao">Não existe</span></td><td class="vazio">ninguém</td><td class="vazio">nunca</td><td class="vazio">—</td></tr>
+      <tr><td>Atividades documentadas</td><td><span class="marca-nao">Não existe</span></td><td class="vazio">ninguém</td><td class="vazio">nunca</td><td class="vazio">sem lugar</td></tr>
       <tr><td>Termos e autorizações</td><td><span class="marca-nao">Não sei</span></td><td class="vazio">ninguém</td><td>só se dá problema</td><td>pasta no armário</td></tr>
-      <tr><td>Relatórios periódicos</td><td><span class="marca-nao">Não existe</span></td><td class="vazio">ninguém</td><td class="vazio">nunca</td><td class="vazio">—</td></tr>
+      <tr><td>Relatórios periódicos</td><td><span class="marca-nao">Não existe</span></td><td class="vazio">ninguém</td><td class="vazio">nunca</td><td class="vazio">sem lugar</td></tr>
     </table>
   </div>
   <aside class="notas">
-    <div class="notas-topo"><span>O exemplo — é a página 2 do PDF</span></div><span class="notas-tempo">14:00</span>
+    <div class="notas-topo"><span>O exemplo, na página 2 do PDF</span></div><span class="notas-tempo">14:00</span>
     <div class="notas-corpo">
       <p>"É a dimensão de Operação de uma organização que atende sessenta jovens. Ela trabalha bem. As pessoas são boas. <strong>E olha o resultado.</strong>"</p>
-      <p>Aponte a linha 2: <strong>tem dono, tem frequência — e ainda é frágil, porque o lugar é o caderno de uma pessoa.</strong> Se ela sair, a informação sai com ela. "O próximo passo não é cobrar mais dela. É mudar o onde."</p>
+      <p>Aponte a linha 2: <strong>tem dono, tem frequência, e ainda é frágil, porque o lugar é o caderno de uma pessoa.</strong> Se ela sair, a informação sai com ela. "O próximo passo não é cobrar mais dela. É mudar o onde."</p>
     </div>
     <div class="notas-aviso"><strong>Este é o slide que ensina a ler.</strong> Se a plateia entender aqui, as quatro pausas correm sozinhas. Não corra.</div>
     <div class="notas-ref"></div>
@@ -1568,7 +1569,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">O retrato daquela organização,<br>numa dimensão só</div></div>
+    <div class="cabecalho"><div class="titulo">O retrato daquela organização, numa dimensão só</div></div>
     <div class="numeros">
       <div><div class="n">0</div><div class="d">linhas saudáveis</div></div>
       <div><div class="n">2</div><div class="d">existem, mas frágeis</div></div>
@@ -1576,13 +1577,13 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="fecho">
       <span>E ninguém ali é desleixado.</span>
-      <span>O problema não é falta de esforço — <b>é falta de estrutura</b>.</span>
+      <span>O problema não é falta de esforço, <b>é falta de estrutura</b>.</span>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O argumento central, demonstrado</span></div><span class="notas-tempo">16:00</span>
     <div class="notas-corpo">
-      <p><strong>Não acuse ninguém.</strong> Este slide existe para tirar a culpa da sala antes das pausas — se a plateia se sentir julgada, ela preenche bonito e o diagnóstico não serve para nada.</p>
+      <p><strong>Não acuse ninguém.</strong> Este slide existe para tirar a culpa da sala antes das pausas. Se a plateia se sentir julgada, ela preenche bonito e o diagnóstico não serve para nada.</p>
       <p>"Se você preencher honesto e der um resultado parecido, você está na média. Não é sobre ser bom ou ruim gestor."</p>
     </div>
     <div class="notas-aviso"><strong>Transição:</strong> "Agora a sua vez. Vamos começar pela estratégia."</div>
@@ -1629,7 +1630,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="numero-parte">Dimensão 1 de 4</div>
     <h2>Estratégia</h2>
-    <div class="seccao-apoio">Estratégia não é o plano bonito de um dia bonito. É <strong>a organização sabendo dizer o que quer mudar, com medida e prazo</strong> — e conseguindo provar que decidiu, e não só conversou.</div>
+    <div class="seccao-apoio">Estratégia não é o plano bonito de um dia bonito. É <strong>a organização sabendo dizer o que quer mudar, com medida e prazo</strong>, e conseguindo provar que decidiu, e não só conversou.</div>
     <div class="fecho">
       <span>O Jaime abriu esta formação falando de direção.</span>
       <span>A pergunta de hoje é outra: <b>daquilo que ele te ajudou a construir, o que não pode cair?</b></span>
@@ -1638,8 +1639,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>Abre a dimensão</span></div><span class="notas-tempo">17:00</span>
     <div class="notas-corpo">
-      <p><strong>Diga a ponte com o Jaime em voz alta.</strong> Ele deu missão, visão e prioridades na aula 1 — você não repete nada disso. Você pergunta o que daquilo continua existindo.</p>
-      <p>"Plano estratégico não morre de erro. Morre de abandono — ninguém nunca mais abre o arquivo."</p>
+      <p><strong>Diga a ponte com o Jaime em voz alta.</strong> Ele deu missão, visão e prioridades na aula 1, você não repete nada disso. Você pergunta o que daquilo continua existindo.</p>
+      <p>"Plano estratégico não morre de erro. Morre de abandono, ninguém nunca mais abre o arquivo."</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -1681,10 +1682,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Estratégia · critério 1 de 5</span>
-    <div class="cabecalho"><div class="titulo">A organização definiu<br><em>a transformação</em> que busca gerar</div></div>
+    <div class="cabecalho"><div class="titulo">A organização definiu <em>a transformação</em> que busca gerar</div></div>
     <div class="declaracao">
-      <div class="rotulo">A mesma pergunta, duas educadoras da mesma casa</div>
-      <div class="corpo">— O que a gente quer que mude na vida desses jovens?<br>— <strong>Que eles não fiquem na rua.</strong><br>— <strong>Que eles entrem no mercado de trabalho.</strong></div>
+      <div class="rotulo">A mesma pergunta, duas educadoras</div>
+      <div class="corpo">"O que a gente quer que mude na vida desses jovens?"<br><strong>"Que eles não fiquem na rua."</strong><br><strong>"Que eles entrem no mercado de trabalho."</strong></div>
     </div>
     <div class="fecho">
       <span>As duas estão ali há três anos.</span>
@@ -1694,7 +1695,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">18:00</span>
     <div class="notas-corpo">
-      <p>"Duas respostas legítimas significam <strong>duas organizações dentro da mesma organização</strong> — e cada projeto vai perseguir uma delas."</p>
+      <p>"Duas respostas legítimas significam <strong>duas organizações dentro da mesma organização</strong>, e cada projeto vai perseguir uma delas."</p>
       <p>"Isso não está escrito em lugar nenhum. Se estivesse, as duas responderiam igual."</p>
     </div>
     <div class="notas-ref"></div>
@@ -1737,7 +1738,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Estratégia · critério 2 de 5</span>
-    <div class="cabecalho"><div class="titulo">A organização possui<br><em>metas anuais de resultado</em></div></div>
+    <div class="cabecalho"><div class="titulo">A organização possui <em>metas anuais de resultado</em></div></div>
     <div class="contraste">
       <div class="nao"><span class="rotulo">Meta de atividade</span><span class="texto">"Atender 120 jovens este ano"</span></div>
       <div class="sim"><span class="rotulo">Meta de resultado</span><span class="texto">"80 dos 120 concluindo o curso até dezembro"</span></div>
@@ -1793,7 +1794,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Estratégia · critério 3 de 5</span>
-    <div class="cabecalho"><div class="titulo">As metas possuem<br><em>indicadores definidos</em></div></div>
+    <div class="cabecalho"><div class="titulo">As metas possuem <em>indicadores definidos</em></div></div>
     <div class="fluxo">
       <div class="caixa antes"><div class="rotulo">Em março</div><div class="valor">"A nossa meta é melhorar o desempenho escolar dos atendidos"</div></div>
       <div class="seta">↓</div>
@@ -1846,10 +1847,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Estratégia · critério 4 de 5</span>
-    <div class="cabecalho"><div class="titulo">Os projetos possuem<br><em>planos de ação</em></div></div>
+    <div class="cabecalho"><div class="titulo">Os projetos possuem <em>planos de ação</em></div></div>
     <div class="declaracao">
       <div class="rotulo">O projeto foi aprovado em março e começa em maio</div>
-      <div class="corpo">Em abril, ninguém sabe dizer quem compra o material, quem contrata a oficineira, quem monta a lista de inscritos. <strong>Está na cabeça de quem escreveu o projeto — não num plano com nome e data.</strong></div>
+      <div class="corpo">Em abril, ninguém sabe dizer quem compra o material, quem contrata a oficineira, quem monta a lista de inscritos. <strong>Está na cabeça de quem escreveu o projeto. Não num plano com nome e data.</strong></div>
     </div>
     <div class="fecho">
       <span>Projeto aprovado não é projeto planejado.</span>
@@ -1902,21 +1903,21 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Estratégia · critério 5 de 5</span>
-    <div class="cabecalho"><div class="titulo">As decisões coletivas<br><em>são registradas</em></div></div>
+    <div class="cabecalho"><div class="titulo">As decisões coletivas <em>são registradas</em></div></div>
     <div class="declaracao">
       <div class="rotulo">Em maio ficou decidido mudar o horário das oficinas</div>
       <div class="corpo">Em julho, ninguém lembra se foi <strong>decidido</strong> ou se foi só <strong>conversado</strong>. E a mudança nunca aconteceu.</div>
     </div>
     <div class="fecho">
       <span>Não é burocracia de organização grande.</span>
-      <span>Meia página de ata resolvia — e ata é <b>memória, não formalidade</b>.</span>
+      <span>Meia página de ata resolvia, e ata é <b>memória, não formalidade</b>.</span>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">22:40</span>
     <div class="notas-corpo">
       <p>"Quantas decisões da sua organização estão nessa situação agora? <strong>Decidido ou conversado?</strong>"</p>
-      <p>"O registro da decisão é o que permite cobrar sem parecer perseguição — porque está escrito o que ficou combinado e com quem."</p>
+      <p>"O registro da decisão é o que permite cobrar sem parecer perseguição, porque está escrito o que ficou combinado e com quem."</p>
     </div>
     <div class="notas-aviso"><strong>Transição:</strong> "Agora é a sua vez. Cinco minutos, dimensão 1."</div>
     <div class="notas-ref"></div>
@@ -1974,7 +1975,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <p><strong>Fique quieto.</strong> A vontade de explicar de novo rouba o tempo de quem está preenchendo. Responda no chat, por escrito.</p>
       <p>Aos 4 min, avise: <strong>"um minuto."</strong></p>
     </div>
-    <div class="notas-aviso">Se o chat travar em alguma dúvida repetida, guarde para a retomada da próxima dimensão — não interrompa a pausa.</div>
+    <div class="notas-aviso">Se o chat travar em alguma dúvida repetida, guarde para a retomada da próxima dimensão. Não interrompa a pausa.</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -2018,7 +2019,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="numero-parte">Dimensão 2 de 4</div>
     <h2>Operação</h2>
-    <div class="seccao-apoio">Operação não é gestão de pessoas — é <strong>o rastro do trabalho</strong>. Quem foi atendido, o que aconteceu, o que foi trabalhado, e onde tudo isso ficou registrado.</div>
+    <div class="seccao-apoio">Operação não é gestão de pessoas. É <strong>o rastro do trabalho</strong>. Quem foi atendido, o que aconteceu, o que foi trabalhado, e onde tudo isso ficou registrado.</div>
     <div class="fecho">
       <span>A Ana Gabriela já falou de equipe e delegação.</span>
       <span>Aqui é uma coisa mais chata e mais concreta: <b>o registro do que vocês fazem</b>.</span>
@@ -2070,20 +2071,20 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Operação · critério 1 de 5</span>
-    <div class="cabecalho"><div class="titulo">O cadastro dos atendidos<br>está <em>atualizado</em></div></div>
+    <div class="cabecalho"><div class="titulo">O cadastro dos atendidos está <em>atualizado</em></div></div>
     <div class="declaracao">
       <div class="rotulo">Um jovem volta depois de oito meses fora</div>
       <div class="corpo">Ninguém consegue dizer o que ele já fez ali, quais oficinas cursou, se entregou documento. <strong>Ele é recebido como se fosse novo.</strong></div>
     </div>
     <div class="fecho">
       <span>E aí a organização perde duas coisas ao mesmo tempo:</span>
-      <span>o histórico que ela mesma construiu — e <b>a chance de continuar de onde parou</b>.</span>
+      <span>o histórico que ela mesma construiu, e <b>a chance de continuar de onde parou</b>.</span>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">30:00</span>
     <div class="notas-corpo">
-      <p>"Cadastro não é lista de nomes. <strong>É histórico</strong> — e é o histórico que transforma atendimento em trajetória."</p>
+      <p>"Cadastro não é lista de nomes. <strong>É histórico</strong>, e é o histórico que transforma atendimento em trajetória."</p>
       <p>"Sem ele, cada retorno começa do zero, e a organização nunca sabe se está mudando a vida de alguém ou atendendo muita gente uma vez."</p>
     </div>
     <div class="notas-ref"></div>
@@ -2126,14 +2127,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Operação · critério 2 de 5</span>
-    <div class="cabecalho"><div class="titulo">As presenças e oficinas são<br>registradas <em>de forma integrada</em></div></div>
+    <div class="cabecalho"><div class="titulo">As presenças e oficinas são registradas <em>de forma integrada</em></div></div>
     <div class="contraste">
       <div class="nao"><span class="rotulo">Como costuma ser</span><span class="texto">Cada uma anota no seu caderno, e alguém passa a tarde somando papel</span></div>
-      <div class="sim"><span class="rotulo">Como precisa ser</span><span class="texto">Quem participou, quem faltou e o conteúdo — em um lugar, em minutos</span></div>
+      <div class="sim"><span class="rotulo">Como precisa ser</span><span class="texto">Quem participou, quem faltou e o conteúdo, em um lugar, em minutos</span></div>
     </div>
     <div class="fecho">
       <span>Ninguém deixou de anotar.</span>
-      <span>A informação existia — <b>só não estava junta</b>.</span>
+      <span>A informação existia, <b>só não estava junta</b>.</span>
     </div>
   </div>
   <aside class="notas">
@@ -2182,7 +2183,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Operação · critério 3 de 5</span>
-    <div class="cabecalho"><div class="titulo">As atividades realizadas<br><em>são documentadas</em></div></div>
+    <div class="cabecalho"><div class="titulo">As atividades realizadas <em>são documentadas</em></div></div>
     <div class="declaracao">
       <div class="rotulo">A formação de agosto foi muito boa</div>
       <div class="corpo">Em novembro, um parceiro pede o conteúdo para replicar. <strong>Sobraram três fotos no WhatsApp de alguém, e ninguém lembra o roteiro.</strong></div>
@@ -2238,10 +2239,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Operação · critério 4 de 5</span>
-    <div class="cabecalho"><div class="titulo">Os termos e as autorizações<br><em>estão atualizados</em></div></div>
+    <div class="cabecalho"><div class="titulo">Os termos e as autorizações <em>estão atualizados</em></div></div>
     <div class="declaracao">
       <div class="rotulo">A organização vai publicar a foto de uma atividade com adolescentes</div>
-      <div class="corpo">Alguém pergunta se existe autorização de imagem dos responsáveis. Existe — <strong>de dois anos atrás. E três dos jovens da foto entraram depois.</strong></div>
+      <div class="corpo">Alguém pergunta se existe autorização de imagem dos responsáveis. Existe, <strong>de dois anos atrás. E três dos jovens da foto entraram depois.</strong></div>
     </div>
     <div class="fecho">
       <span>Autorização não é documento que se assina uma vez.</span>
@@ -2251,10 +2252,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">33:30</span>
     <div class="notas-corpo">
-      <p>Este é o critério que mais gente vai marcar <strong>"não sei"</strong> — e é o de maior risco jurídico da tabela, junto com dados de menores.</p>
+      <p>Este é o critério que mais gente vai marcar <strong>"não sei"</strong>, e é o de maior risco jurídico da tabela, junto com dados de menores.</p>
       <p><strong>Não assuste a sala.</strong> Diga que a saída é simples: a autorização entra junto com a matrícula, na mesma hora, por padrão.</p>
     </div>
-    <div class="notas-aviso">Se alguém puxar LGPD no chat, responda curto: é o mesmo princípio — consentimento registrado e localizável. Não vire aula de LGPD.</div>
+    <div class="notas-aviso">Se alguém puxar LGPD no chat, responda curto: é o mesmo princípio. Consentimento registrado e localizável. Não vire aula de LGPD.</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -2295,17 +2296,17 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Operação · critério 5 de 5</span>
-    <div class="cabecalho"><div class="titulo">A organização produz<br><em>relatórios periódicos</em> de operação</div></div>
+    <div class="cabecalho"><div class="titulo">A organização produz <em>relatórios periódicos</em> de operação</div></div>
     <div class="fluxo">
       <div class="caixa antes"><div class="rotulo">O financiador pede o relatório do semestre</div><div class="valor">Prazo: cinco dias</div></div>
       <div class="seta">↓</div>
-      <div class="caixa depois"><div class="rotulo">A equipe para tudo para montar</div><div class="valor">O trabalho foi feito — só não foi registrado no caminho. E o relatório custa uma semana de operação que ninguém previu</div></div>
+      <div class="caixa depois"><div class="rotulo">A equipe para tudo para montar</div><div class="valor">O trabalho foi feito, só não foi registrado no caminho. E o relatório custa uma semana de operação</div></div>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">34:40</span>
     <div class="notas-corpo">
-      <p><strong>Aqui a virada da abertura volta, e agora com prova:</strong> a falta de gestão não custou tempo de gestão — custou uma semana de atendimento.</p>
+      <p><strong>Aqui a virada da abertura volta, e agora com prova:</strong> a falta de gestão não custou tempo de gestão. Custou uma semana de atendimento.</p>
       <p>"Relatório não deveria ser um evento. Deveria ser uma consulta."</p>
     </div>
     <div class="notas-aviso"><strong>Transição:</strong> "Cinco minutos, dimensão 2."</div>
@@ -2350,7 +2351,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Pausa de trabalho</span><span class="pausa-tempo">5 min</span></div>
     <div class="pausa-consigna">Responda as quatro colunas dos cinco critérios de <em>Operação</em>.</div>
-    <div class="pausa-restricoes"><span>marque rápido</span><span>na coluna do guardião, um nome — não "a equipe"</span></div>
+    <div class="pausa-restricoes"><span>marque rápido</span><span>na coluna do guardião, um nome. Não "a equipe"</span></div>
     <div class="instrumento compacto">
       <div class="parte preenchida"><span class="n">1</span><div class="rotulo">Estratégia</div></div>
       <div class="parte ativa"><span class="agora">agora</span><span class="n">2</span><div class="rotulo">Operação</div></div>
@@ -2360,7 +2361,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Pausa 2 de 4</span></div><span class="notas-tempo">36:00</span>
-    <div class="notas-corpo"><p>Silêncio de novo. E repare no chat quem está escrevendo "a equipe" no guardião — <strong>é o material da sua retomada</strong>.</p></div>
+    <div class="notas-corpo"><p>Silêncio de novo. E repare no chat quem está escrevendo "a equipe" no guardião, <strong>é o material da sua retomada</strong>.</p></div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -2404,7 +2405,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="numero-parte">Dimensão 3 de 4</div>
     <h2>Finanças</h2>
-    <div class="seccao-apoio">Não é captação — é <strong>gestão do recurso que já entrou</strong>. O que está previsto, o que foi gasto, em que projeto, e o que dá para provar quando alguém pedir.</div>
+    <div class="seccao-apoio">Não é captação. É <strong>gestão do recurso que já entrou</strong>. O que está previsto, o que foi gasto, em que projeto, e o que dá para provar quando alguém pedir.</div>
     <div class="fecho">
       <span>Captação é a aula da semana que vem, com o Thiago, e é dele.</span>
       <span>O que eu quero mostrar é outra coisa: <b>a captação morre antes de começar quando a gestão não está em dia</b>.</span>
@@ -2456,7 +2457,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Finanças · critério 1 de 5</span>
-    <div class="cabecalho"><div class="titulo">A organização possui<br><em>planejamento orçamentário</em> para o ano</div></div>
+    <div class="cabecalho"><div class="titulo">A organização possui <em>planejamento orçamentário</em> para o ano</div></div>
     <div class="numeros">
       <div><div class="n">18 mil</div><div class="d">por mês para funcionar</div></div>
       <div><div class="n">11 mil</div><div class="d">garantidos</div></div>
@@ -2513,7 +2514,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Finanças · critério 2 de 5</span>
-    <div class="cabecalho"><div class="titulo">As informações financeiras estão<br><em>atualizadas e integradas</em></div></div>
+    <div class="cabecalho"><div class="titulo">As informações financeiras estão <em>atualizadas e integradas</em></div></div>
     <div class="declaracao">
       <div class="rotulo">A diretoria pergunta quanto a organização tem em caixa</div>
       <div class="corpo">A resposta leva dois dias, porque é preciso juntar o extrato de duas contas, uma planilha e os recibos de uma pasta.</div>
@@ -2569,10 +2570,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Finanças · critério 3 de 5</span>
-    <div class="cabecalho"><div class="titulo">As despesas são<br>controladas <em>por projeto</em></div></div>
+    <div class="cabecalho"><div class="titulo">As despesas são controladas <em>por projeto</em></div></div>
     <div class="contraste">
-      <div class="nao"><span class="rotulo">Rateio por estimativa</span><span class="texto">Três projetos, a mesma equipe — e a conta de cada um sai por estimativa</span></div>
-      <div class="sim"><span class="rotulo">Controle por centro de custo</span><span class="texto">Quanto cada projeto recebeu, gastou e ainda tem — separado</span></div>
+      <div class="nao"><span class="rotulo">Rateio por estimativa</span><span class="texto">Três projetos, a mesma equipe, e a conta de cada um sai por estimativa</span></div>
+      <div class="sim"><span class="rotulo">Controle por centro de custo</span><span class="texto">Quanto cada projeto recebeu, gastou e ainda tem, separado</span></div>
     </div>
     <div class="fecho">
       <span>E estimativa tem um nome, do lado de quem analisa:</span>
@@ -2625,20 +2626,20 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Finanças · critério 4 de 5</span>
-    <div class="cabecalho"><div class="titulo">As prestações de contas são<br>organizadas <em>durante a execução</em></div></div>
+    <div class="cabecalho"><div class="titulo">As prestações de contas são organizadas <em>durante a execução</em></div></div>
     <div class="declaracao">
       <div class="rotulo">A prestação vence em quinze dias</div>
       <div class="corpo">Faltam onze comprovantes de compras feitas há sete meses. <strong>Dois fornecedores não existem mais.</strong></div>
     </div>
     <div class="fecho">
       <span>O dinheiro foi bem gasto.</span>
-      <span>E não dá para provar — o que, para quem analisa, <b>é a mesma coisa que não ter sido</b>.</span>
+      <span>E não dá para provar, o que, para quem analisa, <b>é a mesma coisa que não ter sido</b>.</span>
     </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">45:30</span>
     <div class="notas-corpo">
-      <p><strong>Esta é a frase que eu quero que fique da dimensão inteira:</strong> do lado de quem avalia, gasto que não se comprova é gasto que não aconteceu. Não é maldade — é a regra.</p>
+      <p><strong>Esta é a frase que eu quero que fique da dimensão inteira:</strong> do lado de quem avalia, gasto que não se comprova é gasto que não aconteceu. Não é maldade. É a regra.</p>
       <p>"Comprovante se junta no dia da despesa. Depois, cada semana que passa custa o dobro."</p>
     </div>
     <div class="notas-ref"></div>
@@ -2681,7 +2682,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Finanças · critério 5 de 5</span>
-    <div class="cabecalho"><div class="titulo">As obrigações fiscais e<br>trabalhistas <em>estão em dia</em></div></div>
+    <div class="cabecalho"><div class="titulo">As obrigações fiscais e trabalhistas <em>estão em dia</em></div></div>
     <div class="numeros">
       <div><div class="n">R$ 300</div><div class="d">uma guia não paga em janeiro</div></div>
       <div><div class="n">0</div><div class="d">certidões negativas emitidas</div></div>
@@ -2689,7 +2690,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="fecho">
       <span>Ninguém elogia uma organização por ter a certidão em dia.</span>
-      <span>Só <b>cobra quando ela não tem</b> — e sempre no pior dia possível.</span>
+      <span>Só <b>cobra quando ela não tem</b>, e sempre no pior dia possível.</span>
     </div>
   </div>
   <aside class="notas">
@@ -2698,7 +2699,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <p>"Olha a desproporção. <strong>Trezentos reais travando noventa mil.</strong> E o pior: quando você descobre, já não há prazo para resolver."</p>
       <p>"É a linha mais silenciosa do Mapa. Nada acontecer é o resultado esperado."</p>
     </div>
-    <div class="notas-aviso"><strong>Transição:</strong> "Cinco minutos, dimensão 3. E se você não souber responder alguma, escreve 'não sei' — é a resposta mais útil da aula."</div>
+    <div class="notas-aviso"><strong>Transição:</strong> "Cinco minutos, dimensão 3. E se você não souber responder alguma, escreve 'não sei'. É a resposta mais útil da aula."</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -2750,7 +2751,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Pausa 3 de 4</span></div><span class="notas-tempo">48:00</span>
-    <div class="notas-corpo"><p>Esta é a pausa mais desconfortável das quatro — muita gente vai descobrir que não sabe. <strong>Antecipe sem julgar</strong> antes de calar: "'não sei' aqui é normal, e é onde o problema cresce sem você ver."</p></div>
+    <div class="notas-corpo"><p>Esta é a pausa mais desconfortável das quatro. Muita gente vai descobrir que não sabe. <strong>Antecipe sem julgar</strong> antes de calar: "'não sei' aqui é normal, e é onde o problema cresce sem você ver."</p></div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -2794,7 +2795,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="numero-parte">Dimensão 4 de 4</div>
     <h2>Monitoramento e Avaliação</h2>
-    <div class="seccao-apoio"><strong>Monitorar é acompanhar o que está acontecendo. Avaliar é julgar o que aquilo significa</strong> — e decidir diferente por causa disso.</div>
+    <div class="seccao-apoio"><strong>Monitorar é acompanhar o que está acontecendo. Avaliar é julgar o que aquilo significa</strong>, e decidir diferente por causa disso.</div>
     <div class="fecho">
       <span>É a dimensão em que eu passei os últimos quinze anos.</span>
       <span>E a pergunta que atravessa tudo o que eu construí é uma só: <b>o que mudou por causa desse projeto?</b></span>
@@ -2803,8 +2804,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>Abre a dimensão</span></div><span class="notas-tempo">53:00</span>
     <div class="notas-corpo">
-      <p><strong>Seu território mais forte — e é aqui que você tem que segurar a mão.</strong> Seis minutos, não vire aula de indicadores. A plateia tem menos repertório aqui que em qualquer outra dimensão.</p>
-      <p>"A organização que não mede não fica só sem relatório. <strong>Ela fica sem aprender</strong> — repete o que não funciona por mais três anos, porque ninguém tem como saber que não funcionou."</p>
+      <p><strong>Seu território mais forte, e é aqui que você tem que segurar a mão.</strong> Seis minutos, não vire aula de indicadores. A plateia tem menos repertório aqui que em qualquer outra dimensão.</p>
+      <p>"A organização que não mede não fica só sem relatório. <strong>Ela fica sem aprender</strong>. Repete o que não funciona por mais três anos, porque ninguém tem como saber que não funcionou."</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -2846,10 +2847,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 1 de 5</span>
-    <div class="cabecalho"><div class="titulo">Os indicadores são<br>acompanhados <em>regularmente</em></div></div>
+    <div class="cabecalho"><div class="titulo">Os indicadores são acompanhados <em>regularmente</em></div></div>
     <div class="declaracao">
-      <div class="rotulo">Os números do projeto existem — e são olhados uma vez por ano</div>
-      <div class="corpo">Quando o relatório vence. <strong>Se algo começou a dar errado em março, a organização descobre em dezembro</strong> — com o ano inteiro já gasto.</div>
+      <div class="rotulo">Os números do projeto existem, e são olhados uma vez por ano</div>
+      <div class="corpo">Quando o relatório vence. <strong>Se algo começou a dar errado em março, a organização descobre em dezembro</strong>, com o ano inteiro já gasto.</div>
     </div>
     <div class="fecho">
       <span>Indicador olhado no fim não é indicador.</span>
@@ -2860,7 +2861,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">54:00</span>
     <div class="notas-corpo">
       <p>"Monitorar serve para <strong>corrigir no meio do caminho</strong>. Se você só olha no fim, o dado serve para explicar o fracasso, não para evitar."</p>
-      <p>Repare que aqui a coluna 'quando é acompanhado' é o critério inteiro. <strong>É a única linha do Mapa em que a frequência não é detalhe — é o conteúdo.</strong></p>
+      <p>Repare que aqui a coluna 'quando é acompanhado' é o critério inteiro. <strong>É a única linha do Mapa em que a frequência não é detalhe. É o conteúdo.</strong></p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -2902,7 +2903,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 2 de 5</span>
-    <div class="cabecalho"><div class="titulo">A coleta de dados possui<br>uma <em>rotina definida</em></div></div>
+    <div class="cabecalho"><div class="titulo">A coleta de dados possui uma <em>rotina definida</em></div></div>
     <div class="declaracao">
       <div class="rotulo">A organização decidiu medir a evasão</div>
       <div class="corpo">Ninguém combinou quem anota, em que momento e onde. Três meses depois existem dados de um mês só, coletados pela pessoa que teve tempo.</div>
@@ -2958,7 +2959,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 3 de 5</span>
-    <div class="cabecalho"><div class="titulo">A organização reúne<br><em>evidências de transformação</em></div></div>
+    <div class="cabecalho"><div class="titulo">A organização reúne <em>evidências de transformação</em></div></div>
     <div class="contraste">
       <div class="nao"><span class="rotulo">Registro de operação</span><span class="texto">"Fizemos 96 oficinas este ano"</span></div>
       <div class="sim"><span class="rotulo">Evidência de transformação</span><span class="texto">Um caso do começo ao fim, um antes e depois medido</span></div>
@@ -2972,7 +2973,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">56:20</span>
     <div class="notas-corpo">
       <p><strong>É a distinção mais importante da dimensão.</strong> Atividade é o que você fez; evidência é o que mudou em quem recebeu.</p>
-      <p>"A organização sabe que mudou a vida de muita gente. <strong>Sabe e não consegue demonstrar</strong> — e hoje isso custa recurso."</p>
+      <p>"A organização sabe que mudou a vida de muita gente. <strong>Sabe e não consegue demonstrar</strong>, e hoje isso custa recurso."</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -3014,7 +3015,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 4 de 5</span>
-    <div class="cabecalho"><div class="titulo">A organização <em>avalia</em><br>os resultados alcançados</div></div>
+    <div class="cabecalho"><div class="titulo">A organização <em>avalia</em> os resultados alcançados</div></div>
     <div class="numeros">
       <div><div class="n">80</div><div class="d">concluintes na meta</div></div>
       <div><div class="n">47</div><div class="d">concluintes de fato</div></div>
@@ -3029,7 +3030,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">57:30</span>
     <div class="notas-corpo">
       <p><strong>Aqui é a diferença entre monitorar e avaliar, em número.</strong> Monitorar deu o 47. Avaliar é a conversa que ninguém teve.</p>
-      <p>"E olha que 47 pode ser um resultado excelente ou terrível. Sem a conversa, ninguém sabe qual dos dois — e o número sozinho não diz."</p>
+      <p>"E olha que 47 pode ser um resultado excelente ou terrível. Sem a conversa, ninguém sabe qual dos dois, e o número sozinho não diz."</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -3071,7 +3072,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 5 de 5</span>
-    <div class="cabecalho"><div class="titulo">Os aprendizados<br><em>geram melhorias</em></div></div>
+    <div class="cabecalho"><div class="titulo">Os aprendizados <em>geram melhorias</em></div></div>
     <div class="declaracao">
       <div class="rotulo">A avaliação de dois anos atrás mostrou o dobro de evasão na oficina da manhã</div>
       <div class="corpo">O dado foi coletado. Foi analisado. Foi escrito no relatório. <strong>E a oficina da manhã continua no mesmo horário.</strong></div>
@@ -3085,9 +3086,9 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="notas-topo"><span>O caso</span></div><span class="notas-tempo">58:40</span>
     <div class="notas-corpo">
       <p><strong>Deixe o silêncio depois de "continua no mesmo horário".</strong> É o caso mais incômodo dos vinte, e é de propósito: fecha a dimensão mostrando que dado sem decisão não vale nada.</p>
-      <p>"Quem mede aprende. Quem aprende <strong>muda alguma coisa</strong> — e é só aí que virou gestão."</p>
+      <p>"Quem mede aprende. Quem aprende <strong>muda alguma coisa</strong>, e é só aí que virou gestão."</p>
     </div>
-    <div class="notas-aviso"><strong>Transição:</strong> "Última pausa. Cinco minutos — e quando terminar, olhe o Mapa inteiro."</div>
+    <div class="notas-aviso"><strong>Transição:</strong> "Última pausa. Cinco minutos, e quando terminar, olhe o Mapa inteiro."</div>
     <div class="notas-ref"></div>
   </aside>
 </section>
@@ -3140,7 +3141,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>Pausa 4 de 4</span></div><span class="notas-tempo">60:00</span>
     <div class="notas-corpo">
-      <p>Ao final desta pausa <strong>o Mapa está completo</strong> — e é ele que o fechamento usa.</p>
+      <p>Ao final desta pausa <strong>o Mapa está completo</strong>, e é ele que o fechamento usa.</p>
       <p>Aos 4 min: <strong>"um minuto. E já deixa as quatro páginas do lado, que a gente vai ler juntas."</strong></p>
     </div>
     <div class="notas-ref"></div>
@@ -3184,7 +3185,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">Você acabou de fazer<br>o <em>diagnóstico</em> da sua gestão</div></div>
+    <div class="cabecalho"><div class="titulo">Você acabou de fazer o <em>diagnóstico</em> da sua gestão</div></div>
     <div class="instrumento">
       <div class="parte preenchida"><span class="n">1</span><div class="rotulo">Estratégia</div><div class="conteudo">5 critérios respondidos</div></div>
       <div class="parte preenchida"><span class="n">2</span><div class="rotulo">Operação</div><div class="conteudo">5 critérios respondidos</div></div>
@@ -3238,7 +3239,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">Agora conte,<br>nos <em>vinte critérios</em></div></div>
+    <div class="cabecalho"><div class="titulo">Agora conte, nos <em>vinte critérios</em></div></div>
     <div class="numeros">
       <div><div class="n">?</div><div class="d">em "não existe"<br>o tamanho do caminho</div></div>
       <div><div class="n">?</div><div class="d">com o <b>seu</b> nome no guardião<br>o grau de centralização</div></div>
@@ -3246,10 +3247,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
   </div>
   <aside class="notas">
-    <div class="notas-topo"><span>A leitura — dê tempo</span></div><span class="notas-tempo">66:00</span>
+    <div class="notas-topo"><span>A leitura, dê tempo</span></div><span class="notas-tempo">66:00</span>
     <div class="notas-corpo">
       <p><strong>Dê vinte segundos de silêncio para contarem de verdade.</strong> Sem a contagem, o fechamento é discurso; com ela, é diagnóstico.</p>
-      <p>Na segunda: "se o seu nome aparece em quinze das vinte, <strong>você não tem uma organização — você tem uma dependência.</strong>" Diga sem julgamento: é o perfil da maioria da sala.</p>
+      <p>Na segunda: "se o seu nome aparece em quinze das vinte, <strong>você não tem uma organização, você tem uma dependência.</strong>" Diga sem julgamento: é o perfil da maioria da sala.</p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -3347,7 +3348,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>O primeiro passo</span></div><span class="notas-tempo">68:30</span>
     <div class="notas-corpo">
-      <p><strong>Um só.</strong> Se você pedir cinco, eles não fazem nenhum. E o passo é sempre o mesmo: dono e frequência — porque é isso que transforma "não existe" em "existe".</p>
+      <p><strong>Um só.</strong> Se você pedir cinco, eles não fazem nenhum. E o passo é sempre o mesmo: dono e frequência, porque é isso que transforma "não existe" em "existe".</p>
       <p>"Comece pelo que te deixou mais desconfortável durante a aula. Não pelo mais fácil."</p>
     </div>
     <div class="notas-ref"></div>
@@ -3391,7 +3392,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="declaracao">
       <div class="rotulo">E o Mapa não termina aqui</div>
-      <div class="corpo">Estes vinte critérios são <strong>um corte</strong>, não a gestão inteira. Existem outros eixos — governança, pessoas, comunicação, sustentabilidade — e outros critérios dentro de cada um destes quatro.</div>
+      <div class="corpo">Estes vinte critérios são <strong>um corte</strong>, não a gestão inteira. Existem outros eixos, governança, pessoas, comunicação, sustentabilidade, e outros critérios dentro de cada um destes quatro.</div>
     </div>
     <div class="fecho">
       <span>Alguns deles são justamente as outras aulas desta formação.</span>
@@ -3401,7 +3402,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
   <aside class="notas">
     <div class="notas-topo"><span>A humildade, pela segunda vez</span></div><span class="notas-tempo">70:00</span>
     <div class="notas-corpo">
-      <p><strong>Dito na abertura e repetido aqui, de propósito.</strong> Sem isso, quem marcou muito "não existe" sai achando que foi reprovado numa prova completa — e ela nem é completa.</p>
+      <p><strong>Dito na abertura e repetido aqui, de propósito.</strong> Sem isso, quem marcou muito "não existe" sai achando que foi reprovado numa prova completa, e ela nem é completa.</p>
       <p>"Eu escolhi quatro dimensões porque são as que eu vejo quebrar mais, e porque cabem em uma aula."</p>
     </div>
     <div class="notas-ref"></div>
@@ -3443,15 +3444,15 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" style="aspect-ratio:4">pratika</span>
       </div>
     </div>
-    <div class="cabecalho"><div class="titulo">E se você quiser<br><em>companhia</em> nesse caminho</div></div>
+    <div class="cabecalho"><div class="titulo">E se você quiser <em>companhia</em> nesse caminho</div></div>
     <div class="passos">
       <div><span class="n">1</span><span class="rotulo">Ferramenta</span><span class="valor">a Bússola Social tem gestão de projetos e financeira estruturada</span></div>
       <div><span class="n">2</span><span class="rotulo">Formação</span><span class="valor">a Pratika Social tem cursos práticos, curtos, com instrumento no fim</span></div>
-      <div><span class="n">3</span><span class="rotulo">Um curso, de graça</span><span class="valor">me procure e eu libero um acesso — é sério, e é para quem pedir</span></div>
+      <div><span class="n">3</span><span class="rotulo">Um curso, de graça</span><span class="valor">me procure e eu libero um acesso. É sério, e é para quem pedir</span></div>
     </div>
   </div>
   <aside class="notas">
-    <div class="notas-topo"><span>A oferta — curta</span></div><span class="notas-tempo">71:00</span>
+    <div class="notas-topo"><span>A oferta, curta</span></div><span class="notas-tempo">71:00</span>
     <div class="notas-corpo">
       <p><strong>Um parágrafo, não mais.</strong> A aula toda foi diagnóstico honesto; se a oferta crescer, ela recontamina o que veio antes.</p>
       <p>"Não tem como fugir disso: estrutura precisa de ferramenta e de método. Eu tenho os dois para oferecer, e você não é obrigado a nada."</p>

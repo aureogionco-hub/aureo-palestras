@@ -1,4 +1,4 @@
-# Case, credencial e banco de âncoras — Gestão Eficiente
+# Case, credencial e banco de âncoras, Gestão Eficiente
 
 ## Decisão de Fase 2: o case não é fictício
 
@@ -13,17 +13,17 @@ a própria trajetória de Aureo, porque:
   **e** entregar quatro colunas.
 
 **Regra que continua valendo:** personagens por função. "O contador", "a
-coordenadora", "a equipe" — nunca nome próprio, nem o de quem errou junto.
+coordenadora", "a equipe", nunca nome próprio, nem o de quem errou junto.
 
 ---
 
-## A credencial — duas frases, depois da promessa
+## A credencial, duas frases, depois da promessa
 
 O arco de vida de Aureo **é** a tese da aula. Não precisa de currículo:
 
 > "Eu comecei na Pastoral Social de uma paróquia em Itajaí, organizando ação
 > comunitária. Hoje eu sou fundador de uma plataforma que administra o
-> investimento social de empresas como Petrobras, Itaipu e Caixa — bilhões de
+> investimento social de empresas como Petrobras, Itaipu e Caixa, bilhões de
 > reais em projetos sociais."
 
 E, se couber uma terceira, é a que ganha o direito de falar do tema:
@@ -45,7 +45,7 @@ serve à plateia, e parte é sensível.
 
 ## O que a trajetória entrega para a aula
 
-### 1. A parede, vista por ele há décadas — material de abertura
+### 1. A parede, vista por ele há décadas, material de abertura
 
 Do histórico, sobre o começo na Pastoral e no Conselho:
 
@@ -69,7 +69,7 @@ princípio central do finale.**
 
 ### 3. A autoridade específica sobre o slide do software
 
-Aureo constrói sistemas de gestão há mais de uma década — e a Bússola **nasceu do
+Aureo constrói sistemas de gestão há mais de uma década, e a Bússola **nasceu do
 campo social, não é software genérico adaptado**. Isso dá a ele o direito raro de
 dizer "não compra sistema ainda" sem parecer que está desmerecendo ferramenta.
 
@@ -77,12 +77,12 @@ dizer "não compra sistema ainda" sem parecer que está desmerecendo ferramenta.
 
 É o momento mais confiável da aula inteira, porque contraria o próprio interesse.
 
-### 4. O contraponto positivo — âncora da volta 4
+### 4. O contraponto positivo, âncora da volta 4
 
 Do histórico: contrato continuado com o Instituto Rogério Rosa há 4-5 anos, **uma
 hora por semana, toda semana**.
 
-> "Eu assessoro um instituto há cinco anos. Uma hora por semana. Não é muito —
+> "Eu assessoro um instituto há cinco anos. Uma hora por semana. Não é muito,
 > é uma hora. Mas é **toda semana**. Isso é a quarta coluna."
 
 É a prova viva da coluna 4, e é o contraponto de que a aula precisa: as três
@@ -111,7 +111,7 @@ Sustenta, em uma frase, por que esta aula tem pausas em vez de exposição corri
 | 4 | "Eu só descubro quando já é tarde" | **A certidão vencida** + o contraponto do IRR (1h/semana, 5 anos) | literal + estrutural |
 
 **Cobertura:** voltas 1 e 4 têm âncora estrutural além do exemplo vivido. Voltas
-2 e 3 são âncoras literais fortes — os tombos — e não precisam de metáfora
+2 e 3 são âncoras literais fortes, os tombos, e não precisam de metáfora
 competindo com elas.
 
 ---
@@ -120,14 +120,14 @@ competindo com elas.
 
 | Case | Contexto | Onde entra |
 |---|---|---|
-| **Instituto Rogério Rosa** | Instituto empresarial, assessoria semanal há 5 anos | Volta 4 — a rotina que funciona |
+| **Instituto Rogério Rosa** | Instituto empresarial, assessoria semanal há 5 anos | Volta 4, a rotina que funciona |
 | **Cooperativas / Sescoop** | Outro porte, outro setor. Muita ação, pouca demonstração de impacto | Reserva, se precisar mostrar que o problema não é só de ONG pequena |
 
 Ambos por função, sem expor cliente além do que já é público.
 
 ---
 
-## ⚠️ Uma coincidência disponível — decisão de Aureo
+## ⚠️ Uma coincidência disponível, decisão de Aureo
 
 O processo de INSS foi "na casa de R$ 300 mil". O investimento-anjo que
 viabilizou a Bússola foi "aproximadamente R$ 300 mil".
@@ -136,7 +136,7 @@ viabilizou a Bússola foi "aproximadamente R$ 300 mil".
 
 **Retoricamente é forte. Recomendo não usar**, por três razões: expõe informação
 societária que não serve à plateia; pode soar a exibição de porte diante de
-organizações pequenas; e desloca a atenção do erro — que é o ponto — para a
+organizações pequenas; e desloca a atenção do erro, que é o ponto, para a
 conquista. A história do INSS é mais forte sozinha.
 
 Fica registrado porque a decisão é de Aureo, não minha.

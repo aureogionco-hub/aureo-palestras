@@ -1,7 +1,7 @@
-# Guia visual — slides de palestra de Aureo Gionco
+# Guia visual dos slides de palestra de Aureo Gionco
 
 O sistema visual da marca vive no submodule `_identidade`. Este guia é a
-**tradução dele para slide de palestra** — o que muda quando a peça vai para um
+**tradução dele para slide de palestra**, o que muda quando a peça vai para um
 telão, é vista de longe e dura 40 segundos na tela.
 
 Fonte da verdade da marca: `_identidade/skills/skill-identidade-visual/SKILL.md`
@@ -16,30 +16,30 @@ Catálogo vivo: `biblioteca-de-blocos.html`
 |---|---|
 | Leitura próxima, tempo livre | Leitura a 15 metros, 40 segundos |
 | Texto pode ter densidade editorial | Texto é âncora, não conteúdo |
-| Textura e granulação percebidas de perto | Textura some no projetor — use forma e cor |
+| Textura e granulação percebidas de perto | Textura some no projetor, use forma e cor |
 | Paleta inteira disponível | Metade da paleta não passa em contraste como texto |
 
 A regra de aprovação da marca ("mesma materialidade, intenção e acabamento")
 continua valendo para **capas, aberturas e peças de divulgação**. Dentro do
-slide de conteúdo, legibilidade ganha de acabamento — sempre.
+slide de conteúdo, legibilidade ganha de acabamento, sempre.
 
 ## 2. As oito regras de composição
 
 Estas oito não são preferência: são o que separa um slide montado de um slide
-desenhado. Todas estão implementadas no `slides.css` — se você usar os blocos,
+desenhado. Todas estão implementadas no `slides.css`. Se você usar os blocos,
 já vêm de graça.
 
 **1 · A assinatura fica sempre no canto inferior direito.** Nunca à esquerda: à
 esquerda ela cai no começo da linha de leitura e briga com o texto. À direita ela
 assina, que é a função dela. A paginação vai para o canto oposto.
 
-**2 · Na capa a assinatura também é pequena e de canto** — no alto à direita.
+**2 · Na capa a assinatura também é pequena e de canto**, no alto à direita.
 Assinatura grande e centralizada no meio da capa não é composição, é logo de
 abertura de vídeo.
 
 **3 · Nunca uma palavra sozinha na linha.** Título, frase de impacto, gancho,
 promessa e nome de pilar usam `text-wrap: balance`, que reparte as linhas em vez
-de deixar a última órfã. **Isso não cobre `<br>` escrito à mão** — se você quebrar
+de deixar a última órfã. **Isso não cobre `<br>` escrito à mão**. Se você quebrar
 manualmente, confira se não sobrou uma palavra sozinha embaixo.
 
 **4 · Tela de pilar: o nome é o slide.** Sem conteúdo competindo, o nome da parte
@@ -53,14 +53,14 @@ acontece.
 
 **6 · ✕ e ✓ não são elemento gráfico.** No telão eles leem como correção de prova
 de escola e roubam a atenção do texto. No bloco `contraste`, quem diz de que lado
-está a linha é **a barra de cor no topo mais um rótulo em caixa alta** — e o
+está a linha é **a barra de cor no topo mais um rótulo em caixa alta**, e o
 rótulo nomeia a categoria em vez de julgar. Se o rótulo repetir o que o texto já
 diz, corte um dos dois.
 
 **7 · Frase única e citação ficam centralizadas.** Fala solta encostada na margem
 esquerda parece parágrafo cortado. No eixo do slide, com medida curta, ela
 respira. O bloco `citacao` já é centrado, com um traço curto acima em vez de barra
-lateral — barra lateral desloca o texto do centro.
+lateral, barra lateral desloca o texto do centro.
 
 **8 · Fundo de slide é azul claríssimo, nunca bege.** Ver a seção seguinte.
 
@@ -71,7 +71,7 @@ saiu:** a granulação que dá calor no impresso desaparece no projetor e sobra 
 amarelado, que lê como papel envelhecido. As caixas usam `--superficie` e as
 bordas `--superficie-linha`, da mesma família.
 
-`--papel` e `--papel-fundo` continuam existindo — são o **papel impresso**, do
+`--papel` e `--papel-fundo` continuam existindo. São o **papel impresso**, do
 material do participante, onde o bege funciona. Slide e impresso podem divergir
 nisso, e devem.
 
@@ -84,9 +84,9 @@ um detalhe azul **inverteu o sistema**.
 
 O resumo operacional de contraste:
 
-- **Texto em qualquer tamanho** — azul-profundo, azul-assinatura, verde-petroleo, vermelho-profundo, tinta
-- **Só texto grande (28px+)** — azul-aberto, vermelho-assinatura, coral
-- **Nunca como texto; só forma, barra, ícone** — turquesa, verde-alegre, verde-vivo, açafrão, areia, rosa
+- **Texto em qualquer tamanho**, azul-profundo, azul-assinatura, verde-petroleo, vermelho-profundo, tinta
+- **Só texto grande (28px+)**, azul-aberto, vermelho-assinatura, coral
+- **Nunca como texto; só forma, barra, ícone**, turquesa, verde-alegre, verde-vivo, açafrão, areia, rosa
 
 É por isso que o `<em>` de realce usa **vermelho-profundo**: ele precisa
 funcionar no título grande *e* dentro de uma linha de texto pequena.
@@ -94,14 +94,32 @@ funcionar no título grande *e* dentro de uma linha de texto pequena.
 **Nunca escreva hex dentro de um slide.** Só as variáveis do `tokens.css`. Uma
 mudança de marca precisa acontecer em um arquivo, não em quarenta.
 
+## Escrita: sem travessão
+
+**Não use travessão (—) em texto de slide, nota, roteiro ou material do
+participante.** É decisão de Aureo sobre a voz da casa, não preferência
+tipográfica. No lugar dele:
+
+| Em vez de | Use |
+|---|---|
+| `X — e Y` | `X, e Y` |
+| `X — é Y` | `X. É Y` |
+| `Rótulo — a explicação` | `Rótulo: a explicação` |
+| `— fala de alguém` | `"fala de alguém"` entre aspas |
+| `—` em célula vazia | a palavra que falta (`sem lugar`, `nenhum`, `nunca`) |
+
+Trocar travessão por vírgula às cegas produz frase torta e emenda de
+vírgula. Cada caso pede uma pontuação diferente: leia a frase em voz alta
+antes de escolher.
+
 ## 4. Tipografia
 
-- **Títulos:** Sesimbra. Não é webfont pública — coloque o `.woff2` em
+- **Títulos:** Sesimbra. Não é webfont pública, coloque o `.woff2` em
   `_design-slides/fontes/Sesimbra.woff2` e o `@font-face` carrega. Sem o
   arquivo, cai em **Sora**, o fallback previsto pela identidade.
 - **Texto:** Carlito / Calibri.
 
-Tudo dimensiona em `cqw` — percentual da largura do slide. O mesmo HTML serve a
+Tudo dimensiona em `cqw`, percentual da largura do slide. O mesmo HTML serve a
 um notebook e a um telão. **Não use `px` dentro da `.tela`**: quebra exatamente
 no telão, que é onde não dá para consertar.
 
@@ -130,7 +148,7 @@ Duas linhas, a segunda mais curta, com uma palavra em `<b>`. Deliberadamente
 pequeno e sem cor forte: ele não pode competir com o conteúdo.
 
 **O erro mortal é usar o fecho para repetir o que você acabou de falar.** Ele
-carrega o que a plateia leva embora — não o resumo do slide.
+carrega o que a plateia leva embora. Não o resumo do slide.
 
 ## 7. Ilustração gerada por IA
 
@@ -138,7 +156,7 @@ Quando um slide pedir imagem, use os estilos A1-A12 do guia da marca. Regras:
 
 - **Um estilo principal por palestra**, no máximo um de apoio. Misturar estilo é
   o jeito mais rápido de a apresentação parecer montada por três pessoas.
-- Envie **a imagem de referência junto com o prompt-base** — o prompt sozinho
+- Envie **a imagem de referência junto com o prompt-base**, o prompt sozinho
   produz genérico.
 - Registre no `PALESTRA-base.md` (seção 7) qual estilo foi escolhido.
 
@@ -163,7 +181,7 @@ Estilos que costumam servir a palestra:
 - [ ] Testado na proporção da sala (16:9 quase sempre; confirme no briefing)
 - [ ] `--canvas-slide` domina os slides de conteúdo; azul/verde cheios só em capa,
       promessa e telas de pilar
-- [ ] **Nenhum slide estoura a `.tela`** — rode a checagem automática abaixo
+- [ ] **Nenhum slide estoura a `.tela`**, rode a checagem automática abaixo
 - [ ] Assinatura à direita em todos; nenhuma palavra sozinha em fim de linha
 - [ ] Nenhum ✕ ou ✓ como elemento gráfico
 
@@ -179,4 +197,4 @@ t.scrollHeight > t.clientHeight   // true = está cortado
 ```
 
 Empilhar `cabecalho` + bloco + `fecho` é o que estoura com mais frequência. Quando
-estourar, **corte texto** — não reduza corpo de fonte.
+estourar, **corte texto**. Não reduza corpo de fonte.

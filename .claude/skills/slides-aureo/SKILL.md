@@ -1,9 +1,9 @@
 ---
 name: slides-aureo
-description: Como montar slides no sistema visual próprio de Aureo Gionco — os 17 blocos, quando usar cada um, as regras de cor e contraste, e a estrutura do arquivo slides.html com modo formador e modo limpo. Use ao criar ou revisar qualquer slide deste repositório.
+description: Como montar slides no sistema visual próprio de Aureo Gionco, os 17 blocos, quando usar cada um, as regras de cor e contraste, e a estrutura do arquivo slides.html com modo formador e modo limpo. Use ao criar ou revisar qualquer slide deste repositório.
 ---
 
-# Slides Aureo — como montar
+# Slides Aureo · como montar
 
 O sistema vive em `_design-slides/`. Antes de escrever slide, abra
 `biblioteca-de-blocos.html` no navegador: ele é o catálogo **e** o teste vivo do
@@ -37,46 +37,46 @@ Um arquivo por palestra: `palestras/<nome>/slides.html`. Um slide é:
 ```
 
 Nunca escreva número de slide à mão. `slides.js` numera a paginação e a
-referência das notas — inserir um slide no meio não obriga a renumerar nada.
+referência das notas, inserir um slide no meio não obriga a renumerar nada.
 
 ## Os 17 blocos
 
-Os quatro primeiros são os movimentos da metodologia — abertura, promessa, o
+Os quatro primeiros são os movimentos da metodologia, abertura, promessa, o
 instrumento que atravessa a palestra e a pausa de trabalho. Os outros treze são
 blocos de conteúdo.
 
 | # | Bloco | Âncora | Use quando |
 |---|---|---|---|
 | 14 | `gancho` | mínima | **A tensão.** Primeiro slide depois da capa. Sem cabeçalho, sem fecho |
-| 15 | `promessa` | — | **O que a plateia ganha**, com o instrumento nomeado. Logo após o gancho |
+| 15 | `promessa` |, | **O que a plateia ganha**, com o instrumento nomeado. Logo após o gancho |
 | 16 | `instrumento` | literal | **A assinatura da metodologia.** Reaparece ao fim de cada volta da trança |
-| 17 | `pausa` (`.tela.trabalho`) | — | **Aula online.** Fica sozinho na tela enquanto a plateia preenche |
+| 17 | `pausa` (`.tela.trabalho`) |, | **Aula online.** Fica sozinho na tela enquanto a plateia preenche |
 | 1 | `frase-impacto` | mínima | A frase é a ideia. Virada, encerramento |
 | 2 | `contraste` | estrutural | A plateia confunde duas coisas que precisam ser separadas |
 | 3 | `declaracao` | literal | O texto vale pela redação exata; a plateia vai querer copiar |
-| 4 | `passos` | literal | O método reutilizável — o coração da ideia-instrumento |
+| 4 | `passos` | literal | O método reutilizável, o coração da ideia-instrumento |
 | 5 | `teste` | literal | A plateia avalia o próprio material ali na cadeira |
 | 6 | `fluxo` | estrutural | Um lado *vira* o outro: geral → específico, antes → depois |
-| 7 | `lista` | — | O tamanho da lista **é** o argumento |
-| 8 | `numeros` | — | Credencial, dimensão de um problema, resultado |
+| 7 | `lista` |, | O tamanho da lista **é** o argumento |
+| 8 | `numeros` |, | Credencial, dimensão de um problema, resultado |
 | 9 | `citacao` | metafórica | A fala de alguém diz melhor que a sua explicação |
-| 10 | `chamada` | — | O momento do exercício, com a restrição explícita |
+| 10 | `chamada` |, | O momento do exercício, com a restrição explícita |
 | 11 | `fecho` | apoio | O remate no pé. Nunca sozinho |
-| 12 | `capa` | — | Abertura da palestra |
-| 13 | `seccao` | — | Vira a página do arco. No máximo 3 por palestra |
+| 12 | `capa` |, | Abertura da palestra |
+| 13 | `seccao` |, | Vira a página do arco. No máximo 3 por palestra |
 
-Escolher o bloco **não é escolher um estilo — é escolher como a plateia vai
+Escolher o bloco **não é escolher um estilo. É escolher como a plateia vai
 lembrar daquilo.** Se um slide não cabe em nenhum bloco, o problema quase nunca
 é a biblioteca: é que o slide está tentando dizer duas coisas.
 
 ## Limites por bloco
 
 - `passos` e `teste`: **3 linhas.** 4 só se a quarta for realmente indispensável.
-- `lista`: até 7 — e só porque a quantidade é o argumento. Se a plateia precisa
+- `lista`: até 7, e só porque a quantidade é o argumento. Se a plateia precisa
   reter cada item, vire `passos` e corte para três.
 - `numeros`: **3.** O quarto número apaga os três primeiros.
 - `citacao`: 1 por palestra, 2 no limite.
-- `seccao`: **uma por parte do arco** — uma por volta da trança, ou uma por
+- `seccao`: **uma por parte do arco**, uma por volta da trança, ou uma por
   dimensão em aula de diagnóstico. O que a regra proíbe é `seccao` usada como
   sumário ou como respiro decorativo; usada para virar a página do arco, quatro
   são legítimas em palestra de quatro partes.
@@ -84,13 +84,13 @@ lembrar daquilo.** Se um slide não cabe em nenhum bloco, o problema quase nunca
 - `gancho`: **1 por palestra.** Se aparece um segundo, ele não era o gancho.
 - `promessa`: **1 por palestra**, sempre logo depois do gancho.
 - `instrumento`: **no máximo 4 partes**, e o número vem do tempo de palco, não do
-  gosto — 20 min = 2 · 45 min = 3 · 90 min = 4.
+  gosto, 20 min = 2 · 45 min = 3 · 90 min = 4.
 - `pausa`: só em formato ao vivo com tempo de trabalho. Um por volta da trança.
 
-## O bloco `pausa` — o único que fica sozinho na tela
+## O bloco `pausa`, o único que fica sozinho na tela
 
 Para aula online ao vivo, onde a plateia **preenche o instrumento junto com
-você**. Este slide fica na tela 5 minutos, sem ninguém falando — então ele
+você**. Este slide fica na tela 5 minutos, sem ninguém falando, então ele
 carrega tudo: consigna, restrição, tempo e o instrumento com a parte ativa.
 
 **O teste:** se alguém chegar atrasado no meio da pausa, este slide sozinho tem
@@ -109,7 +109,7 @@ que bastar. Se não bastar, falta informação nele.
 ```
 
 O relógio é grande de propósito: é a informação mais consultada durante a pausa.
-E a orientação de fala mais importante deste bloco é **ficar quieto** — a vontade
+E a orientação de fala mais importante deste bloco é **ficar quieto**, a vontade
 de preencher o silêncio explicando de novo rouba o tempo de quem está escrevendo.
 
 ## O bloco `instrumento`
@@ -131,10 +131,10 @@ Três estados por parte:
 <div class="instrumento-legenda">Nome do instrumento · 2 de 3</div>
 ```
 
-- `vazia` — tracejada, sem conteúdo. Ainda não foi conquistada.
-- `ativa` — verde, com o selo "agora". **Uma por slide**, nunca duas.
-- `preenchida` — já conquistada em uma volta anterior.
-- `alerta` — vermelho. A resposta que **é o problema** ("não sei", "ninguém",
+- `vazia`, tracejada, sem conteúdo. Ainda não foi conquistada.
+- `ativa`, verde, com o selo "agora". **Uma por slide**, nunca duas.
+- `preenchida`, já conquistada em uma volta anterior.
+- `alerta`, vermelho. A resposta que **é o problema** ("não sei", "ninguém",
   "quando dá problema"). Não use `ativa` para marcar falha: verde diz "ok" e
   briga com o que o texto está dizendo.
 
@@ -144,21 +144,21 @@ dispositivo de palco.
 
 ## As oito regras de composição
 
-Estão implementadas no `slides.css` — usando os blocos, vêm de graça. Mas você
+Estão implementadas no `slides.css`, usando os blocos, vêm de graça. Mas você
 precisa saber que existem, porque três delas dependem do que você escreve.
 
 | # | Regra | Depende de você? |
 |---|---|---|
 | 1 | **Assinatura sempre no canto inferior direito**, nunca à esquerda. Paginação no canto oposto | não |
-| 2 | **Na capa a assinatura é pequena e de canto** (alto à direita). Nunca grande no centro — não use `.marca-completa` | **sim** |
-| 3 | **Nunca uma palavra sozinha na linha.** `text-wrap: balance` cuida do fluxo automático — **mas não do seu `<br>`** | **sim** |
+| 2 | **Na capa a assinatura é pequena e de canto** (alto à direita). Nunca grande no centro. Não use `.marca-completa` | **sim** |
+| 3 | **Nunca uma palavra sozinha na linha.** `text-wrap: balance` cuida do fluxo automático, **mas não do seu `<br>`** | **sim** |
 | 4 | **Tela de pilar: o nome é o slide** (7,8cqw). Use `seccao` com `h2` + `.numero-parte` + `.seccao-apoio` | **sim** |
 | 5 | **Respiro de fora para dentro:** borda enxuta, ar no miolo entre cabeçalho, bloco e fecho | não |
-| 6 | **✕ e ✓ não são elemento gráfico** — leem como correção de prova. No `contraste`, use `.rotulo` em caixa alta; a barra de cor no topo faz o trabalho | **sim** |
+| 6 | **✕ e ✓ não são elemento gráfico**, leem como correção de prova. No `contraste`, use `.rotulo` em caixa alta; a barra de cor no topo faz o trabalho | **sim** |
 | 7 | **Frase única e citação centralizadas**, com medida curta | não |
 | 8 | **Fundo azul claríssimo, nunca bege** (`--canvas-slide`) | não |
 
-O bloco `contraste` agora é assim — **sem glifo**:
+O bloco `contraste` agora é assim, **sem glifo**:
 
 ```html
 <div class="contraste">
@@ -172,7 +172,7 @@ O bloco `contraste` agora é assim — **sem glifo**:
 O rótulo **nomeia a categoria**, não julga. E se ele repetir o que o texto já diz,
 corte um dos dois.
 
-## Estouro da `.tela` — meça, não confie no olho
+## Estouro da `.tela`, meça, não confie no olho
 
 Slide mais alto que a `.tela` fica **cortado no telão e você não vê no navegador**,
 porque o overflow é escondido. `cabecalho` + bloco + `fecho` empilhados é a
@@ -186,12 +186,30 @@ t.scrollHeight > t.clientHeight   // true = cortado
 Quando estourar, **corte texto.** Não reduza corpo de fonte: a escala foi medida
 para leitura a 15 metros.
 
-## Cor — a parte que não é gosto
+## Escrita: sem travessão
+
+**Não use travessão (—) em texto de slide, nota, roteiro ou material do
+participante.** É decisão de Aureo sobre a voz da casa, não preferência
+tipográfica. No lugar dele:
+
+| Em vez de | Use |
+|---|---|
+| `X — e Y` | `X, e Y` |
+| `X — é Y` | `X. É Y` |
+| `Rótulo — a explicação` | `Rótulo: a explicação` |
+| `— fala de alguém` | `"fala de alguém"` entre aspas |
+| `—` em célula vazia | a palavra que falta (`sem lugar`, `nenhum`, `nunca`) |
+
+Trocar travessão por vírgula às cegas produz frase torta e emenda de
+vírgula. Cada caso pede uma pontuação diferente: leia a frase em voz alta
+antes de escolher.
+
+## Cor, a parte que não é gosto
 
 A paleta vem de `_identidade` e está traduzida em `_design-slides/tokens.css`.
 **Nunca escreva hex dentro de um slide.** Use as variáveis.
 
-O fundo do slide é `--canvas-slide` — azul quase branco. **`--papel` (bege) é o
+O fundo do slide é `--canvas-slide`, azul quase branco. **`--papel` (bege) é o
 papel impresso**, do material do participante, não o fundo do slide: no projetor a
 granulação que dá calor no impresso desaparece e sobra o amarelado.
 
@@ -201,7 +219,7 @@ O contraste sobre o fundo do slide foi medido (a tabela completa está no fim do
 - **Texto em qualquer tamanho:** azul-profundo, azul-assinatura, verde-petroleo,
   vermelho-profundo, tinta.
 - **Só texto grande (28px+):** azul-aberto, vermelho-assinatura, coral.
-- **Nunca como texto — só forma, barra, ícone, preenchimento:** turquesa,
+- **Nunca como texto, só forma, barra, ícone, preenchimento:** turquesa,
   verde-alegre, verde-vivo, açafrão, areia, rosa.
 
 Por isso o `<em>` de realce dentro de um título usa vermelho-**profundo** e não
@@ -215,15 +233,15 @@ sistema.
 
 Tudo dentro de `.tela` dimensiona em `cqw` (percentual da largura do slide). O
 mesmo HTML serve a um notebook e a um telão de evento sem uma linha reescrita.
-**Não use `px` dentro da `.tela`** — quebra exatamente no telão, que é onde não
+**Não use `px` dentro da `.tela`**, quebra exatamente no telão, que é onde não
 dá para consertar.
 
 ## Modo formador e modo limpo
 
 Um arquivo, duas saídas:
 
-- `data-modo="formador"` — slide + coluna de notas. É como você ensaia e apresenta.
-- `?modo=limpo` ou tecla **P** — só o slide, 16:9, tela cheia. É a apresentação final.
+- `data-modo="formador"`, slide + coluna de notas. É como você ensaia e apresenta.
+- `?modo=limpo` ou tecla **P**, só o slide, 16:9, tela cheia. É a apresentação final.
 
 Teclas: `← →` navega · `P` alterna modo · `F` tela cheia · `Home`/`End` extremos.
 
@@ -233,7 +251,7 @@ primeira correção de última hora, que é sempre a mais importante.
 ## A nota do formador
 
 A nota **não repete o slide**. O slide ancora, a nota conduz. Se a nota é a
-leitura do slide, um dos dois está sobrando — e é o slide.
+leitura do slide, um dos dois está sobrando, e é o slide.
 
 Use `<strong>` no que não pode ser esquecido se você travar. Use
 `.notas-tempo` com o tempo acumulado, para saber, olhando de relance, se está

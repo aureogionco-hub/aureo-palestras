@@ -1,11 +1,10 @@
-# Os 20 casezinhos — um por critério
+# Os 20 casezinhos: um por critério
 
-> Um slide por critério, um exemplo por slide. **Inventados de propósito** — não
-> são casos de Aureo nem de cliente. Situação de rotina, organização pequena,
+> Um slide por critério, um exemplo por slide. **Inventados de propósito**: não são casos de Aureo nem de cliente. Situação de rotina, organização pequena,
 > personagem por função.
 >
 > **A regra dos 20:** mostrar o critério **pela falta**. A plateia não se reconhece
-> na boa prática descrita — se reconhece no incômodo. E nenhum exemplo culpa
+> na boa prática descrita. Se reconhece no incômodo. E nenhum exemplo culpa
 > ninguém: em todos, as pessoas estão trabalhando bem e a estrutura é que falta.
 
 ---
@@ -14,10 +13,10 @@
 
 **1.1 · A organização definiu a transformação que busca gerar.**
 
-Duas educadoras da mesma organização respondem à mesma pergunta — o que a gente
+Duas educadoras da mesma organização respondem à mesma pergunta, o que a gente
 quer que mude na vida desses jovens? Uma diz: que eles não fiquem na rua. A outra
 diz: que eles entrem no mercado de trabalho. As duas estão ali há três anos.
-Nenhuma está errada — **e é exatamente esse o problema.**
+Nenhuma está errada, **e é exatamente esse o problema.**
 
 **1.2 · A organização possui metas anuais de resultado.**
 
@@ -29,7 +28,7 @@ só cumpre se acompanhar.
 **1.3 · As metas possuem indicadores definidos.**
 
 A meta era melhorar o desempenho escolar. Em dezembro, a coordenadora precisa
-dizer se melhorou — e descobre que ninguém combinou qual era a medida. Nota?
+dizer se melhorou, e descobre que ninguém combinou qual era a medida. Nota?
 Frequência? Aprovação? **Sem indicador definido antes, a meta vira opinião
 depois.**
 
@@ -37,13 +36,13 @@ depois.**
 
 O projeto foi aprovado em março e começa em maio. Em abril, ninguém sabe dizer
 quem compra o material, quem contrata a oficineira, quem monta a lista de
-inscritos — porque isso está na cabeça de quem escreveu o projeto, **não num plano
+inscritos, porque isso está na cabeça de quem escreveu o projeto, **não num plano
 com nome e data.**
 
 **1.5 · As decisões coletivas são registradas.**
 
 Na reunião de maio ficou decidido mudar o horário das oficinas. Em julho ninguém
-lembra se foi decidido ou só conversado — e a mudança nunca aconteceu. **Meia
+lembra se foi decidido ou só conversado, e a mudança nunca aconteceu. **Meia
 página de ata teria resolvido.**
 
 ---
@@ -54,12 +53,12 @@ página de ata teria resolvido.**
 
 Um jovem volta depois de oito meses fora. Ninguém consegue dizer o que ele já fez
 ali, quais oficinas cursou, se entregou documento. Ele é recebido como se fosse
-novo — **e a organização perde o histórico que ela mesma construiu.**
+novo, **e a organização perde o histórico que ela mesma construiu.**
 
 **2.2 · As presenças e oficinas são registradas de forma integrada.**
 
 A educadora anota presença no caderno dela. A oficineira, numa folha solta. No fim
-do mês a coordenadora precisa saber quem participou de tudo e quem faltou muito —
+do mês a coordenadora precisa saber quem participou de tudo e quem faltou muito,
 e passa uma tarde somando papel. **A informação existia. Só não estava junta.**
 
 **2.3 · As atividades realizadas são documentadas.**
@@ -71,13 +70,13 @@ o roteiro. **O trabalho aconteceu e não deixou rastro.**
 **2.4 · Os termos e as autorizações estão atualizados.**
 
 A organização vai publicar a foto de uma atividade com adolescentes. Alguém
-pergunta se há autorização de imagem dos responsáveis. Há — **de dois anos atrás,
+pergunta se há autorização de imagem dos responsáveis. Há, **de dois anos atrás,
 e três dos jovens da foto entraram depois.**
 
 **2.5 · A organização produz relatórios periódicos de operação.**
 
 O financiador pede o relatório do semestre com prazo de cinco dias. A equipe para
-tudo para montar. **O trabalho foi feito — só não foi registrado no caminho.** E o
+tudo para montar. **O trabalho foi feito, só não foi registrado no caminho.** E o
 relatório custa uma semana de operação que ninguém previu.
 
 ---
@@ -87,7 +86,7 @@ relatório custa uma semana de operação que ninguém previu.
 **3.1 · A organização possui planejamento orçamentário para o ano.**
 
 Em março a organização descobre que precisa de 18 mil por mês para funcionar e tem
-11 garantidos. **Descobre em março** — não em dezembro do ano anterior, quando
+11 garantidos. **Descobre em março**, não em dezembro do ano anterior, quando
 ainda havia tempo de fazer alguma coisa a respeito.
 
 **3.2 · As informações financeiras estão atualizadas e integradas.**
@@ -120,7 +119,7 @@ era de noventa mil.**
 
 **4.1 · Os indicadores são acompanhados regularmente.**
 
-Os números do projeto existem — e são olhados uma vez por ano, quando o relatório
+Os números do projeto existem, e são olhados uma vez por ano, quando o relatório
 vence. **Se algo começou a dar errado em março, a organização descobre em
 dezembro**, com o ano inteiro já gasto.
 
@@ -133,26 +132,25 @@ meses depois existem dados de um mês só, coletados pela pessoa que teve tempo.
 **4.3 · A organização reúne evidências de transformação.**
 
 A organização sabe que mudou a vida de muita gente. Quando precisa mostrar, tem
-número de atendimento e foto de atividade — **não tem um caso contado do começo ao
+número de atendimento e foto de atividade, **não tem um caso contado do começo ao
 fim, nem uma comparação de antes e depois.** Sabe, e não consegue demonstrar.
 
 **4.4 · A organização avalia os resultados alcançados.**
 
 A meta era 80 concluintes. Foram 47. O relatório informa 47 e segue. **Ninguém
-senta para perguntar por que 47** — e o ano seguinte começa igual ao anterior.
+senta para perguntar por que 47**, e o ano seguinte começa igual ao anterior.
 
 **4.5 · Os aprendizados geram melhorias.**
 
 A avaliação de dois anos atrás mostrou que a oficina da manhã tinha o dobro de
 evasão da oficina da tarde. **A oficina da manhã continua no mesmo horário.** O
-dado foi coletado, analisado, escrito — e não mudou nada.
+dado foi coletado, analisado, escrito, e não mudou nada.
 
 ---
 
 ## Os dois exemplos preenchidos, para ensinar a leitura
 
-Vão antes da primeira dimensão. Não ensinam mecânica — ensinam **o que a linha
-diz.**
+Vão antes da primeira dimensão. Não ensinam mecânica: ensinam **o que a linha diz.**
 
 ### Exemplo A · as quatro colunas respondidas, e ainda assim frágil
 
@@ -162,7 +160,7 @@ diz.**
 |---|---|---|---|
 | Existe, mas frágil | a educadora da tarde | todo mês | o caderno dela |
 
-**A leitura:** tem dono e tem frequência — é isso que segura essa linha de pé. Mas
+**A leitura:** tem dono e tem frequência, e é isso que segura essa linha de pé. Mas
 o lugar é o caderno de uma pessoa: **se ela sair, a informação sai com ela.** O
 próximo passo não é cobrar mais dela. É mudar o "onde".
 
@@ -172,8 +170,8 @@ próximo passo não é cobrar mais dela. É mudar o "onde".
 
 | Como está hoje | Guardião | Quando é acompanhado | Onde está registrado |
 |---|---|---|---|
-| Não existe | — | nunca | — |
+| Não existe |, | nunca |, |
 
 **A leitura:** quando a primeira coluna é "não existe", as outras três ficam vazias
 por consequência. Essa não é uma linha para acompanhar, é uma linha para criar. E
-o primeiro passo é sempre **dar um nome ao guardião** — sem dono, nada é criado.
+o primeiro passo é sempre **dar um nome ao guardião**. Sem dono, nada é criado.
