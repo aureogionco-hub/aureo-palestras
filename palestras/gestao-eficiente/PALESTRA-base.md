@@ -196,8 +196,7 @@ gestão como o que sobra. Enquanto essa crença estiver de pé, nenhuma ferramen
 pega, a pessoa aprende e não usa, porque usar parece trair a causa.
 
 **A virada, na formulação nova:** não é volume de gestão, é **estrutura mínima e
-recorrente.** Uma hora por semana (§15 do histórico) sustenta uma instituição há
-cinco anos. Isso baixa o preço em vez de levantar o susto, e é o argumento que
+recorrente. Trinta minutos por dia** (formulação de Aureo, na revisão dos slides). Isso baixa o preço em vez de levantar o susto, e é o argumento que
 uma plateia exausta consegue aceitar às nove da manhã.
 
 ---
@@ -214,11 +213,12 @@ cooperativas". Nunca nome próprio.
 
 **Credencial, três frases, depois da promessa:**
 
-> Comecei na Pastoral Social de uma paróquia em Itajaí, organizando ação
-> comunitária. Hoje sou fundador de uma plataforma que administra o investimento
-> social de empresas como Petrobras, Itaipu e Caixa. E, entre uma coisa e outra,
-> passei vinte anos construindo os sistemas onde a gestão de organizações como a
-> sua é analisada do outro lado da mesa.
+> Comecei participando de um projeto social aos 14 anos, aprendendo
+> datilografia, informática básica e secretariado. Hoje sou fundador de uma
+> plataforma que administra o investimento social de empresas como Petrobras,
+> Itaipu e Caixa. E, entre uma coisa e outra, passei vinte anos construindo os
+> sistemas onde a gestão de organizações como a sua é analisada do outro lado
+> da mesa.
 
 A terceira frase é a credencial nova, e é a que sustenta a aula sem as falhas: a
 autoridade deixa de vir do tombo e passa a vir do ponto de observação.
@@ -325,6 +325,25 @@ linhas daquele pilar.
 | **Desvios** | nenhum |
 
 ---
+
+## 7b. Decisões da revisão de slides de Aureo
+
+Aplicadas nos 49 e, quando são regra, no `_design-slides`:
+
+| Pedido | O que virou |
+|---|---|
+| Elementos maiores em geral | A escala **sobe** dentro da moldura em vez de descer. A altura veio de encolher a mobília do evento, não o conteúdo |
+| Nome do pilar pequeno | 8cqw, tamanho de display |
+| Item de lista sem hierarquia | O termo que abre cada item vem em `<b>` |
+| "As etapas estão apagadas" | O estado `vazia` do instrumento passa a ter fundo, borda cheia e texto em cor de leitura. Vazia quer dizer não conquistada, não ilegível |
+| Números pobres | Cartão com fundo, slot de ícone e rótulo maior; os cartões crescem para o rótulo não quebrar em três linhas |
+| Promessa discreta | Centralizada e com peso de display: é a maior entrega da aula |
+| Exemplo empilhado | O bloco `fluxo` virou horizontal |
+| Pergunta e resposta confusas | O diálogo identifica quem fala: a coordenadora, a educadora da manhã, a educadora da tarde |
+| **Citações a outros palestrantes** | **Removidas de todos os slides, notas e roteiro.** As três pontes viraram recorte do próprio tema |
+| Uma hora por semana | **Trinta minutos por dia** |
+| Credencial | Projeto social aos 14 anos, com datilografia, informática básica e secretariado |
+| Uma via de acesso ao instrumento | **Duas:** baixar o PDF ou montar o instrumento digital na plataforma da Pratika |
 
 ## 8. Status de produção
 

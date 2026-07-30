@@ -76,6 +76,51 @@
   const btnModo = document.querySelector('[data-modo-toggle]');
   if (btnModo) btnModo.onclick = alternarModo;
 
+  /* ---- apresentar e voltar ----
+     Tela cheia e modo limpo são a MESMA intenção ("quero ver a
+     apresentação"), então um botão faz as duas. E a volta não pode depender
+     de saber que existe a tecla P: um botão flutuante aparece no modo limpo
+     e devolve ao modo edição. */
+  function definirModo(m) {
+    document.body.dataset.modo = m;
+    const url = new URL(location.href);
+    if (m === 'limpo') url.searchParams.set('modo', 'limpo');
+    else url.searchParams.delete('modo');
+    history.replaceState(null, '', url);
+  }
+
+  async function apresentar() {
+    definirModo('limpo');
+    try {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+    } catch (e) { /* alguns navegadores exigem gesto direto; o modo limpo já valeu */ }
+  }
+
+  async function voltarAEditar() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+    } catch (e) {}
+    definirModo('formador');
+  }
+
+  const btnApresentar = document.querySelector('[data-apresentar]');
+  if (btnApresentar) btnApresentar.onclick = apresentar;
+
+  /* o botão de volta é criado aqui, não no HTML: assim toda palestra ganha
+     ele sem precisar editar 49 slides */
+  const btnVoltar = document.createElement('button');
+  btnVoltar.className = 'voltar-editar';
+  btnVoltar.type = 'button';
+  btnVoltar.textContent = '⤺ Voltar ao modo edição';
+  btnVoltar.title = 'Sair da apresentação (ou tecla P)';
+  btnVoltar.onclick = voltarAEditar;
+  document.body.appendChild(btnVoltar);
+
+  /* sair da tela cheia pelo Esc devolve ao modo edição junto */
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && document.body.dataset.modo === 'limpo') definirModo('formador');
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     switch (e.key) {
@@ -87,8 +132,11 @@
       case 'End': e.preventDefault(); irPara(total - 1); break;
       case 'p': case 'P': alternarModo(); break;
       case 'f': case 'F':
-        if (document.fullscreenElement) document.exitFullscreen();
-        else document.documentElement.requestFullscreen();
+        if (document.fullscreenElement) voltarAEditar();
+        else apresentar();
+        break;
+      case 'Escape':
+        if (document.body.dataset.modo === 'limpo') voltarAEditar();
         break;
     }
   });

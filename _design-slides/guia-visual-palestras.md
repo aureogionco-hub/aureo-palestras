@@ -112,6 +112,57 @@ Trocar travessão por vírgula às cegas produz frase torta e emenda de
 vírgula. Cada caso pede uma pontuação diferente: leia a frase em voz alta
 antes de escolher.
 
+## Regras aprendidas na revisão de Aureo
+
+Oito decisões que valem para toda palestra, não só para a que as gerou.
+
+**1 · Elementos maiores: a altura vem de encolher a mobília, não o conteúdo.**
+Quando a moldura do evento aparece, a tentação é reduzir a tipografia para caber.
+Errado. O conteúdo é o que se lê a 15 metros; a mobília é o que identifica o
+evento. Encolha logos, ornamentos e recuos, e **suba** a escala do texto.
+
+**2 · O termo que abre um item de lista vem em `<b>`.** É por ele que a plateia
+varre o olho. Item de lista sem hierarquia interna é parágrafo picado.
+
+**3 · "Vazia" quer dizer não conquistada, não ilegível.** No bloco `instrumento`,
+a etapa que ainda não chegou precisa de fundo, borda cheia e texto em cor de
+leitura. O que a distingue da preenchida é a **ausência de cor forte**, nunca a
+falta de contraste. Se a plateia não consegue ler o nome da etapa que vem, o
+bloco perdeu a função.
+
+**4 · Número precisa de cartão, não de espaço vazio.** O bloco `numeros` ganha
+fundo, slot de ícone opcional e rótulo em corpo de leitura. E os cartões
+**crescem** para ocupar a largura: coluna estreita faz o rótulo quebrar em três
+linhas e o bloco cresce em altura sem precisar.
+
+**5 · A promessa é a maior entrega da aula, e o slide tem que dizer isso.**
+Centralizada, com peso de display. Promessa discreta faz a plateia não entender
+que vai levar um objeto embora.
+
+**6 · Comparação vai lado a lado.** O bloco `fluxo` é horizontal: dois estados
+que se comparam pedem o olho varrendo na horizontal. Empilhado, sobra altura e
+some a comparação.
+
+**7 · Diálogo identifica quem fala.** Sem atribuição, a plateia não sabe o que é
+pergunta e o que é resposta. Por função, sempre: a coordenadora, a educadora da
+manhã, a educadora da tarde.
+
+**8 · Não cite outros palestrantes da mesma formação.** A ponte parece elegante e
+não é: ela obriga a plateia a lembrar de uma aula que talvez não tenha assistido,
+e transfere autoridade para quem não está na sala. O recorte se faz pelo próprio
+tema: "aqui não se fala de onde o dinheiro vem, se fala do dinheiro que já
+entrou" diz a mesma coisa sem nome nenhum.
+
+## Apresentar e voltar
+
+Dois botões, porque depender de tecla é depender de memória:
+
+- **⛶ Apresentar em tela inteira**, na barra: entra em tela cheia **e** em modo
+  limpo de uma vez. São a mesma intenção.
+- **⤺ Voltar ao modo edição**, flutuante, só existe no modo limpo. Discreto até o
+  mouse chegar perto. `Esc` e `F` fazem o mesmo, e sair da tela cheia devolve ao
+  modo edição junto.
+
 ## 4. Tipografia
 
 - **Títulos:** Sesimbra. Não é webfont pública, coloque o `.woff2` em

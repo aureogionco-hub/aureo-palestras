@@ -72,9 +72,8 @@ que você gasta apagando incêndio é hora que você não passou com quem você
 atende.
 
 E eu quero ser muito claro sobre o tamanho da coisa que eu estou pedindo:
-**não é volume de gestão. É estrutura mínima e recorrente.** Eu assessoro um
-instituto há cinco anos. Uma hora por semana. Não é muito, é uma hora. Mas é
-toda semana."
+**não é volume de gestão. É estrutura mínima e recorrente. Trinta minutos por
+dia.** Não é reunião, não é projeto novo. É meia hora olhando o que já existe."
 
 > **Transição:** "E é isso que a gente vai fazer hoje, junto."
 
@@ -99,10 +98,10 @@ acrescentar os seus."
 
 **Quem fala, três frases**
 
-"Rapidamente, para você saber com quem está falando. Eu comecei organizando ação
-comunitária na Pastoral Social de uma paróquia em Itajaí. Hoje sou fundador de
-uma plataforma que administra o investimento social de empresas como Petrobras,
-Itaipu e Caixa.
+"Rapidamente, para você saber com quem está falando. Eu comecei participando de
+um projeto social aos 14 anos, aprendendo datilografia, informática básica e
+secretariado. Hoje sou fundador de uma plataforma que administra o investimento
+social de empresas como Petrobras, Itaipu e Caixa.
 
 **E, no meio disso, passei vinte anos construindo os sistemas onde a gestão de
 organizações como a sua é analisada do outro lado da mesa.** É de lá que vêm os
@@ -116,11 +115,15 @@ vinte critérios. Não saíram de um livro."
 
 > A logística vem **aqui**, não no minuto zero. Agora eles já querem entrar.
 
-"Eu vou mandar um link no chat, e ele também está no QR da tela.
+"São duas formas de acessar, escolhe a que for melhor para você.
 
-São sete páginas. A primeira explica as colunas, a segunda é um exemplo
-preenchido, e as quatro do meio são as dimensões que a gente vai preencher hoje.
-**Se você conseguir imprimir, melhor: é para marcar caixinha, não para digitar.**
+**A primeira, mais rápida:** baixa o PDF no link que está no chat. São sete
+páginas: a primeira explica as colunas, a segunda é um exemplo preenchido, e as
+quatro do meio são as dimensões de hoje. Se conseguir imprimir, melhor ainda, é
+para marcar caixinha.
+
+**A segunda:** entra na plataforma de instrumentos da Pratika Social, no outro
+link, e monta o instrumento digital. Aí ele fica salvo na sua conta.
 
 Três minutos. Quem abriu, escreve 'abri' no chat."
 
@@ -175,9 +178,9 @@ desleixado. **O problema não é falta de esforço, é falta de estrutura.**"
 
 ### Dimensão 1 · Estratégia, 17:00
 
-**A ponte com o Jaime, dita em voz alta:** "estratégia quem deu foi o Jaime, na
-aula 1 desta formação. Eu não vou repetir. Eu só quero fazer uma pergunta sobre
-aquilo: **do que ele te ajudou a construir, o que não pode cair?**"
+**Abra dizendo o que é estratégia aqui:** não é o plano bonito de um dia bonito,
+é o rumo escrito com medida e prazo. E a pergunta que abre a dimensão é:
+**o que da sua estratégia não pode cair?**
 
 "Porque plano estratégico não morre de erro. **Morre de abandono**, ninguém
 nunca mais abre o arquivo."
@@ -190,9 +193,8 @@ nunca mais abre o arquivo."
 **Comece pela retomada:** comente uma ou duas coisas que apareceram no chat.
 Isso prova que você está lendo e sobe a participação nas três pausas seguintes.
 
-**A ponte com a Ana Gabriela:** "ela já falou de equipe, de delegação, de
-voluntariado nesta formação, e eu não vou repetir. **Eu estou falando de uma
-coisa mais chata e mais concreta: o registro do que vocês fazem.**"
+**Deixe claro o recorte:** não é gestão de pessoas, não é delegação. **É o
+registro do que vocês fazem**, uma coisa mais chata e mais concreta.
 
 "O impacto acontece na rotina. E a rotina, se não for registrada, some."
 
@@ -201,9 +203,9 @@ coisa mais chata e mais concreta: o registro do que vocês fazem.**"
 
 ### Dimensão 3 · Finanças, 41:00
 
-**A ponte com o Thiago:** "captação é a aula da semana que vem, com o Thiago, e é
-dele. O que eu quero mostrar aqui é outra coisa: **a captação morre antes de
-começar quando a gestão não está em dia.**"
+**Deixe claro o recorte:** aqui não se fala de onde o dinheiro vem, se fala do
+dinheiro que já entrou. **A captação morre antes de começar quando a gestão não
+está em dia.**
 
 "E é a dimensão em que eu tenho mais quilometragem do lado de quem analisa. Eu
 passei vinte anos construindo o sistema onde a prestação de contas de
@@ -306,7 +308,6 @@ Obrigado, gente. Foi um prazer."
 | "Não tenho equipe nem dinheiro para contador." | O Mapa não pressupõe nenhum dos dois. Pressupõe **uma hora por semana**. |
 | "Isso vale para organização pequena?" | Os vinte critérios foram escolhidos para funcionar com três pessoas e sem orçamento. **Nenhum deles exige sistema, equipe ou dinheiro**, exigem dono e rotina. |
 | "Como faço a teoria de mudança?" (critério 1 de Estratégia) | É o critério que mais gente marca "não existe", e é assunto de um curso inteiro, não de uma resposta. **É exatamente o curso que eu ofereci no fim.** |
-| "E governança, conselho, estatuto?" | É a aula 1, do Jaime. Deixei fora de propósito para não repetir o que ele já deu. |
 
 ---
 

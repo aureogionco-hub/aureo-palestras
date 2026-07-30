@@ -39,6 +39,12 @@ body {
   background: rgba(255,255,255,0.07); border: 1px solid var(--palco-linha);
   color: var(--palco-fraco); padding: 5px 12px; border-radius: 6px; cursor: pointer;
 }
+.barra .apresentar {
+  font: inherit; text-transform: uppercase; letter-spacing: 0.08em;
+  background: var(--vermelho-assinatura); border: 1px solid var(--vermelho-assinatura);
+  color: #fff; padding: 5px 14px; border-radius: 6px; cursor: pointer; margin-left: 10px;
+}
+.barra .apresentar:hover { background: var(--vermelho-profundo); border-color: var(--vermelho-profundo); }
 .barra .modo-toggle:hover { color: #fff; background: rgba(255,255,255,0.14); }
 
 /* ---------- palco: slide + notas ---------- */
@@ -187,6 +193,21 @@ body[data-modo="limpo"] .tela {
 /* Na apresentação final a paginação some — ninguém precisa ver "4/18". */
 body[data-modo="limpo"] .paginacao { display: none; }
 
+/* VOLTAR AO MODO EDIÇÃO: só existe no modo limpo. Discreto até o mouse
+   chegar perto, porque em cima do telão ele não pode roubar atenção. Mas a
+   saída não pode depender de adivinhar uma tecla. */
+.voltar-editar {
+  position: fixed; top: 14px; right: 14px; z-index: 200;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.20); border-radius: 8px;
+  padding: 8px 14px; cursor: pointer; opacity: 0.25;
+  transition: opacity .18s, background .18s, color .18s;
+}
+.voltar-editar:hover { opacity: 1; background: rgba(255,255,255,0.20); color: #fff; }
+body[data-modo="formador"] .voltar-editar { display: none; }
+@media print { .voltar-editar { display: none; } }
+
 /* ============================================================
    BLOCOS DE SLIDE
    Cada bloco é uma forma de ancorar uma ideia. Não são "estilos":
@@ -313,7 +334,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .teste .texto strong { color: var(--azul-profundo); font-weight: 800; }
 
 /* -- 6. FLUXO — âncora estrutural: de onde para onde. -- */
-.fluxo { margin: auto 0; }
+/* Lado a lado, não empilhado: dois estados que se comparam pedem o olho
+   varrendo na horizontal. Empilhado sobrava altura e sumia a comparação. */
+.fluxo { margin: auto 0; display: flex; align-items: stretch; gap: var(--gap-2); }
+.fluxo .caixa { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .fluxo .caixa { border-radius: var(--raio); padding: 2.4cqw 2.8cqw; }
 .fluxo .antes { background: var(--superficie); border: 0.18cqw solid var(--superficie-linha); }
 .fluxo .depois { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
@@ -324,7 +348,13 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo .antes .rotulo { color: var(--tinta-suave); }
 .fluxo .depois .rotulo { color: var(--verde-petroleo); }
 .fluxo .valor { font-size: var(--t-corpo); font-weight: 600; color: var(--tinta); line-height: 1.4; }
-.fluxo .seta { text-align: center; padding: 1.4cqw 0; font-size: 2.8cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1; }
+.fluxo .seta {
+  align-self: center; flex: 0 0 auto; padding: 0 0.4cqw;
+  font-size: 3.4cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1;
+}
+/* a seta vira horizontal por CSS, então o HTML não precisa mudar */
+.fluxo .seta { font-size: 0; }
+.fluxo .seta::after { content: '→'; font-size: 3.4cqw; }
 
 /* -- 7. LISTA — itens curtos, mesmo peso, sem virar bullet corporativo. -- */
 .lista { display: flex; flex-direction: column; gap: 0.9cqw; margin: auto 0; }
@@ -336,10 +366,20 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .lista > div:last-child { border-left-color: var(--verde-petroleo); background: var(--fundo-verde); }
 .lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 2cqw; flex-shrink: 0; }
 .lista .texto { font-size: var(--t-apoio); font-weight: 600; color: var(--tinta); line-height: 1.3; }
+/* o termo que abre o item vem em <b>: é ele que a plateia varre com o olho */
+.lista .texto b, .lista .texto strong { color: var(--azul-profundo); font-weight: 800; }
 
 /* -- 8. NÚMEROS — indicadores tratados com peso, não como enfeite. -- */
 .numeros { display: flex; gap: var(--gap-3); justify-content: center; margin: auto 0; flex-wrap: wrap; }
-.numeros > div { text-align: center; min-width: 16cqw; }
+.numeros > div {
+  /* crescem para ocupar a largura: coluna estreita fazia o rótulo quebrar em
+     três linhas e o bloco crescia em altura sem precisar */
+  flex: 1 1 0; max-width: 27cqw; text-align: center;
+  background: var(--superficie); border-radius: var(--raio-g);
+  padding: 1.6cqw 1.4cqw 1.4cqw;
+}
+/* o ícone entra como <span class="ico">, opcional, acima do número */
+.numeros .ico { display: block; font-size: 2.8cqw; line-height: 1; margin-bottom: 0.6cqw; }
 .numeros .n {
   font-family: var(--fonte-titulo);
   font-size: 6cqw; font-weight: 800; line-height: 1; color: var(--azul-profundo);
@@ -347,9 +387,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .numeros > div:nth-child(2) .n { color: var(--verde-petroleo); }
 .numeros > div:nth-child(3) .n { color: var(--vermelho-profundo); }
 .numeros .d {
-  font-size: var(--t-apoio); font-weight: 600; color: var(--tinta-suave);
-  margin-top: 1cqw; line-height: 1.35;
+  font-size: var(--t-apoio); font-weight: 700; color: var(--tinta);
+  margin-top: 0.9cqw; line-height: 1.28;
 }
+.numeros .d b { color: var(--azul-profundo); font-weight: 800; }
 
 /* -- 9. CITAÇÃO — a fala de alguém, com a autoria por cargo.
       Centralizada: fala única e frase única respiram melhor no eixo do
@@ -456,23 +497,25 @@ body[data-modo="limpo"] .paginacao { display: none; }
 /* -- 15. PROMESSA — o que a plateia ganha. Peso de capa, cor própria:
       azul-assinatura, para não se confundir com a capa (azul-profundo)
       nem com a secção (verde-petróleo). -- */
-.tela.promessa { background: var(--azul-assinatura); justify-content: center; padding: 7cqw; }
+/* A promessa é a maior entrega da aula. Centralizada e com peso de display:
+   se ela ficar discreta, a plateia não entende que vai levar um objeto. */
+.tela.promessa { background: var(--azul-assinatura); justify-content: center; align-items: center; padding: 6cqw; text-align: center; }
 .tela.promessa .assinatura, .tela.promessa .paginacao { color: #fff; opacity: 0.45; }
 .promessa-rotulo {
-  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--turquesa); margin-bottom: 2.4cqw;
+  font-size: var(--t-corpo); font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--turquesa); margin-bottom: 2.8cqw;
 }
 .promessa-frase {
   font-family: var(--fonte-titulo);
-  font-size: 4.4cqw; font-weight: 700; color: #fff;
-  line-height: 1.22; letter-spacing: -0.015em; text-wrap: balance;
+  font-size: 4.4cqw; font-weight: 800; color: #fff;
+  line-height: 1.18; letter-spacing: -0.02em; text-wrap: balance; max-width: 80cqw;
 }
 /* o instrumento prometido — é o que esta metodologia tem e as outras não */
 .promessa-frase b { color: var(--acafrao); font-weight: 800; }
 .promessa-apoio {
-  margin-top: 3cqw; padding-top: 2.2cqw;
-  border-top: 0.15cqw solid rgba(255,255,255,0.22);
-  font-size: var(--t-apoio); color: rgba(255,255,255,0.78); font-weight: 500; line-height: 1.5;
+  margin-top: 3.2cqw; padding-top: 2.4cqw; max-width: 74cqw;
+  border-top: 0.15cqw solid rgba(255,255,255,0.30);
+  font-size: var(--t-corpo); color: rgba(255,255,255,0.86); font-weight: 500; line-height: 1.45;
 }
 
 /* -- 16. INSTRUMENTO — a assinatura desta metodologia.
@@ -499,9 +542,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 .instrumento .conteudo { font-size: var(--t-apoio); font-weight: 600; line-height: 1.35; }
 
-.instrumento .vazia { background: transparent; border: 0.2cqw dashed var(--papel-borda); }
-.instrumento .vazia .n { background: var(--papel-borda); }
-.instrumento .vazia .rotulo { color: var(--tinta-suave); opacity: 0.55; }
+/* "vazia" quer dizer NÃO CONQUISTADA, não ilegível. Antes ela quase
+   desaparecia e a plateia não conseguia ler o nome da etapa que vinha. Agora
+   tem fundo, borda cheia e texto em cor de leitura: o que a distingue da
+   preenchida é a ausência de cor forte, não a falta de contraste. */
+.instrumento .vazia { background: var(--superficie); border: 0.2cqw solid var(--superficie-linha); }
+.instrumento .vazia .n { background: var(--tinta-suave); }
+.instrumento .vazia .rotulo { color: var(--azul-profundo); opacity: 1; }
+.instrumento .vazia .conteudo { color: var(--tinta-suave); }
 
 .instrumento .preenchida { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
 .instrumento .preenchida .n { background: var(--azul-assinatura); }
@@ -603,7 +651,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento.compacto .parte { min-height: 8cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; justify-content: center; }
 .instrumento.compacto .conteudo { font-size: 1.35cqw; }
 .tela.trabalho .instrumento .preenchida { background: #fff; }
-.tela.trabalho .instrumento .vazia { border-color: var(--papel-borda); }
+.tela.trabalho .instrumento .vazia { border-color: var(--superficie-linha); }
 
 /* ---------- impressão / captura para o .pptx ---------- */
 @media print {
@@ -629,69 +677,74 @@ body[data-modo="limpo"] .paginacao { display: none; }
    que encolhe é o texto.
    ============================================================ */
 .tela.com-moldura {
-  --t-display:  5.95cqw;
-  --t-titulo:   4.05cqw;
-  --t-corpo:    2.25cqw;
-  --t-apoio:    1.76cqw;
-  --t-etiqueta: 1.22cqw;
+  /* A escala NÃO cai mais dentro da moldura: ela sobe. A altura vem de
+     encolher a mobília, não o conteúdo, porque o conteúdo é o que se lê a
+     15 metros. */
+  --t-display:  6.6cqw;
+  --t-titulo:   4.4cqw;
+  --t-corpo:    2.55cqw;
+  --t-apoio:    1.98cqw;
+  --t-etiqueta: 1.32cqw;
   /* topo: logos terminam em 5,8cqw (2,6 + 3,2). Pé: em 4,4cqw (2 + 2,4).
      O recuo abaixo dá a folga mínima sem roubar altura do conteúdo. */
-  padding: 6.1cqw 5.5cqw 5cqw;
+  padding: 4.9cqw 5cqw 3.7cqw;
 }
 /* os tamanhos que não vêm de token também cedem os 10% */
-.tela.com-moldura .gancho-frase   { font-size: 5.6cqw; }
-.tela.com-moldura.capa h1         { font-size: 5.75cqw; }
+.tela.com-moldura .gancho-frase   { font-size: 6cqw; }
+.tela.com-moldura.capa h1         { font-size: 8.2cqw; }
 .tela.com-moldura .seccao h2,
-.tela.com-moldura h2              { font-size: 7cqw; }
-.tela.com-moldura .promessa-frase { font-size: 3.95cqw; }
-.tela.com-moldura .numeros .n     { font-size: 5.4cqw; }
-.tela.com-moldura .citacao .fala  { font-size: 2.9cqw; }
-.tela.com-moldura .declaracao .corpo { font-size: 2.07cqw; }
+.tela.com-moldura h2              { font-size: 8cqw; }
+.tela.com-moldura .promessa-frase { font-size: 4.9cqw; }
+.tela.com-moldura .numeros .n     { font-size: 6.6cqw; }
+.tela.com-moldura .citacao .fala  { font-size: 3.3cqw; }
+.tela.com-moldura .declaracao .corpo { font-size: 2.35cqw; }
 .tela.com-moldura .instrumento .parte { min-height: 15cqw; }
 /* o fecho cede um pouco de forro interno — é o bloco mais discreto do slide */
-.tela.com-moldura .fecho { padding: 1.4cqw 2.4cqw; }
+.tela.com-moldura .fecho { padding: 1.2cqw 2.2cqw; margin-top: 1.6cqw; }
+.tela.com-moldura .fecho span { line-height: 1.32; }
 /* seis linhas de tabela somam muito espaçamento; dentro da moldura ele aperta */
-.tela.com-moldura .mapa { border-spacing: 0 0.5cqw; }
+.tela.com-moldura .mapa { border-spacing: 0 0.45cqw; }
+.tela.com-moldura .mapa td, .tela.com-moldura .mapa th { font-size: 1.85cqw; }
 
 .moldura { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 
 /* logos de quem promove: canto superior esquerdo, na ordem do template */
 .moldura-topo {
-  position: absolute; top: 2.6cqw; left: 3.4cqw;
-  display: flex; align-items: center; gap: 2.4cqw;
+  position: absolute; top: 1.7cqw; left: 2.6cqw;
+  display: flex; align-items: center; gap: 2cqw;
 }
 /* logos dos parceiros: no pé, centralizados */
 .moldura-pe {
-  position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 3.4cqw;
+  position: absolute; bottom: 1.3cqw; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 3cqw;
 }
 /* cada logo entra como <img> com altura fixa e largura livre — a proporção
    é a do arquivo, e a altura é o que alinha a fileira */
-.moldura-topo img { height: 3.2cqw; width: auto; display: block; }
-.moldura-pe img   { height: 2.4cqw; width: auto; display: block; }
+.moldura-topo img { height: 2.4cqw; width: auto; display: block; }
+.moldura-pe img   { height: 1.9cqw; width: auto; display: block; }
 
 /* SLOT: espaço reservado, invisível, enquanto o arquivo do logo não existe.
    Sem contorno e SEM rótulo. Nome de logo escrito na tela é anotação de
    rascunho, e a plateia lê o rascunho antes do conteúdo. O nome fica no
    atributo data-logo, para quem edita o arquivo. */
 .slot { display: block; font-size: 0; line-height: 0; }
-.moldura-topo .slot { height: 3.2cqw; }
-.moldura-pe   .slot { height: 2.4cqw; }
+.moldura-topo .slot { height: 2.4cqw; }
+.moldura-pe   .slot { height: 1.9cqw; }
 
 /* ORNAMENTO de bússola: vetor, não recorte. Escala no telão sem serrar e a
    cor vem do token. Sangra pelos cantos, como no template do evento. */
 .ornamento { position: absolute; opacity: 0.45; }
 .ornamento svg { width: 100%; height: 100%; display: block; }
-.ornamento-td { top: -4cqw; right: -4cqw; width: 17cqw; height: 17cqw; }
+.ornamento-td { top: -3.5cqw; right: -3.5cqw; width: 14cqw; height: 14cqw; }
 /* na capa a assinatura mora no alto à direita, então o ornamento de cima sai:
    os dois no mesmo canto viram sobreposição, não composição */
 .tela.capa .ornamento-td { display: none; }
-.ornamento-be { bottom: -5cqw; left: -5cqw; width: 16cqw; height: 16cqw; }
+.ornamento-be { bottom: -4.5cqw; left: -4.5cqw; width: 13cqw; height: 13cqw; }
 
 /* em fundo escuro (capa, promessa, tela de pilar) o ornamento clareia */
 .tela.seccao .ornamento, .tela.promessa .ornamento, .tela.capa .ornamento { opacity: 0.30; }
 
 
 /* a assinatura e a paginação descem para a faixa livre, abaixo do conteúdo */
-.tela.com-moldura .assinatura { bottom: 1.6cqw; }
-.tela.com-moldura .paginacao  { bottom: 2.1cqw; }
+.tela.com-moldura .assinatura { bottom: 1cqw; }
+.tela.com-moldura .paginacao  { bottom: 1.5cqw; }

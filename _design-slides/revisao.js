@@ -82,10 +82,10 @@
        overflow hidden, entao nao havia como rolar ate os botoes de exportar */
     ".rv-faixa{position:fixed;left:0;right:0;bottom:0;z-index:120;background:#FAF7F2;",
     "border-radius:16px 16px 0 0;padding:12px 22px 14px;box-shadow:0 -8px 34px rgba(0,0,0,.45);",
-    "max-height:44vh;overflow-y:auto;font-family:'Carlito',Calibri,system-ui,sans-serif}",
+    "max-height:27vh;overflow-y:auto;font-family:'Carlito',Calibri,system-ui,sans-serif}",
     /* o deck encolhe o suficiente para nunca ficar atras da faixa */
     "body.rv-on{justify-content:flex-start;padding-top:1.4vh}",
-    "body.rv-on .apresentacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
+    "body.rv-on .apresentacao{max-width:min(1500px,calc((100vh - 250px) * 2.7))}",
     "body.rv-on .barra,body.rv-on .navegacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
     "body.rv-on .dica-teclado{display:none}",
     ".rv-cab{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",

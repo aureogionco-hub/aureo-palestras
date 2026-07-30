@@ -186,6 +186,12 @@ body {
   background: rgba(255,255,255,0.07); border: 1px solid var(--palco-linha);
   color: var(--palco-fraco); padding: 5px 12px; border-radius: 6px; cursor: pointer;
 }
+.barra .apresentar {
+  font: inherit; text-transform: uppercase; letter-spacing: 0.08em;
+  background: var(--vermelho-assinatura); border: 1px solid var(--vermelho-assinatura);
+  color: #fff; padding: 5px 14px; border-radius: 6px; cursor: pointer; margin-left: 10px;
+}
+.barra .apresentar:hover { background: var(--vermelho-profundo); border-color: var(--vermelho-profundo); }
 .barra .modo-toggle:hover { color: #fff; background: rgba(255,255,255,0.14); }
 
 /* ---------- palco: slide + notas ---------- */
@@ -334,6 +340,21 @@ body[data-modo="limpo"] .tela {
 /* Na apresentação final a paginação some — ninguém precisa ver "4/18". */
 body[data-modo="limpo"] .paginacao { display: none; }
 
+/* VOLTAR AO MODO EDIÇÃO: só existe no modo limpo. Discreto até o mouse
+   chegar perto, porque em cima do telão ele não pode roubar atenção. Mas a
+   saída não pode depender de adivinhar uma tecla. */
+.voltar-editar {
+  position: fixed; top: 14px; right: 14px; z-index: 200;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.20); border-radius: 8px;
+  padding: 8px 14px; cursor: pointer; opacity: 0.25;
+  transition: opacity .18s, background .18s, color .18s;
+}
+.voltar-editar:hover { opacity: 1; background: rgba(255,255,255,0.20); color: #fff; }
+body[data-modo="formador"] .voltar-editar { display: none; }
+@media print { .voltar-editar { display: none; } }
+
 /* ============================================================
    BLOCOS DE SLIDE
    Cada bloco é uma forma de ancorar uma ideia. Não são "estilos":
@@ -460,7 +481,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .teste .texto strong { color: var(--azul-profundo); font-weight: 800; }
 
 /* -- 6. FLUXO — âncora estrutural: de onde para onde. -- */
-.fluxo { margin: auto 0; }
+/* Lado a lado, não empilhado: dois estados que se comparam pedem o olho
+   varrendo na horizontal. Empilhado sobrava altura e sumia a comparação. */
+.fluxo { margin: auto 0; display: flex; align-items: stretch; gap: var(--gap-2); }
+.fluxo .caixa { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .fluxo .caixa { border-radius: var(--raio); padding: 2.4cqw 2.8cqw; }
 .fluxo .antes { background: var(--superficie); border: 0.18cqw solid var(--superficie-linha); }
 .fluxo .depois { background: var(--fundo-verde); border: 0.18cqw solid var(--verde-petroleo); }
@@ -471,7 +495,13 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .fluxo .antes .rotulo { color: var(--tinta-suave); }
 .fluxo .depois .rotulo { color: var(--verde-petroleo); }
 .fluxo .valor { font-size: var(--t-corpo); font-weight: 600; color: var(--tinta); line-height: 1.4; }
-.fluxo .seta { text-align: center; padding: 1.4cqw 0; font-size: 2.8cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1; }
+.fluxo .seta {
+  align-self: center; flex: 0 0 auto; padding: 0 0.4cqw;
+  font-size: 3.4cqw; color: var(--verde-petroleo); font-weight: 800; line-height: 1;
+}
+/* a seta vira horizontal por CSS, então o HTML não precisa mudar */
+.fluxo .seta { font-size: 0; }
+.fluxo .seta::after { content: '→'; font-size: 3.4cqw; }
 
 /* -- 7. LISTA — itens curtos, mesmo peso, sem virar bullet corporativo. -- */
 .lista { display: flex; flex-direction: column; gap: 0.9cqw; margin: auto 0; }
@@ -483,10 +513,20 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .lista > div:last-child { border-left-color: var(--verde-petroleo); background: var(--fundo-verde); }
 .lista .seta { color: var(--verde-petroleo); font-weight: 900; font-size: 2cqw; flex-shrink: 0; }
 .lista .texto { font-size: var(--t-apoio); font-weight: 600; color: var(--tinta); line-height: 1.3; }
+/* o termo que abre o item vem em <b>: é ele que a plateia varre com o olho */
+.lista .texto b, .lista .texto strong { color: var(--azul-profundo); font-weight: 800; }
 
 /* -- 8. NÚMEROS — indicadores tratados com peso, não como enfeite. -- */
 .numeros { display: flex; gap: var(--gap-3); justify-content: center; margin: auto 0; flex-wrap: wrap; }
-.numeros > div { text-align: center; min-width: 16cqw; }
+.numeros > div {
+  /* crescem para ocupar a largura: coluna estreita fazia o rótulo quebrar em
+     três linhas e o bloco crescia em altura sem precisar */
+  flex: 1 1 0; max-width: 27cqw; text-align: center;
+  background: var(--superficie); border-radius: var(--raio-g);
+  padding: 1.6cqw 1.4cqw 1.4cqw;
+}
+/* o ícone entra como <span class="ico">, opcional, acima do número */
+.numeros .ico { display: block; font-size: 2.8cqw; line-height: 1; margin-bottom: 0.6cqw; }
 .numeros .n {
   font-family: var(--fonte-titulo);
   font-size: 6cqw; font-weight: 800; line-height: 1; color: var(--azul-profundo);
@@ -494,9 +534,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .numeros > div:nth-child(2) .n { color: var(--verde-petroleo); }
 .numeros > div:nth-child(3) .n { color: var(--vermelho-profundo); }
 .numeros .d {
-  font-size: var(--t-apoio); font-weight: 600; color: var(--tinta-suave);
-  margin-top: 1cqw; line-height: 1.35;
+  font-size: var(--t-apoio); font-weight: 700; color: var(--tinta);
+  margin-top: 0.9cqw; line-height: 1.28;
 }
+.numeros .d b { color: var(--azul-profundo); font-weight: 800; }
 
 /* -- 9. CITAÇÃO — a fala de alguém, com a autoria por cargo.
       Centralizada: fala única e frase única respiram melhor no eixo do
@@ -603,23 +644,25 @@ body[data-modo="limpo"] .paginacao { display: none; }
 /* -- 15. PROMESSA — o que a plateia ganha. Peso de capa, cor própria:
       azul-assinatura, para não se confundir com a capa (azul-profundo)
       nem com a secção (verde-petróleo). -- */
-.tela.promessa { background: var(--azul-assinatura); justify-content: center; padding: 7cqw; }
+/* A promessa é a maior entrega da aula. Centralizada e com peso de display:
+   se ela ficar discreta, a plateia não entende que vai levar um objeto. */
+.tela.promessa { background: var(--azul-assinatura); justify-content: center; align-items: center; padding: 6cqw; text-align: center; }
 .tela.promessa .assinatura, .tela.promessa .paginacao { color: #fff; opacity: 0.45; }
 .promessa-rotulo {
-  font-size: var(--t-apoio); font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--turquesa); margin-bottom: 2.4cqw;
+  font-size: var(--t-corpo); font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--turquesa); margin-bottom: 2.8cqw;
 }
 .promessa-frase {
   font-family: var(--fonte-titulo);
-  font-size: 4.4cqw; font-weight: 700; color: #fff;
-  line-height: 1.22; letter-spacing: -0.015em; text-wrap: balance;
+  font-size: 4.4cqw; font-weight: 800; color: #fff;
+  line-height: 1.18; letter-spacing: -0.02em; text-wrap: balance; max-width: 80cqw;
 }
 /* o instrumento prometido — é o que esta metodologia tem e as outras não */
 .promessa-frase b { color: var(--acafrao); font-weight: 800; }
 .promessa-apoio {
-  margin-top: 3cqw; padding-top: 2.2cqw;
-  border-top: 0.15cqw solid rgba(255,255,255,0.22);
-  font-size: var(--t-apoio); color: rgba(255,255,255,0.78); font-weight: 500; line-height: 1.5;
+  margin-top: 3.2cqw; padding-top: 2.4cqw; max-width: 74cqw;
+  border-top: 0.15cqw solid rgba(255,255,255,0.30);
+  font-size: var(--t-corpo); color: rgba(255,255,255,0.86); font-weight: 500; line-height: 1.45;
 }
 
 /* -- 16. INSTRUMENTO — a assinatura desta metodologia.
@@ -646,9 +689,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 }
 .instrumento .conteudo { font-size: var(--t-apoio); font-weight: 600; line-height: 1.35; }
 
-.instrumento .vazia { background: transparent; border: 0.2cqw dashed var(--papel-borda); }
-.instrumento .vazia .n { background: var(--papel-borda); }
-.instrumento .vazia .rotulo { color: var(--tinta-suave); opacity: 0.55; }
+/* "vazia" quer dizer NÃO CONQUISTADA, não ilegível. Antes ela quase
+   desaparecia e a plateia não conseguia ler o nome da etapa que vinha. Agora
+   tem fundo, borda cheia e texto em cor de leitura: o que a distingue da
+   preenchida é a ausência de cor forte, não a falta de contraste. */
+.instrumento .vazia { background: var(--superficie); border: 0.2cqw solid var(--superficie-linha); }
+.instrumento .vazia .n { background: var(--tinta-suave); }
+.instrumento .vazia .rotulo { color: var(--azul-profundo); opacity: 1; }
+.instrumento .vazia .conteudo { color: var(--tinta-suave); }
 
 .instrumento .preenchida { background: var(--papel-fundo); border: 0.18cqw solid var(--areia); }
 .instrumento .preenchida .n { background: var(--azul-assinatura); }
@@ -750,7 +798,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .instrumento.compacto .parte { min-height: 8cqw; padding: 1.6cqw 1.5cqw; gap: 0.8cqw; justify-content: center; }
 .instrumento.compacto .conteudo { font-size: 1.35cqw; }
 .tela.trabalho .instrumento .preenchida { background: #fff; }
-.tela.trabalho .instrumento .vazia { border-color: var(--papel-borda); }
+.tela.trabalho .instrumento .vazia { border-color: var(--superficie-linha); }
 
 /* ---------- impressão / captura para o .pptx ---------- */
 @media print {
@@ -776,72 +824,77 @@ body[data-modo="limpo"] .paginacao { display: none; }
    que encolhe é o texto.
    ============================================================ */
 .tela.com-moldura {
-  --t-display:  5.95cqw;
-  --t-titulo:   4.05cqw;
-  --t-corpo:    2.25cqw;
-  --t-apoio:    1.76cqw;
-  --t-etiqueta: 1.22cqw;
+  /* A escala NÃO cai mais dentro da moldura: ela sobe. A altura vem de
+     encolher a mobília, não o conteúdo, porque o conteúdo é o que se lê a
+     15 metros. */
+  --t-display:  6.6cqw;
+  --t-titulo:   4.4cqw;
+  --t-corpo:    2.55cqw;
+  --t-apoio:    1.98cqw;
+  --t-etiqueta: 1.32cqw;
   /* topo: logos terminam em 5,8cqw (2,6 + 3,2). Pé: em 4,4cqw (2 + 2,4).
      O recuo abaixo dá a folga mínima sem roubar altura do conteúdo. */
-  padding: 6.1cqw 5.5cqw 5cqw;
+  padding: 4.9cqw 5cqw 3.7cqw;
 }
 /* os tamanhos que não vêm de token também cedem os 10% */
-.tela.com-moldura .gancho-frase   { font-size: 5.6cqw; }
-.tela.com-moldura.capa h1         { font-size: 5.75cqw; }
+.tela.com-moldura .gancho-frase   { font-size: 6cqw; }
+.tela.com-moldura.capa h1         { font-size: 8.2cqw; }
 .tela.com-moldura .seccao h2,
-.tela.com-moldura h2              { font-size: 7cqw; }
-.tela.com-moldura .promessa-frase { font-size: 3.95cqw; }
-.tela.com-moldura .numeros .n     { font-size: 5.4cqw; }
-.tela.com-moldura .citacao .fala  { font-size: 2.9cqw; }
-.tela.com-moldura .declaracao .corpo { font-size: 2.07cqw; }
+.tela.com-moldura h2              { font-size: 8cqw; }
+.tela.com-moldura .promessa-frase { font-size: 4.9cqw; }
+.tela.com-moldura .numeros .n     { font-size: 6.6cqw; }
+.tela.com-moldura .citacao .fala  { font-size: 3.3cqw; }
+.tela.com-moldura .declaracao .corpo { font-size: 2.35cqw; }
 .tela.com-moldura .instrumento .parte { min-height: 15cqw; }
 /* o fecho cede um pouco de forro interno — é o bloco mais discreto do slide */
-.tela.com-moldura .fecho { padding: 1.4cqw 2.4cqw; }
+.tela.com-moldura .fecho { padding: 1.2cqw 2.2cqw; margin-top: 1.6cqw; }
+.tela.com-moldura .fecho span { line-height: 1.32; }
 /* seis linhas de tabela somam muito espaçamento; dentro da moldura ele aperta */
-.tela.com-moldura .mapa { border-spacing: 0 0.5cqw; }
+.tela.com-moldura .mapa { border-spacing: 0 0.45cqw; }
+.tela.com-moldura .mapa td, .tela.com-moldura .mapa th { font-size: 1.85cqw; }
 
 .moldura { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 
 /* logos de quem promove: canto superior esquerdo, na ordem do template */
 .moldura-topo {
-  position: absolute; top: 2.6cqw; left: 3.4cqw;
-  display: flex; align-items: center; gap: 2.4cqw;
+  position: absolute; top: 1.7cqw; left: 2.6cqw;
+  display: flex; align-items: center; gap: 2cqw;
 }
 /* logos dos parceiros: no pé, centralizados */
 .moldura-pe {
-  position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 3.4cqw;
+  position: absolute; bottom: 1.3cqw; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 3cqw;
 }
 /* cada logo entra como <img> com altura fixa e largura livre — a proporção
    é a do arquivo, e a altura é o que alinha a fileira */
-.moldura-topo img { height: 3.2cqw; width: auto; display: block; }
-.moldura-pe img   { height: 2.4cqw; width: auto; display: block; }
+.moldura-topo img { height: 2.4cqw; width: auto; display: block; }
+.moldura-pe img   { height: 1.9cqw; width: auto; display: block; }
 
 /* SLOT: espaço reservado, invisível, enquanto o arquivo do logo não existe.
    Sem contorno e SEM rótulo. Nome de logo escrito na tela é anotação de
    rascunho, e a plateia lê o rascunho antes do conteúdo. O nome fica no
    atributo data-logo, para quem edita o arquivo. */
 .slot { display: block; font-size: 0; line-height: 0; }
-.moldura-topo .slot { height: 3.2cqw; }
-.moldura-pe   .slot { height: 2.4cqw; }
+.moldura-topo .slot { height: 2.4cqw; }
+.moldura-pe   .slot { height: 1.9cqw; }
 
 /* ORNAMENTO de bússola: vetor, não recorte. Escala no telão sem serrar e a
    cor vem do token. Sangra pelos cantos, como no template do evento. */
 .ornamento { position: absolute; opacity: 0.45; }
 .ornamento svg { width: 100%; height: 100%; display: block; }
-.ornamento-td { top: -4cqw; right: -4cqw; width: 17cqw; height: 17cqw; }
+.ornamento-td { top: -3.5cqw; right: -3.5cqw; width: 14cqw; height: 14cqw; }
 /* na capa a assinatura mora no alto à direita, então o ornamento de cima sai:
    os dois no mesmo canto viram sobreposição, não composição */
 .tela.capa .ornamento-td { display: none; }
-.ornamento-be { bottom: -5cqw; left: -5cqw; width: 16cqw; height: 16cqw; }
+.ornamento-be { bottom: -4.5cqw; left: -4.5cqw; width: 13cqw; height: 13cqw; }
 
 /* em fundo escuro (capa, promessa, tela de pilar) o ornamento clareia */
 .tela.seccao .ornamento, .tela.promessa .ornamento, .tela.capa .ornamento { opacity: 0.30; }
 
 
 /* a assinatura e a paginação descem para a faixa livre, abaixo do conteúdo */
-.tela.com-moldura .assinatura { bottom: 1.6cqw; }
-.tela.com-moldura .paginacao  { bottom: 2.1cqw; }
+.tela.com-moldura .assinatura { bottom: 1cqw; }
+.tela.com-moldura .paginacao  { bottom: 1.5cqw; }
 
 </style>
 </head>
@@ -850,7 +903,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 <div class="barra">
   <span><span>Gestão Eficiente · Formação de Líderes no 3º Setor · 30/07</span></span>
   <span>
-    <button class="modo-toggle" data-modo-toggle>P · alternar modo</button>
+    <button class="modo-toggle" data-modo-toggle>P · alternar modo</button><button class="apresentar" data-apresentar>⛶ Apresentar em tela inteira</button>
     <span data-contador style="margin-left:14px"></span>
   </span>
 </div>
@@ -940,7 +993,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
         <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
-    <div class="gancho-frase">Toda organização social cuida<br>muito bem de quem ela atende.<br><br>E quase nenhuma cuida<br><em>de si mesma</em>.</div>
+    <div class="gancho-frase">Toda organização social cuida muito bem de quem ela atende.<br>E quase nenhuma cuida <em>de si mesma</em>.</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>A abertura</span></div><span class="notas-tempo">00:20</span>
@@ -990,11 +1043,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="cabecalho"><div class="titulo">O que a obsessão pelo atendimento <em>deixa de fora</em></div></div>
     <div class="lista">
-      <div><span class="seta">→</span><span class="texto">A equipe: quem faz, e com que preparo</span></div>
-      <div><span class="seta">→</span><span class="texto">As metas: o que a gente quer alcançar este ano</span></div>
-      <div><span class="seta">→</span><span class="texto">A operação: o registro do que a gente faz</span></div>
-      <div><span class="seta">→</span><span class="texto">O financeiro: quanto entra, quanto sai, quanto falta</span></div>
-      <div><span class="seta">→</span><span class="texto"><strong>E o mais grave: por que a gente faz o que faz</strong></span></div>
+      <div><span class="seta">→</span><span class="texto"><b>A equipe:</b> quem faz, e com que preparo</span></div>
+      <div><span class="seta">→</span><span class="texto"><b>As metas:</b> o que a gente quer alcançar este ano</span></div>
+      <div><span class="seta">→</span><span class="texto"><b>A operação:</b> o registro do que a gente faz</span></div>
+      <div><span class="seta">→</span><span class="texto"><b>O financeiro:</b> quanto entra, quanto sai, quanto falta</span></div>
+      <div><span class="seta">→</span><span class="texto"><b>E o mais grave:</b> <strong>por que a gente faz o que faz</strong></span></div>
     </div>
   </div>
   <aside class="notas">
@@ -1141,13 +1194,13 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <div class="frase-impacto">Não é <em>volume</em><br>de gestão.</div>
-    <div class="frase-apoio">É estrutura mínima e recorrente. Uma hora por semana sustenta uma instituição por cinco anos.</div>
+    <div class="frase-apoio">É estrutura mínima e recorrente. <b>Trinta minutos por dia</b> sustentam a gestão de uma organização.</div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>O preço, baixado</span></div><span class="notas-tempo">05:30</span>
     <div class="notas-corpo">
-      <p>"Eu assessoro um instituto há cinco anos. <strong>Uma hora por semana.</strong> Não é muito. É uma hora. Mas é toda semana."</p>
-      <p>Esta é a frase que a plateia exausta consegue aceitar às nove da manhã. <strong>Ninguém aqui vai virar gestor. Todo mundo consegue uma hora.</strong></p>
+      <p>"<strong>Trinta minutos por dia.</strong> Não é reunião, não é projeto novo. É meia hora olhando o que já existe."</p>
+      <p>Esta é a frase que a plateia exausta consegue aceitar às nove da manhã. <strong>Ninguém aqui vai virar gestor. Todo mundo consegue meia hora.</strong></p>
     </div>
     <div class="notas-ref"></div>
   </aside>
@@ -1242,8 +1295,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="cabecalho"><div class="titulo">Com quem você <em>está falando</em></div></div>
     <div class="declaracao">
-      <div class="rotulo">Da Pastoral Social de Itajaí ao investimento social de grandes empresas</div>
-      <div class="corpo">Comecei organizando ação comunitária numa paróquia. Hoje sou fundador de uma plataforma que administra o investimento social de empresas como <strong>Petrobras, Itaipu e Caixa</strong>.</div>
+      <div class="rotulo">De um projeto social aos 14 anos ao investimento social de grandes empresas</div>
+      <div class="corpo">Comecei num projeto social aos 14 anos, aprendendo datilografia, informática básica e secretariado. Hoje sou fundador de uma plataforma que administra o investimento social de empresas como <strong>Petrobras, Itaipu e Caixa</strong>.</div>
     </div>
     <div class="fecho">
       <span>E, no meio, vinte anos construindo os sistemas onde</span>
@@ -1350,16 +1403,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
       </div>
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Abra o instrumento</span><span class="pausa-tempo">3 min</span></div>
-    <div class="pausa-consigna">Baixe o <em>Mapa do Que Não Pode Cair</em>. Ele fica seu depois da aula.</div>
-    <div class="pausa-restricoes">
-      <span>1 · o link está no chat</span>
-      <span>2 · ou aponte a câmera no QR</span>
-      <span>3 · escreva "abri" no chat</span>
-    </div>
+    <div class="pausa-consigna">Duas formas de acessar o <em>Mapa do Que Não Pode Cair</em>. Ele fica seu depois da aula.</div>
+    <div class="pausa-restricoes"><span>escolha uma das duas</span><span>escreva "abri" no chat</span></div>
     <div class="instrumento compacto">
-      <div class="parte ativa"><span class="agora">aqui</span><span class="n">1</span><div class="rotulo">[ QR CODE ]</div><div class="conteudo">trocar pela imagem</div></div>
-      <div class="parte preenchida"><span class="n">2</span><div class="rotulo">O link</div><div class="conteudo">[colar o endereço por extenso]</div></div>
-      <div class="parte preenchida"><span class="n">3</span><div class="rotulo">Sem acesso?</div><div class="conteudo">Papel e caneta funcionam igual</div></div>
+      <div class="parte ativa"><span class="agora">mais rápido</span><span class="n">1</span><div class="rotulo">Baixe o PDF</div><div class="conteudo">[colar o link do PDF]</div></div>
+      <div class="parte preenchida"><span class="n">2</span><div class="rotulo">Ou monte o instrumento digital</div><div class="conteudo">plataforma de instrumentos da Pratika Social<br>[colar o link da plataforma]</div></div>
     </div>
   </div>
   <aside class="notas">
@@ -1630,15 +1678,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="numero-parte">Dimensão 1 de 4</div>
     <h2>Estratégia</h2>
     <div class="seccao-apoio">Estratégia não é o plano bonito de um dia bonito. É <strong>a organização sabendo dizer o que quer mudar, com medida e prazo</strong>, e conseguindo provar que decidiu, e não só conversou.</div>
-    <div class="fecho">
-      <span>O Jaime abriu esta formação falando de direção.</span>
-      <span>A pergunta de hoje é outra: <b>daquilo que ele te ajudou a construir, o que não pode cair?</b></span>
-    </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Abre a dimensão</span></div><span class="notas-tempo">17:00</span>
     <div class="notas-corpo">
-      <p><strong>Diga a ponte com o Jaime em voz alta.</strong> Ele deu missão, visão e prioridades na aula 1, você não repete nada disso. Você pergunta o que daquilo continua existindo.</p>
+      <p><strong>Abra dizendo o que é estratégia aqui:</strong> não é o plano bonito de um dia bonito, é o rumo escrito com medida e prazo.</p>
       <p>"Plano estratégico não morre de erro. Morre de abandono, ninguém nunca mais abre o arquivo."</p>
     </div>
     <div class="notas-ref"></div>
@@ -1683,8 +1727,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="selo">Estratégia · critério 1 de 5</span>
     <div class="cabecalho"><div class="titulo">A organização definiu <em>a transformação</em> que busca gerar</div></div>
     <div class="declaracao">
-      <div class="rotulo">A mesma pergunta, duas educadoras</div>
-      <div class="corpo">"O que a gente quer que mude na vida desses jovens?"<br><strong>"Que eles não fiquem na rua."</strong><br><strong>"Que eles entrem no mercado de trabalho."</strong></div>
+      <div class="rotulo">Duas educadoras da mesma casa</div>
+      <div class="corpo"><b>A coordenadora:</b> o que a gente quer que mude nesses jovens?<br><b>A educadora da manhã:</b> que eles não fiquem na rua.<br><b>A educadora da tarde:</b> que eles entrem no mercado.</div>
     </div>
     <div class="fecho">
       <span>As duas estão ali há três anos.</span>
@@ -2019,10 +2063,6 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="numero-parte">Dimensão 2 de 4</div>
     <h2>Operação</h2>
     <div class="seccao-apoio">Operação não é gestão de pessoas. É <strong>o rastro do trabalho</strong>. Quem foi atendido, o que aconteceu, o que foi trabalhado, e onde tudo isso ficou registrado.</div>
-    <div class="fecho">
-      <span>A Ana Gabriela já falou de equipe e delegação.</span>
-      <span>Aqui é uma coisa mais chata e mais concreta: <b>o registro do que vocês fazem</b>.</span>
-    </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Abre a dimensão</span></div><span class="notas-tempo">29:00</span>
@@ -2244,7 +2284,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="corpo">Alguém pergunta se existe autorização de imagem dos responsáveis. Existe, <strong>de dois anos atrás. E três dos jovens da foto entraram depois.</strong></div>
     </div>
     <div class="fecho">
-      <span>Autorização não é documento que se assina uma vez.</span>
+      <span>Autorização não se assina uma vez.</span>
       <span>É documento que <b>acompanha quem entra</b>.</span>
     </div>
   </div>
@@ -2405,15 +2445,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <div class="numero-parte">Dimensão 3 de 4</div>
     <h2>Finanças</h2>
     <div class="seccao-apoio">Não é captação. É <strong>gestão do recurso que já entrou</strong>. O que está previsto, o que foi gasto, em que projeto, e o que dá para provar quando alguém pedir.</div>
-    <div class="fecho">
-      <span>Captação é a aula da semana que vem, com o Thiago, e é dele.</span>
-      <span>O que eu quero mostrar é outra coisa: <b>a captação morre antes de começar quando a gestão não está em dia</b>.</span>
-    </div>
   </div>
   <aside class="notas">
     <div class="notas-topo"><span>Abre a dimensão</span></div><span class="notas-tempo">41:00</span>
     <div class="notas-corpo">
-      <p><strong>Diga a ponte com o Thiago em voz alta.</strong> Sem isso, esta dimensão parece invasão do território dele; com isso, vira preparação para a aula seguinte.</p>
+      <p><strong>Deixe claro o recorte:</strong> aqui não se fala de onde o dinheiro vem, se fala do dinheiro que já entrou.</p>
       <p>"Eu passei vinte anos construindo o sistema onde a prestação de contas de organizações como a sua é analisada. <strong>É a dimensão em que eu vi mais projeto bom morrer por motivo bobo.</strong>"</p>
     </div>
     <div class="notas-ref"></div>
@@ -2683,13 +2719,13 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="selo">Finanças · critério 5 de 5</span>
     <div class="cabecalho"><div class="titulo">As obrigações fiscais e trabalhistas <em>estão em dia</em></div></div>
     <div class="numeros">
-      <div><div class="n">R$ 300</div><div class="d">uma guia não paga em janeiro</div></div>
-      <div><div class="n">0</div><div class="d">certidões negativas emitidas</div></div>
-      <div><div class="n">R$ 90 mil</div><div class="d">o convênio que não foi assinado</div></div>
+      <div><div class="n">R$ 300</div><div class="d">guia não paga em janeiro</div></div>
+      <div><div class="n">0</div><div class="d">certidões emitidas</div></div>
+      <div><div class="n">R$ 90 mil</div><div class="d">convênio não assinado</div></div>
     </div>
     <div class="fecho">
-      <span>Ninguém elogia uma organização por ter a certidão em dia.</span>
-      <span>Só <b>cobra quando ela não tem</b>, e sempre no pior dia possível.</span>
+      <span>Ninguém elogia quem tem a certidão em dia.</span>
+      <span>Só <b>cobra quando não tem</b>, sempre no pior dia.</span>
     </div>
   </div>
   <aside class="notas">
@@ -2909,7 +2945,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
     </div>
     <div class="fecho">
       <span>Decidir medir não é medir.</span>
-      <span>Entre a decisão e o dado existe uma coisa chata e indispensável: <b>a rotina</b>.</span>
+      <span>Entre a decisão e o dado existe <b>a rotina</b>.</span>
     </div>
   </div>
   <aside class="notas">
@@ -3394,8 +3430,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
       <div class="corpo">Estes vinte critérios são <strong>um corte</strong>, não a gestão inteira. Existem outros eixos, governança, pessoas, comunicação, sustentabilidade, e outros critérios dentro de cada um destes quatro.</div>
     </div>
     <div class="fecho">
-      <span>Alguns deles são justamente as outras aulas desta formação.</span>
-      <span>Então <b>acrescente as suas linhas</b>: o Mapa é seu, e deve crescer com a organização.</span>
+      <span><b>Acrescente as suas linhas.</b></span>
+      <span>O Mapa é seu, e deve <b>crescer com a organização</b>.</span>
     </div>
   </div>
   <aside class="notas">
@@ -3598,6 +3634,51 @@ body[data-modo="limpo"] .paginacao { display: none; }
   const btnModo = document.querySelector('[data-modo-toggle]');
   if (btnModo) btnModo.onclick = alternarModo;
 
+  /* ---- apresentar e voltar ----
+     Tela cheia e modo limpo são a MESMA intenção ("quero ver a
+     apresentação"), então um botão faz as duas. E a volta não pode depender
+     de saber que existe a tecla P: um botão flutuante aparece no modo limpo
+     e devolve ao modo edição. */
+  function definirModo(m) {
+    document.body.dataset.modo = m;
+    const url = new URL(location.href);
+    if (m === 'limpo') url.searchParams.set('modo', 'limpo');
+    else url.searchParams.delete('modo');
+    history.replaceState(null, '', url);
+  }
+
+  async function apresentar() {
+    definirModo('limpo');
+    try {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+    } catch (e) { /* alguns navegadores exigem gesto direto; o modo limpo já valeu */ }
+  }
+
+  async function voltarAEditar() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+    } catch (e) {}
+    definirModo('formador');
+  }
+
+  const btnApresentar = document.querySelector('[data-apresentar]');
+  if (btnApresentar) btnApresentar.onclick = apresentar;
+
+  /* o botão de volta é criado aqui, não no HTML: assim toda palestra ganha
+     ele sem precisar editar 49 slides */
+  const btnVoltar = document.createElement('button');
+  btnVoltar.className = 'voltar-editar';
+  btnVoltar.type = 'button';
+  btnVoltar.textContent = '⤺ Voltar ao modo edição';
+  btnVoltar.title = 'Sair da apresentação (ou tecla P)';
+  btnVoltar.onclick = voltarAEditar;
+  document.body.appendChild(btnVoltar);
+
+  /* sair da tela cheia pelo Esc devolve ao modo edição junto */
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && document.body.dataset.modo === 'limpo') definirModo('formador');
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     switch (e.key) {
@@ -3609,8 +3690,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
       case 'End': e.preventDefault(); irPara(total - 1); break;
       case 'p': case 'P': alternarModo(); break;
       case 'f': case 'F':
-        if (document.fullscreenElement) document.exitFullscreen();
-        else document.documentElement.requestFullscreen();
+        if (document.fullscreenElement) voltarAEditar();
+        else apresentar();
+        break;
+      case 'Escape':
+        if (document.body.dataset.modo === 'limpo') voltarAEditar();
         break;
     }
   });
@@ -3717,10 +3801,10 @@ body[data-modo="limpo"] .paginacao { display: none; }
        overflow hidden, entao nao havia como rolar ate os botoes de exportar */
     ".rv-faixa{position:fixed;left:0;right:0;bottom:0;z-index:120;background:#FAF7F2;",
     "border-radius:16px 16px 0 0;padding:12px 22px 14px;box-shadow:0 -8px 34px rgba(0,0,0,.45);",
-    "max-height:44vh;overflow-y:auto;font-family:'Carlito',Calibri,system-ui,sans-serif}",
+    "max-height:27vh;overflow-y:auto;font-family:'Carlito',Calibri,system-ui,sans-serif}",
     /* o deck encolhe o suficiente para nunca ficar atras da faixa */
     "body.rv-on{justify-content:flex-start;padding-top:1.4vh}",
-    "body.rv-on .apresentacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
+    "body.rv-on .apresentacao{max-width:min(1500px,calc((100vh - 250px) * 2.7))}",
     "body.rv-on .barra,body.rv-on .navegacao{max-width:min(1500px,calc((100vh - 330px) * 2.7))}",
     "body.rv-on .dica-teclado{display:none}",
     ".rv-cab{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",
