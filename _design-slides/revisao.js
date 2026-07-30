@@ -1,7 +1,7 @@
 /* ============================================================
    REVISÃO — aprovar e comentar slide a slide
    Inclua depois de slides.js:
-     <script src="../../_design-slides/revisao.js"></script>
+     inclua a tag script apontando para _design-slides/revisao.js
 
    Segue o padrão validado no curso de Avaliação de Impacto da Pratika: uma
    faixa única logo abaixo do deck, no caminho natural da leitura — "este slide

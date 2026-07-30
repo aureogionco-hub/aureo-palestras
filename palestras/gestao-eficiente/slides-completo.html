@@ -323,6 +323,9 @@ body[data-modo="limpo"] .apresentacao {
   border-radius: 0; box-shadow: none;
   align-items: center; justify-content: center;
 }
+/* sem isto a .tela encosta à esquerda do .slide e a sobra vira uma barra
+   preta de um lado só, em vez de letterbox simétrico */
+body[data-modo="limpo"] .slide { justify-content: center; align-items: center; }
 body[data-modo="limpo"] .tela {
   flex: none;
   width: min(100vw, calc(100vh * 16 / 9));
@@ -814,16 +817,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .moldura-topo img { height: 3.2cqw; width: auto; display: block; }
 .moldura-pe img   { height: 2.4cqw; width: auto; display: block; }
 
-/* SLOT: o lugar reservado enquanto o arquivo do logo não existe.
-   Tem a proporção do logo real, então trocar por <img> não desloca nada.
-   SEM contorno: moldura tracejada faz o slide parecer wireframe, e a
-   plateia vê o rascunho antes do conteúdo. */
-.slot {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.95cqw; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--tinta-suave); opacity: 0.30;
-  white-space: nowrap;
-}
+/* SLOT: espaço reservado, invisível, enquanto o arquivo do logo não existe.
+   Sem contorno e SEM rótulo. Nome de logo escrito na tela é anotação de
+   rascunho, e a plateia lê o rascunho antes do conteúdo. O nome fica no
+   atributo data-logo, para quem edita o arquivo. */
+.slot { display: block; font-size: 0; line-height: 0; }
 .moldura-topo .slot { height: 3.2cqw; }
 .moldura-pe   .slot { height: 2.4cqw; }
 
@@ -832,13 +830,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .ornamento { position: absolute; opacity: 0.45; }
 .ornamento svg { width: 100%; height: 100%; display: block; }
 .ornamento-td { top: -4cqw; right: -4cqw; width: 17cqw; height: 17cqw; }
+/* na capa a assinatura mora no alto à direita, então o ornamento de cima sai:
+   os dois no mesmo canto viram sobreposição, não composição */
+.tela.capa .ornamento-td { display: none; }
 .ornamento-be { bottom: -5cqw; left: -5cqw; width: 16cqw; height: 16cqw; }
 
 /* em fundo escuro (capa, promessa, tela de pilar) o ornamento clareia */
 .tela.seccao .ornamento, .tela.promessa .ornamento, .tela.capa .ornamento { opacity: 0.30; }
-.tela.seccao .slot, .tela.promessa .slot, .tela.capa .slot {
-  color: rgba(255,255,255,0.55); opacity: 0.55;
-}
+
 
 /* a assinatura e a paginação descem para a faixa livre, abaixo do conteúdo */
 .tela.com-moldura .assinatura { bottom: 1.6cqw; }
@@ -865,8 +864,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -891,8 +890,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="sobretitulo">Formação de Líderes no 3º Setor · 30 de julho</div>
@@ -911,8 +910,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -937,8 +936,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="gancho-frase">Toda organização social cuida<br>muito bem de quem ela atende.<br><br>E quase nenhuma cuida<br><em>de si mesma</em>.</div>
@@ -959,8 +958,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -985,8 +984,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">O que a obsessão pelo atendimento <em>deixa de fora</em></div></div>
@@ -1013,8 +1012,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1039,8 +1038,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="frase-impacto">Hoje não basta<br>fazer o bem.</div>
@@ -1061,8 +1060,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1087,8 +1086,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">A crença que trava tudo, e ela é <em>o contrário</em> da verdade</div></div>
@@ -1111,8 +1110,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1137,8 +1136,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="frase-impacto">Não é <em>volume</em><br>de gestão.</div>
@@ -1161,8 +1160,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1187,8 +1186,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="promessa-rotulo">O que você leva daqui</div>
@@ -1211,8 +1210,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1237,8 +1236,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">Com quem você <em>está falando</em></div></div>
@@ -1266,8 +1265,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1292,8 +1291,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">Quatro dimensões, <em>cinco critérios</em> em cada</div></div>
@@ -1320,8 +1319,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1346,8 +1345,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Abra o instrumento</span><span class="pausa-tempo">3 min</span></div>
@@ -1381,8 +1380,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1407,8 +1406,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">As quatro colunas que <em>você</em> responde</div></div>
@@ -1435,8 +1434,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1461,8 +1460,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">Uma organização que <em>trabalha bem</em></div></div>
@@ -1491,8 +1490,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1517,8 +1516,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="frase-impacto">Uma linha só está saudável<br>quando as <em>quatro colunas</em><br>estão respondidas.</div>
@@ -1539,8 +1538,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1565,8 +1564,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">O retrato daquela organização, numa dimensão só</div></div>
@@ -1598,8 +1597,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1624,8 +1623,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="numero-parte">Dimensão 1 de 4</div>
@@ -1651,8 +1650,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1677,8 +1676,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Estratégia · critério 1 de 5</span>
@@ -1707,8 +1706,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1733,8 +1732,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Estratégia · critério 2 de 5</span>
@@ -1763,8 +1762,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1789,8 +1788,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Estratégia · critério 3 de 5</span>
@@ -1816,8 +1815,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1842,8 +1841,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Estratégia · critério 4 de 5</span>
@@ -1872,8 +1871,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1898,8 +1897,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Estratégia · critério 5 de 5</span>
@@ -1929,8 +1928,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -1955,8 +1954,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Pausa de trabalho</span><span class="pausa-tempo">5 min</span></div>
@@ -1987,8 +1986,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2013,8 +2012,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="numero-parte">Dimensão 2 de 4</div>
@@ -2040,8 +2039,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2066,8 +2065,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Operação · critério 1 de 5</span>
@@ -2096,8 +2095,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2122,8 +2121,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Operação · critério 2 de 5</span>
@@ -2152,8 +2151,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2178,8 +2177,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Operação · critério 3 de 5</span>
@@ -2208,8 +2207,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2234,8 +2233,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Operação · critério 4 de 5</span>
@@ -2265,8 +2264,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2291,8 +2290,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Operação · critério 5 de 5</span>
@@ -2319,8 +2318,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2345,8 +2344,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Pausa de trabalho</span><span class="pausa-tempo">5 min</span></div>
@@ -2373,8 +2372,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2399,8 +2398,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="numero-parte">Dimensão 3 de 4</div>
@@ -2426,8 +2425,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2452,8 +2451,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Finanças · critério 1 de 5</span>
@@ -2483,8 +2482,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2509,8 +2508,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Finanças · critério 2 de 5</span>
@@ -2539,8 +2538,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2565,8 +2564,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Finanças · critério 3 de 5</span>
@@ -2595,8 +2594,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2621,8 +2620,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Finanças · critério 4 de 5</span>
@@ -2651,8 +2650,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2677,8 +2676,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Finanças · critério 5 de 5</span>
@@ -2709,8 +2708,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2735,8 +2734,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Pausa de trabalho</span><span class="pausa-tempo">5 min</span></div>
@@ -2763,8 +2762,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2789,8 +2788,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="numero-parte">Dimensão 4 de 4</div>
@@ -2816,8 +2815,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2842,8 +2841,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 1 de 5</span>
@@ -2872,8 +2871,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2898,8 +2897,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 2 de 5</span>
@@ -2928,8 +2927,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -2954,8 +2953,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 3 de 5</span>
@@ -2984,8 +2983,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3010,8 +3009,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 4 de 5</span>
@@ -3041,8 +3040,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3067,8 +3066,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <span class="selo">Monit. e Avaliação · critério 5 de 5</span>
@@ -3098,8 +3097,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3124,8 +3123,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="pausa-topo"><span class="pausa-selo">● Última pausa</span><span class="pausa-tempo">5 min</span></div>
@@ -3155,8 +3154,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3181,8 +3180,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">Você acabou de fazer o <em>diagnóstico</em> da sua gestão</div></div>
@@ -3209,8 +3208,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3235,8 +3234,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">Agora conte, nos <em>vinte critérios</em></div></div>
@@ -3261,8 +3260,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3287,8 +3286,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="frase-impacto">Se a maioria está<br>sem dono e sem lugar,<br>o problema não é<br><em>falta de esforço</em>.</div>
@@ -3309,8 +3308,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3335,8 +3334,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="chamada">
@@ -3360,8 +3359,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3386,8 +3385,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="declaracao">
@@ -3414,8 +3413,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3440,8 +3439,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="cabecalho"><div class="titulo">E se você quiser <em>companhia</em> nesse caminho</div></div>
@@ -3467,8 +3466,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
     <span class="assinatura">Aureo Gionco</span><span class="paginacao"></span>
     <div class="moldura">
       <div class="moldura-topo">
-        <span class="slot" style="aspect-ratio:2.05">impulso</span>
-        <span class="slot" style="aspect-ratio:3.4">grpcom</span>
+        <span class="slot" data-logo="impulso" style="aspect-ratio:2.05"></span>
+        <span class="slot" data-logo="grpcom" style="aspect-ratio:3.4"></span>
       </div>
       <div class="ornamento ornamento-td">
         <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -3493,8 +3492,8 @@ body[data-modo="limpo"] .paginacao { display: none; }
         </svg>
       </div>
       <div class="moldura-pe">
-        <span class="slot" style="aspect-ratio:4.1">bússola</span>
-        <span class="slot" style="aspect-ratio:4">pratika</span>
+        <span class="slot" data-logo="bússola" style="aspect-ratio:4.1"></span>
+        <span class="slot" data-logo="pratika" style="aspect-ratio:4"></span>
       </div>
     </div>
     <div class="frase-impacto">Sair da <em>intenção</em><br>e chegar à <em>prática</em>.</div>
@@ -3637,7 +3636,7 @@ body[data-modo="limpo"] .paginacao { display: none; }
 /* ============================================================
    REVISÃO — aprovar e comentar slide a slide
    Inclua depois de slides.js:
-     <script src="../../_design-slides/revisao.js"></script>
+     inclua a tag script apontando para _design-slides/revisao.js
 
    Segue o padrão validado no curso de Avaliação de Impacto da Pratika: uma
    faixa única logo abaixo do deck, no caminho natural da leitura — "este slide

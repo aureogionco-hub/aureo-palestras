@@ -176,6 +176,9 @@ body[data-modo="limpo"] .apresentacao {
   border-radius: 0; box-shadow: none;
   align-items: center; justify-content: center;
 }
+/* sem isto a .tela encosta à esquerda do .slide e a sobra vira uma barra
+   preta de um lado só, em vez de letterbox simétrico */
+body[data-modo="limpo"] .slide { justify-content: center; align-items: center; }
 body[data-modo="limpo"] .tela {
   flex: none;
   width: min(100vw, calc(100vh * 16 / 9));
@@ -667,16 +670,11 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .moldura-topo img { height: 3.2cqw; width: auto; display: block; }
 .moldura-pe img   { height: 2.4cqw; width: auto; display: block; }
 
-/* SLOT: o lugar reservado enquanto o arquivo do logo não existe.
-   Tem a proporção do logo real, então trocar por <img> não desloca nada.
-   SEM contorno: moldura tracejada faz o slide parecer wireframe, e a
-   plateia vê o rascunho antes do conteúdo. */
-.slot {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.95cqw; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--tinta-suave); opacity: 0.30;
-  white-space: nowrap;
-}
+/* SLOT: espaço reservado, invisível, enquanto o arquivo do logo não existe.
+   Sem contorno e SEM rótulo. Nome de logo escrito na tela é anotação de
+   rascunho, e a plateia lê o rascunho antes do conteúdo. O nome fica no
+   atributo data-logo, para quem edita o arquivo. */
+.slot { display: block; font-size: 0; line-height: 0; }
 .moldura-topo .slot { height: 3.2cqw; }
 .moldura-pe   .slot { height: 2.4cqw; }
 
@@ -685,13 +683,14 @@ body[data-modo="limpo"] .paginacao { display: none; }
 .ornamento { position: absolute; opacity: 0.45; }
 .ornamento svg { width: 100%; height: 100%; display: block; }
 .ornamento-td { top: -4cqw; right: -4cqw; width: 17cqw; height: 17cqw; }
+/* na capa a assinatura mora no alto à direita, então o ornamento de cima sai:
+   os dois no mesmo canto viram sobreposição, não composição */
+.tela.capa .ornamento-td { display: none; }
 .ornamento-be { bottom: -5cqw; left: -5cqw; width: 16cqw; height: 16cqw; }
 
 /* em fundo escuro (capa, promessa, tela de pilar) o ornamento clareia */
 .tela.seccao .ornamento, .tela.promessa .ornamento, .tela.capa .ornamento { opacity: 0.30; }
-.tela.seccao .slot, .tela.promessa .slot, .tela.capa .slot {
-  color: rgba(255,255,255,0.55); opacity: 0.55;
-}
+
 
 /* a assinatura e a paginação descem para a faixa livre, abaixo do conteúdo */
 .tela.com-moldura .assinatura { bottom: 1.6cqw; }

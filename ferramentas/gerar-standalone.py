@@ -69,7 +69,12 @@ def main():
         if not alvo.exists():
             return m.group(0)
         embutidos.append(src)
-        return "<script>\n" + alvo.read_text(encoding="utf-8") + "\n</script>"
+        js = alvo.read_text(encoding="utf-8")
+        # Um "</script>" dentro do JS (mesmo em comentário) fecha a tag antes da
+        # hora e joga o resto do arquivo como TEXTO na página. Escapar a barra
+        # resolve sem mudar o comportamento do script.
+        js = js.replace("</script", "<\\/script")
+        return "<script>\n" + js + "\n</script>"
 
     html = re.sub(r'<link[^>]*rel=["\']stylesheet["\'][^>]*href=["\']([^"\']+)["\'][^>]*>',
                   trocar_link, html)
